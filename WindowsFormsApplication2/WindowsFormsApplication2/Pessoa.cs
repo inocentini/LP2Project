@@ -22,8 +22,8 @@ namespace WindowsFormsApplication2
         {
             this.Nome = nome;
             this.Cpf = cpf;
-            this.Email = Email;
-            this.Telefone = Telefone;
+            this.Email = email;
+            this.Telefone = telefone;
         }
 
         public string Nome
