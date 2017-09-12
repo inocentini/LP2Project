@@ -38,7 +38,10 @@ namespace WindowsFormsApplication2
 
         private void bntEditar_Click(object sender, EventArgs e)
         {
-            wCadastro editar = new wCadastro(Convert.ToString(dgvPessoas.SelectedRows[dgvPessoas.CurrentRow.Index].Cells["CPF"]));
+            wCadastro editar = new wCadastro(dgvPessoas.SelectedRows[dgvPessoas.CurrentRow.Index].Cells[0].Value.ToString());
+            editar.ShowDialog(this);
+
+
         }
     }
 }
