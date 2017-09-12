@@ -16,5 +16,29 @@ namespace WindowsFormsApplication2
         {
             InitializeComponent();
         }
+
+        private void bntAdd_Click(object sender, EventArgs e)
+        {
+            wCadastro cadastro = new wCadastro();
+            cadastro.ShowDialog(this);
+            Fill();
+        }
+
+        private void Fill()
+        {
+            IDatabase db = new DatabaseDict();
+            List <Pessoa> lista = db.Listar();
+
+            dgvPessoas.Rows.Clear();
+            foreach(Pessoa p in lista)
+            {
+                dgvPessoas.Rows.Add(p.Cpf, p.Nome, p.Email, p.Telefone);
+            }
+        }
+
+        private void bntEditar_Click(object sender, EventArgs e)
+        {
+            wCadastro editar = new wCadastro(Convert.ToString(dgvPessoas.SelectedRows[dgvPessoas.CurrentRow.Index].Cells["CPF"]));
+        }
     }
 }

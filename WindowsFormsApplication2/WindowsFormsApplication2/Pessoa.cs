@@ -9,7 +9,7 @@ namespace WindowsFormsApplication2
     class Pessoa
     {
         private string nome;
-        private long cpf;
+        private string cpf;
         private string email;
         private string telefone;
 
@@ -18,7 +18,7 @@ namespace WindowsFormsApplication2
 
         }
 
-        public Pessoa(string nome, long cpf, string email, string telefone)
+        public Pessoa(string nome, string cpf, string email, string telefone)
         {
             this.Nome = nome;
             this.Cpf = cpf;
@@ -39,7 +39,7 @@ namespace WindowsFormsApplication2
             }
         }
 
-        public long Cpf
+        public string Cpf
         {
             get
             {

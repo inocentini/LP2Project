@@ -12,9 +12,11 @@ namespace WindowsFormsApplication2
 
         void Editar(Pessoa p);
 
-        void Remover(long cpf);
+        void Remover(string cpf);
 
         List<Pessoa> Listar();
+
+        Pessoa Read(string cpf);
 
     }
 }

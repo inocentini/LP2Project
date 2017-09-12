@@ -33,11 +33,11 @@
             this.labEmail = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtCPF = new System.Windows.Forms.TextBox();
-            this.txtContribuicao = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.labTelefone = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labNome
@@ -81,12 +81,12 @@
             this.txtCPF.Size = new System.Drawing.Size(145, 20);
             this.txtCPF.TabIndex = 4;
             // 
-            // txtContribuicao
+            // txtEmail
             // 
-            this.txtContribuicao.Location = new System.Drawing.Point(93, 81);
-            this.txtContribuicao.Name = "txtContribuicao";
-            this.txtContribuicao.Size = new System.Drawing.Size(201, 20);
-            this.txtContribuicao.TabIndex = 5;
+            this.txtEmail.Location = new System.Drawing.Point(93, 81);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(201, 20);
+            this.txtEmail.TabIndex = 5;
             // 
             // btnSalvar
             // 
@@ -96,6 +96,7 @@
             this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCancelar
             // 
@@ -115,23 +116,23 @@
             this.labTelefone.TabIndex = 8;
             this.labTelefone.Text = "Telefone:";
             // 
-            // textBox1
+            // txtTelefone
             // 
-            this.textBox1.Location = new System.Drawing.Point(93, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(108, 20);
-            this.textBox1.TabIndex = 9;
+            this.txtTelefone.Location = new System.Drawing.Point(93, 107);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(108, 20);
+            this.txtTelefone.TabIndex = 9;
             // 
             // wCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 214);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.labTelefone);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.txtContribuicao);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.labEmail);
@@ -139,6 +140,7 @@
             this.Controls.Add(this.labNome);
             this.Name = "wCadastro";
             this.Text = "Cadastro";
+            this.Load += new System.EventHandler(this.wCadastro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,11 +153,11 @@
         private System.Windows.Forms.Label labEmail;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtCPF;
-        private System.Windows.Forms.TextBox txtContribuicao;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label labTelefone;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTelefone;
     }
 }
 

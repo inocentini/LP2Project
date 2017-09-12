@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.dgvPessoas = new System.Windows.Forms.DataGridView();
+            this.colCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labFiltrar = new System.Windows.Forms.Label();
             this.labPessoas = new System.Windows.Forms.Label();
             this.txtFiltrar = new System.Windows.Forms.TextBox();
             this.bntAdd = new System.Windows.Forms.Button();
             this.bntEditar = new System.Windows.Forms.Button();
-            this.bntAtualizar = new System.Windows.Forms.Button();
+            this.bntDetalhes = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
-            this.colCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +58,37 @@
             this.dgvPessoas.ReadOnly = true;
             this.dgvPessoas.Size = new System.Drawing.Size(479, 150);
             this.dgvPessoas.TabIndex = 0;
+            // 
+            // colCPF
+            // 
+            this.colCPF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCPF.HeaderText = "CPF";
+            this.colCPF.Name = "colCPF";
+            this.colCPF.ReadOnly = true;
+            // 
+            // colNome
+            // 
+            this.colNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colNome.FillWeight = 180F;
+            this.colNome.HeaderText = "Nome";
+            this.colNome.Name = "colNome";
+            this.colNome.ReadOnly = true;
+            // 
+            // colEmail
+            // 
+            this.colEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colEmail.FillWeight = 150F;
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
+            // 
+            // colTelefone
+            // 
+            this.colTelefone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTelefone.FillWeight = 80F;
+            this.colTelefone.HeaderText = "Tel";
+            this.colTelefone.Name = "colTelefone";
+            this.colTelefone.ReadOnly = true;
             // 
             // labFiltrar
             // 
@@ -92,6 +123,7 @@
             this.bntAdd.TabIndex = 4;
             this.bntAdd.Text = "Adicionar";
             this.bntAdd.UseVisualStyleBackColor = true;
+            this.bntAdd.Click += new System.EventHandler(this.bntAdd_Click);
             // 
             // bntEditar
             // 
@@ -101,15 +133,16 @@
             this.bntEditar.TabIndex = 5;
             this.bntEditar.Text = "Editar";
             this.bntEditar.UseVisualStyleBackColor = true;
+            this.bntEditar.Click += new System.EventHandler(this.bntEditar_Click);
             // 
-            // bntAtualizar
+            // bntDetalhes
             // 
-            this.bntAtualizar.Location = new System.Drawing.Point(242, 227);
-            this.bntAtualizar.Name = "bntAtualizar";
-            this.bntAtualizar.Size = new System.Drawing.Size(75, 23);
-            this.bntAtualizar.TabIndex = 6;
-            this.bntAtualizar.Text = "Atualizar";
-            this.bntAtualizar.UseVisualStyleBackColor = true;
+            this.bntDetalhes.Location = new System.Drawing.Point(242, 227);
+            this.bntDetalhes.Name = "bntDetalhes";
+            this.bntDetalhes.Size = new System.Drawing.Size(75, 23);
+            this.bntDetalhes.TabIndex = 6;
+            this.bntDetalhes.Text = "Detalhes";
+            this.bntDetalhes.UseVisualStyleBackColor = true;
             // 
             // btnRemover
             // 
@@ -120,44 +153,13 @@
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
             // 
-            // colCPF
-            // 
-            this.colCPF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCPF.HeaderText = "CPF";
-            this.colCPF.Name = "colCPF";
-            this.colCPF.ReadOnly = true;
-            // 
-            // colNome
-            // 
-            this.colNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colNome.FillWeight = 180F;
-            this.colNome.HeaderText = "Nome";
-            this.colNome.Name = "colNome";
-            this.colNome.ReadOnly = true;
-            // 
-            // colEmail
-            // 
-            this.colEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colEmail.FillWeight = 150F;
-            this.colEmail.HeaderText = "Email";
-            this.colEmail.Name = "colEmail";
-            this.colEmail.ReadOnly = true;
-            // 
-            // colTelefone
-            // 
-            this.colTelefone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTelefone.FillWeight = 80F;
-            this.colTelefone.HeaderText = "Tel";
-            this.colTelefone.Name = "colTelefone";
-            this.colTelefone.ReadOnly = true;
-            // 
             // wPessoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 262);
             this.Controls.Add(this.btnRemover);
-            this.Controls.Add(this.bntAtualizar);
+            this.Controls.Add(this.bntDetalhes);
             this.Controls.Add(this.bntEditar);
             this.Controls.Add(this.bntAdd);
             this.Controls.Add(this.txtFiltrar);
@@ -180,7 +182,7 @@
         private System.Windows.Forms.TextBox txtFiltrar;
         private System.Windows.Forms.Button bntAdd;
         private System.Windows.Forms.Button bntEditar;
-        private System.Windows.Forms.Button bntAtualizar;
+        private System.Windows.Forms.Button bntDetalhes;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCPF;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
