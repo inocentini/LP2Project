@@ -56,6 +56,7 @@
             this.dgvPessoas.Location = new System.Drawing.Point(1, 66);
             this.dgvPessoas.Name = "dgvPessoas";
             this.dgvPessoas.ReadOnly = true;
+            this.dgvPessoas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPessoas.Size = new System.Drawing.Size(479, 150);
             this.dgvPessoas.TabIndex = 0;
             // 
@@ -114,6 +115,7 @@
             this.txtFiltrar.Name = "txtFiltrar";
             this.txtFiltrar.Size = new System.Drawing.Size(402, 20);
             this.txtFiltrar.TabIndex = 3;
+            this.txtFiltrar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFiltrar_KeyUp);
             // 
             // bntAdd
             // 
@@ -143,6 +145,7 @@
             this.bntDetalhes.TabIndex = 6;
             this.bntDetalhes.Text = "Detalhes";
             this.bntDetalhes.UseVisualStyleBackColor = true;
+            this.bntDetalhes.Click += new System.EventHandler(this.bntDetalhes_Click);
             // 
             // btnRemover
             // 
@@ -152,6 +155,7 @@
             this.btnRemover.TabIndex = 7;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // wPessoa
             // 

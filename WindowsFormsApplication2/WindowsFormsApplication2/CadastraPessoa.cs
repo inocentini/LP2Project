@@ -27,13 +27,27 @@ namespace WindowsFormsApplication2
             }
         }
 
-        public wCadastro(string cpf)
+        public wCadastro(string cpf,bool edicao)
         {
-            Editar = true;
+            Editar = edicao;
             InitializeComponent();
             IDatabase db = new DatabaseDict();
             Pessoa p = db.Read(cpf);
             setDTO(p);
+            if (Editar)
+            {
+                txtCPF.ReadOnly = true;
+                txtCPF.TabIndex = btnCancelar.TabIndex + 1;
+            }
+            else
+            {
+                txtCPF.ReadOnly = true;
+                txtEmail.ReadOnly = true;
+                txtNome.ReadOnly = true;
+                txtTelefone.ReadOnly = true;
+                btnCancelar.Text = "Voltar";
+                btnSalvar.Hide();
+            }
         }
 
         public wCadastro()
@@ -60,21 +74,29 @@ namespace WindowsFormsApplication2
             txtTelefone.Text = p.Telefone;
         }
 
-        private void getPessoa()
-        {
-
-        }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             IDatabase database = new DatabaseDict();
-            database.Salvar(getDTO());
-            Dispose();
+            if (Editar)
+            {
+                database.Editar(getDTO());
+                Dispose();
+            }
+            else
+            {
+                database.Salvar(getDTO());
+                Dispose();
+            }
         }
 
         private void wCadastro_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

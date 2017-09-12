@@ -43,7 +43,7 @@
             // labNome
             // 
             this.labNome.AutoSize = true;
-            this.labNome.Location = new System.Drawing.Point(43, 30);
+            this.labNome.Location = new System.Drawing.Point(43, 63);
             this.labNome.Name = "labNome";
             this.labNome.Size = new System.Drawing.Size(38, 13);
             this.labNome.TabIndex = 0;
@@ -52,7 +52,7 @@
             // labCPF
             // 
             this.labCPF.AutoSize = true;
-            this.labCPF.Location = new System.Drawing.Point(43, 56);
+            this.labCPF.Location = new System.Drawing.Point(51, 38);
             this.labCPF.Name = "labCPF";
             this.labCPF.Size = new System.Drawing.Size(30, 13);
             this.labCPF.TabIndex = 1;
@@ -61,7 +61,7 @@
             // labEmail
             // 
             this.labEmail.AutoSize = true;
-            this.labEmail.Location = new System.Drawing.Point(43, 88);
+            this.labEmail.Location = new System.Drawing.Point(46, 88);
             this.labEmail.Name = "labEmail";
             this.labEmail.Size = new System.Drawing.Size(35, 13);
             this.labEmail.TabIndex = 2;
@@ -69,31 +69,31 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(93, 27);
+            this.txtNome.Location = new System.Drawing.Point(93, 56);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(290, 20);
-            this.txtNome.TabIndex = 3;
+            this.txtNome.TabIndex = 2;
             // 
             // txtCPF
             // 
-            this.txtCPF.Location = new System.Drawing.Point(93, 53);
+            this.txtCPF.Location = new System.Drawing.Point(93, 31);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(145, 20);
-            this.txtCPF.TabIndex = 4;
+            this.txtCPF.TabIndex = 1;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(93, 81);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(201, 20);
-            this.txtEmail.TabIndex = 5;
+            this.txtEmail.TabIndex = 3;
             // 
             // btnSalvar
             // 
             this.btnSalvar.Location = new System.Drawing.Point(93, 155);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 36);
-            this.btnSalvar.TabIndex = 6;
+            this.btnSalvar.TabIndex = 5;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -103,14 +103,15 @@
             this.btnCancelar.Location = new System.Drawing.Point(230, 155);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 36);
-            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // labTelefone
             // 
             this.labTelefone.AutoSize = true;
-            this.labTelefone.Location = new System.Drawing.Point(29, 111);
+            this.labTelefone.Location = new System.Drawing.Point(29, 114);
             this.labTelefone.Name = "labTelefone";
             this.labTelefone.Size = new System.Drawing.Size(52, 13);
             this.labTelefone.TabIndex = 8;
@@ -121,7 +122,7 @@
             this.txtTelefone.Location = new System.Drawing.Point(93, 107);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(108, 20);
-            this.txtTelefone.TabIndex = 9;
+            this.txtTelefone.TabIndex = 4;
             // 
             // wCadastro
             // 

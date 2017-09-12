@@ -36,12 +36,46 @@ namespace WindowsFormsApplication2
             }
         }
 
+        private string selecao()
+        {
+            int indiceSelecao = dgvPessoas.SelectedCells[0].RowIndex;
+            DataGridViewRow linhaSelecionada = dgvPessoas.Rows[indiceSelecao];
+            return linhaSelecionada.Cells[0].Value.ToString();
+        }
+
         private void bntEditar_Click(object sender, EventArgs e)
         {
-            wCadastro editar = new wCadastro(dgvPessoas.SelectedRows[dgvPessoas.CurrentRow.Index].Cells[0].Value.ToString());
+            wCadastro editar = new wCadastro(selecao(),true);
             editar.ShowDialog(this);
+            Fill();
+        }
 
+        private void bntDetalhes_Click(object sender, EventArgs e)
+        {
+            wCadastro detalhes = new wCadastro(selecao(),false);
+            detalhes.ShowDialog(this);
+        }
 
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            IDatabase db = new DatabaseDict();
+            db.Remover(selecao());
+            Fill();
+        }
+
+        private void txtFiltrar_KeyUp(object sender, KeyEventArgs e)
+        {
+            IDatabase db = new DatabaseDict();
+            List<Pessoa> lista = db.Listar();
+
+            dgvPessoas.Rows.Clear();
+            foreach(Pessoa p in lista)
+            {
+                if (p.Nome.Contains(txtFiltrar.Text))
+                {
+                    dgvPessoas.Rows.Add(p.Cpf, p.Nome, p.Email, p.Telefone);
+                }
+            }
         }
     }
 }

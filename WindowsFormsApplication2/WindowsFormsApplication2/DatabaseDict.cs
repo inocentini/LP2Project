@@ -16,11 +16,12 @@ namespace WindowsFormsApplication2
 
         public void Editar(Pessoa p)
         {
+            db[p.Cpf] = p;
         }
 
         public void Remover(string cpf)
         {
-            throw new NotImplementedException();
+            db.Remove(cpf);
         }
 
         public List<Pessoa> Listar()
@@ -41,10 +42,6 @@ namespace WindowsFormsApplication2
                 if (v.Key == cpf)
                 {
                     return v.Value;
-                }
-                else
-                {
-                    return null;
                 }
             }
             return null;

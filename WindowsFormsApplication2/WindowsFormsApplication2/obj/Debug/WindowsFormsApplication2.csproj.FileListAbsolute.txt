@@ -10,3 +10,14 @@ C:\Users\IFSP\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplic
 C:\Users\IFSP\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.pdb
 C:\Users\IFSP\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.exe
 C:\Users\IFSP\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.pdb
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.exe.config
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.exe
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.pdb
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.exe
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.pdb
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.wCadastro.resources
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.wPessoa.resources
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Login.resources
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Properties.Resources.resources
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.csproj.GenerateResource.Cache
