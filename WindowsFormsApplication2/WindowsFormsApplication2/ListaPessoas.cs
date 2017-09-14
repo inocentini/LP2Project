@@ -36,31 +36,51 @@ namespace WindowsFormsApplication2
             }
         }
 
-        private string selecao()
+        private Pessoa selecao()
         {
-            int indiceSelecao = dgvPessoas.SelectedCells[0].RowIndex;
-            DataGridViewRow linhaSelecionada = dgvPessoas.Rows[indiceSelecao];
-            return linhaSelecionada.Cells[0].Value.ToString();
+            if (dgvPessoas.CurrentRow != null) {
+                int indiceSelecao = dgvPessoas.SelectedCells[0].RowIndex;
+                DataGridViewRow linhaSelecionada = dgvPessoas.Rows[indiceSelecao];
+                IDatabase db = new DatabaseDict();
+                return db.Read(linhaSelecionada.Cells[0].Value.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma pessoa!", "Você deve selecionar uma pessoa.", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return null;
+            }
         }
 
         private void bntEditar_Click(object sender, EventArgs e)
         {
-            wCadastro editar = new wCadastro(selecao(),true);
-            editar.ShowDialog(this);
-            Fill();
+            Pessoa selecionada = selecao();
+            if (selecionada != null)
+            {
+                wCadastro editar = new wCadastro(selecao(), true);
+                editar.ShowDialog(this);
+                Fill();
+            }
         }
 
         private void bntDetalhes_Click(object sender, EventArgs e)
         {
-            wCadastro detalhes = new wCadastro(selecao(),false);
-            detalhes.ShowDialog(this);
+            Pessoa selecionada = selecao();
+            if (selecionada != null)
+            {
+                wCadastro detalhes = new wCadastro(selecao(), false);
+                detalhes.ShowDialog(this);
+            }
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            IDatabase db = new DatabaseDict();
-            db.Remover(selecao());
-            Fill();
+            Pessoa selecionada = selecao();
+            if (selecionada != null)
+            {
+                IDatabase db = new DatabaseDict();
+                db.Remover(selecao().Cpf);
+                Fill();
+            }
         }
 
         private void txtFiltrar_KeyUp(object sender, KeyEventArgs e)

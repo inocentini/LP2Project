@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication2
 {
-    class Pessoa
+    public class Pessoa
     {
         private string nome;
         private string cpf;

@@ -27,12 +27,10 @@ namespace WindowsFormsApplication2
             }
         }
 
-        public wCadastro(string cpf,bool edicao)
+        public wCadastro(Pessoa p, bool edicao) //objeto
         {
             Editar = edicao;
             InitializeComponent();
-            IDatabase db = new DatabaseDict();
-            Pessoa p = db.Read(cpf);
             setDTO(p);
             if (Editar)
             {
@@ -76,17 +74,32 @@ namespace WindowsFormsApplication2
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            IDatabase database = new DatabaseDict();
-            if (Editar)
+            if (IsComplete())
             {
-                database.Editar(getDTO());
-                Dispose();
-            }
-            else
+                IDatabase database = new DatabaseDict();
+                if (Editar)
+                {
+                    database.Editar(getDTO());
+                    Dispose();
+                }
+                else
+                {
+                    database.Salvar(getDTO());
+                    Dispose();
+                }
+            }else
             {
-                database.Salvar(getDTO());
-                Dispose();
+                MessageBox.Show("Escreve direito vacilão","Menssagem para vacilão",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+        }
+
+        private bool IsComplete()
+        {
+            if(txtCPF.Text.Trim() == "" || txtNome.Text.Trim() =="" || txtEmail.Text.Trim() =="" || txtTelefone.Text.Trim()=="")
+            {
+                return false;
+            }
+            return true;
         }
 
         private void wCadastro_Load(object sender, EventArgs e)
