@@ -17,7 +17,7 @@ namespace WindowsFormsApplication2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new wPessoa());
-            Console.WriteLine("OI");
+            //Application.Run(new wLogin());
         }
     }
 }

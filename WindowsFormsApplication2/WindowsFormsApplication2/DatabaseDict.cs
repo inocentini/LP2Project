@@ -8,7 +8,7 @@ namespace WindowsFormsApplication2
 {
      class DatabaseDict : IDatabase
     {
-        private static Dictionary<string, Pessoa> db = new Dictionary<string, Pessoa>(); 
+        private static Dictionary<string, Pessoa> db = new Dictionary<string, Pessoa>();
         public void Salvar(Pessoa p)
         {
             db.Add(p.Cpf, p);

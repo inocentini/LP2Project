@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication2
 {
-    public partial class Login : Form
+    public partial class wLogin : Form
     {
-        public Login()
+        public wLogin()
         {
             InitializeComponent();
+        }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            Form
         }
     }
 }

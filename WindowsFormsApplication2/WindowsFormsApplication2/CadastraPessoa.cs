@@ -84,8 +84,16 @@ namespace WindowsFormsApplication2
                 }
                 else
                 {
-                    database.Salvar(getDTO());
-                    Dispose();
+                    Pessoa p = getDTO();
+                    if (database.Read(p.Cpf) == null)
+                    {
+                        database.Salvar(getDTO());
+                        Dispose();
+                    }
+                    else
+                    {
+                        MessageBox.Show("O CPF já está cadastrado!", "Erro: utilize um CPF diferente.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }else
             {

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication2
 {
-    partial class Login
+    partial class wLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -32,8 +32,8 @@
             this.labSenha = new System.Windows.Forms.Label();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
             this.labLogin = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -63,6 +63,7 @@
             this.btnEntrar.TabIndex = 2;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // btnNovo
             // 
@@ -73,22 +74,22 @@
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtUser
             // 
-            this.textBox1.Location = new System.Drawing.Point(93, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtUser.Location = new System.Drawing.Point(93, 68);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(146, 20);
+            this.txtUser.TabIndex = 4;
             // 
-            // textBox2
+            // txtSenha
             // 
-            this.textBox2.Location = new System.Drawing.Point(93, 99);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox2.Size = new System.Drawing.Size(146, 20);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.txtSenha.Location = new System.Drawing.Point(93, 99);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '•';
+            this.txtSenha.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtSenha.Size = new System.Drawing.Size(146, 20);
+            this.txtSenha.TabIndex = 5;
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
             // labLogin
             // 
@@ -102,19 +103,19 @@
             this.labLogin.Text = "Login";
             this.labLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Login
+            // wLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 229);
             this.Controls.Add(this.labLogin);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSenha);
+            this.Controls.Add(this.txtUser);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.labSenha);
             this.Controls.Add(this.labUser);
-            this.Name = "Login";
+            this.Name = "wLogin";
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -127,8 +128,8 @@
         private System.Windows.Forms.Label labSenha;
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label labLogin;
     }
 }
