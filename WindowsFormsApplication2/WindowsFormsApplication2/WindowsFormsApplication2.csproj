@@ -93,6 +93,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
@@ -109,6 +110,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\processamento-de-dados-computacao-fotos-imagens.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\geladeira_republica.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\24b3b3f4d6839c2029c06ead11153598.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_24b3b3f4d6839c2029c06ead11153598.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
