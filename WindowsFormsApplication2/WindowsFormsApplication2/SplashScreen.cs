@@ -30,5 +30,10 @@ namespace WindowsFormsApplication2
                 this.Close();
             }
         }
+
+        private void lbTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

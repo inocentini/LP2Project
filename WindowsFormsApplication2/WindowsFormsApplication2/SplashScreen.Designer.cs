@@ -43,23 +43,25 @@
             // 
             this.lbTitulo.AutoSize = true;
             this.lbTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.lbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbTitulo.Location = new System.Drawing.Point(125, 0);
+            this.lbTitulo.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.lbTitulo.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lbTitulo.Location = new System.Drawing.Point(115, -4);
             this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(418, 37);
+            this.lbTitulo.Size = new System.Drawing.Size(440, 41);
             this.lbTitulo.TabIndex = 0;
             this.lbTitulo.Text = "Gerenciador de Residências";
+            this.lbTitulo.Click += new System.EventHandler(this.lbTitulo_Click);
             // 
             // lbLoad
             // 
             this.lbLoad.AutoSize = true;
             this.lbLoad.BackColor = System.Drawing.Color.Transparent;
-            this.lbLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLoad.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbLoad.Location = new System.Drawing.Point(39, 154);
+            this.lbLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLoad.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lbLoad.Location = new System.Drawing.Point(13, 154);
             this.lbLoad.Name = "lbLoad";
-            this.lbLoad.Size = new System.Drawing.Size(125, 24);
+            this.lbLoad.Size = new System.Drawing.Size(138, 24);
             this.lbLoad.TabIndex = 1;
             this.lbLoad.Text = "Carregando...";
             // 
@@ -68,7 +70,7 @@
             this.lbVersão.AutoSize = true;
             this.lbVersão.BackColor = System.Drawing.Color.Transparent;
             this.lbVersão.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbVersão.Location = new System.Drawing.Point(512, 37);
+            this.lbVersão.Location = new System.Drawing.Point(500, 37);
             this.lbVersão.Name = "lbVersão";
             this.lbVersão.Size = new System.Drawing.Size(67, 13);
             this.lbVersão.TabIndex = 2;
@@ -108,6 +110,7 @@
             this.Controls.Add(this.lbVersão);
             this.Controls.Add(this.lbLoad);
             this.Controls.Add(this.lbTitulo);
+            this.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SplashScreen";
