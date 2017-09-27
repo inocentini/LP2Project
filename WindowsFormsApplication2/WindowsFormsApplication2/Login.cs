@@ -19,7 +19,7 @@ namespace WindowsFormsApplication2
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            Form
+            
         }
     }
 }

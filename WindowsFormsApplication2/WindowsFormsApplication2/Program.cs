@@ -16,6 +16,7 @@ namespace WindowsFormsApplication2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new SplashScreen());
             Application.Run(new wPessoa());
             //Application.Run(new wLogin());
         }
