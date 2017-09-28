@@ -140,6 +140,7 @@
             this.Controls.Add(this.labCPF);
             this.Controls.Add(this.labNome);
             this.Name = "wCadastro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro";
             this.Load += new System.EventHandler(this.wCadastro_Load);
             this.ResumeLayout(false);

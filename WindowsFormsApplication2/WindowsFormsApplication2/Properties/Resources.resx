@@ -121,13 +121,16 @@
   <data name="geladeira_republica" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\geladeira_republica.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="rsz_24b3b3f4d6839c2029c06ead11153598" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_24b3b3f4d6839c2029c06ead11153598.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="24b3b3f4d6839c2029c06ead11153598" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\24b3b3f4d6839c2029c06ead11153598.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="processamento-de-dados-computacao-fotos-imagens" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\processamento-de-dados-computacao-fotos-imagens.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rsz_24b3b3f4d6839c2029c06ead11153598" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rsz_24b3b3f4d6839c2029c06ead11153598.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rsz_black_cubes_3-wallpaper-640x960" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_black_cubes_3-wallpaper-640x960.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

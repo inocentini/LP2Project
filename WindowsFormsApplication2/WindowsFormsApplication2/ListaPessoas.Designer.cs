@@ -171,6 +171,7 @@
             this.Controls.Add(this.labFiltrar);
             this.Controls.Add(this.dgvPessoas);
             this.Name = "wPessoa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pessoas";
             this.Load += new System.EventHandler(this.wPessoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoas)).EndInit();

@@ -99,5 +99,15 @@ namespace WindowsFormsApplication2.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_black_cubes_3_wallpaper_640x960 {
+            get {
+                object obj = ResourceManager.GetObject("rsz_black_cubes_3-wallpaper-640x960", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

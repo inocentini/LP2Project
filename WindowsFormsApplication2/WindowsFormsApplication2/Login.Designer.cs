@@ -116,6 +116,7 @@
             this.Controls.Add(this.labSenha);
             this.Controls.Add(this.labUser);
             this.Name = "wLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
