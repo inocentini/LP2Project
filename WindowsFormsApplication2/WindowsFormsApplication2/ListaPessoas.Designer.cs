@@ -172,6 +172,7 @@
             this.Controls.Add(this.dgvPessoas);
             this.Name = "wPessoa";
             this.Text = "Pessoas";
+            this.Load += new System.EventHandler(this.wPessoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

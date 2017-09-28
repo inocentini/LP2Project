@@ -37,3 +37,5 @@ C:\Users\IFSP-\Source\Repos\LP2Projet2\WindowsFormsApplication2\WindowsFormsAppl
 C:\Users\IFSP-\Source\Repos\LP2Projet2\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.pdb
 C:\Users\IFSP-\Source\Repos\LP2Projet2\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.SplashScreen.resources
 C:\Users\IFSP\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.SplashScreen.resources
+C:\Users\IFSP\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\MySql.Data.dll
+C:\Users\IFSP\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\MySql.Data.xml

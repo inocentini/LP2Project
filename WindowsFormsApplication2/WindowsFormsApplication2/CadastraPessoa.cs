@@ -76,7 +76,8 @@ namespace WindowsFormsApplication2
         {
             if (IsComplete())
             {
-                IDatabase database = new DatabaseDict();
+                //IDatabase database = new DatabaseDict();
+                IDatabase database = new DatabaseMySQL();
                 if (Editar)
                 {
                     database.Editar(getDTO());
