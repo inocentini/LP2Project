@@ -47,6 +47,8 @@
             // 
             this.dgvPessoas.AllowUserToAddRows = false;
             this.dgvPessoas.AllowUserToDeleteRows = false;
+            this.dgvPessoas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPessoas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPessoas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCPF,
@@ -93,6 +95,8 @@
             // 
             // labFiltrar
             // 
+            this.labFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labFiltrar.AutoSize = true;
             this.labFiltrar.Location = new System.Drawing.Point(27, 9);
             this.labFiltrar.Name = "labFiltrar";
@@ -111,6 +115,8 @@
             // 
             // txtFiltrar
             // 
+            this.txtFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFiltrar.Location = new System.Drawing.Point(68, 6);
             this.txtFiltrar.Name = "txtFiltrar";
             this.txtFiltrar.Size = new System.Drawing.Size(402, 20);
@@ -119,7 +125,10 @@
             // 
             // bntAdd
             // 
+            this.bntAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bntAdd.Location = new System.Drawing.Point(80, 227);
+            this.bntAdd.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntAdd.Name = "bntAdd";
             this.bntAdd.Size = new System.Drawing.Size(75, 23);
             this.bntAdd.TabIndex = 4;
@@ -129,7 +138,10 @@
             // 
             // bntEditar
             // 
+            this.bntEditar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bntEditar.Location = new System.Drawing.Point(161, 227);
+            this.bntEditar.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntEditar.Name = "bntEditar";
             this.bntEditar.Size = new System.Drawing.Size(75, 23);
             this.bntEditar.TabIndex = 5;
@@ -139,7 +151,10 @@
             // 
             // bntDetalhes
             // 
+            this.bntDetalhes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bntDetalhes.Location = new System.Drawing.Point(242, 227);
+            this.bntDetalhes.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntDetalhes.Name = "bntDetalhes";
             this.bntDetalhes.Size = new System.Drawing.Size(75, 23);
             this.bntDetalhes.TabIndex = 6;
@@ -149,7 +164,10 @@
             // 
             // btnRemover
             // 
+            this.btnRemover.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemover.Location = new System.Drawing.Point(323, 227);
+            this.btnRemover.MaximumSize = new System.Drawing.Size(75, 23);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 23);
             this.btnRemover.TabIndex = 7;
@@ -170,6 +188,7 @@
             this.Controls.Add(this.labPessoas);
             this.Controls.Add(this.labFiltrar);
             this.Controls.Add(this.dgvPessoas);
+            this.MaximumSize = new System.Drawing.Size(700, 300);
             this.Name = "wPessoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pessoas";
