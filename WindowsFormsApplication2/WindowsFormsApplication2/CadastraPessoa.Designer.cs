@@ -46,7 +46,7 @@
             // 
             this.labNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labNome.AutoSize = true;
-            this.labNome.Location = new System.Drawing.Point(20, 35);
+            this.labNome.Location = new System.Drawing.Point(20, 34);
             this.labNome.Name = "labNome";
             this.labNome.Size = new System.Drawing.Size(38, 13);
             this.labNome.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             this.labCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labCPF.AutoSize = true;
-            this.labCPF.Location = new System.Drawing.Point(25, 11);
+            this.labCPF.Location = new System.Drawing.Point(25, 10);
             this.labCPF.Name = "labCPF";
             this.labCPF.Size = new System.Drawing.Size(30, 13);
             this.labCPF.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             this.labEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labEmail.AutoSize = true;
-            this.labEmail.Location = new System.Drawing.Point(20, 69);
+            this.labEmail.Location = new System.Drawing.Point(20, 68);
             this.labEmail.Name = "labEmail";
             this.labEmail.Size = new System.Drawing.Size(35, 13);
             this.labEmail.TabIndex = 2;
@@ -75,7 +75,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalvar.Location = new System.Drawing.Point(53, 142);
+            this.btnSalvar.Location = new System.Drawing.Point(77, 142);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 36);
             this.btnSalvar.TabIndex = 5;
@@ -86,7 +86,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(174, 142);
+            this.btnCancelar.Location = new System.Drawing.Point(198, 142);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 36);
             this.btnCancelar.TabIndex = 6;
@@ -98,7 +98,7 @@
             // 
             this.labTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labTelefone.AutoSize = true;
-            this.labTelefone.Location = new System.Drawing.Point(17, 97);
+            this.labTelefone.Location = new System.Drawing.Point(17, 96);
             this.labTelefone.Name = "labTelefone";
             this.labTelefone.Size = new System.Drawing.Size(52, 13);
             this.labTelefone.TabIndex = 8;
@@ -107,8 +107,8 @@
             // txtCPF
             // 
             this.txtCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCPF.Location = new System.Drawing.Point(77, 4);
-            this.txtCPF.Mask = "000.000.000-00";
+            this.txtCPF.Location = new System.Drawing.Point(77, 3);
+            this.txtCPF.Mask = "000,000,000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(100, 20);
             this.txtCPF.TabIndex = 9;
@@ -116,7 +116,7 @@
             // txtNome
             // 
             this.txtNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNome.Location = new System.Drawing.Point(77, 32);
+            this.txtNome.Location = new System.Drawing.Point(77, 31);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(235, 20);
             this.txtNome.TabIndex = 10;
@@ -124,7 +124,7 @@
             // txtEmail
             // 
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmail.Location = new System.Drawing.Point(77, 62);
+            this.txtEmail.Location = new System.Drawing.Point(77, 61);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
             this.txtEmail.TabIndex = 11;
@@ -132,7 +132,7 @@
             // txtTelefone
             // 
             this.txtTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTelefone.Location = new System.Drawing.Point(77, 97);
+            this.txtTelefone.Location = new System.Drawing.Point(77, 96);
             this.txtTelefone.Mask = "(99) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(100, 20);
@@ -153,14 +153,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 214);
+            this.panel1.Size = new System.Drawing.Size(400, 213);
             this.panel1.TabIndex = 13;
             // 
             // wCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 214);
+            this.ClientSize = new System.Drawing.Size(400, 213);
             this.Controls.Add(this.panel1);
             this.MaximumSize = new System.Drawing.Size(416, 252);
             this.MinimizeBox = false;
