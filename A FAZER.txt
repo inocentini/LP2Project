@@ -1,0 +1,51 @@
+SPLASH SCREEN
+
+
+LOGIN
+*Classe Pessoa, adicionar:
+-login
+-senha
+
+*Opção para recuperar a senha
+
+
+ADMINISTRAÇÃO DE CONTATOS
+*Pessoa (já feito)
+?
+
+
+ADMINISTRAÇÃO DE CONTAS
+*Classe Conta, com:
+-id
+-nome
+-detalhes
+-valor
+-vencimento
+-responsável
+-lista de pessoas e o quanto já pagaram da conta em questão
+
+*Pagamentos pessoais
+-pagar
+-cancelar pagamento
+-ver pagamentos por pessoa
+-ver pagamentos por conta
+
+
+ADIMINISTRAÇÃO DE PRODUTOS
+*Classe produto, com:
+-id
+-nome
+-detalhes
+-quantidade disponível
+
+*Utilizações
+-remover produto
+-adicionar produto
+-ver produtos
+-pesquisar produtos
+
+
+RELATÓRIOS
+*Relatório de gastos da casa
+
+*Relatório de pagamentos
