@@ -16,7 +16,12 @@ namespace WindowsFormsApplication2
         private Pessoa responsavel;
 
         //Construtor e properties feitos, dúvida quanto a lista de pessoas e o quanto ja pagaram.
-        public Conta(string id, string nome, string detalhes, float valor, DateTime vencimento, string responsavel)
+
+        public Conta()
+        {
+
+        }
+        public Conta(int id, string nome, string detalhes, float valor, DateTime vencimento, Pessoa responsavel)
         {
             this.Id = id;
             this.Nome = nome;

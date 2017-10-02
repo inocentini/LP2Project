@@ -13,7 +13,11 @@ namespace WindowsFormsApplication2
         private string detalhes;
         private int qtdDisponivel;
 
-        public Produto(string id, string nome, string detalhes, int qtdDisponivel)
+        public Produto()
+        {
+
+        }
+        public Produto(int id, string nome, string detalhes, int qtdDisponivel)
         {
             this.Id = id;
             this.Nome = nome;
