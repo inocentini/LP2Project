@@ -1,0 +1,111 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace WindowsFormsApplication2
+{
+    class Conta
+    {
+        private string id;
+        private string nome;
+        private string detalhes;
+        private float valor;
+        private DateTime vencimento;
+        private string responsavel;
+
+        //Construtor e properties feitos, dúvida quanto a lista de pessoas e o quanto ja pagaram.
+        public Conta(string id, string nome, string detalhes, float valor, DateTime vencimento, string responsavel)
+        {
+            this.Id = id;
+            this.Nome = nome;
+            this.Detalhes = detalhes;
+            this.Valor = valor;
+            this.Vencimento = vencimento;
+            this.Responsavel = responsavel;
+        }
+
+        public string Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+        public string Nome
+        {
+            get
+            {
+                return nome;
+            }
+
+            set
+            {
+                nome = value;
+            }
+        }
+
+        public string Detalhes
+        {
+            get
+            {
+                return detalhes;
+            }
+
+            set
+            {
+                detalhes = value;
+            }
+        }
+
+        public float Valor
+        {
+            get
+            {
+                return valor;
+            }
+
+            set
+            {
+                valor = value;
+            }
+        }
+
+        public DateTime Vencimento
+        {
+            get
+            {
+                return vencimento;
+            }
+
+            set
+            {
+                vencimento = value;
+            }
+        }
+
+        public string Responsavel
+        {
+            get
+            {
+                return responsavel;
+            }
+
+            set
+            {
+                responsavel = value;
+            }
+        }
+
+        
+
+
+    }
+}
