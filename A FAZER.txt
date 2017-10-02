@@ -6,23 +6,23 @@ LOGIN
 -login
 -senha
 
-*OpÁ„o para recuperar a senha
+*Op√ß√£o para recuperar a senha
 
 
-ADMINISTRA«√O DE CONTATOS
-*Pessoa (j· feito)
+ADMINISTRA√á√ÉO DE CONTATOS
+*Pessoa (j√° feito)
 ?
 
 
-ADMINISTRA«√O DE CONTAS
-*Classe Conta, com:
--id
--nome
--detalhes
--valor
--vencimento
--respons·vel
--lista de pessoas e o quanto j· pagaram da conta em quest„o
+ADMINISTRA√á√ÉO DE CONTAS
+*Classe Conta, com: //properties e construtotes feitos
+-id (feito)
+-nome(feito)
+-detalhes(feito)
+-valor(feito)
+-vencimento(feito)
+-respons√°vel(feito)
+-lista de pessoas e o quanto j√° pagaram da conta em quest√£o (fiquei em d√∫vida, portanto n√£o fiz nada)
 
 *Pagamentos pessoais
 -pagar
@@ -31,21 +31,21 @@ ADMINISTRA«√O DE CONTAS
 -ver pagamentos por conta
 
 
-ADIMINISTRA«√O DE PRODUTOS
+ADIMINISTRA√á√ÉO DE PRODUTOS
 *Classe produto, com:
--id
--nome
--detalhes
--quantidade disponÌvel
+-id(feito)
+-nome(feito)
+-detalhes(feito)
+-quantidade dispon√≠vel(feito)
 
-*UtilizaÁıes
+*Utiliza√ß√µes
 -remover produto
 -adicionar produto
 -ver produtos
 -pesquisar produtos
 
 
-RELAT”RIOS
-*RelatÛrio de gastos da casa
+RELAT√ìRIOS
+*Relat√≥rio de gastos da casa
 
-*RelatÛrio de pagamentos
+*Relat√≥rio de pagamentos
