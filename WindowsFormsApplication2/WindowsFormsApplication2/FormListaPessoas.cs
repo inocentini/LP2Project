@@ -27,7 +27,7 @@ namespace WindowsFormsApplication2
         private void Fill()
         {
             //IDatabase db = new DatabaseDict();
-            IDatabase db = new DatabaseMySQL();
+            IDatabasePessoa db = new DatabaseMySQLPessoa();
             List <Pessoa> lista = db.Listar();
 
             dgvPessoas.Rows.Clear();
@@ -43,7 +43,7 @@ namespace WindowsFormsApplication2
                 int indiceSelecao = dgvPessoas.SelectedCells[0].RowIndex;
                 DataGridViewRow linhaSelecionada = dgvPessoas.Rows[indiceSelecao];
                 //IDatabase db = new DatabaseDict();
-                IDatabase db = new DatabaseMySQL();
+                IDatabasePessoa db = new DatabaseMySQLPessoa();
                 return db.Read(linhaSelecionada.Cells[0].Value.ToString());
             }
             else
@@ -80,7 +80,7 @@ namespace WindowsFormsApplication2
             if (selecionada != null)
             {
                 //IDatabase db = new DatabaseDict();
-                IDatabase db = new DatabaseMySQL();
+                IDatabasePessoa db = new DatabaseMySQLPessoa();
                 db.Remover(selecao().Cpf);
                 Fill();
             }
@@ -89,7 +89,7 @@ namespace WindowsFormsApplication2
         private void txtFiltrar_KeyUp(object sender, KeyEventArgs e)
         {
             //IDatabase db = new DatabaseDict();
-            IDatabase db = new DatabaseMySQL();
+            IDatabasePessoa db = new DatabaseMySQLPessoa();
             List<Pessoa> lista = db.Listar();
 
             dgvPessoas.Rows.Clear();

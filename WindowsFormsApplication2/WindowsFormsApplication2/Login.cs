@@ -1,25 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace WindowsFormsApplication2
 {
-    public partial class wLogin : Form
+    public class Login
     {
-        public wLogin()
+        private string nome;
+        private string senha;
+
+        public Login()
         {
-            InitializeComponent();
+
         }
 
-        private void btnEntrar_Click(object sender, EventArgs e)
+        public Login(string nome, string senha)
         {
-            
+            this.Nome = nome;
+            this.Senha = Hashing.Hash(senha,null);
+        }
+
+        public string Nome
+        {
+            get
+            {
+                return nome;
+            }
+
+            set
+            {
+                nome = value;
+            }
+        }
+
+        public string Senha
+        {
+            get
+            {
+                return senha;
+            }
+
+            set
+            {
+                senha = value;
+            }
         }
     }
 }

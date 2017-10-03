@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication2
 {
-    public partial class SplashScreen : Form
+    public partial class FormSplashScreen : Form
     {
-        public SplashScreen()
+        public FormSplashScreen()
         {
             InitializeComponent();
         }

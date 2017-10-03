@@ -8,12 +8,12 @@ namespace WindowsFormsApplication2
 {
     class Conta
     {
-        private string id;
+        private int id;
         private string nome;
         private string detalhes;
         private float valor;
         private DateTime vencimento;
-        private string responsavel;
+        private Pessoa responsavel;
 
         //Construtor e properties feitos, dúvida quanto a lista de pessoas e o quanto ja pagaram.
         public Conta(string id, string nome, string detalhes, float valor, DateTime vencimento, string responsavel)
@@ -26,7 +26,7 @@ namespace WindowsFormsApplication2
             this.Responsavel = responsavel;
         }
 
-        public string Id
+        public int Id
         {
             get
             {
@@ -91,7 +91,7 @@ namespace WindowsFormsApplication2
             }
         }
 
-        public string Responsavel
+        public Pessoa Responsavel
         {
             get
             {
@@ -103,9 +103,5 @@ namespace WindowsFormsApplication2
                 responsavel = value;
             }
         }
-
-        
-
-
     }
 }

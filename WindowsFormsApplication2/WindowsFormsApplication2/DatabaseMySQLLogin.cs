@@ -7,9 +7,9 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication2
 {
-    class DatabaseMySQL : IDatabase
+    class DatabaseMySQLLogin : IDatabaseLogin
     {
-        public void Editar(Pessoa p)
+        public List<Login> Listar()
         {
             MySqlConnection conn = new MySqlConnection();
             conn.ConnectionString = "Server=localhost; Database=aula; Uid=root; Pwd=ifsp;";
@@ -17,41 +17,23 @@ namespace WindowsFormsApplication2
             if (conn.State != System.Data.ConnectionState.Open)
                 conn.Open();
 
-            string qry = string.Format("UPDATE Pessoa SET nome = '{0}', email = '{1}', telefone = '{2}' WHERE cpf = '{3}';", p.Nome, p.Email, p.Telefone, p.Cpf);
+            string qry = string.Format("SELECT * FROM Login");
             MySqlCommand cmd = new MySqlCommand(qry, conn);
-            cmd.ExecuteNonQuery();
-
-            conn.Close();
-        }
-
-        public List<Pessoa> Listar()
-        {
-            MySqlConnection conn = new MySqlConnection();
-            conn.ConnectionString = "Server=localhost; Database=aula; Uid=root; Pwd=ifsp;";
-
-            if (conn.State != System.Data.ConnectionState.Open)
-                conn.Open();
-
-            string qry = string.Format("SELECT * FROM Pessoa");
-            MySqlCommand cmd = new MySqlCommand(qry,conn);
             MySqlDataReader dr = cmd.ExecuteReader();
-            List<Pessoa> LPessoas = new List<Pessoa>();
+            List<Login> LLogin = new List<Login>();
             while (dr.Read())
             {
-                Pessoa p = new Pessoa();
-                p.Cpf = dr.GetString(0);
-                p.Nome = dr.GetString(1);
-                p.Email = dr.GetString(2);
-                p.Telefone = dr.GetString(3);
+                Login l = new Login();
+                l.Nome = dr.GetString(0);
+                l.Senha = dr.GetString(1);
 
-                LPessoas.Add(p);
+                LLogin.Add(l);
             }
             conn.Close();
-            return LPessoas;
-            
+            return LLogin;
         }
 
-        public Pessoa Read(string cpf)
+        public bool Login(Login l)
         {
             MySqlConnection conn = new MySqlConnection();
             conn.ConnectionString = "Server=localhost; Database=aula; Uid=root; Pwd=ifsp;";
@@ -59,26 +41,22 @@ namespace WindowsFormsApplication2
             if (conn.State != System.Data.ConnectionState.Open)
                 conn.Open();
 
-            string qry = string.Format("SELECT * FROM Pessoa WHERE cpf = '{0}';", cpf);
+            string qry = string.Format("SELECT * FROM Login WHERE Nome = '{0}';", l.Nome);
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             MySqlDataReader dr = cmd.ExecuteReader();
 
             if (dr.Read())
             {
-                Pessoa p = new Pessoa();
-                p.Cpf = dr.GetString(0);
-                p.Nome = dr.GetString(1);
-                p.Email = dr.GetString(2);
-                p.Telefone = dr.GetString(3);
+                string hash = dr.GetString(1);
+
                 conn.Close();
-                return p;
+                return Hashing.Verifica(l.Senha, hash);
             }
             conn.Close();
-            return null;
-            
+            return false;
         }
 
-        public void Remover(string cpf)
+        public Login Read(string nome)
         {
             MySqlConnection conn = new MySqlConnection();
             conn.ConnectionString = "Server=localhost; Database=aula; Uid=root; Pwd=ifsp;";
@@ -86,14 +64,38 @@ namespace WindowsFormsApplication2
             if (conn.State != System.Data.ConnectionState.Open)
                 conn.Open();
 
-            string qry = string.Format("DELETE FROM Pessoa WHERE cpf = '{0}';", cpf);
+            string qry = string.Format("SELECT * FROM Login WHERE Nome = '{0}';", nome);
+            MySqlCommand cmd = new MySqlCommand(qry, conn);
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                Login l = new Login();
+                l.Nome = dr.GetString(0);
+                l.Senha = dr.GetString(1);
+                conn.Close();
+                return l;
+            }
+            conn.Close();
+            return null;
+        }
+
+        public void Remover(string nome)
+        {
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = "Server=localhost; Database=aula; Uid=root; Pwd=ifsp;";
+
+            if (conn.State != System.Data.ConnectionState.Open)
+                conn.Open();
+
+            string qry = string.Format("DELETE FROM Login WHERE Nome = '{0}';", nome);
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.ExecuteNonQuery();
 
             conn.Close();
         }
 
-        public void Salvar(Pessoa p)
+        public void Salvar(Login l)
         {
             MySqlConnection conn = new MySqlConnection();
             conn.ConnectionString = "Server=localhost; Database=aula; Uid=root; Pwd=ifsp;";
@@ -101,7 +103,7 @@ namespace WindowsFormsApplication2
             if (conn.State != System.Data.ConnectionState.Open)
                 conn.Open();
 
-            string qry = string.Format("INSERT INTO Pessoa (cpf,nome,email,telefone) VALUES ('{0}','{1}','{2}','{3}');", p.Cpf, p.Nome, p.Email, p.Telefone);
+            string qry = string.Format("INSERT INTO Login (Nome,Senha) VALUES ('{0}','{1}');", l.Nome, Hashing.Hash(l.Senha,null));
 
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.ExecuteNonQuery();

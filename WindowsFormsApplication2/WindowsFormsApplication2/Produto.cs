@@ -8,7 +8,7 @@ namespace WindowsFormsApplication2
 {
     class Produto
     {
-        private string id;
+        private int id;
         private string nome;
         private string detalhes;
         private int qtdDisponivel;
@@ -20,7 +20,7 @@ namespace WindowsFormsApplication2
             this.Detalhes = detalhes;
             this.QtdDisponivel = qtdDisponivel;
         }
-        public string Id
+        public int Id
         {
             get
             {

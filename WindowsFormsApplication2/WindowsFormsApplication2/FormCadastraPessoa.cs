@@ -77,7 +77,7 @@ namespace WindowsFormsApplication2
             if (IsComplete())
             {
                 //IDatabase database = new DatabaseDict();
-                IDatabase database = new DatabaseMySQL();
+                IDatabasePessoa database = new DatabaseMySQLPessoa();
                 if (Editar)
                 {
                     database.Editar(getDTO());
@@ -104,10 +104,22 @@ namespace WindowsFormsApplication2
 
         private bool IsComplete()
         {
-            if(txtCPF.Text.Trim() == "" || txtNome.Text.Trim() =="" || txtEmail.Text.Trim() =="" || txtTelefone.Text.Trim()=="")
+            txtCPF.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            txtNome.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            txtEmail.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            txtTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (txtCPF.Text.Trim() == "" || txtNome.Text.Trim() =="" || txtEmail.Text.Trim() =="" || txtTelefone.Text.Trim()=="")
             {
+                txtCPF.TextMaskFormat = MaskFormat.IncludeLiterals;
+                txtNome.TextMaskFormat = MaskFormat.IncludeLiterals;
+                txtEmail.TextMaskFormat = MaskFormat.IncludeLiterals;
+                txtTelefone.TextMaskFormat = MaskFormat.IncludeLiterals;
                 return false;
             }
+            txtCPF.TextMaskFormat = MaskFormat.IncludeLiterals;
+            txtNome.TextMaskFormat = MaskFormat.IncludeLiterals;
+            txtEmail.TextMaskFormat = MaskFormat.IncludeLiterals;
+            txtTelefone.TextMaskFormat = MaskFormat.IncludeLiterals;
             return true;
         }
 

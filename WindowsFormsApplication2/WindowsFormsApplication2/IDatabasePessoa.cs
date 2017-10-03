@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication2
 {
-    interface IDatabase
+    interface IDatabasePessoa
     {
         void Salvar(Pessoa p);
 

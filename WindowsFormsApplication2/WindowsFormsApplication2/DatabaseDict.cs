@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication2
 {
-     class DatabaseDict : IDatabase
+     class DatabaseDict : IDatabasePessoa
     {
         private static Dictionary<string, Pessoa> db = new Dictionary<string, Pessoa>();
         public void Salvar(Pessoa p)

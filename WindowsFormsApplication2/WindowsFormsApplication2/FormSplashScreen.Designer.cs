@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication2
 {
-    partial class SplashScreen
+    partial class FormSplashScreen
     {
         /// <summary>
         /// Required designer variable.
