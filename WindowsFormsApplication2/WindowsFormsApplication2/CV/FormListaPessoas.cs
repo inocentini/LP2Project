@@ -29,12 +29,12 @@ namespace WindowsFormsApplication2
             //IDatabase db = new DatabaseDict();
             PessoaDAO db = new PessoaDAO();
             
-            List <object> lista = db.Listar();
+            List <Pessoa> lista = db.Listar();
 
             dgvPessoas.Rows.Clear();
-            foreach(object p in lista)
+            foreach(Pessoa p in lista)
             {
-                dgvPessoas.Rows.Add(((Pessoa)p).Cpf, ((Pessoa)p).Nome, ((Pessoa)p).Email, ((Pessoa)p).Telefone);
+                dgvPessoas.Rows.Add(p.Cpf, p.Nome, p.Email, p.Telefone);
             }
         }
 
@@ -44,7 +44,7 @@ namespace WindowsFormsApplication2
                 int indiceSelecao = dgvPessoas.SelectedCells[0].RowIndex;
                 DataGridViewRow linhaSelecionada = dgvPessoas.Rows[indiceSelecao];
                 PessoaDAO db = new PessoaDAO();
-                return (Pessoa)db.Read(linhaSelecionada.Cells[0].Value.ToString());
+                return db.Read(linhaSelecionada.Cells[0].Value.ToString());
             }
             else
             {
@@ -58,7 +58,7 @@ namespace WindowsFormsApplication2
             Pessoa selecionada = selecao();
             if (selecionada != null)
             {
-                wCadastro editar = new wCadastro(selecao(), true);
+                wCadastro editar = new wCadastro(selecionada, true);
                 editar.ShowDialog(this);
                 Fill();
             }
@@ -69,7 +69,7 @@ namespace WindowsFormsApplication2
             Pessoa selecionada = selecao();
             if (selecionada != null)
             {
-                wCadastro detalhes = new wCadastro(selecao(), false);
+                wCadastro detalhes = new wCadastro(selecionada, false);
                 detalhes.ShowDialog(this);
             }
         }
@@ -80,7 +80,7 @@ namespace WindowsFormsApplication2
             if (selecionada != null)
             {
                 PessoaDAO db = new PessoaDAO();
-                db.Remover(selecao().Cpf);
+                db.Remover(selecionada.Cpf);
                 Fill();
             }
         }
@@ -89,15 +89,15 @@ namespace WindowsFormsApplication2
         {
             PessoaDAO db = new PessoaDAO();
 
-            List<object> lista = db.Listar();
+            List<Pessoa> lista = db.Listar();
            
 
             dgvPessoas.Rows.Clear();
-            foreach(object p in lista)
+            foreach(Pessoa p in lista)
             {
-                if (((Pessoa)p).Nome.Contains(txtFiltrar.Text))
+                if (p.Nome.Contains(txtFiltrar.Text))
                 {
-                    dgvPessoas.Rows.Add(((Pessoa)p).Cpf, ((Pessoa)p).Nome, ((Pessoa)p).Email, ((Pessoa)p).Telefone);
+                    dgvPessoas.Rows.Add(p.Cpf, p.Nome, p.Email, p.Telefone);
                 }
             }
         }

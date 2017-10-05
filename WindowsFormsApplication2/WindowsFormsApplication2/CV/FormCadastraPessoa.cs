@@ -76,7 +76,6 @@ namespace WindowsFormsApplication2
         {
             if (IsComplete())
             {
-                //IDatabase database = new DatabaseDict();
                 PessoaDAO database = new PessoaDAO();
                 if (Editar)
                 {
@@ -86,19 +85,20 @@ namespace WindowsFormsApplication2
                 else
                 {
                     Pessoa p = getDTO();
-                    //if (database.Read(p.Cpf) == null)
-                    //{
+                    if (database.Read(p.Cpf) == null)
+                    {
                         database.Salvar(getDTO());
                         Dispose();
-                    //}
-                    //else
-                    //{
-                   //     MessageBox.Show("O CPF já está cadastrado!", "Erro: utilize um CPF diferente.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                   // }
+                    }
+                    else
+                    {
+                        MessageBox.Show("O CPF já está cadastrado!", "Erro: utilize um CPF diferente.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-            }else
+            }
+            else
             {
-                MessageBox.Show("Escreve direito vacilão","Menssagem para vacilão",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Erro!","Verifique se todos os campos estão preenchidos!",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 

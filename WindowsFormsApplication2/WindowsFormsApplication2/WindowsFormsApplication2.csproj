@@ -71,7 +71,6 @@
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Hashing.cs" />
-    <Compile Include="Utils\IDAO.cs" />
     <Compile Include="Modelo\Login.cs" />
     <Compile Include="Modelo\Pessoa.cs" />
     <Compile Include="Modelo\Produto.cs" />

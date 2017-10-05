@@ -8,11 +8,10 @@ using System.Data;
 
 namespace WindowsFormsApplication2
 {
-    class PessoaDAO : IDAO
+    class PessoaDAO
     {
-        public void Editar(object o)
+        public void Editar(Pessoa p)
         {
-            Pessoa p = (Pessoa)o;
             Database db = Database.GetInstance();
             string qry = string.Format("UPDATE pessoa SET nome = '{0}', email = '{1}', telefone = '{2}' where cpf='{3}'", p.Nome, p.Email, p.Telefone, p.Cpf );
 
@@ -20,13 +19,13 @@ namespace WindowsFormsApplication2
             
         }
 
-        public List<object> Listar()
+        public List<Pessoa> Listar()
         {
             Database db = Database.GetInstance();
             string qry = string.Format("SELECT * FROM Pessoa");
             DataSet ds = db.ExecuteQuery(qry);
 
-            List<object> LPessoas = new List<object>();
+            List<Pessoa> LPessoas = new List<Pessoa>();
 
             foreach(DataRow dr in ds.Tables[0].Rows)
             {
@@ -40,7 +39,7 @@ namespace WindowsFormsApplication2
             return LPessoas;
         }
 
-        public object Read(object cpf)
+        public Pessoa Read(string cpf)
         {
             Database db = Database.GetInstance();
             string qry = string.Format("SELECT * FROM Pessoa WHERE cpf = '{0}'", cpf);
@@ -48,15 +47,22 @@ namespace WindowsFormsApplication2
 
             Pessoa p = new Pessoa();
 
-            DataRow dr = ds.Tables[0].Rows[0];
-            p.Cpf = dr["cpf"].ToString();
-            p.Nome = dr["nome"].ToString();
-            p.Email = dr["email"].ToString();
-            p.Telefone = dr["telefone"].ToString();   
-            return p;
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+                DataRow dr = ds.Tables[0].Rows[0];
+                p.Cpf = dr["cpf"].ToString();
+                p.Nome = dr["nome"].ToString();
+                p.Email = dr["email"].ToString();
+                p.Telefone = dr["telefone"].ToString();
+                return p;
+            }
+            else
+            {
+                return null;
+            }
         }
 
-        public void Remover(object o)
+        public void Remover(string o)
         {
             Database db = Database.GetInstance();
 
@@ -64,11 +70,11 @@ namespace WindowsFormsApplication2
             db.ExecuteNonQuery(qry);
         }
 
-        public void Salvar(object o)
+        public void Salvar(Pessoa o)
         {
             Database db = Database.GetInstance();
 
-            string qry = string.Format("INSERT INTO PESSOA VALUES('{0}','{1}','{2}','{3}')", ((Pessoa)o).Cpf, ((Pessoa)o).Nome, ((Pessoa)o).Email, ((Pessoa)o).Telefone);
+            string qry = string.Format("INSERT INTO PESSOA VALUES('{0}','{1}','{2}','{3}')", o.Cpf, o.Nome, o.Email, o.Telefone);
             db.ExecuteNonQuery(qry);
         }
     }

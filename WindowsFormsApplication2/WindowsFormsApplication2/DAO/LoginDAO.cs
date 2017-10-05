@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 using System.Data;
 namespace WindowsFormsApplication2
 {
-    class LoginDAO : IDAO
+    class LoginDAO
     {
         public bool Login (Login l)
         {
@@ -15,14 +15,21 @@ namespace WindowsFormsApplication2
 
             Login n = (Login)Read(l.Nome);
 
-            string hash = n.Senha;
-            return Hashing.Verifica(l.Senha, hash);
+            if (n != null)
+            {
+                string hash = n.Senha;
+                return Hashing.Verifica(l.Senha, hash);
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
 
-        public void Editar(object o)
+        public void Editar(Login p)
         {
-            Login p = (Login)o;
             Database db = Database.GetInstance();
             string qry = string.Format("UPDATE Login SET senha ='{0}' where nome ='{1}'", p.Senha, p.Nome);
 
@@ -30,13 +37,13 @@ namespace WindowsFormsApplication2
 
         }
 
-        public List<object> Listar()
+        public List<Login> Listar()
         {
             Database db = Database.GetInstance();
             string qry = string.Format("SELECT * FROM Login");
             DataSet ds = db.ExecuteQuery(qry);
 
-            List<object> LLogin = new List<object>();
+            List<Login> LLogin = new List<Login>();
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
@@ -48,33 +55,37 @@ namespace WindowsFormsApplication2
             return LLogin;
         }
 
-        public object Read(object nome)
+        public Login Read(string nome)
         {
             Database db = Database.GetInstance();
             string qry = string.Format("SELECT * FROM Login WHERE nome = '{0}'", nome);
             DataSet ds = db.ExecuteQuery(qry);
 
-            Login p = new Login();
+            Login l = new Login();
 
-            DataRow dr = ds.Tables[0].Rows[0];
-            p.Nome = dr["nome"].ToString();
-            p.Senha = dr["senha"].ToString();
-            
-            return p;
+            if(ds.Tables[0].Rows.Count != 0)
+            {
+                DataRow dr = ds.Tables[0].Rows[0];
+                l.Nome = dr["nome"].ToString();
+                l.Senha = dr["senha"].ToString();
+                return l;
+            }
+            else
+            {
+                return null;
+            }
         }
 
-        public void Remover(object o)
+        public void Remover(string o)
         {
             Database db = Database.GetInstance();
-            Login p = (Login)o;
 
-            string qry = string.Format("DELETE FROM Login WHERE nome ='{0}", p.Nome);
+            string qry = string.Format("DELETE FROM Login WHERE nome ='{0}", o);
             db.ExecuteNonQuery(qry);
         }
 
-        public void Salvar(object o)
+        public void Salvar(Login p)
         {
-            Login p = (Login)o;
             Database db = Database.GetInstance();
 
             string qry = string.Format("INSERT INTO Login VALUES('{0}', '{1}')", p.Nome, Hashing.Hash(p.Senha,null));
