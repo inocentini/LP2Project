@@ -16,7 +16,7 @@ namespace WindowsFormsApplication2
             Login n = (Login)Read(l.Nome);
 
             string hash = n.Senha;
-            return Hashing.Verifica(n.Senha, hash);
+            return Hashing.Verifica(l.Senha, hash);
         }
 
 

@@ -91,9 +91,6 @@ namespace WindowsFormsApplication2
             //É criado um hash temporário com os dados obtidos anteriormente
             string hashTemp = Hash(senha,bytesSalt);
 
-            Console.WriteLine(valorHash);
-            Console.WriteLine(hashTemp);
-
             //Retorna true se o hash informado for o mesmo da senha e false senão
             return (valorHash == hashTemp);
         }

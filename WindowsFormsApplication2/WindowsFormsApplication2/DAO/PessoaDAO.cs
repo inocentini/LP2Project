@@ -14,7 +14,7 @@ namespace WindowsFormsApplication2
         {
             Pessoa p = (Pessoa)o;
             Database db = Database.GetInstance();
-            string qry = string.Format("UPDATE pessoa SET nome = {0}, email = {1}, telefone = {2] where cpf={3}", p.Nome, p.Email, p.Telefone, p.Cpf );
+            string qry = string.Format("UPDATE pessoa SET nome = '{0}', email = '{1}', telefone = '{2}' where cpf='{3}'", p.Nome, p.Email, p.Telefone, p.Cpf );
 
             db.ExecuteNonQuery(qry);           
             
@@ -43,8 +43,7 @@ namespace WindowsFormsApplication2
         public object Read(object cpf)
         {
             Database db = Database.GetInstance();
-            string qry = string.Format("SELECT * FROM Pessoa WHERE cpf = {0}", cpf);
-            Console.WriteLine(qry);
+            string qry = string.Format("SELECT * FROM Pessoa WHERE cpf = '{0}'", cpf);
             DataSet ds = db.ExecuteQuery(qry);
 
             Pessoa p = new Pessoa();
@@ -54,14 +53,14 @@ namespace WindowsFormsApplication2
             p.Nome = dr["nome"].ToString();
             p.Email = dr["email"].ToString();
             p.Telefone = dr["telefone"].ToString();   
-            return new Pessoa() ;
+            return p;
         }
 
         public void Remover(object o)
         {
             Database db = Database.GetInstance();
 
-            string qry = string.Format("DELETE FROM Pessoa WHERE cpf ='{0}", o);
+            string qry = string.Format("DELETE FROM Pessoa WHERE cpf ='{0}'", o);
             db.ExecuteNonQuery(qry);
         }
 
