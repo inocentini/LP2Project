@@ -38,7 +38,7 @@ namespace WindowsFormsApplication2
         {
             if (IsComplete())
             {
-                IDatabaseLogin database = new DatabaseMySQLLogin();
+                LoginDAO database = new LoginDAO();
 
                 Login l = GetDTO();
                 if (database.Login(l))
@@ -64,7 +64,7 @@ namespace WindowsFormsApplication2
         {
             if (IsComplete())
             {
-                IDatabaseLogin database = new DatabaseMySQLLogin();
+                LoginDAO database = new LoginDAO();
 
                 Login l = GetDTO();
                 database.Salvar(l);

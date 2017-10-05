@@ -27,13 +27,14 @@ namespace WindowsFormsApplication2
         private void Fill()
         {
             //IDatabase db = new DatabaseDict();
-            IDatabasePessoa db = new DatabaseMySQLPessoa();
-            List <Pessoa> lista = db.Listar();
+            PessoaDAO db = new PessoaDAO();
+            
+            List <object> lista = db.Listar();
 
             dgvPessoas.Rows.Clear();
-            foreach(Pessoa p in lista)
+            foreach(object p in lista)
             {
-                dgvPessoas.Rows.Add(p.Cpf, p.Nome, p.Email, p.Telefone);
+                dgvPessoas.Rows.Add(((Pessoa)p).Cpf, ((Pessoa)p).Nome, ((Pessoa)p).Email, ((Pessoa)p).Telefone);
             }
         }
 
@@ -42,9 +43,8 @@ namespace WindowsFormsApplication2
             if (dgvPessoas.CurrentRow != null) {
                 int indiceSelecao = dgvPessoas.SelectedCells[0].RowIndex;
                 DataGridViewRow linhaSelecionada = dgvPessoas.Rows[indiceSelecao];
-                //IDatabase db = new DatabaseDict();
-                IDatabasePessoa db = new DatabaseMySQLPessoa();
-                return db.Read(linhaSelecionada.Cells[0].Value.ToString());
+                PessoaDAO db = new PessoaDAO();
+                return (Pessoa)db.Read(linhaSelecionada.Cells[0].Value.ToString());
             }
             else
             {
@@ -79,8 +79,7 @@ namespace WindowsFormsApplication2
             Pessoa selecionada = selecao();
             if (selecionada != null)
             {
-                //IDatabase db = new DatabaseDict();
-                IDatabasePessoa db = new DatabaseMySQLPessoa();
+                PessoaDAO db = new PessoaDAO();
                 db.Remover(selecao().Cpf);
                 Fill();
             }
@@ -88,16 +87,17 @@ namespace WindowsFormsApplication2
 
         private void txtFiltrar_KeyUp(object sender, KeyEventArgs e)
         {
-            //IDatabase db = new DatabaseDict();
-            IDatabasePessoa db = new DatabaseMySQLPessoa();
-            List<Pessoa> lista = db.Listar();
+            PessoaDAO db = new PessoaDAO();
+
+            List<object> lista = db.Listar();
+           
 
             dgvPessoas.Rows.Clear();
-            foreach(Pessoa p in lista)
+            foreach(object p in lista)
             {
-                if (p.Nome.Contains(txtFiltrar.Text))
+                if (((Pessoa)p).Nome.Contains(txtFiltrar.Text))
                 {
-                    dgvPessoas.Rows.Add(p.Cpf, p.Nome, p.Email, p.Telefone);
+                    dgvPessoas.Rows.Add(((Pessoa)p).Cpf, ((Pessoa)p).Nome, ((Pessoa)p).Email, ((Pessoa)p).Telefone);
                 }
             }
         }

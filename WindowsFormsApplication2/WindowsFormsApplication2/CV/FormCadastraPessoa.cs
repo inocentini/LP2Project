@@ -77,7 +77,7 @@ namespace WindowsFormsApplication2
             if (IsComplete())
             {
                 //IDatabase database = new DatabaseDict();
-                IDatabasePessoa database = new DatabaseMySQLPessoa();
+                PessoaDAO database = new PessoaDAO();
                 if (Editar)
                 {
                     database.Editar(getDTO());
@@ -86,15 +86,15 @@ namespace WindowsFormsApplication2
                 else
                 {
                     Pessoa p = getDTO();
-                    if (database.Read(p.Cpf) == null)
-                    {
+                    //if (database.Read(p.Cpf) == null)
+                    //{
                         database.Salvar(getDTO());
                         Dispose();
-                    }
-                    else
-                    {
-                        MessageBox.Show("O CPF já está cadastrado!", "Erro: utilize um CPF diferente.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    //}
+                    //else
+                    //{
+                   //     MessageBox.Show("O CPF já está cadastrado!", "Erro: utilize um CPF diferente.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   // }
                 }
             }else
             {

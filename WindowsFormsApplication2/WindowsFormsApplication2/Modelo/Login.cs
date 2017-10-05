@@ -10,7 +10,7 @@ namespace WindowsFormsApplication2
     {
         private string nome;
         private string senha;
-
+        private string cpf;
         public Login()
         {
 
@@ -45,6 +45,19 @@ namespace WindowsFormsApplication2
             set
             {
                 senha = value;
+            }
+        }
+
+        public string Cpf
+        {
+            get
+            {
+                return cpf;
+            }
+
+            set
+            {
+                cpf = value;
             }
         }
     }

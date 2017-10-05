@@ -48,49 +48,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conta.cs" />
-    <Compile Include="DatabaseDict.cs" />
-    <Compile Include="DatabaseMySQLLogin.cs" />
-    <Compile Include="FormCadastraPessoa.cs">
+    <Compile Include="Utils\Database.cs" />
+    <Compile Include="Modelo\Conta.cs" />
+    <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="CV\FormCadastraPessoa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastraPessoa.Designer.cs">
+    <Compile Include="CV\FormCadastraPessoa.Designer.cs">
       <DependentUpon>FormCadastraPessoa.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseMySQLPessoa.cs" />
-    <Compile Include="FormListaPessoas.cs">
+    <Compile Include="DAO\PessoaDAO.cs" />
+    <Compile Include="CV\FormListaPessoas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormListaPessoas.Designer.cs">
+    <Compile Include="CV\FormListaPessoas.Designer.cs">
       <DependentUpon>FormListaPessoas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.cs">
+    <Compile Include="CV\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.Designer.cs">
+    <Compile Include="CV\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hashing.cs" />
-    <Compile Include="IDatabaseLogin.cs" />
-    <Compile Include="IDatabasePessoa.cs" />
-    <Compile Include="Login.cs" />
-    <Compile Include="Pessoa.cs" />
-    <Compile Include="Produto.cs" />
+    <Compile Include="Utils\Hashing.cs" />
+    <Compile Include="Utils\IDAO.cs" />
+    <Compile Include="Modelo\Login.cs" />
+    <Compile Include="Modelo\Pessoa.cs" />
+    <Compile Include="Modelo\Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FormSplashScreen.cs">
+    <Compile Include="CV\FormSplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSplashScreen.Designer.cs">
+    <Compile Include="CV\FormSplashScreen.Designer.cs">
       <DependentUpon>FormSplashScreen.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormCadastraPessoa.resx">
+    <EmbeddedResource Include="CV\FormCadastraPessoa.resx">
       <DependentUpon>FormCadastraPessoa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormListaPessoas.resx">
+    <EmbeddedResource Include="CV\FormListaPessoas.resx">
       <DependentUpon>FormListaPessoas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
+    <EmbeddedResource Include="CV\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -103,7 +102,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="FormSplashScreen.resx">
+    <EmbeddedResource Include="CV\FormSplashScreen.resx">
       <DependentUpon>FormSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
