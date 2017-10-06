@@ -72,3 +72,4 @@ C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsA
 C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.wLogin.resources
 C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormSplashScreen.resources
 C:\Users\IFSP\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormSplashScreen.resources
+C:\Users\IFSP\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormNovoLogin.resources

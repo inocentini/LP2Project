@@ -62,7 +62,9 @@ namespace WindowsFormsApplication2
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            if (IsComplete())
+            FormNovoLogin newlogin = new FormNovoLogin();
+            newlogin.ShowDialog(this);
+            /*if (IsComplete())
             {
                 LoginDAO database = new LoginDAO();
 
@@ -73,6 +75,7 @@ namespace WindowsFormsApplication2
             {
                 MessageBox.Show("Erro! Login ou senha incompletos!", "Informe seu login e sua senha.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            */
         }
     }
 }
