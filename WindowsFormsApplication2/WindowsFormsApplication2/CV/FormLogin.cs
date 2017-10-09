@@ -43,7 +43,7 @@ namespace WindowsFormsApplication2
                 Login l = GetDTO();
                 if (database.Login(l))
                 {
-                    wPessoa wp = new wPessoa();
+                    FormListaPessoas wp = new FormListaPessoas();
                     this.Hide();
                     wp.ShowDialog();
                     Dispose();

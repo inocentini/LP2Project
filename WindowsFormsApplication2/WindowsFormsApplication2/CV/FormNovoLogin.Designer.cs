@@ -40,12 +40,12 @@
             this.labTelefone = new System.Windows.Forms.Label();
             this.lbNovoLogin = new System.Windows.Forms.Label();
             this.pnDados = new System.Windows.Forms.Panel();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.txtUser = new System.Windows.Forms.MaskedTextBox();
+            this.lbSenha = new System.Windows.Forms.Label();
+            this.lbUser = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbUser = new System.Windows.Forms.Label();
-            this.lbSenha = new System.Windows.Forms.Label();
-            this.txtUser = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.pnDados.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -69,6 +69,7 @@
             this.btnCancelar.TabIndex = 17;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtTelefone
             // 
@@ -178,6 +179,39 @@
             this.pnDados.Size = new System.Drawing.Size(336, 200);
             this.pnDados.TabIndex = 24;
             // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Location = new System.Drawing.Point(66, 155);
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.PasswordChar = '•';
+            this.maskedTextBox2.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox2.TabIndex = 26;
+            // 
+            // txtUser
+            // 
+            this.txtUser.Location = new System.Drawing.Point(68, 129);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(100, 20);
+            this.txtUser.TabIndex = 25;
+            // 
+            // lbSenha
+            // 
+            this.lbSenha.AutoSize = true;
+            this.lbSenha.Location = new System.Drawing.Point(21, 160);
+            this.lbSenha.Name = "lbSenha";
+            this.lbSenha.Size = new System.Drawing.Size(41, 13);
+            this.lbSenha.TabIndex = 24;
+            this.lbSenha.Text = "Senha:";
+            // 
+            // lbUser
+            // 
+            this.lbUser.AutoSize = true;
+            this.lbUser.Location = new System.Drawing.Point(16, 132);
+            this.lbUser.Name = "lbUser";
+            this.lbUser.Size = new System.Drawing.Size(46, 13);
+            this.lbUser.TabIndex = 23;
+            this.lbUser.Text = "Usuário:";
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -200,39 +234,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(179, 47);
             this.panel2.TabIndex = 26;
-            // 
-            // lbUser
-            // 
-            this.lbUser.AutoSize = true;
-            this.lbUser.Location = new System.Drawing.Point(16, 132);
-            this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(46, 13);
-            this.lbUser.TabIndex = 23;
-            this.lbUser.Text = "Usuário:";
-            // 
-            // lbSenha
-            // 
-            this.lbSenha.AutoSize = true;
-            this.lbSenha.Location = new System.Drawing.Point(21, 160);
-            this.lbSenha.Name = "lbSenha";
-            this.lbSenha.Size = new System.Drawing.Size(41, 13);
-            this.lbSenha.TabIndex = 24;
-            this.lbSenha.Text = "Senha:";
-            // 
-            // txtUser
-            // 
-            this.txtUser.Location = new System.Drawing.Point(68, 129);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(100, 20);
-            this.txtUser.TabIndex = 25;
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(66, 155);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.PasswordChar = '•';
-            this.maskedTextBox2.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox2.TabIndex = 26;
             // 
             // FormNovoLogin
             // 

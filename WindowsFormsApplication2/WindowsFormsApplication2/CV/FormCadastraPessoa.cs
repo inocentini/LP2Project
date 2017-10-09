@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication2
 {
-    public partial class wCadastro : Form
+    public partial class FormCadastraPessoa : Form
     {
         private bool editar = new bool();
 
@@ -27,7 +27,7 @@ namespace WindowsFormsApplication2
             }
         }
 
-        public wCadastro(Pessoa p, bool edicao) //objeto
+        public FormCadastraPessoa(Pessoa p, bool edicao) //objeto
         {
             Editar = edicao;
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace WindowsFormsApplication2
             }
         }
 
-        public wCadastro()
+        public FormCadastraPessoa()
         {
             InitializeComponent();
         }
@@ -123,7 +123,7 @@ namespace WindowsFormsApplication2
             return true;
         }
 
-        private void wCadastro_Load(object sender, EventArgs e)
+        private void FormCadastraPessoa_Load(object sender, EventArgs e)
         {
 
         }

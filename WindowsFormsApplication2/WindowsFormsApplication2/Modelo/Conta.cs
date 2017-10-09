@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication2
 {
-    class Conta
+    public class Conta
     {
         private int id;
         private string nome;

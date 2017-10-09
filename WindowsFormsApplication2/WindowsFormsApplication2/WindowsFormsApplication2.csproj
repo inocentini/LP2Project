@@ -48,11 +48,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\ContaDAO.cs" />
     <Compile Include="CV\FormNovoLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CV\FormNovoLogin.Designer.cs">
       <DependentUpon>FormNovoLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormListaContas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormListaContas.Designer.cs">
+      <DependentUpon>FormListaContas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormCadastraConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormCadastraConta.Designer.cs">
+      <DependentUpon>FormCadastraConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormPesquisaPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormPesquisaPessoa.Designer.cs">
+      <DependentUpon>FormPesquisaPessoa.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Database.cs" />
     <Compile Include="Modelo\Conta.cs" />
@@ -99,6 +118,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormNovoLogin.resx">
       <DependentUpon>FormNovoLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormListaContas.resx">
+      <DependentUpon>FormListaContas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormCadastraConta.resx">
+      <DependentUpon>FormCadastraConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormPesquisaPessoa.resx">
+      <DependentUpon>FormPesquisaPessoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

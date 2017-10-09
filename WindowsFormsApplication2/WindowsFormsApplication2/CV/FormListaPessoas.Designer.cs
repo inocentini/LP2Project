@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication2
 {
-    partial class wPessoa
+    partial class FormListaPessoas
     {
         /// <summary>
         /// Required designer variable.
@@ -175,11 +175,11 @@
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
-            // wPessoa
+            // FormListaPessoas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 262);
+            this.ClientSize = new System.Drawing.Size(482, 261);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.bntDetalhes);
             this.Controls.Add(this.bntEditar);
@@ -189,10 +189,10 @@
             this.Controls.Add(this.labFiltrar);
             this.Controls.Add(this.dgvPessoas);
             this.MaximumSize = new System.Drawing.Size(700, 300);
-            this.Name = "wPessoa";
+            this.Name = "FormListaPessoas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pessoas";
-            this.Load += new System.EventHandler(this.wPessoa_Load);
+            this.Load += new System.EventHandler(this.FormListaPessoas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

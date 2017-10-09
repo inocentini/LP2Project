@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication2
 {
-    public partial class wPessoa : Form
+    public partial class FormListaPessoas : Form
     {
-        public wPessoa()
+        public FormListaPessoas()
         {
             InitializeComponent();
         }
 
         private void bntAdd_Click(object sender, EventArgs e)
         {
-            wCadastro cadastro = new wCadastro();
+            FormCadastraPessoa cadastro = new FormCadastraPessoa();
             cadastro.ShowDialog(this);
             Fill();
         }
@@ -58,7 +58,7 @@ namespace WindowsFormsApplication2
             Pessoa selecionada = selecao();
             if (selecionada != null)
             {
-                wCadastro editar = new wCadastro(selecionada, true);
+                FormCadastraPessoa editar = new FormCadastraPessoa(selecionada, true);
                 editar.ShowDialog(this);
                 Fill();
             }
@@ -69,7 +69,7 @@ namespace WindowsFormsApplication2
             Pessoa selecionada = selecao();
             if (selecionada != null)
             {
-                wCadastro detalhes = new wCadastro(selecionada, false);
+                FormCadastraPessoa detalhes = new FormCadastraPessoa(selecionada, false);
                 detalhes.ShowDialog(this);
             }
         }
@@ -102,7 +102,7 @@ namespace WindowsFormsApplication2
             }
         }
 
-        private void wPessoa_Load(object sender, EventArgs e)
+        private void FormListaPessoas_Load(object sender, EventArgs e)
         {
             Fill();
         }

@@ -104,5 +104,10 @@ namespace WindowsFormsApplication2
                 MessageBox.Show("Erro!", "Campo inválido ou vazio.",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 }

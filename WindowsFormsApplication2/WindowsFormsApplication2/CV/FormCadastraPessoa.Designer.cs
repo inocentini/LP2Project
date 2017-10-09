@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication2
 {
-    partial class wCadastro
+    partial class FormCadastraPessoa
     {
         /// <summary>
         /// Required designer variable.
@@ -156,7 +156,7 @@
             this.panel1.Size = new System.Drawing.Size(400, 213);
             this.panel1.TabIndex = 13;
             // 
-            // wCadastro
+            // FormCadastraPessoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -164,10 +164,10 @@
             this.Controls.Add(this.panel1);
             this.MaximumSize = new System.Drawing.Size(416, 252);
             this.MinimizeBox = false;
-            this.Name = "wCadastro";
+            this.Name = "FormCadastraPessoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro";
-            this.Load += new System.EventHandler(this.wCadastro_Load);
+            this.Load += new System.EventHandler(this.FormCadastraPessoa_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
