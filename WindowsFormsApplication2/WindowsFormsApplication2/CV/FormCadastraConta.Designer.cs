@@ -39,11 +39,11 @@
             this.labResponsavel = new System.Windows.Forms.Label();
             this.dtpVencimento = new System.Windows.Forms.DateTimePicker();
             this.panCadastro = new System.Windows.Forms.Panel();
+            this.txtVencimento = new System.Windows.Forms.TextBox();
             this.labReais = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.MaskedTextBox();
             this.txtResponsavel = new System.Windows.Forms.TextBox();
             this.btnResponsavel = new System.Windows.Forms.Button();
-            this.txtVencimento = new System.Windows.Forms.TextBox();
             this.panCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labDetalhes.AutoSize = true;
+            this.labDetalhes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labDetalhes.ForeColor = System.Drawing.Color.Black;
             this.labDetalhes.Location = new System.Drawing.Point(40, 43);
             this.labDetalhes.Name = "labDetalhes";
             this.labDetalhes.Size = new System.Drawing.Size(52, 13);
@@ -97,6 +99,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labNome.AutoSize = true;
+            this.labNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labNome.ForeColor = System.Drawing.Color.Black;
             this.labNome.Location = new System.Drawing.Point(54, 17);
             this.labNome.Name = "labNome";
             this.labNome.Size = new System.Drawing.Size(38, 13);
@@ -119,6 +123,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labValor.AutoSize = true;
+            this.labValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labValor.ForeColor = System.Drawing.Color.Black;
             this.labValor.Location = new System.Drawing.Point(40, 70);
             this.labValor.Name = "labValor";
             this.labValor.Size = new System.Drawing.Size(34, 13);
@@ -131,6 +137,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labVencimento.AutoSize = true;
+            this.labVencimento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labVencimento.ForeColor = System.Drawing.Color.Black;
             this.labVencimento.Location = new System.Drawing.Point(26, 95);
             this.labVencimento.Name = "labVencimento";
             this.labVencimento.Size = new System.Drawing.Size(66, 13);
@@ -143,6 +151,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labResponsavel.AutoSize = true;
+            this.labResponsavel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labResponsavel.ForeColor = System.Drawing.Color.Black;
             this.labResponsavel.Location = new System.Drawing.Point(20, 122);
             this.labResponsavel.Name = "labResponsavel";
             this.labResponsavel.Size = new System.Drawing.Size(72, 13);
@@ -165,6 +175,7 @@
             this.panCadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panCadastro.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources._240_F_81814151_BuyTjihhQ7ad76dgCgaXu4htNbVufT6g;
             this.panCadastro.Controls.Add(this.txtVencimento);
             this.panCadastro.Controls.Add(this.labReais);
             this.panCadastro.Controls.Add(this.txtValor);
@@ -185,9 +196,24 @@
             this.panCadastro.Size = new System.Drawing.Size(372, 213);
             this.panCadastro.TabIndex = 27;
             // 
+            // txtVencimento
+            // 
+            this.txtVencimento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtVencimento.Location = new System.Drawing.Point(98, 91);
+            this.txtVencimento.Name = "txtVencimento";
+            this.txtVencimento.ReadOnly = true;
+            this.txtVencimento.Size = new System.Drawing.Size(100, 20);
+            this.txtVencimento.TabIndex = 31;
+            this.txtVencimento.TabStop = false;
+            this.txtVencimento.Visible = false;
+            // 
             // labReais
             // 
             this.labReais.AutoSize = true;
+            this.labReais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labReais.ForeColor = System.Drawing.Color.Black;
             this.labReais.Location = new System.Drawing.Point(77, 70);
             this.labReais.Name = "labReais";
             this.labReais.Size = new System.Drawing.Size(21, 13);
@@ -202,7 +228,7 @@
             this.txtValor.Location = new System.Drawing.Point(98, 66);
             this.txtValor.Mask = "0000,00";
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(100, 20);
+            this.txtValor.Size = new System.Drawing.Size(73, 20);
             this.txtValor.TabIndex = 3;
             // 
             // txtResponsavel
@@ -227,23 +253,11 @@
             this.btnResponsavel.UseVisualStyleBackColor = true;
             this.btnResponsavel.Click += new System.EventHandler(this.btnResponsavel_Click);
             // 
-            // txtVencimento
-            // 
-            this.txtVencimento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtVencimento.Location = new System.Drawing.Point(98, 91);
-            this.txtVencimento.Name = "txtVencimento";
-            this.txtVencimento.ReadOnly = true;
-            this.txtVencimento.Size = new System.Drawing.Size(100, 20);
-            this.txtVencimento.TabIndex = 31;
-            this.txtVencimento.TabStop = false;
-            this.txtVencimento.Visible = false;
-            // 
             // FormCadastraConta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources._240_F_81814151_BuyTjihhQ7ad76dgCgaXu4htNbVufT6g;
             this.ClientSize = new System.Drawing.Size(396, 238);
             this.Controls.Add(this.panCadastro);
             this.Name = "FormCadastraConta";

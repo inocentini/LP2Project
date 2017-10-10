@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="geladeira_republica" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\geladeira_republica.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="rsz_24b3b3f4d6839c2029c06ead11153598" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_24b3b3f4d6839c2029c06ead11153598.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="O7MF5N0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\O7MF5N0.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="24b3b3f4d6839c2029c06ead11153598" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\24b3b3f4d6839c2029c06ead11153598.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -132,5 +132,20 @@
   </data>
   <data name="rsz_black_cubes_3-wallpaper-640x960" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_black_cubes_3-wallpaper-640x960.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="10131" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1013.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="geladeira_republica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\geladeira_republica.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="padlock-md" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\padlock-md.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1013" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1013.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="240_F_81814151_BuyTjihhQ7ad76dgCgaXu4htNbVufT6g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\240_F_81814151_BuyTjihhQ7ad76dgCgaXu4htNbVufT6g.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

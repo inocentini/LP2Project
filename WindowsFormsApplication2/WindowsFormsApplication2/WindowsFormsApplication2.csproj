@@ -169,6 +169,18 @@
   <ItemGroup>
     <None Include="Resources\rsz_black_cubes_3-wallpaper-640x960.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock-md.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1013.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\O7MF5N0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\240_F_81814151_BuyTjihhQ7ad76dgCgaXu4htNbVufT6g.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
