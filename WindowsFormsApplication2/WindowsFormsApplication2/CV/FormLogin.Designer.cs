@@ -149,9 +149,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.padlock_md;
-            this.ClientSize = new System.Drawing.Size(334, 311);
+            this.ClientSize = new System.Drawing.Size(334, 312);
             this.Controls.Add(this.gbLogin);
             this.MaximumSize = new System.Drawing.Size(350, 350);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(350, 350);
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

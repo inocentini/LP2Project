@@ -190,6 +190,7 @@
             this.Controls.Add(this.labFiltrar);
             this.Controls.Add(this.dgvPessoas);
             this.MaximumSize = new System.Drawing.Size(700, 300);
+            this.MinimizeBox = false;
             this.Name = "FormListaPessoas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pessoas";

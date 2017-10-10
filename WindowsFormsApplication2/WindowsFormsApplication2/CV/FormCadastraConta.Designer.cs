@@ -260,6 +260,7 @@
             this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources._240_F_81814151_BuyTjihhQ7ad76dgCgaXu4htNbVufT6g;
             this.ClientSize = new System.Drawing.Size(396, 238);
             this.Controls.Add(this.panCadastro);
+            this.MinimizeBox = false;
             this.Name = "FormCadastraConta";
             this.Text = "FormCadastraConta";
             this.panCadastro.ResumeLayout(false);

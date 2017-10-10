@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CV\FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\ContaDAO.cs" />
     <Compile Include="CV\FormNovoLogin.cs">
       <SubType>Form</SubType>
