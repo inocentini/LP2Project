@@ -14,7 +14,6 @@ namespace WindowsFormsApplication2
     {
         private bool editar = new bool();
         private int id = new int();
-        private TextBox txtVencimento;
 
         public bool Editar
         {
@@ -38,17 +37,15 @@ namespace WindowsFormsApplication2
             if (!Editar)
             {
                 txtNome.ReadOnly = true;
+                txtNome.TabStop = false;
                 txtDetalhes.ReadOnly = true;
+                txtDetalhes.TabStop = false;
                 txtValor.ReadOnly = true;
+                txtValor.TabStop = false;
                 dtpVencimento.Hide();
                 btnResponsavel.Hide();
-                this.txtVencimento = new System.Windows.Forms.TextBox();
-                txtVencimento.Size = dtpVencimento.Size;
-                txtVencimento.Location = dtpVencimento.Location;
-                txtVencimento.TabIndex = dtpVencimento.TabIndex;
-                txtVencimento.Anchor = dtpVencimento.Anchor;
-                txtVencimento.Text = dtpVencimento.Value.ToString();
-                txtVencimento.ReadOnly = true;
+                txtVencimento.Visible = true;
+                txtVencimento.Text = dtpVencimento.Value.ToString("dd/MM/yyyy");
                 btnCancelar.Text = "Voltar";
                 btnSalvar.Hide();
             }
@@ -64,7 +61,8 @@ namespace WindowsFormsApplication2
             Conta c = new Conta();
             c.Nome = txtNome.Text;
             c.Detalhes = txtDetalhes.Text;
-            c.Valor = float.Parse(txtValor.Text);
+            c.Valor = double.Parse(txtValor.Text,System.Globalization.CultureInfo.InvariantCulture);
+            Console.WriteLine(c.Valor + " " + txtValor.Text);
             c.Vencimento = dtpVencimento.Value;
             PessoaDAO dbp = new PessoaDAO();
             c.Responsavel = dbp.Read(txtResponsavel.Text);
@@ -95,16 +93,16 @@ namespace WindowsFormsApplication2
             if (IsComplete())
             {
                 ContaDAO database = new ContaDAO();
+                Conta c = getDTO();
                 if (Editar)
                 {
-                    Conta c = getDTO();
                     c.Id = id;
                     database.Editar(c);
                     Dispose();
                 }
                 else
                 {
-                    database.Salvar(getDTO());
+                    database.Salvar(c);
                     Dispose();
                 }
             }

@@ -111,7 +111,7 @@
             this.txtCPF.Mask = "000,000,000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(100, 20);
-            this.txtCPF.TabIndex = 9;
+            this.txtCPF.TabIndex = 1;
             // 
             // txtNome
             // 
@@ -119,7 +119,7 @@
             this.txtNome.Location = new System.Drawing.Point(77, 31);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(235, 20);
-            this.txtNome.TabIndex = 10;
+            this.txtNome.TabIndex = 2;
             // 
             // txtEmail
             // 
@@ -127,7 +127,7 @@
             this.txtEmail.Location = new System.Drawing.Point(77, 61);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
-            this.txtEmail.TabIndex = 11;
+            this.txtEmail.TabIndex = 3;
             // 
             // txtTelefone
             // 
@@ -136,7 +136,7 @@
             this.txtTelefone.Mask = "(99) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefone.TabIndex = 12;
+            this.txtTelefone.TabIndex = 4;
             // 
             // panel1
             // 

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication2
 {
-    partial class wLogin
+    partial class FormLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -104,7 +104,7 @@
             this.labLogin.Text = "Login";
             this.labLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // wLogin
+            // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -116,7 +116,7 @@
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.labSenha);
             this.Controls.Add(this.labUser);
-            this.Name = "wLogin";
+            this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);

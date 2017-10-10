@@ -11,7 +11,7 @@ namespace WindowsFormsApplication2
         private int id;
         private string nome;
         private string detalhes;
-        private float valor;
+        private double valor;
         private DateTime vencimento;
         private Pessoa responsavel;
 
@@ -21,7 +21,7 @@ namespace WindowsFormsApplication2
         {
 
         }
-        public Conta(int id, string nome, string detalhes, float valor, DateTime vencimento, Pessoa responsavel)
+        public Conta(int id, string nome, string detalhes, double valor, DateTime vencimento, Pessoa responsavel)
         {
             this.Id = id;
             this.Nome = nome;
@@ -70,7 +70,7 @@ namespace WindowsFormsApplication2
             }
         }
 
-        public float Valor
+        public double Valor
         {
             get
             {

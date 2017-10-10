@@ -37,11 +37,13 @@
             this.labValor = new System.Windows.Forms.Label();
             this.labVencimento = new System.Windows.Forms.Label();
             this.labResponsavel = new System.Windows.Forms.Label();
-            this.txtValor = new System.Windows.Forms.TextBox();
             this.dtpVencimento = new System.Windows.Forms.DateTimePicker();
             this.panCadastro = new System.Windows.Forms.Panel();
+            this.labReais = new System.Windows.Forms.Label();
+            this.txtValor = new System.Windows.Forms.MaskedTextBox();
             this.txtResponsavel = new System.Windows.Forms.TextBox();
             this.btnResponsavel = new System.Windows.Forms.Button();
+            this.txtVencimento = new System.Windows.Forms.TextBox();
             this.panCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,7 +119,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labValor.AutoSize = true;
-            this.labValor.Location = new System.Drawing.Point(58, 69);
+            this.labValor.Location = new System.Drawing.Point(40, 70);
             this.labValor.Name = "labValor";
             this.labValor.Size = new System.Drawing.Size(34, 13);
             this.labValor.TabIndex = 15;
@@ -147,16 +149,6 @@
             this.labResponsavel.TabIndex = 22;
             this.labResponsavel.Text = "Responsável:";
             // 
-            // txtValor
-            // 
-            this.txtValor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtValor.Location = new System.Drawing.Point(98, 65);
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(100, 20);
-            this.txtValor.TabIndex = 3;
-            // 
             // dtpVencimento
             // 
             this.dtpVencimento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -165,7 +157,7 @@
             this.dtpVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpVencimento.Location = new System.Drawing.Point(98, 91);
             this.dtpVencimento.Name = "dtpVencimento";
-            this.dtpVencimento.Size = new System.Drawing.Size(200, 20);
+            this.dtpVencimento.Size = new System.Drawing.Size(100, 20);
             this.dtpVencimento.TabIndex = 4;
             // 
             // panCadastro
@@ -173,6 +165,9 @@
             this.panCadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panCadastro.Controls.Add(this.txtVencimento);
+            this.panCadastro.Controls.Add(this.labReais);
+            this.panCadastro.Controls.Add(this.txtValor);
             this.panCadastro.Controls.Add(this.txtResponsavel);
             this.panCadastro.Controls.Add(this.btnResponsavel);
             this.panCadastro.Controls.Add(this.txtNome);
@@ -181,7 +176,6 @@
             this.panCadastro.Controls.Add(this.labVencimento);
             this.panCadastro.Controls.Add(this.dtpVencimento);
             this.panCadastro.Controls.Add(this.labValor);
-            this.panCadastro.Controls.Add(this.txtValor);
             this.panCadastro.Controls.Add(this.txtDetalhes);
             this.panCadastro.Controls.Add(this.labResponsavel);
             this.panCadastro.Controls.Add(this.labNome);
@@ -191,15 +185,36 @@
             this.panCadastro.Size = new System.Drawing.Size(372, 213);
             this.panCadastro.TabIndex = 27;
             // 
+            // labReais
+            // 
+            this.labReais.AutoSize = true;
+            this.labReais.Location = new System.Drawing.Point(77, 70);
+            this.labReais.Name = "labReais";
+            this.labReais.Size = new System.Drawing.Size(21, 13);
+            this.labReais.TabIndex = 30;
+            this.labReais.Text = "R$";
+            // 
+            // txtValor
+            // 
+            this.txtValor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtValor.Location = new System.Drawing.Point(98, 66);
+            this.txtValor.Mask = "0000,00";
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(100, 20);
+            this.txtValor.TabIndex = 3;
+            // 
             // txtResponsavel
             // 
             this.txtResponsavel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtResponsavel.Location = new System.Drawing.Point(99, 118);
+            this.txtResponsavel.Location = new System.Drawing.Point(98, 118);
             this.txtResponsavel.Name = "txtResponsavel";
             this.txtResponsavel.ReadOnly = true;
             this.txtResponsavel.Size = new System.Drawing.Size(153, 20);
-            this.txtResponsavel.TabIndex = 29;
+            this.txtResponsavel.TabIndex = 8;
+            this.txtResponsavel.TabStop = false;
             // 
             // btnResponsavel
             // 
@@ -211,6 +226,19 @@
             this.btnResponsavel.Text = "Buscar";
             this.btnResponsavel.UseVisualStyleBackColor = true;
             this.btnResponsavel.Click += new System.EventHandler(this.btnResponsavel_Click);
+            // 
+            // txtVencimento
+            // 
+            this.txtVencimento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtVencimento.Location = new System.Drawing.Point(98, 91);
+            this.txtVencimento.Name = "txtVencimento";
+            this.txtVencimento.ReadOnly = true;
+            this.txtVencimento.Size = new System.Drawing.Size(100, 20);
+            this.txtVencimento.TabIndex = 31;
+            this.txtVencimento.TabStop = false;
+            this.txtVencimento.Visible = false;
             // 
             // FormCadastraConta
             // 
@@ -237,10 +265,12 @@
         private System.Windows.Forms.Label labValor;
         private System.Windows.Forms.Label labVencimento;
         private System.Windows.Forms.Label labResponsavel;
-        private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.DateTimePicker dtpVencimento;
         private System.Windows.Forms.Panel panCadastro;
         private System.Windows.Forms.TextBox txtResponsavel;
         private System.Windows.Forms.Button btnResponsavel;
+        private System.Windows.Forms.MaskedTextBox txtValor;
+        private System.Windows.Forms.Label labReais;
+        private System.Windows.Forms.TextBox txtVencimento;
     }
 }

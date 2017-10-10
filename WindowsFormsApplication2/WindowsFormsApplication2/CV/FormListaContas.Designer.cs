@@ -53,7 +53,7 @@
             this.btnRemover.MaximumSize = new System.Drawing.Size(75, 23);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 23);
-            this.btnRemover.TabIndex = 15;
+            this.btnRemover.TabIndex = 6;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
@@ -66,7 +66,7 @@
             this.bntDetalhes.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntDetalhes.Name = "bntDetalhes";
             this.bntDetalhes.Size = new System.Drawing.Size(75, 23);
-            this.bntDetalhes.TabIndex = 14;
+            this.bntDetalhes.TabIndex = 5;
             this.bntDetalhes.Text = "Detalhes";
             this.bntDetalhes.UseVisualStyleBackColor = true;
             this.bntDetalhes.Click += new System.EventHandler(this.bntDetalhes_Click);
@@ -79,7 +79,7 @@
             this.bntEditar.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntEditar.Name = "bntEditar";
             this.bntEditar.Size = new System.Drawing.Size(75, 23);
-            this.bntEditar.TabIndex = 13;
+            this.bntEditar.TabIndex = 4;
             this.bntEditar.Text = "Editar";
             this.bntEditar.UseVisualStyleBackColor = true;
             this.bntEditar.Click += new System.EventHandler(this.bntEditar_Click);
@@ -92,7 +92,7 @@
             this.bntAdd.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntAdd.Name = "bntAdd";
             this.bntAdd.Size = new System.Drawing.Size(75, 23);
-            this.bntAdd.TabIndex = 12;
+            this.bntAdd.TabIndex = 3;
             this.bntAdd.Text = "Adicionar";
             this.bntAdd.UseVisualStyleBackColor = true;
             this.bntAdd.Click += new System.EventHandler(this.bntAdd_Click);
@@ -104,7 +104,7 @@
             this.txtFiltrar.Location = new System.Drawing.Point(69, 8);
             this.txtFiltrar.Name = "txtFiltrar";
             this.txtFiltrar.Size = new System.Drawing.Size(629, 20);
-            this.txtFiltrar.TabIndex = 11;
+            this.txtFiltrar.TabIndex = 1;
             this.txtFiltrar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFiltrar_KeyUp);
             // 
             // labContas
@@ -144,9 +144,10 @@
             this.dgvContas.Location = new System.Drawing.Point(2, 68);
             this.dgvContas.Name = "dgvContas";
             this.dgvContas.ReadOnly = true;
+            this.dgvContas.RowHeadersVisible = false;
             this.dgvContas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContas.Size = new System.Drawing.Size(706, 150);
-            this.dgvContas.TabIndex = 8;
+            this.dgvContas.TabIndex = 2;
             // 
             // colID
             // 

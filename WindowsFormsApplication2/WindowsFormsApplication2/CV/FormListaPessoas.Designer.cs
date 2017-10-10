@@ -58,9 +58,10 @@
             this.dgvPessoas.Location = new System.Drawing.Point(1, 66);
             this.dgvPessoas.Name = "dgvPessoas";
             this.dgvPessoas.ReadOnly = true;
+            this.dgvPessoas.RowHeadersVisible = false;
             this.dgvPessoas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPessoas.Size = new System.Drawing.Size(479, 150);
-            this.dgvPessoas.TabIndex = 0;
+            this.dgvPessoas.TabIndex = 2;
             // 
             // colCPF
             // 
@@ -120,7 +121,7 @@
             this.txtFiltrar.Location = new System.Drawing.Point(68, 6);
             this.txtFiltrar.Name = "txtFiltrar";
             this.txtFiltrar.Size = new System.Drawing.Size(402, 20);
-            this.txtFiltrar.TabIndex = 3;
+            this.txtFiltrar.TabIndex = 1;
             this.txtFiltrar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFiltrar_KeyUp);
             // 
             // bntAdd
@@ -131,7 +132,7 @@
             this.bntAdd.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntAdd.Name = "bntAdd";
             this.bntAdd.Size = new System.Drawing.Size(75, 23);
-            this.bntAdd.TabIndex = 4;
+            this.bntAdd.TabIndex = 3;
             this.bntAdd.Text = "Adicionar";
             this.bntAdd.UseVisualStyleBackColor = true;
             this.bntAdd.Click += new System.EventHandler(this.bntAdd_Click);
@@ -144,7 +145,7 @@
             this.bntEditar.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntEditar.Name = "bntEditar";
             this.bntEditar.Size = new System.Drawing.Size(75, 23);
-            this.bntEditar.TabIndex = 5;
+            this.bntEditar.TabIndex = 4;
             this.bntEditar.Text = "Editar";
             this.bntEditar.UseVisualStyleBackColor = true;
             this.bntEditar.Click += new System.EventHandler(this.bntEditar_Click);
@@ -157,7 +158,7 @@
             this.bntDetalhes.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntDetalhes.Name = "bntDetalhes";
             this.bntDetalhes.Size = new System.Drawing.Size(75, 23);
-            this.bntDetalhes.TabIndex = 6;
+            this.bntDetalhes.TabIndex = 5;
             this.bntDetalhes.Text = "Detalhes";
             this.bntDetalhes.UseVisualStyleBackColor = true;
             this.bntDetalhes.Click += new System.EventHandler(this.bntDetalhes_Click);
@@ -170,7 +171,7 @@
             this.btnRemover.MaximumSize = new System.Drawing.Size(75, 23);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 23);
-            this.btnRemover.TabIndex = 7;
+            this.btnRemover.TabIndex = 6;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);

@@ -32,17 +32,16 @@ namespace WindowsFormsApplication2
             Editar = edicao;
             InitializeComponent();
             setDTO(p);
-            if (Editar)
+            txtCPF.ReadOnly = true;
+            txtCPF.TabStop = false;
+            if (!Editar)
             {
-                txtCPF.ReadOnly = true;
-                txtCPF.TabIndex = btnCancelar.TabIndex + 1;
-            }
-            else
-            {
-                txtCPF.ReadOnly = true;
                 txtEmail.ReadOnly = true;
+                txtEmail.TabStop = false;
                 txtNome.ReadOnly = true;
+                txtNome.TabStop = false;
                 txtTelefone.ReadOnly = true;
+                txtTelefone.TabStop = false;
                 btnCancelar.Text = "Voltar";
                 btnSalvar.Hide();
             }

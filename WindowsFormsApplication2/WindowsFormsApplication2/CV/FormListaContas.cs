@@ -26,7 +26,7 @@ namespace WindowsFormsApplication2
             dgvContas.Rows.Clear();
             foreach (Conta c in lista)
             {
-                dgvContas.Rows.Add(c.Id,c.Nome,c.Detalhes,c.Valor,c.Vencimento,c.Responsavel.Nome);
+                dgvContas.Rows.Add(c.Id,c.Nome,c.Detalhes,"R$" + c.Valor,c.Vencimento,c.Responsavel.Nome);
             }
         }
 
@@ -97,7 +97,7 @@ namespace WindowsFormsApplication2
             {
                 if (c.Nome.Contains(txtFiltrar.Text))
                 {
-                    dgvContas.Rows.Add(c.Id,c.Nome,c.Detalhes,c.Valor,c.Vencimento,c.Responsavel.Nome);
+                    dgvContas.Rows.Add(c.Id,c.Nome,c.Detalhes,"R$" + c.Valor,c.Vencimento,c.Responsavel.Nome);
                 }
             }
         }
