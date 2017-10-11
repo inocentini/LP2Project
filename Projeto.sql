@@ -6,3 +6,5 @@ CREATE TABLE Login(nome varchar(16), senha varchar(256),PRIMARY KEY(nome));
 /*Falta adicionar a foreign key para ligar com pessoa*/
 
 CREATE TABLE Conta(id int auto_increment, nome varchar(64), detalhes varchar(128), valor float, vencimento date, cpfresponsavel varchar(14),primary key(id),foreign key(cpfresponsavel) references pessoa(cpf));
+
+CREATE TABLE Produto(id int auto_increment, nome varchar(64), detalhes varchar(128), quantidade int,primary key(id));

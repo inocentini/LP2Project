@@ -262,7 +262,7 @@
             this.Controls.Add(this.panCadastro);
             this.MinimizeBox = false;
             this.Name = "FormCadastraConta";
-            this.Text = "FormCadastraConta";
+            this.Text = "Cadastro";
             this.panCadastro.ResumeLayout(false);
             this.panCadastro.PerformLayout();
             this.ResumeLayout(false);

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication2
 {
-    partial class FormListaContas
+    partial class FormListaProdutos
     {
         /// <summary>
         /// Required designer variable.
@@ -33,23 +33,21 @@
             this.bntEditar = new System.Windows.Forms.Button();
             this.bntAdd = new System.Windows.Forms.Button();
             this.txtFiltrar = new System.Windows.Forms.TextBox();
-            this.labContas = new System.Windows.Forms.Label();
+            this.labProdutos = new System.Windows.Forms.Label();
             this.labFiltrar = new System.Windows.Forms.Label();
-            this.dgvContas = new System.Windows.Forms.DataGridView();
+            this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDetalhes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colResponsavel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRemover
             // 
             this.btnRemover.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemover.Location = new System.Drawing.Point(447, 241);
+            this.btnRemover.Location = new System.Drawing.Point(442, 242);
             this.btnRemover.MaximumSize = new System.Drawing.Size(75, 23);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 23);
@@ -62,7 +60,7 @@
             // 
             this.bntDetalhes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bntDetalhes.Location = new System.Drawing.Point(366, 241);
+            this.bntDetalhes.Location = new System.Drawing.Point(361, 242);
             this.bntDetalhes.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntDetalhes.Name = "bntDetalhes";
             this.bntDetalhes.Size = new System.Drawing.Size(75, 23);
@@ -75,7 +73,7 @@
             // 
             this.bntEditar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bntEditar.Location = new System.Drawing.Point(285, 241);
+            this.bntEditar.Location = new System.Drawing.Point(280, 242);
             this.bntEditar.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntEditar.Name = "bntEditar";
             this.bntEditar.Size = new System.Drawing.Size(75, 23);
@@ -88,7 +86,7 @@
             // 
             this.bntAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bntAdd.Location = new System.Drawing.Point(204, 241);
+            this.bntAdd.Location = new System.Drawing.Point(199, 242);
             this.bntAdd.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntAdd.Name = "bntAdd";
             this.bntAdd.Size = new System.Drawing.Size(75, 23);
@@ -101,54 +99,52 @@
             // 
             this.txtFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFiltrar.Location = new System.Drawing.Point(69, 8);
+            this.txtFiltrar.Location = new System.Drawing.Point(64, 9);
             this.txtFiltrar.Name = "txtFiltrar";
-            this.txtFiltrar.Size = new System.Drawing.Size(629, 20);
+            this.txtFiltrar.Size = new System.Drawing.Size(659, 20);
             this.txtFiltrar.TabIndex = 1;
             this.txtFiltrar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFiltrar_KeyUp);
             // 
-            // labContas
+            // labProdutos
             // 
-            this.labContas.AutoSize = true;
-            this.labContas.Location = new System.Drawing.Point(14, 49);
-            this.labContas.Name = "labContas";
-            this.labContas.Size = new System.Drawing.Size(43, 13);
-            this.labContas.TabIndex = 10;
-            this.labContas.Text = "Contas:";
+            this.labProdutos.AutoSize = true;
+            this.labProdutos.Location = new System.Drawing.Point(9, 50);
+            this.labProdutos.Name = "labProdutos";
+            this.labProdutos.Size = new System.Drawing.Size(52, 13);
+            this.labProdutos.TabIndex = 18;
+            this.labProdutos.Text = "Produtos:";
             // 
             // labFiltrar
             // 
             this.labFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labFiltrar.AutoSize = true;
-            this.labFiltrar.Location = new System.Drawing.Point(28, 11);
+            this.labFiltrar.Location = new System.Drawing.Point(23, 12);
             this.labFiltrar.Name = "labFiltrar";
             this.labFiltrar.Size = new System.Drawing.Size(35, 13);
-            this.labFiltrar.TabIndex = 9;
+            this.labFiltrar.TabIndex = 17;
             this.labFiltrar.Text = "Filtrar:";
             // 
-            // dgvContas
+            // dgvProdutos
             // 
-            this.dgvContas.AllowUserToAddRows = false;
-            this.dgvContas.AllowUserToDeleteRows = false;
-            this.dgvContas.AllowUserToResizeRows = false;
-            this.dgvContas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvProdutos.AllowUserToAddRows = false;
+            this.dgvProdutos.AllowUserToDeleteRows = false;
+            this.dgvProdutos.AllowUserToResizeRows = false;
+            this.dgvProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvContas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
             this.colNome,
             this.colDetalhes,
-            this.colValor,
-            this.colVencimento,
-            this.colResponsavel});
-            this.dgvContas.Location = new System.Drawing.Point(2, 68);
-            this.dgvContas.Name = "dgvContas";
-            this.dgvContas.ReadOnly = true;
-            this.dgvContas.RowHeadersVisible = false;
-            this.dgvContas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContas.Size = new System.Drawing.Size(706, 150);
-            this.dgvContas.TabIndex = 2;
+            this.colValor});
+            this.dgvProdutos.Location = new System.Drawing.Point(-3, 69);
+            this.dgvProdutos.Name = "dgvProdutos";
+            this.dgvProdutos.ReadOnly = true;
+            this.dgvProdutos.RowHeadersVisible = false;
+            this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProdutos.Size = new System.Drawing.Size(736, 150);
+            this.dgvProdutos.TabIndex = 2;
             // 
             // colID
             // 
@@ -177,42 +173,27 @@
             // 
             this.colValor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colValor.FillWeight = 80F;
-            this.colValor.HeaderText = "Valor";
+            this.colValor.HeaderText = "Quantidade";
             this.colValor.Name = "colValor";
             this.colValor.ReadOnly = true;
             // 
-            // colVencimento
-            // 
-            this.colVencimento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colVencimento.FillWeight = 60F;
-            this.colVencimento.HeaderText = "Vencimento";
-            this.colVencimento.Name = "colVencimento";
-            this.colVencimento.ReadOnly = true;
-            // 
-            // colResponsavel
-            // 
-            this.colResponsavel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colResponsavel.HeaderText = "Responsável";
-            this.colResponsavel.Name = "colResponsavel";
-            this.colResponsavel.ReadOnly = true;
-            // 
-            // FormListaContas
+            // FormListaProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 281);
+            this.ClientSize = new System.Drawing.Size(730, 286);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.bntDetalhes);
             this.Controls.Add(this.bntEditar);
             this.Controls.Add(this.bntAdd);
             this.Controls.Add(this.txtFiltrar);
-            this.Controls.Add(this.labContas);
+            this.Controls.Add(this.labProdutos);
             this.Controls.Add(this.labFiltrar);
-            this.Controls.Add(this.dgvContas);
-            this.Name = "FormListaContas";
-            this.Text = "Contas";
-            this.Load += new System.EventHandler(this.FromListaContas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContas)).EndInit();
+            this.Controls.Add(this.dgvProdutos);
+            this.Name = "FormListaProdutos";
+            this.Text = "Produtos";
+            this.Load += new System.EventHandler(this.FromListaProdutos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,14 +206,12 @@
         private System.Windows.Forms.Button bntEditar;
         private System.Windows.Forms.Button bntAdd;
         private System.Windows.Forms.TextBox txtFiltrar;
-        private System.Windows.Forms.Label labContas;
+        private System.Windows.Forms.Label labProdutos;
         private System.Windows.Forms.Label labFiltrar;
-        private System.Windows.Forms.DataGridView dgvContas;
+        private System.Windows.Forms.DataGridView dgvProdutos;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDetalhes;
         private System.Windows.Forms.DataGridViewTextBoxColumn colValor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVencimento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colResponsavel;
     }
 }

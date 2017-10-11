@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication2
 {
-    class Produto
+    public class Produto
     {
         private int id;
         private string nome;
         private string detalhes;
-        private int qtdDisponivel;
+        private int quantidade;
 
         public Produto()
         {
 
         }
-        public Produto(int id, string nome, string detalhes, int qtdDisponivel)
+        public Produto(int id, string nome, string detalhes, int quantidade)
         {
             this.Id = id;
             this.Nome = nome;
             this.Detalhes = detalhes;
-            this.QtdDisponivel = qtdDisponivel;
+            this.quantidade = quantidade;
         }
         public int Id
         {
@@ -63,16 +63,16 @@ namespace WindowsFormsApplication2
             }
         }
 
-        public int QtdDisponivel
+        public int Quantidade
         {
             get
             {
-                return qtdDisponivel;
+                return quantidade;
             }
 
             set
             {
-                qtdDisponivel = value;
+                quantidade = value;
             }
         }
 

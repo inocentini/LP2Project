@@ -62,7 +62,6 @@ namespace WindowsFormsApplication2
             c.Nome = txtNome.Text;
             c.Detalhes = txtDetalhes.Text;
             c.Valor = double.Parse(txtValor.Text,System.Globalization.CultureInfo.InvariantCulture);
-            Console.WriteLine(c.Valor + " " + txtValor.Text);
             c.Vencimento = dtpVencimento.Value;
             PessoaDAO dbp = new PessoaDAO();
             c.Responsavel = dbp.Read(txtResponsavel.Text);
