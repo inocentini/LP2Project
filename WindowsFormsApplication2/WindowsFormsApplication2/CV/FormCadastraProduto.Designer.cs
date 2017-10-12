@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panCadastro = new System.Windows.Forms.Panel();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.MaskedTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -37,7 +36,9 @@
             this.txtDetalhes = new System.Windows.Forms.MaskedTextBox();
             this.labNome = new System.Windows.Forms.Label();
             this.labDetalhes = new System.Windows.Forms.Label();
+            this.txtQuantidade = new System.Windows.Forms.NumericUpDown();
             this.panCadastro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQuantidade)).BeginInit();
             this.SuspendLayout();
             // 
             // panCadastro
@@ -57,17 +58,6 @@
             this.panCadastro.Name = "panCadastro";
             this.panCadastro.Size = new System.Drawing.Size(370, 151);
             this.panCadastro.TabIndex = 28;
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtQuantidade.Location = new System.Drawing.Point(98, 68);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtQuantidade.Size = new System.Drawing.Size(98, 20);
-            this.txtQuantidade.TabIndex = 3;
-            this.txtQuantidade.TextChanged += new System.EventHandler(this.txtQuantidade_TextChanged);
-            this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantidade_KeyPress);
             // 
             // txtNome
             // 
@@ -109,7 +99,7 @@
             this.labQuantidade.AutoSize = true;
             this.labQuantidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labQuantidade.ForeColor = System.Drawing.Color.Black;
-            this.labQuantidade.Location = new System.Drawing.Point(27, 72);
+            this.labQuantidade.Location = new System.Drawing.Point(27, 81);
             this.labQuantidade.Name = "labQuantidade";
             this.labQuantidade.Size = new System.Drawing.Size(65, 13);
             this.labQuantidade.TabIndex = 15;
@@ -120,7 +110,7 @@
             this.txtDetalhes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDetalhes.Location = new System.Drawing.Point(98, 39);
+            this.txtDetalhes.Location = new System.Drawing.Point(98, 46);
             this.txtDetalhes.Name = "txtDetalhes";
             this.txtDetalhes.Size = new System.Drawing.Size(233, 20);
             this.txtDetalhes.TabIndex = 2;
@@ -133,7 +123,7 @@
             this.labNome.AutoSize = true;
             this.labNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labNome.ForeColor = System.Drawing.Color.Black;
-            this.labNome.Location = new System.Drawing.Point(54, 17);
+            this.labNome.Location = new System.Drawing.Point(54, 16);
             this.labNome.Name = "labNome";
             this.labNome.Size = new System.Drawing.Size(38, 13);
             this.labNome.TabIndex = 13;
@@ -147,11 +137,19 @@
             this.labDetalhes.AutoSize = true;
             this.labDetalhes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labDetalhes.ForeColor = System.Drawing.Color.Black;
-            this.labDetalhes.Location = new System.Drawing.Point(40, 43);
+            this.labDetalhes.Location = new System.Drawing.Point(40, 49);
             this.labDetalhes.Name = "labDetalhes";
             this.labDetalhes.Size = new System.Drawing.Size(52, 13);
             this.labDetalhes.TabIndex = 14;
             this.labDetalhes.Text = "Detalhes:";
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.DecimalPlaces = 2;
+            this.txtQuantidade.Location = new System.Drawing.Point(98, 79);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(120, 20);
+            this.txtQuantidade.TabIndex = 3;
             // 
             // FormCadastraProduto
             // 
@@ -163,6 +161,7 @@
             this.Text = "Cadastro";
             this.panCadastro.ResumeLayout(false);
             this.panCadastro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQuantidade)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -177,6 +176,6 @@
         private System.Windows.Forms.MaskedTextBox txtDetalhes;
         private System.Windows.Forms.Label labNome;
         private System.Windows.Forms.Label labDetalhes;
-        private System.Windows.Forms.TextBox txtQuantidade;
+        private System.Windows.Forms.NumericUpDown txtQuantidade;
     }
 }

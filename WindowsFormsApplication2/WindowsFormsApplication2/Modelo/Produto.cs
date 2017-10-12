@@ -11,13 +11,13 @@ namespace WindowsFormsApplication2
         private int id;
         private string nome;
         private string detalhes;
-        private int quantidade;
+        private double quantidade;
 
         public Produto()
         {
 
         }
-        public Produto(int id, string nome, string detalhes, int quantidade)
+        public Produto(int id, string nome, string detalhes, double quantidade)
         {
             this.Id = id;
             this.Nome = nome;
@@ -63,7 +63,7 @@ namespace WindowsFormsApplication2
             }
         }
 
-        public int Quantidade
+        public double Quantidade
         {
             get
             {

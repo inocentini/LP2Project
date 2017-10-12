@@ -42,6 +42,8 @@ namespace WindowsFormsApplication2
                 txtDetalhes.ReadOnly = true;
                 txtDetalhes.TabStop = false;
                 txtQuantidade.ReadOnly = true;
+                txtQuantidade.Increment = 0;
+                txtQuantidade.Controls[0].Visible = false;
                 txtQuantidade.TabStop = false;
                 btnCancelar.Text = "Voltar";
                 btnSalvar.Hide();
@@ -58,7 +60,7 @@ namespace WindowsFormsApplication2
             Produto p = new Produto();
             p.Nome = txtNome.Text;
             p.Detalhes = txtDetalhes.Text;
-            p.Quantidade = int.Parse(txtQuantidade.Text);
+            p.Quantidade = double.Parse(txtQuantidade.Text);
                  
             return p;
         }
@@ -102,21 +104,7 @@ namespace WindowsFormsApplication2
                 MessageBox.Show("Erro!", "Verifique se todos os campos estão preenchidos!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void txtQuantidade_TextChanged(object sender, EventArgs e)
-        {
-            if (!Regex.Match(txtQuantidade.Text, @"^[0-9]*$").Success)
-            {
-                txtQuantidade.Text = "";
-            }
-        }
-        private void txtQuantidade_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
+        
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Dispose();

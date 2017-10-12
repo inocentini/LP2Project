@@ -12,7 +12,7 @@ namespace WindowsFormsApplication2
         public void Editar(Produto p)
         {
             Database db = Database.GetInstance();
-            string qry = string.Format("UPDATE produto SET nome = '{0}', detalhes = '{1}', quantidade = {2} where id={3}", p.Nome, p.Detalhes, p.Quantidade, p.Id);
+            string qry = string.Format("UPDATE produto SET nome = '{0}', detalhes = '{1}', quantidade = {2} where id={3}", p.Nome, p.Detalhes, p.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture), p.Id);
 
             db.ExecuteNonQuery(qry);
 
@@ -32,7 +32,7 @@ namespace WindowsFormsApplication2
                 p.Id = int.Parse(dr["id"].ToString());
                 p.Nome = dr["nome"].ToString();
                 p.Detalhes = dr["detalhes"].ToString();
-                p.Quantidade = int.Parse(dr["quantidade"].ToString());
+                p.Quantidade = double.Parse(dr["quantidade"].ToString());
                 LProdutos.Add(p);
             }
             return LProdutos;
@@ -52,7 +52,7 @@ namespace WindowsFormsApplication2
                 p.Id = int.Parse(dr["id"].ToString());
                 p.Nome = dr["nome"].ToString();
                 p.Detalhes = dr["detalhes"].ToString();
-                p.Quantidade = int.Parse(dr["quantidade"].ToString());
+                p.Quantidade = Double.Parse(dr["quantidade"].ToString());
                 return p;
             }
             else
@@ -73,7 +73,7 @@ namespace WindowsFormsApplication2
         {
             Database db = Database.GetInstance();
 
-            string qry = string.Format("INSERT INTO Produto(nome,detalhes,quantidade) VALUES('{0}','{1}',{2})", p.Nome, p.Detalhes, p.Quantidade);
+            string qry = string.Format("INSERT INTO Produto(nome,detalhes,quantidade) VALUES('{0}','{1}',{2})", p.Nome, p.Detalhes, p.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture));
             db.ExecuteNonQuery(qry);
         }
     }
