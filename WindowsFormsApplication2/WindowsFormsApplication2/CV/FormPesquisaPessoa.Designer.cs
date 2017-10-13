@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPesquisaPessoa));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtFiltrar = new System.Windows.Forms.TextBox();
             this.labFiltrar = new System.Windows.Forms.Label();
@@ -145,7 +146,9 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(358, 347);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPesquisaPessoa";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Selecione uma pessoa";
             this.Load += new System.EventHandler(this.FormPesquisaPessoa_Load);

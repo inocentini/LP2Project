@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListaContas));
             this.btnRemover = new System.Windows.Forms.Button();
             this.bntDetalhes = new System.Windows.Forms.Button();
             this.bntEditar = new System.Windows.Forms.Button();
@@ -207,6 +208,7 @@
             this.Controls.Add(this.labContas);
             this.Controls.Add(this.labFiltrar);
             this.Controls.Add(this.dgvContas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormListaContas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contas";

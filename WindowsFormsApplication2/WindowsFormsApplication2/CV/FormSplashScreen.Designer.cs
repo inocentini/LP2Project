@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSplashScreen));
             this.lbTitulo = new System.Windows.Forms.Label();
             this.lbVersão = new System.Windows.Forms.Label();
             this.pbFullLoad = new System.Windows.Forms.PictureBox();
@@ -43,11 +44,11 @@
             this.lbTitulo.AutoSize = true;
             this.lbTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lbTitulo.Cursor = System.Windows.Forms.Cursors.AppStarting;
-            this.lbTitulo.Font = new System.Drawing.Font("Liberation Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitulo.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.lbTitulo.Location = new System.Drawing.Point(123, 18);
             this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(239, 36);
+            this.lbTitulo.Size = new System.Drawing.Size(244, 37);
             this.lbTitulo.TabIndex = 0;
             this.lbTitulo.Text = "House Manager";
             this.lbTitulo.Click += new System.EventHandler(this.lbTitulo_Click);
@@ -85,7 +86,7 @@
             // 
             this.tmLoad.Tick += new System.EventHandler(this.tmLoad_Tick);
             // 
-            // SplashScreen
+            // FormSplashScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -99,7 +100,8 @@
             this.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SplashScreen";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FormSplashScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SplashScreen";
             this.Load += new System.EventHandler(this.SplashScreen_Load);

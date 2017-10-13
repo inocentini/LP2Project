@@ -15,6 +15,7 @@ namespace WindowsFormsApplication2
         FormListaPessoas flp = new FormListaPessoas();
         FormListaProdutos flpr = new FormListaProdutos();
         FormListaContas flc = new FormListaContas();
+        FormAdmin fa = new FormAdmin();
 
         public FormPrincipal()
         {
@@ -22,6 +23,7 @@ namespace WindowsFormsApplication2
             flp.MdiParent = this;
             flpr.MdiParent = this;
             flc.MdiParent = this;
+            fa.MdiParent = this;
         }
 
         private void pessoaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,6 +44,11 @@ namespace WindowsFormsApplication2
         private void contaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             flc.Show();
+        }
+
+        private void áreaAdministrativaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fa.Show();
         }
     }
 }

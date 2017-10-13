@@ -64,6 +64,7 @@
             // 
             this.áreaAdministrativaToolStripMenuItem.Name = "áreaAdministrativaToolStripMenuItem";
             resources.ApplyResources(this.áreaAdministrativaToolStripMenuItem, "áreaAdministrativaToolStripMenuItem");
+            this.áreaAdministrativaToolStripMenuItem.Click += new System.EventHandler(this.áreaAdministrativaToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 

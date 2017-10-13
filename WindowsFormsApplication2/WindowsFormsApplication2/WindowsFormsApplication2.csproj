@@ -160,6 +160,9 @@
     <Compile Include="CV\FormSplashScreen.Designer.cs">
       <DependentUpon>FormSplashScreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CV\FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CV\FormCadastraPessoa.resx">
       <DependentUpon>FormCadastraPessoa.cs</DependentUpon>
     </EmbeddedResource>

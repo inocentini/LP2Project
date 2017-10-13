@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNovoLogin));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gbNovoLogin = new System.Windows.Forms.GroupBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
@@ -218,10 +219,12 @@
             this.ClientSize = new System.Drawing.Size(383, 278);
             this.Controls.Add(this.gbNovoLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(400, 380);
             this.MinimizeBox = false;
             this.Name = "FormNovoLogin";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Novo usuário";
             this.gbNovoLogin.ResumeLayout(false);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastraProduto));
             this.panCadastro = new System.Windows.Forms.Panel();
             this.txtQuantidade = new System.Windows.Forms.NumericUpDown();
             this.txtNome = new System.Windows.Forms.MaskedTextBox();
@@ -162,7 +163,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 191);
             this.Controls.Add(this.panCadastro);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCadastraProduto";
+            this.ShowInTaskbar = false;
             this.Text = "Cadastro";
             this.panCadastro.ResumeLayout(false);
             this.panCadastro.PerformLayout();
