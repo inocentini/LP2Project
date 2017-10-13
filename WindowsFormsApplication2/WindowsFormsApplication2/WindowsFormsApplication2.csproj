@@ -71,6 +71,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modelo\CompraEVenda.cs" />
+    <Compile Include="DAO\CompraEVendaDAO.cs" />
     <Compile Include="CV\FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +123,13 @@
       <DependentUpon>FormListaProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\ProdutoDAO.cs" />
+    <Compile Include="CV\FormEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormEstoque.Designer.cs">
+      <DependentUpon>FormEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\ProdutoVenda.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -168,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormCadastraProduto.resx">
       <DependentUpon>FormCadastraProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormEstoque.resx">
+      <DependentUpon>FormEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormListaPessoas.resx">
       <DependentUpon>FormListaPessoas.cs</DependentUpon>

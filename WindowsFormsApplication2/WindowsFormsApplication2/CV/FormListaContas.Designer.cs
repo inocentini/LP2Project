@@ -140,13 +140,13 @@
             this.colValor,
             this.colVencimento,
             this.colResponsavel});
-            this.dgvContas.Location = new System.Drawing.Point(2, 68);
+            this.dgvContas.Location = new System.Drawing.Point(0, 68);
             this.dgvContas.MultiSelect = false;
             this.dgvContas.Name = "dgvContas";
             this.dgvContas.ReadOnly = true;
             this.dgvContas.RowHeadersVisible = false;
             this.dgvContas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContas.Size = new System.Drawing.Size(706, 150);
+            this.dgvContas.Size = new System.Drawing.Size(709, 150);
             this.dgvContas.TabIndex = 2;
             // 
             // colID

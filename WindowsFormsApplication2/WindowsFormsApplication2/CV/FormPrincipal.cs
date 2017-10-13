@@ -50,5 +50,10 @@ namespace WindowsFormsApplication2
         {
             fa.Show();
         }
+
+        private void FormPrincipal_ResizeEnd(object sender, EventArgs e)
+        {
+            this.Refresh();
+        }
     }
 }

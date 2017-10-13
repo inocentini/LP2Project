@@ -36,6 +36,8 @@ namespace WindowsFormsApplication2
             sql.AppendLine("CREATE TABLE IF NOT EXISTS Login([nome] varchar(16) PRIMARY KEY, [senha] varchar(256));");
             sql.AppendLine("CREATE TABLE IF NOT EXISTS Conta([id] integer PRIMARY KEY autoincrement, [nome] varchar(64), [detalhes] varchar(128), [valor] float, [vencimento] date, [cpfresponsavel] varchar(14), foreign key(cpfresponsavel) references pessoa(cpf));");
             sql.AppendLine("CREATE TABLE IF NOT EXISTS Produto([id] integer PRIMARY KEY autoincrement, [nome] varchar(64), [detalhes] varchar(128), [quantidade] float);");
+            sql.AppendLine("CREATE TABLE IF NOT EXISTS CompraEVenda([id] integer PRIMARY KEY autoincrement, [data] date, [valor] float, [int] compra);");
+            sql.AppendLine("CREATE TABLE IF NOT EXISTS CompraEVenda_Produto([idcompra] integer, [idproduto] integer, [quantidade] float, PRIMARY KEY(idcompra,idproduto), FOREIGN KEY(idcompra) REFERENCES CompraEVenda(id) ON DELETE CASCADE, FOREIGN KEY(idproduto) REFERENCES Produto(id) ON DELETE CASCADE);");
             SQLiteCommand cmd = new SQLiteCommand(sql.ToString(), con);
             cmd.ExecuteNonQuery();
         }
