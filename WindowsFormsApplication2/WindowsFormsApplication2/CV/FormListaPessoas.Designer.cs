@@ -40,7 +40,9 @@
             this.bntEditar = new System.Windows.Forms.Button();
             this.bntDetalhes = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
+            this.pnlConteudo = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoas)).BeginInit();
+            this.pnlConteudo.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvPessoas
@@ -48,7 +50,8 @@
             this.dgvPessoas.AllowUserToAddRows = false;
             this.dgvPessoas.AllowUserToDeleteRows = false;
             this.dgvPessoas.AllowUserToResizeRows = false;
-            this.dgvPessoas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvPessoas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPessoas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPessoas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -56,12 +59,14 @@
             this.colNome,
             this.colEmail,
             this.colTelefone});
-            this.dgvPessoas.Location = new System.Drawing.Point(1, 66);
+            this.dgvPessoas.Location = new System.Drawing.Point(0, 75);
+            this.dgvPessoas.MultiSelect = false;
             this.dgvPessoas.Name = "dgvPessoas";
             this.dgvPessoas.ReadOnly = true;
             this.dgvPessoas.RowHeadersVisible = false;
+            this.dgvPessoas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPessoas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPessoas.Size = new System.Drawing.Size(479, 150);
+            this.dgvPessoas.Size = new System.Drawing.Size(719, 162);
             this.dgvPessoas.TabIndex = 2;
             // 
             // colCPF
@@ -100,7 +105,7 @@
             this.labFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labFiltrar.AutoSize = true;
-            this.labFiltrar.Location = new System.Drawing.Point(27, 9);
+            this.labFiltrar.Location = new System.Drawing.Point(26, 18);
             this.labFiltrar.Name = "labFiltrar";
             this.labFiltrar.Size = new System.Drawing.Size(35, 13);
             this.labFiltrar.TabIndex = 1;
@@ -109,7 +114,7 @@
             // labPessoas
             // 
             this.labPessoas.AutoSize = true;
-            this.labPessoas.Location = new System.Drawing.Point(13, 47);
+            this.labPessoas.Location = new System.Drawing.Point(12, 56);
             this.labPessoas.Name = "labPessoas";
             this.labPessoas.Size = new System.Drawing.Size(50, 13);
             this.labPessoas.TabIndex = 2;
@@ -119,17 +124,16 @@
             // 
             this.txtFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFiltrar.Location = new System.Drawing.Point(68, 6);
+            this.txtFiltrar.Location = new System.Drawing.Point(67, 15);
             this.txtFiltrar.Name = "txtFiltrar";
-            this.txtFiltrar.Size = new System.Drawing.Size(402, 20);
+            this.txtFiltrar.Size = new System.Drawing.Size(642, 20);
             this.txtFiltrar.TabIndex = 1;
             this.txtFiltrar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFiltrar_KeyUp);
             // 
             // bntAdd
             // 
-            this.bntAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bntAdd.Location = new System.Drawing.Point(80, 227);
+            this.bntAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.bntAdd.Location = new System.Drawing.Point(199, 248);
             this.bntAdd.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntAdd.Name = "bntAdd";
             this.bntAdd.Size = new System.Drawing.Size(75, 23);
@@ -140,9 +144,8 @@
             // 
             // bntEditar
             // 
-            this.bntEditar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bntEditar.Location = new System.Drawing.Point(161, 227);
+            this.bntEditar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.bntEditar.Location = new System.Drawing.Point(280, 248);
             this.bntEditar.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntEditar.Name = "bntEditar";
             this.bntEditar.Size = new System.Drawing.Size(75, 23);
@@ -153,9 +156,8 @@
             // 
             // bntDetalhes
             // 
-            this.bntDetalhes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bntDetalhes.Location = new System.Drawing.Point(242, 227);
+            this.bntDetalhes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.bntDetalhes.Location = new System.Drawing.Point(361, 248);
             this.bntDetalhes.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntDetalhes.Name = "bntDetalhes";
             this.bntDetalhes.Size = new System.Drawing.Size(75, 23);
@@ -166,9 +168,8 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemover.Location = new System.Drawing.Point(323, 227);
+            this.btnRemover.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnRemover.Location = new System.Drawing.Point(442, 248);
             this.btnRemover.MaximumSize = new System.Drawing.Size(75, 23);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 23);
@@ -177,28 +178,39 @@
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
+            // pnlConteudo
+            // 
+            this.pnlConteudo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlConteudo.Controls.Add(this.txtFiltrar);
+            this.pnlConteudo.Controls.Add(this.btnRemover);
+            this.pnlConteudo.Controls.Add(this.dgvPessoas);
+            this.pnlConteudo.Controls.Add(this.bntDetalhes);
+            this.pnlConteudo.Controls.Add(this.labFiltrar);
+            this.pnlConteudo.Controls.Add(this.bntEditar);
+            this.pnlConteudo.Controls.Add(this.labPessoas);
+            this.pnlConteudo.Controls.Add(this.bntAdd);
+            this.pnlConteudo.Location = new System.Drawing.Point(2, 2);
+            this.pnlConteudo.Name = "pnlConteudo";
+            this.pnlConteudo.Size = new System.Drawing.Size(719, 289);
+            this.pnlConteudo.TabIndex = 7;
+            // 
             // FormListaPessoas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 261);
-            this.Controls.Add(this.btnRemover);
-            this.Controls.Add(this.bntDetalhes);
-            this.Controls.Add(this.bntEditar);
-            this.Controls.Add(this.bntAdd);
-            this.Controls.Add(this.txtFiltrar);
-            this.Controls.Add(this.labPessoas);
-            this.Controls.Add(this.labFiltrar);
-            this.Controls.Add(this.dgvPessoas);
-            this.MaximumSize = new System.Drawing.Size(700, 300);
-            this.MinimizeBox = false;
+            this.ClientSize = new System.Drawing.Size(722, 294);
+            this.Controls.Add(this.pnlConteudo);
             this.Name = "FormListaPessoas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pessoas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormListaPessoas_FormClosing);
             this.Load += new System.EventHandler(this.FormListaPessoas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoas)).EndInit();
+            this.pnlConteudo.ResumeLayout(false);
+            this.pnlConteudo.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -216,5 +228,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTelefone;
+        private System.Windows.Forms.Panel pnlConteudo;
     }
 }

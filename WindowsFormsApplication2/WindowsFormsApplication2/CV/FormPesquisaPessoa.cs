@@ -12,9 +12,9 @@ namespace WindowsFormsApplication2
 {
     public partial class FormPesquisaPessoa : Form
     {
-        private string selecionado = "";
+        private Pessoa selecionado;
 
-        public string Selecionado
+        public Pessoa Selecionado
         {
             get
             {
@@ -85,7 +85,7 @@ namespace WindowsFormsApplication2
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            Selecionado = selecao().Cpf;
+            Selecionado = selecao();
             this.Hide();
         }
 

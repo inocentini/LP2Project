@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panCadastro = new System.Windows.Forms.Panel();
+            this.txtQuantidade = new System.Windows.Forms.NumericUpDown();
             this.txtNome = new System.Windows.Forms.MaskedTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -36,7 +37,6 @@
             this.txtDetalhes = new System.Windows.Forms.MaskedTextBox();
             this.labNome = new System.Windows.Forms.Label();
             this.labDetalhes = new System.Windows.Forms.Label();
-            this.txtQuantidade = new System.Windows.Forms.NumericUpDown();
             this.panCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuantidade)).BeginInit();
             this.SuspendLayout();
@@ -56,8 +56,21 @@
             this.panCadastro.Controls.Add(this.labDetalhes);
             this.panCadastro.Location = new System.Drawing.Point(12, 12);
             this.panCadastro.Name = "panCadastro";
-            this.panCadastro.Size = new System.Drawing.Size(370, 151);
+            this.panCadastro.Size = new System.Drawing.Size(370, 167);
             this.panCadastro.TabIndex = 28;
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.DecimalPlaces = 2;
+            this.txtQuantidade.Location = new System.Drawing.Point(98, 69);
+            this.txtQuantidade.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(120, 20);
+            this.txtQuantidade.TabIndex = 3;
             // 
             // txtNome
             // 
@@ -72,7 +85,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelar.Location = new System.Drawing.Point(235, 104);
+            this.btnCancelar.Location = new System.Drawing.Point(177, 112);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 36);
             this.btnCancelar.TabIndex = 5;
@@ -83,7 +96,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSalvar.Location = new System.Drawing.Point(98, 104);
+            this.btnSalvar.Location = new System.Drawing.Point(66, 112);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 36);
             this.btnSalvar.TabIndex = 4;
@@ -99,7 +112,7 @@
             this.labQuantidade.AutoSize = true;
             this.labQuantidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labQuantidade.ForeColor = System.Drawing.Color.Black;
-            this.labQuantidade.Location = new System.Drawing.Point(27, 81);
+            this.labQuantidade.Location = new System.Drawing.Point(27, 73);
             this.labQuantidade.Name = "labQuantidade";
             this.labQuantidade.Size = new System.Drawing.Size(65, 13);
             this.labQuantidade.TabIndex = 15;
@@ -110,7 +123,7 @@
             this.txtDetalhes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDetalhes.Location = new System.Drawing.Point(98, 46);
+            this.txtDetalhes.Location = new System.Drawing.Point(98, 41);
             this.txtDetalhes.Name = "txtDetalhes";
             this.txtDetalhes.Size = new System.Drawing.Size(233, 20);
             this.txtDetalhes.TabIndex = 2;
@@ -123,7 +136,7 @@
             this.labNome.AutoSize = true;
             this.labNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labNome.ForeColor = System.Drawing.Color.Black;
-            this.labNome.Location = new System.Drawing.Point(54, 16);
+            this.labNome.Location = new System.Drawing.Point(54, 17);
             this.labNome.Name = "labNome";
             this.labNome.Size = new System.Drawing.Size(38, 13);
             this.labNome.TabIndex = 13;
@@ -137,25 +150,17 @@
             this.labDetalhes.AutoSize = true;
             this.labDetalhes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labDetalhes.ForeColor = System.Drawing.Color.Black;
-            this.labDetalhes.Location = new System.Drawing.Point(40, 49);
+            this.labDetalhes.Location = new System.Drawing.Point(40, 45);
             this.labDetalhes.Name = "labDetalhes";
             this.labDetalhes.Size = new System.Drawing.Size(52, 13);
             this.labDetalhes.TabIndex = 14;
             this.labDetalhes.Text = "Detalhes:";
             // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.DecimalPlaces = 2;
-            this.txtQuantidade.Location = new System.Drawing.Point(98, 79);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(120, 20);
-            this.txtQuantidade.TabIndex = 3;
-            // 
             // FormCadastraProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 175);
+            this.ClientSize = new System.Drawing.Size(394, 191);
             this.Controls.Add(this.panCadastro);
             this.Name = "FormCadastraProduto";
             this.Text = "Cadastro";

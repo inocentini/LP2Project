@@ -43,9 +43,9 @@ namespace WindowsFormsApplication2
                 Login l = GetDTO();
                 if (database.Login(l))
                 {
-                    FormListaPessoas wp = new FormListaPessoas();
+                    FormPrincipal fp = new FormPrincipal();
                     this.Hide();
-                    wp.ShowDialog();
+                    fp.ShowDialog();
                     Dispose();
                 }
                 else
@@ -64,18 +64,6 @@ namespace WindowsFormsApplication2
         {
             FormNovoLogin newlogin = new FormNovoLogin();
             newlogin.ShowDialog(this);
-            /*if (IsComplete())
-            {
-                LoginDAO database = new LoginDAO();
-
-                Login l = GetDTO();
-                database.Salvar(l);
-            }
-            else
-            {
-                MessageBox.Show("Erro! Login ou senha incompletos!", "Informe seu login e sua senha.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            */
         }
     }
 }

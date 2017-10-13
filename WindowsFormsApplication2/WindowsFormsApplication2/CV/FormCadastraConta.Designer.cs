@@ -39,18 +39,19 @@
             this.labResponsavel = new System.Windows.Forms.Label();
             this.dtpVencimento = new System.Windows.Forms.DateTimePicker();
             this.panCadastro = new System.Windows.Forms.Panel();
+            this.txtValor = new System.Windows.Forms.NumericUpDown();
             this.txtVencimento = new System.Windows.Forms.TextBox();
             this.labReais = new System.Windows.Forms.Label();
-            this.txtValor = new System.Windows.Forms.MaskedTextBox();
             this.txtResponsavel = new System.Windows.Forms.TextBox();
             this.btnResponsavel = new System.Windows.Forms.Button();
             this.panCadastro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtValor)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelar.Location = new System.Drawing.Point(240, 160);
+            this.btnCancelar.Location = new System.Drawing.Point(226, 160);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 36);
             this.btnCancelar.TabIndex = 7;
@@ -61,7 +62,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSalvar.Location = new System.Drawing.Point(96, 160);
+            this.btnSalvar.Location = new System.Drawing.Point(82, 160);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 36);
             this.btnSalvar.TabIndex = 6;
@@ -76,7 +77,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labDetalhes.AutoSize = true;
             this.labDetalhes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labDetalhes.ForeColor = System.Drawing.Color.Black;
+            this.labDetalhes.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labDetalhes.Location = new System.Drawing.Point(40, 43);
             this.labDetalhes.Name = "labDetalhes";
             this.labDetalhes.Size = new System.Drawing.Size(52, 13);
@@ -90,7 +91,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNome.Location = new System.Drawing.Point(98, 13);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(100, 20);
+            this.txtNome.Size = new System.Drawing.Size(73, 20);
             this.txtNome.TabIndex = 1;
             // 
             // labNome
@@ -100,7 +101,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labNome.AutoSize = true;
             this.labNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labNome.ForeColor = System.Drawing.Color.Black;
+            this.labNome.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labNome.Location = new System.Drawing.Point(54, 17);
             this.labNome.Name = "labNome";
             this.labNome.Size = new System.Drawing.Size(38, 13);
@@ -114,7 +115,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDetalhes.Location = new System.Drawing.Point(98, 39);
             this.txtDetalhes.Name = "txtDetalhes";
-            this.txtDetalhes.Size = new System.Drawing.Size(235, 20);
+            this.txtDetalhes.Size = new System.Drawing.Size(208, 20);
             this.txtDetalhes.TabIndex = 2;
             // 
             // labValor
@@ -124,7 +125,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labValor.AutoSize = true;
             this.labValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labValor.ForeColor = System.Drawing.Color.Black;
+            this.labValor.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labValor.Location = new System.Drawing.Point(40, 70);
             this.labValor.Name = "labValor";
             this.labValor.Size = new System.Drawing.Size(34, 13);
@@ -138,7 +139,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labVencimento.AutoSize = true;
             this.labVencimento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labVencimento.ForeColor = System.Drawing.Color.Black;
+            this.labVencimento.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labVencimento.Location = new System.Drawing.Point(26, 95);
             this.labVencimento.Name = "labVencimento";
             this.labVencimento.Size = new System.Drawing.Size(66, 13);
@@ -152,7 +153,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labResponsavel.AutoSize = true;
             this.labResponsavel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labResponsavel.ForeColor = System.Drawing.Color.Black;
+            this.labResponsavel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labResponsavel.Location = new System.Drawing.Point(20, 122);
             this.labResponsavel.Name = "labResponsavel";
             this.labResponsavel.Size = new System.Drawing.Size(72, 13);
@@ -167,7 +168,7 @@
             this.dtpVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpVencimento.Location = new System.Drawing.Point(98, 91);
             this.dtpVencimento.Name = "dtpVencimento";
-            this.dtpVencimento.Size = new System.Drawing.Size(100, 20);
+            this.dtpVencimento.Size = new System.Drawing.Size(101, 20);
             this.dtpVencimento.TabIndex = 4;
             // 
             // panCadastro
@@ -175,10 +176,9 @@
             this.panCadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panCadastro.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources._240_F_81814151_BuyTjihhQ7ad76dgCgaXu4htNbVufT6g;
+            this.panCadastro.Controls.Add(this.txtValor);
             this.panCadastro.Controls.Add(this.txtVencimento);
             this.panCadastro.Controls.Add(this.labReais);
-            this.panCadastro.Controls.Add(this.txtValor);
             this.panCadastro.Controls.Add(this.txtResponsavel);
             this.panCadastro.Controls.Add(this.btnResponsavel);
             this.panCadastro.Controls.Add(this.txtNome);
@@ -193,8 +193,21 @@
             this.panCadastro.Controls.Add(this.labDetalhes);
             this.panCadastro.Location = new System.Drawing.Point(12, 12);
             this.panCadastro.Name = "panCadastro";
-            this.panCadastro.Size = new System.Drawing.Size(372, 213);
+            this.panCadastro.Size = new System.Drawing.Size(345, 198);
             this.panCadastro.TabIndex = 27;
+            // 
+            // txtValor
+            // 
+            this.txtValor.DecimalPlaces = 2;
+            this.txtValor.Location = new System.Drawing.Point(98, 66);
+            this.txtValor.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(120, 20);
+            this.txtValor.TabIndex = 3;
             // 
             // txtVencimento
             // 
@@ -204,7 +217,7 @@
             this.txtVencimento.Location = new System.Drawing.Point(98, 91);
             this.txtVencimento.Name = "txtVencimento";
             this.txtVencimento.ReadOnly = true;
-            this.txtVencimento.Size = new System.Drawing.Size(100, 20);
+            this.txtVencimento.Size = new System.Drawing.Size(101, 20);
             this.txtVencimento.TabIndex = 31;
             this.txtVencimento.TabStop = false;
             this.txtVencimento.Visible = false;
@@ -213,23 +226,12 @@
             // 
             this.labReais.AutoSize = true;
             this.labReais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labReais.ForeColor = System.Drawing.Color.Black;
-            this.labReais.Location = new System.Drawing.Point(77, 70);
+            this.labReais.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labReais.Location = new System.Drawing.Point(77, 68);
             this.labReais.Name = "labReais";
             this.labReais.Size = new System.Drawing.Size(21, 13);
             this.labReais.TabIndex = 30;
             this.labReais.Text = "R$";
-            // 
-            // txtValor
-            // 
-            this.txtValor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtValor.Location = new System.Drawing.Point(98, 66);
-            this.txtValor.Mask = "0000,00";
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(73, 20);
-            this.txtValor.TabIndex = 3;
             // 
             // txtResponsavel
             // 
@@ -238,14 +240,14 @@
             this.txtResponsavel.Location = new System.Drawing.Point(98, 118);
             this.txtResponsavel.Name = "txtResponsavel";
             this.txtResponsavel.ReadOnly = true;
-            this.txtResponsavel.Size = new System.Drawing.Size(153, 20);
+            this.txtResponsavel.Size = new System.Drawing.Size(126, 20);
             this.txtResponsavel.TabIndex = 8;
             this.txtResponsavel.TabStop = false;
             // 
             // btnResponsavel
             // 
             this.btnResponsavel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnResponsavel.Location = new System.Drawing.Point(258, 117);
+            this.btnResponsavel.Location = new System.Drawing.Point(231, 117);
             this.btnResponsavel.Name = "btnResponsavel";
             this.btnResponsavel.Size = new System.Drawing.Size(75, 23);
             this.btnResponsavel.TabIndex = 5;
@@ -257,14 +259,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources._240_F_81814151_BuyTjihhQ7ad76dgCgaXu4htNbVufT6g;
-            this.ClientSize = new System.Drawing.Size(396, 238);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(369, 222);
             this.Controls.Add(this.panCadastro);
             this.MinimizeBox = false;
             this.Name = "FormCadastraConta";
             this.Text = "Cadastro";
             this.panCadastro.ResumeLayout(false);
             this.panCadastro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtValor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -284,8 +287,8 @@
         private System.Windows.Forms.Panel panCadastro;
         private System.Windows.Forms.TextBox txtResponsavel;
         private System.Windows.Forms.Button btnResponsavel;
-        private System.Windows.Forms.MaskedTextBox txtValor;
         private System.Windows.Forms.Label labReais;
         private System.Windows.Forms.TextBox txtVencimento;
+        private System.Windows.Forms.NumericUpDown txtValor;
     }
 }

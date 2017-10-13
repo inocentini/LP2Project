@@ -69,6 +69,7 @@
             this.labFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labFiltrar.AutoSize = true;
+            this.labFiltrar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labFiltrar.Location = new System.Drawing.Point(5, 15);
             this.labFiltrar.Name = "labFiltrar";
             this.labFiltrar.Size = new System.Drawing.Size(35, 13);
@@ -98,6 +99,7 @@
             // labPessoas
             // 
             this.labPessoas.AutoSize = true;
+            this.labPessoas.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labPessoas.Location = new System.Drawing.Point(3, 50);
             this.labPessoas.Name = "labPessoas";
             this.labPessoas.Size = new System.Drawing.Size(50, 13);
@@ -140,9 +142,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(358, 347);
             this.Controls.Add(this.panel1);
             this.Name = "FormPesquisaPessoa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Selecione uma pessoa";
             this.Load += new System.EventHandler(this.FormPesquisaPessoa_Load);
             this.panel1.ResumeLayout(false);

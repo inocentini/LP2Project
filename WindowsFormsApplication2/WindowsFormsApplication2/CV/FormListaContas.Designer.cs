@@ -47,8 +47,7 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRemover.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnRemover.Location = new System.Drawing.Point(447, 241);
             this.btnRemover.MaximumSize = new System.Drawing.Size(75, 23);
             this.btnRemover.Name = "btnRemover";
@@ -60,8 +59,7 @@
             // 
             // bntDetalhes
             // 
-            this.bntDetalhes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntDetalhes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.bntDetalhes.Location = new System.Drawing.Point(366, 241);
             this.bntDetalhes.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntDetalhes.Name = "bntDetalhes";
@@ -73,8 +71,7 @@
             // 
             // bntEditar
             // 
-            this.bntEditar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntEditar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.bntEditar.Location = new System.Drawing.Point(285, 241);
             this.bntEditar.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntEditar.Name = "bntEditar";
@@ -86,8 +83,7 @@
             // 
             // bntAdd
             // 
-            this.bntAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.bntAdd.Location = new System.Drawing.Point(204, 241);
             this.bntAdd.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntAdd.Name = "bntAdd";
@@ -132,7 +128,8 @@
             this.dgvContas.AllowUserToAddRows = false;
             this.dgvContas.AllowUserToDeleteRows = false;
             this.dgvContas.AllowUserToResizeRows = false;
-            this.dgvContas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvContas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvContas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvContas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -143,6 +140,7 @@
             this.colVencimento,
             this.colResponsavel});
             this.dgvContas.Location = new System.Drawing.Point(2, 68);
+            this.dgvContas.MultiSelect = false;
             this.dgvContas.Name = "dgvContas";
             this.dgvContas.ReadOnly = true;
             this.dgvContas.RowHeadersVisible = false;
@@ -210,7 +208,9 @@
             this.Controls.Add(this.labFiltrar);
             this.Controls.Add(this.dgvContas);
             this.Name = "FormListaContas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormListaContas_FormClosing);
             this.Load += new System.EventHandler(this.FromListaContas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContas)).EndInit();
             this.ResumeLayout(false);

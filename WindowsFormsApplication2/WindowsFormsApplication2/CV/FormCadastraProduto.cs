@@ -43,7 +43,7 @@ namespace WindowsFormsApplication2
                 txtDetalhes.TabStop = false;
                 txtQuantidade.ReadOnly = true;
                 txtQuantidade.Increment = 0;
-                txtQuantidade.Controls[0].Visible = false;
+                txtQuantidade.Controls[0].Enabled = false;
                 txtQuantidade.TabStop = false;
                 btnCancelar.Text = "Voltar";
                 btnSalvar.Hide();

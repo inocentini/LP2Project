@@ -45,8 +45,7 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRemover.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnRemover.Location = new System.Drawing.Point(442, 242);
             this.btnRemover.MaximumSize = new System.Drawing.Size(75, 23);
             this.btnRemover.Name = "btnRemover";
@@ -58,8 +57,7 @@
             // 
             // bntDetalhes
             // 
-            this.bntDetalhes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntDetalhes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.bntDetalhes.Location = new System.Drawing.Point(361, 242);
             this.bntDetalhes.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntDetalhes.Name = "bntDetalhes";
@@ -71,8 +69,7 @@
             // 
             // bntEditar
             // 
-            this.bntEditar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntEditar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.bntEditar.Location = new System.Drawing.Point(280, 242);
             this.bntEditar.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntEditar.Name = "bntEditar";
@@ -84,8 +81,7 @@
             // 
             // bntAdd
             // 
-            this.bntAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.bntAdd.Location = new System.Drawing.Point(199, 242);
             this.bntAdd.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntAdd.Name = "bntAdd";
@@ -130,7 +126,8 @@
             this.dgvProdutos.AllowUserToAddRows = false;
             this.dgvProdutos.AllowUserToDeleteRows = false;
             this.dgvProdutos.AllowUserToResizeRows = false;
-            this.dgvProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -139,6 +136,7 @@
             this.colDetalhes,
             this.colValor});
             this.dgvProdutos.Location = new System.Drawing.Point(-3, 69);
+            this.dgvProdutos.MultiSelect = false;
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.ReadOnly = true;
             this.dgvProdutos.RowHeadersVisible = false;
@@ -191,7 +189,9 @@
             this.Controls.Add(this.labFiltrar);
             this.Controls.Add(this.dgvProdutos);
             this.Name = "FormListaProdutos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produtos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormListaProdutos_FormClosing);
             this.Load += new System.EventHandler(this.FromListaProdutos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.ResumeLayout(false);

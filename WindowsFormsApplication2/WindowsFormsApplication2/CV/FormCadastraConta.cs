@@ -14,6 +14,7 @@ namespace WindowsFormsApplication2
     {
         private bool editar = new bool();
         private int id = new int();
+        private Pessoa resp = new Pessoa();
 
         public bool Editar
         {
@@ -42,6 +43,8 @@ namespace WindowsFormsApplication2
                 txtDetalhes.TabStop = false;
                 txtValor.ReadOnly = true;
                 txtValor.TabStop = false;
+                txtValor.Increment = 0;
+                txtValor.Controls[0].Enabled = false;
                 dtpVencimento.Hide();
                 btnResponsavel.Hide();
                 txtVencimento.Visible = true;
@@ -61,10 +64,10 @@ namespace WindowsFormsApplication2
             Conta c = new Conta();
             c.Nome = txtNome.Text;
             c.Detalhes = txtDetalhes.Text;
-            c.Valor = double.Parse(txtValor.Text,System.Globalization.CultureInfo.InvariantCulture);
+            c.Valor = double.Parse(txtValor.Text);
             c.Vencimento = dtpVencimento.Value;
             PessoaDAO dbp = new PessoaDAO();
-            c.Responsavel = dbp.Read(txtResponsavel.Text);
+            c.Responsavel = resp;
 
             return c;
         }
@@ -75,7 +78,7 @@ namespace WindowsFormsApplication2
             txtDetalhes.Text = c.Detalhes;
             txtValor.Text = c.Valor.ToString();
             dtpVencimento.Value = c.Vencimento;
-            txtResponsavel.Text = c.Responsavel.Cpf;
+            txtResponsavel.Text = c.Responsavel.Nome;
         }
 
         private bool IsComplete()
@@ -120,10 +123,10 @@ namespace WindowsFormsApplication2
         {
             FormPesquisaPessoa pesquisaResponsavel = new FormPesquisaPessoa();
             pesquisaResponsavel.ShowDialog(this);
-            string cpfresp = pesquisaResponsavel.Selecionado;
-            if(cpfresp != "")
+            resp = pesquisaResponsavel.Selecionado;
+            if(resp != null)
             {
-                txtResponsavel.Text = cpfresp;
+                txtResponsavel.Text = resp.Nome;
             }
         }
 

@@ -39,14 +39,19 @@
             this.txtEmail = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // labNome
             // 
-            this.labNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labNome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labNome.AutoSize = true;
-            this.labNome.Location = new System.Drawing.Point(20, 34);
+            this.labNome.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labNome.Location = new System.Drawing.Point(26, 47);
             this.labNome.Name = "labNome";
             this.labNome.Size = new System.Drawing.Size(38, 13);
             this.labNome.TabIndex = 0;
@@ -54,9 +59,12 @@
             // 
             // labCPF
             // 
-            this.labCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labCPF.AutoSize = true;
-            this.labCPF.Location = new System.Drawing.Point(25, 10);
+            this.labCPF.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labCPF.Location = new System.Drawing.Point(34, 16);
             this.labCPF.Name = "labCPF";
             this.labCPF.Size = new System.Drawing.Size(30, 13);
             this.labCPF.TabIndex = 1;
@@ -64,9 +72,12 @@
             // 
             // labEmail
             // 
-            this.labEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labEmail.AutoSize = true;
-            this.labEmail.Location = new System.Drawing.Point(20, 68);
+            this.labEmail.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labEmail.Location = new System.Drawing.Point(29, 78);
             this.labEmail.Name = "labEmail";
             this.labEmail.Size = new System.Drawing.Size(35, 13);
             this.labEmail.TabIndex = 2;
@@ -74,8 +85,8 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalvar.Location = new System.Drawing.Point(77, 142);
+            this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSalvar.Location = new System.Drawing.Point(72, 151);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 36);
             this.btnSalvar.TabIndex = 5;
@@ -85,8 +96,8 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(198, 142);
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancelar.Location = new System.Drawing.Point(193, 151);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 36);
             this.btnCancelar.TabIndex = 6;
@@ -96,9 +107,12 @@
             // 
             // labTelefone
             // 
-            this.labTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labTelefone.AutoSize = true;
-            this.labTelefone.Location = new System.Drawing.Point(17, 96);
+            this.labTelefone.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labTelefone.Location = new System.Drawing.Point(12, 109);
             this.labTelefone.Name = "labTelefone";
             this.labTelefone.Size = new System.Drawing.Size(52, 13);
             this.labTelefone.TabIndex = 8;
@@ -106,8 +120,10 @@
             // 
             // txtCPF
             // 
-            this.txtCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCPF.Location = new System.Drawing.Point(77, 3);
+            this.txtCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCPF.Location = new System.Drawing.Point(72, 12);
             this.txtCPF.Mask = "000,000,000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(100, 20);
@@ -115,24 +131,30 @@
             // 
             // txtNome
             // 
-            this.txtNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNome.Location = new System.Drawing.Point(77, 31);
+            this.txtNome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNome.Location = new System.Drawing.Point(72, 43);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(235, 20);
             this.txtNome.TabIndex = 2;
             // 
             // txtEmail
             // 
-            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmail.Location = new System.Drawing.Point(77, 61);
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmail.Location = new System.Drawing.Point(72, 74);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
             this.txtEmail.TabIndex = 3;
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTelefone.Location = new System.Drawing.Point(77, 96);
+            this.txtTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTelefone.Location = new System.Drawing.Point(72, 105);
             this.txtTelefone.Mask = "(99) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(100, 20);
@@ -140,36 +162,46 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtCPF);
-            this.panel1.Controls.Add(this.btnCancelar);
-            this.panel1.Controls.Add(this.txtTelefone);
-            this.panel1.Controls.Add(this.btnSalvar);
-            this.panel1.Controls.Add(this.labCPF);
-            this.panel1.Controls.Add(this.txtEmail);
-            this.panel1.Controls.Add(this.labNome);
-            this.panel1.Controls.Add(this.txtNome);
-            this.panel1.Controls.Add(this.labEmail);
-            this.panel1.Controls.Add(this.labTelefone);
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 213);
+            this.panel1.Size = new System.Drawing.Size(342, 220);
             this.panel1.TabIndex = 13;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.txtCPF);
+            this.panel2.Controls.Add(this.labTelefone);
+            this.panel2.Controls.Add(this.btnCancelar);
+            this.panel2.Controls.Add(this.labEmail);
+            this.panel2.Controls.Add(this.txtTelefone);
+            this.panel2.Controls.Add(this.txtNome);
+            this.panel2.Controls.Add(this.btnSalvar);
+            this.panel2.Controls.Add(this.labNome);
+            this.panel2.Controls.Add(this.labCPF);
+            this.panel2.Controls.Add(this.txtEmail);
+            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(317, 199);
+            this.panel2.TabIndex = 9;
             // 
             // FormCadastraPessoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 213);
+            this.BackColor = System.Drawing.Color.LightSlateGray;
+            this.ClientSize = new System.Drawing.Size(342, 220);
             this.Controls.Add(this.panel1);
-            this.MaximumSize = new System.Drawing.Size(416, 252);
             this.MinimizeBox = false;
             this.Name = "FormCadastraPessoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro";
             this.Load += new System.EventHandler(this.FormCadastraPessoa_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -187,6 +219,7 @@
         private System.Windows.Forms.MaskedTextBox txtEmail;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

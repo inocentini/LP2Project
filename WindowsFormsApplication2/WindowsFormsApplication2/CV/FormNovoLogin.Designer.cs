@@ -52,7 +52,6 @@
             this.gbNovoLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbNovoLogin.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.O7MF5N0;
             this.gbNovoLogin.Controls.Add(this.maskedTextBox2);
             this.gbNovoLogin.Controls.Add(this.txtUser);
             this.gbNovoLogin.Controls.Add(this.lbSenha);
@@ -68,9 +67,9 @@
             this.gbNovoLogin.Controls.Add(this.btnCancelar);
             this.gbNovoLogin.Controls.Add(this.btnSalvar);
             this.gbNovoLogin.ForeColor = System.Drawing.SystemColors.Control;
-            this.gbNovoLogin.Location = new System.Drawing.Point(4, 12);
+            this.gbNovoLogin.Location = new System.Drawing.Point(7, 12);
             this.gbNovoLogin.Name = "gbNovoLogin";
-            this.gbNovoLogin.Size = new System.Drawing.Size(355, 289);
+            this.gbNovoLogin.Size = new System.Drawing.Size(367, 254);
             this.gbNovoLogin.TabIndex = 39;
             this.gbNovoLogin.TabStop = false;
             this.gbNovoLogin.Text = "Novo Usuário";
@@ -190,40 +189,41 @@
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelar.Location = new System.Drawing.Point(195, 228);
+            this.btnCancelar.Location = new System.Drawing.Point(195, 210);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(96, 36);
+            this.btnCancelar.Size = new System.Drawing.Size(108, 36);
             this.btnCancelar.TabIndex = 26;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalvar
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalvar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSalvar.Location = new System.Drawing.Point(74, 228);
+            this.btnSalvar.Location = new System.Drawing.Point(74, 210);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(96, 36);
+            this.btnSalvar.Size = new System.Drawing.Size(108, 36);
             this.btnSalvar.TabIndex = 25;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // FormNovoLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(60)))), ((int)(((byte)(59)))));
-            this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.O7MF5N0;
+            this.BackColor = System.Drawing.Color.LightSlateGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(371, 314);
+            this.ClientSize = new System.Drawing.Size(383, 278);
             this.Controls.Add(this.gbNovoLogin);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(400, 380);
             this.MinimizeBox = false;
             this.Name = "FormNovoLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormNovoLogin";
+            this.Text = "Novo usuário";
             this.gbNovoLogin.ResumeLayout(false);
             this.gbNovoLogin.PerformLayout();
             this.ResumeLayout(false);

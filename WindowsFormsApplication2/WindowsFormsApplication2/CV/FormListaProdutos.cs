@@ -106,5 +106,11 @@ namespace WindowsFormsApplication2
         {
             Fill();
         }
+
+        private void FormListaProdutos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
     }
 }
