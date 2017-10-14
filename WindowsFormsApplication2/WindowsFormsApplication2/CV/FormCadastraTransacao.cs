@@ -38,7 +38,13 @@ namespace WindowsFormsApplication2
                 txtValor.TabStop = false;
                 txtValor.Increment = 0;
                 txtValor.Controls[0].Enabled = false;
+                txtQuantidade.ReadOnly = true;
+                txtQuantidade.TabStop = false;
+                txtQuantidade.Increment = 0;
+                txtQuantidade.Controls[0].Enabled = false;
                 dtpData.Hide();
+                rdbCompra.Enabled = false;
+                rdbUso.Enabled = false;
                 btnAdd.Hide();
                 btnRemover.Hide();
                 txtData.Visible = true;
@@ -275,6 +281,11 @@ namespace WindowsFormsApplication2
             {
                 MessageBox.Show("Verifique se todos os campos estão preenchidos!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

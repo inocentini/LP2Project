@@ -76,6 +76,7 @@ namespace WindowsFormsApplication2
                 DataRow dr = ds.Tables[0].Rows[0];
                 cv.Id = int.Parse(dr["id"].ToString());
                 string data = dr["data"].ToString();
+                cv.Valor = double.Parse(dr["valor"].ToString());
                 cv.Data = Convert.ToDateTime(data);
                 cv.Compra = Convert.ToBoolean(int.Parse(dr["compra"].ToString()));
                 cv.Lista = ListarProd(cv.Id);

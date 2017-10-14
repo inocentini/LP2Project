@@ -32,6 +32,9 @@
             this.panCadastro = new System.Windows.Forms.Panel();
             this.labTitulo = new System.Windows.Forms.Label();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,9 +53,6 @@
             this.txtValor = new System.Windows.Forms.NumericUpDown();
             this.labReais = new System.Windows.Forms.Label();
             this.txtData = new System.Windows.Forms.TextBox();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.panel1.SuspendLayout();
@@ -107,7 +107,30 @@
             this.dgvProdutos.RowHeadersVisible = false;
             this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProdutos.Size = new System.Drawing.Size(382, 256);
-            this.dgvProdutos.TabIndex = 35;
+            this.dgvProdutos.TabIndex = 10;
+            // 
+            // colId
+            // 
+            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colId.FillWeight = 20F;
+            this.colId.HeaderText = "ID";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            // 
+            // colProduto
+            // 
+            this.colProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colProduto.HeaderText = "Produto";
+            this.colProduto.Name = "colProduto";
+            this.colProduto.ReadOnly = true;
+            // 
+            // colQuantidade
+            // 
+            this.colQuantidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colQuantidade.FillWeight = 40F;
+            this.colQuantidade.HeaderText = "Quantidade";
+            this.colQuantidade.Name = "colQuantidade";
+            this.colQuantidade.ReadOnly = true;
             // 
             // btnCancelar
             // 
@@ -115,9 +138,10 @@
             this.btnCancelar.Location = new System.Drawing.Point(248, 489);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 36);
-            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalvar
             // 
@@ -125,7 +149,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(120, 489);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 36);
-            this.btnSalvar.TabIndex = 6;
+            this.btnSalvar.TabIndex = 11;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -153,14 +177,14 @@
             0});
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(75, 20);
-            this.txtQuantidade.TabIndex = 3;
+            this.txtQuantidade.TabIndex = 7;
             // 
             // btnRemover
             // 
             this.btnRemover.Location = new System.Drawing.Point(307, 49);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 20);
-            this.btnRemover.TabIndex = 38;
+            this.btnRemover.TabIndex = 9;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
@@ -172,13 +196,14 @@
             this.txtDescricao.ReadOnly = true;
             this.txtDescricao.Size = new System.Drawing.Size(220, 20);
             this.txtDescricao.TabIndex = 42;
+            this.txtDescricao.TabStop = false;
             // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(226, 49);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 20);
-            this.btnAdd.TabIndex = 36;
+            this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Adicionar";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -188,7 +213,7 @@
             this.txtNomeProduto.Location = new System.Drawing.Point(0, 17);
             this.txtNomeProduto.Name = "txtNomeProduto";
             this.txtNomeProduto.Size = new System.Drawing.Size(299, 20);
-            this.txtNomeProduto.TabIndex = 40;
+            this.txtNomeProduto.TabIndex = 6;
             this.txtNomeProduto.TextChanged += new System.EventHandler(this.txtNomeProduto_TextChanged);
             // 
             // panel2
@@ -240,7 +265,7 @@
             this.panTransacao.Location = new System.Drawing.Point(70, 70);
             this.panTransacao.Name = "panTransacao";
             this.panTransacao.Size = new System.Drawing.Size(127, 23);
-            this.panTransacao.TabIndex = 34;
+            this.panTransacao.TabIndex = 3;
             // 
             // rdbCompra
             // 
@@ -248,7 +273,7 @@
             this.rdbCompra.Location = new System.Drawing.Point(3, 3);
             this.rdbCompra.Name = "rdbCompra";
             this.rdbCompra.Size = new System.Drawing.Size(61, 17);
-            this.rdbCompra.TabIndex = 32;
+            this.rdbCompra.TabIndex = 4;
             this.rdbCompra.TabStop = true;
             this.rdbCompra.Text = "Compra";
             this.rdbCompra.UseVisualStyleBackColor = true;
@@ -260,7 +285,7 @@
             this.rdbUso.Location = new System.Drawing.Point(76, 3);
             this.rdbUso.Name = "rdbUso";
             this.rdbUso.Size = new System.Drawing.Size(44, 17);
-            this.rdbUso.TabIndex = 33;
+            this.rdbUso.TabIndex = 5;
             this.rdbUso.TabStop = true;
             this.rdbUso.Text = "Uso";
             this.rdbUso.UseVisualStyleBackColor = true;
@@ -274,7 +299,7 @@
             this.dtpData.Location = new System.Drawing.Point(70, 9);
             this.dtpData.Name = "dtpData";
             this.dtpData.Size = new System.Drawing.Size(169, 20);
-            this.dtpData.TabIndex = 4;
+            this.dtpData.TabIndex = 1;
             // 
             // txtValor
             // 
@@ -287,7 +312,7 @@
             0});
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(170, 20);
-            this.txtValor.TabIndex = 3;
+            this.txtValor.TabIndex = 2;
             // 
             // labReais
             // 
@@ -311,29 +336,6 @@
             this.txtData.TabIndex = 31;
             this.txtData.TabStop = false;
             this.txtData.Visible = false;
-            // 
-            // colId
-            // 
-            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colId.FillWeight = 20F;
-            this.colId.HeaderText = "ID";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            // 
-            // colProduto
-            // 
-            this.colProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colProduto.HeaderText = "Produto";
-            this.colProduto.Name = "colProduto";
-            this.colProduto.ReadOnly = true;
-            // 
-            // colQuantidade
-            // 
-            this.colQuantidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colQuantidade.FillWeight = 40F;
-            this.colQuantidade.HeaderText = "Quantidade";
-            this.colQuantidade.Name = "colQuantidade";
-            this.colQuantidade.ReadOnly = true;
             // 
             // FormCadastraTransacao
             // 

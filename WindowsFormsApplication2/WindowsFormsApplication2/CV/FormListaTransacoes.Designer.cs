@@ -66,7 +66,7 @@
             this.dgvComprasEVendas.RowHeadersVisible = false;
             this.dgvComprasEVendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvComprasEVendas.Size = new System.Drawing.Size(856, 254);
-            this.dgvComprasEVendas.TabIndex = 2;
+            this.dgvComprasEVendas.TabIndex = 3;
             // 
             // colId
             // 
@@ -109,7 +109,7 @@
             this.txtFiltrar.Location = new System.Drawing.Point(103, 7);
             this.txtFiltrar.Name = "txtFiltrar";
             this.txtFiltrar.Size = new System.Drawing.Size(745, 20);
-            this.txtFiltrar.TabIndex = 3;
+            this.txtFiltrar.TabIndex = 1;
             this.txtFiltrar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFiltrar_KeyUp);
             // 
             // labFiltrar
@@ -130,7 +130,7 @@
             this.btnRemover.MaximumSize = new System.Drawing.Size(75, 23);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 23);
-            this.btnRemover.TabIndex = 10;
+            this.btnRemover.TabIndex = 7;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
@@ -142,7 +142,7 @@
             this.bntDetalhes.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntDetalhes.Name = "bntDetalhes";
             this.bntDetalhes.Size = new System.Drawing.Size(75, 23);
-            this.bntDetalhes.TabIndex = 9;
+            this.bntDetalhes.TabIndex = 6;
             this.bntDetalhes.Text = "Detalhes";
             this.bntDetalhes.UseVisualStyleBackColor = true;
             this.bntDetalhes.Click += new System.EventHandler(this.bntDetalhes_Click);
@@ -154,7 +154,7 @@
             this.bntEditar.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntEditar.Name = "bntEditar";
             this.bntEditar.Size = new System.Drawing.Size(75, 23);
-            this.bntEditar.TabIndex = 8;
+            this.bntEditar.TabIndex = 5;
             this.bntEditar.Text = "Editar";
             this.bntEditar.UseVisualStyleBackColor = true;
             this.bntEditar.Click += new System.EventHandler(this.bntEditar_Click);
@@ -166,7 +166,7 @@
             this.bntAdd.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntAdd.Name = "bntAdd";
             this.bntAdd.Size = new System.Drawing.Size(75, 23);
-            this.bntAdd.TabIndex = 7;
+            this.bntAdd.TabIndex = 4;
             this.bntAdd.Text = "Adicionar";
             this.bntAdd.UseVisualStyleBackColor = true;
             this.bntAdd.Click += new System.EventHandler(this.bntAdd_Click);
@@ -181,7 +181,7 @@
             this.cbbTransacao.Location = new System.Drawing.Point(727, 42);
             this.cbbTransacao.Name = "cbbTransacao";
             this.cbbTransacao.Size = new System.Drawing.Size(121, 21);
-            this.cbbTransacao.TabIndex = 11;
+            this.cbbTransacao.TabIndex = 2;
             this.cbbTransacao.SelectedIndexChanged += new System.EventHandler(this.cbbTransacao_SelectedIndexChanged);
             // 
             // labFiltrarCompra
