@@ -61,6 +61,29 @@ namespace WindowsFormsApplication2
             }
         }
 
+        public Produto Read(string nome)
+        {
+            Database db = Database.GetInstance();
+            string qry = string.Format("SELECT * FROM Produto WHERE nome = '{0}'", nome);
+            DataSet ds = db.ExecuteQuery(qry);
+
+            Produto p = new Produto();
+
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+                DataRow dr = ds.Tables[0].Rows[0];
+                p.Id = int.Parse(dr["id"].ToString());
+                p.Nome = dr["nome"].ToString();
+                p.Detalhes = dr["detalhes"].ToString();
+                p.Quantidade = Double.Parse(dr["quantidade"].ToString());
+                return p;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public void Remover(int id)
         {
             Database db = Database.GetInstance();

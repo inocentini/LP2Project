@@ -84,6 +84,7 @@
             // 
             this.estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
             resources.ApplyResources(this.estoqueToolStripMenuItem, "estoqueToolStripMenuItem");
+            this.estoqueToolStripMenuItem.Click += new System.EventHandler(this.estoqueToolStripMenuItem_Click);
             // 
             // pagamentosToolStripMenuItem
             // 

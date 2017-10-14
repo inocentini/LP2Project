@@ -51,9 +51,6 @@
             this.dgvPessoas.AllowUserToAddRows = false;
             this.dgvPessoas.AllowUserToDeleteRows = false;
             this.dgvPessoas.AllowUserToResizeRows = false;
-            this.dgvPessoas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPessoas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPessoas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCPF,

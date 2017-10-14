@@ -12,10 +12,10 @@ namespace WindowsFormsApplication2
         public void Editar(CompraEVenda cv)
         {
             Database db = Database.GetInstance();
-            string qry = string.Format("UPDATE compraevenda SET data={0}, valor={1}, compra={2} WHERE id={3};",cv.Data.ToString("yyyy-MM-dd"),cv.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture),Convert.ToInt32(cv.Compra),cv.Id);
+            string qry = string.Format("UPDATE compraevenda SET data='{0}', valor={1}, compra={2} WHERE id={3};",cv.Data.ToString("yyyy-MM-dd"),cv.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture),Convert.ToInt32(cv.Compra),cv.Id);
             foreach(ProdutoVenda pv in cv.Lista)
             {
-                qry = string.Concat(qry, string.Format("UPDATE compraevenda_produto SET quantidade={0} WHERE idcompra={1} AND idproduto={2});",pv.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture),cv.Id,pv.Prod.Id));
+                qry = string.Concat(qry, string.Format("UPDATE compraevenda_produto SET quantidade={0} WHERE idcompra={1} AND idproduto={2};",pv.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture),cv.Id,pv.Prod.Id));
             }
 
             db.ExecuteNonQuery(qry);
@@ -78,7 +78,6 @@ namespace WindowsFormsApplication2
                 string data = dr["data"].ToString();
                 cv.Data = Convert.ToDateTime(data);
                 cv.Compra = Convert.ToBoolean(int.Parse(dr["compra"].ToString()));
-                cv.Valor = double.Parse(dr["quantidade"].ToString());
                 cv.Lista = ListarProd(cv.Id);
                 return cv;
             }
@@ -92,19 +91,22 @@ namespace WindowsFormsApplication2
         {
             Database db = Database.GetInstance();
 
-            string qry = string.Format("DELETE FROM compraevenda WHERE id = {0}", id);
+            string qry = string.Format("DELETE FROM compraevenda WHERE id = {0}; DELETE FROM compraevenda_produto WHERE idcompra = {0}", id);
             db.ExecuteNonQuery(qry);
         }
 
         public void Salvar(CompraEVenda cv)
         {
             Database db = Database.GetInstance();
-            string qry = string.Format("INSERT INTO compraevenda(data,valor,compra) VALUES ({0},{1},{2})", cv.Data.ToString("yyyy-MM-dd"), cv.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture), Convert.ToInt32(cv.Compra));
+            string qry = string.Format("INSERT INTO compraevenda(data,valor,compra) VALUES ('{0}',{1},{2});", cv.Data.ToString("yyyy-MM-dd"), cv.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture), Convert.ToInt32(cv.Compra));
+            db.ExecuteNonQuery(qry);
+
             int ultimoid = UltimoId();
 
+            qry = "";
             foreach (ProdutoVenda p in cv.Lista)
             {
-                qry = string.Concat(qry, string.Format("INSERT INTO compraevenda_produto(idcompra,idproduto,quantidade) VALUES ({0},{1},{2})", ultimoid, p.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture)));
+                qry = string.Concat(qry,string.Format("INSERT INTO compraevenda_produto(idcompra,idproduto,quantidade) VALUES ({0},{1},{2});", ultimoid, p.Prod.Id, p.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture)));
             }
 
             db.ExecuteNonQuery(qry);
@@ -114,13 +116,15 @@ namespace WindowsFormsApplication2
         {
             Database db = Database.GetInstance();
 
-            string qry = string.Format("SELECT last_insert_rowid() AS rowid FROM compraevenda LIMIT 1");
+            string qry = string.Format("SELECT seq FROM sqlite_sequence WHERE name='CompraEVenda';");
             DataSet ds = db.ExecuteQuery(qry);
 
             if (ds.Tables[0].Rows.Count != 0)
             {
                 DataRow dr = ds.Tables[0].Rows[0];
-                int id = int.Parse(dr["rowid"].ToString());
+                Console.WriteLine(dr["seq"].ToString());
+                int id = int.Parse(dr["seq"].ToString());
+                Console.WriteLine(id);
                 return id;
             }
             else

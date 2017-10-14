@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication2
 {
-    class ProdutoVenda
+    public class ProdutoVenda
     {
         private Produto prod = new Produto();
         private double quantidade = new double();

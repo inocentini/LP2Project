@@ -138,4 +138,5 @@ C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsA
 C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\System.Data.SQLite.xml
 C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormPrincipal.resources
 C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormAdmin.resources
-C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormEstoque.resources
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormListaTransacoes.resources
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormCadastraTransacao.resources

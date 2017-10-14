@@ -110,7 +110,7 @@ namespace WindowsFormsApplication2
             }
             else
             {
-                MessageBox.Show("Erro!", "Verifique se todos os campos estão preenchidos!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Verifique se todos os campos estão preenchidos!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

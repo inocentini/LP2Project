@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication2
 {
-    class CompraEVenda
+    public class CompraEVenda
     {
         private int id = new int();
         private DateTime data = new DateTime();

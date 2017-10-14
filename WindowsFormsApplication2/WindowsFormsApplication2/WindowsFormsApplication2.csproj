@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CV\FormCadastraTransacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormCadastraTransacao.Designer.cs">
+      <DependentUpon>FormCadastraTransacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\CompraEVenda.cs" />
     <Compile Include="DAO\CompraEVendaDAO.cs" />
     <Compile Include="CV\FormAdmin.cs">
@@ -123,11 +129,11 @@
       <DependentUpon>FormListaProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\ProdutoDAO.cs" />
-    <Compile Include="CV\FormEstoque.cs">
+    <Compile Include="CV\FormListaTransacoes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CV\FormEstoque.Designer.cs">
-      <DependentUpon>FormEstoque.cs</DependentUpon>
+    <Compile Include="CV\FormListaTransacoes.Designer.cs">
+      <DependentUpon>FormListaTransacoes.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\ProdutoVenda.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -178,8 +184,8 @@
     <EmbeddedResource Include="CV\FormCadastraProduto.resx">
       <DependentUpon>FormCadastraProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CV\FormEstoque.resx">
-      <DependentUpon>FormEstoque.cs</DependentUpon>
+    <EmbeddedResource Include="CV\FormListaTransacoes.resx">
+      <DependentUpon>FormListaTransacoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormListaPessoas.resx">
       <DependentUpon>FormListaPessoas.cs</DependentUpon>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormCadastraTransacao.resx">
+      <DependentUpon>FormCadastraTransacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

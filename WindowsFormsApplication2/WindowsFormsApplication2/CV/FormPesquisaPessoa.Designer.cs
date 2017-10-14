@@ -120,6 +120,7 @@
             this.dgvPessoas.Location = new System.Drawing.Point(0, 71);
             this.dgvPessoas.Name = "dgvPessoas";
             this.dgvPessoas.ReadOnly = true;
+            this.dgvPessoas.RowHeadersVisible = false;
             this.dgvPessoas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPessoas.Size = new System.Drawing.Size(331, 176);
             this.dgvPessoas.TabIndex = 2;
