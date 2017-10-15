@@ -48,7 +48,7 @@ namespace WindowsFormsApplication2
                 dtpVencimento.Hide();
                 btnResponsavel.Hide();
                 txtVencimento.Visible = true;
-                txtVencimento.Text = dtpVencimento.Value.ToString("dd/MM/yyyy");
+                txtVencimento.Text = dtpVencimento.Value.ToShortDateString();
                 btnCancelar.Text = "Voltar";
                 btnSalvar.Hide();
             }

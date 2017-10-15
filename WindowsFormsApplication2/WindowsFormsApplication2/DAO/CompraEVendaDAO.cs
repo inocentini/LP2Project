@@ -13,9 +13,10 @@ namespace WindowsFormsApplication2
         {
             Database db = Database.GetInstance();
             string qry = string.Format("UPDATE compraevenda SET data='{0}', valor={1}, compra={2} WHERE id={3};",cv.Data.ToString("yyyy-MM-dd"),cv.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture),Convert.ToInt32(cv.Compra),cv.Id);
-            foreach(ProdutoVenda pv in cv.Lista)
+            qry = string.Concat(qry, string.Format("DELETE FROM compraevenda_produto WHERE idcompra = {0}; ", cv.Id));
+            foreach (ProdutoVenda pv in cv.Lista)
             {
-                qry = string.Concat(qry, string.Format("UPDATE compraevenda_produto SET quantidade={0} WHERE idcompra={1} AND idproduto={2};",pv.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture),cv.Id,pv.Prod.Id));
+                qry = string.Concat(qry, string.Format("INSERT INTO compraevenda_produto(idcompra,idproduto,quantidade) VALUES ({0},{1},{2});", cv.Id, pv.Prod.Id, pv.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture)));
             }
 
             db.ExecuteNonQuery(qry);

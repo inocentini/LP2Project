@@ -93,5 +93,15 @@ namespace WindowsFormsApplication2
 
         }
 
+        public override string ToString()
+        {
+            string stg = "";
+            foreach(ProdutoVenda pv in Lista)
+            {
+                stg = stg + "" + pv.Prod.Nome + ": " + pv.Quantidade + "  |  ";
+            }
+
+            return stg.Remove(stg.Length - 3,1);
+        }
     }
 }

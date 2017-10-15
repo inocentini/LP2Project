@@ -48,7 +48,8 @@ namespace WindowsFormsApplication2
                 btnAdd.Hide();
                 btnRemover.Hide();
                 txtData.Visible = true;
-                txtData.Text = dtpData.Value.ToString("dd/MM/yyyy");
+                dgvProdutos.Enabled = false;
+                txtData.Text = dtpData.Value.Date.ToShortDateString();
                 btnCancelar.Text = "Voltar";
                 btnSalvar.Hide();
             }

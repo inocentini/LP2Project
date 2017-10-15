@@ -31,9 +31,37 @@ namespace WindowsFormsApplication2
             List<CompraEVenda> lista = db.Listar();
 
             dgvComprasEVendas.Rows.Clear();
-            foreach (CompraEVenda cv in lista)
+
+            bool compra = new bool();
+
+            if (cbbTransacao.SelectedIndex == 0)
             {
-                dgvComprasEVendas.Rows.Add(cv.Id,cv.Data,cv.ToString(),cv.Valor,cv.Compra?"Compra":"Uso");
+                foreach(CompraEVenda cv in lista)
+                {
+                    if (cv.ToString().Contains(txtFiltrar.Text))
+                    {
+                        dgvComprasEVendas.Rows.Add(cv.Id, cv.Data.ToShortDateString(), cv.ToString(), cv.Valor, cv.Compra ? "Compra" : "Uso");
+                    }
+                }
+            }
+            else
+            {
+                if (cbbTransacao.SelectedIndex == 1)
+                {
+                    compra = true;
+                }
+                else
+                {
+                    compra = false;
+                }
+
+                foreach (CompraEVenda cv in lista)
+                {
+                    if (cv.ToString().Contains(txtFiltrar.Text) && cv.Compra == compra)
+                    {
+                        dgvComprasEVendas.Rows.Add(cv.Id, cv.Data.ToShortDateString(), cv.ToString(), cv.Valor, cv.Compra ? "Compra" : "Uso");
+                    }
+                }
             }
         }
 
@@ -87,24 +115,12 @@ namespace WindowsFormsApplication2
 
         private void txtFiltrar_KeyUp(object sender, KeyEventArgs e)
         {
-            CompraEVendaDAO db = new CompraEVendaDAO();
-
-            List<CompraEVenda> lista = db.Listar();
-
-
-            dgvComprasEVendas.Rows.Clear();
-            foreach (CompraEVenda cv in lista)
-            {
-                if (cv.ToString().Contains(txtFiltrar.Text))
-                {
-                    dgvComprasEVendas.Rows.Add(cv.Id, cv.Data, cv.ToString(), cv.Valor, cv.Compra ? "Compra" : "Uso");
-                }
-            }
+            Fill();
         }
 
         private void FormEstoque_Load(object sender, EventArgs e)
         {
-            Fill();
+            cbbTransacao.SelectedIndex = 0;
         }
 
         private void FormEstoque_FormClosing(object sender, FormClosingEventArgs e)
@@ -115,33 +131,12 @@ namespace WindowsFormsApplication2
 
         private void cbbTransacao_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CompraEVendaDAO db = new CompraEVendaDAO();
+            Fill();
+        }
 
-            List<CompraEVenda> lista = db.Listar();
-
-            dgvComprasEVendas.Rows.Clear();
-
-            bool compra = new bool();
-            if (cbbTransacao.SelectedIndex == 0)
-            {
-                Fill();
-            }
-            else if (cbbTransacao.SelectedIndex == 1)
-            {
-                compra = true;
-            }
-            else
-            {
-                compra = false;
-            }
-
-            foreach (CompraEVenda cv in lista)
-            {
-                if (cv.ToString().Contains(txtFiltrar.Text) && cv.Compra == compra)
-                {
-                    dgvComprasEVendas.Rows.Add(cv.Id, cv.Data, cv.ToString(), cv.Valor, cv.Compra ? "Compra" : "Uso");
-                }
-            }
+        private void dtpData_ValueChanged(object sender, EventArgs e)
+        {
+            Fill();
         }
     }
 }

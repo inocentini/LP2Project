@@ -107,7 +107,7 @@
             this.dgvProdutos.RowHeadersVisible = false;
             this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProdutos.Size = new System.Drawing.Size(382, 256);
-            this.dgvProdutos.TabIndex = 10;
+            this.dgvProdutos.TabIndex = 3;
             // 
             // colId
             // 
@@ -138,7 +138,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(248, 489);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 36);
-            this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -149,7 +149,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(120, 489);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 36);
-            this.btnSalvar.TabIndex = 11;
+            this.btnSalvar.TabIndex = 4;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -164,7 +164,7 @@
             this.panel1.Location = new System.Drawing.Point(22, 138);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(382, 84);
-            this.panel1.TabIndex = 43;
+            this.panel1.TabIndex = 2;
             // 
             // txtQuantidade
             // 
@@ -177,14 +177,14 @@
             0});
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(75, 20);
-            this.txtQuantidade.TabIndex = 7;
+            this.txtQuantidade.TabIndex = 2;
             // 
             // btnRemover
             // 
             this.btnRemover.Location = new System.Drawing.Point(307, 49);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 20);
-            this.btnRemover.TabIndex = 9;
+            this.btnRemover.TabIndex = 4;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
@@ -203,7 +203,7 @@
             this.btnAdd.Location = new System.Drawing.Point(226, 49);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 20);
-            this.btnAdd.TabIndex = 8;
+            this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Adicionar";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -213,7 +213,7 @@
             this.txtNomeProduto.Location = new System.Drawing.Point(0, 17);
             this.txtNomeProduto.Name = "txtNomeProduto";
             this.txtNomeProduto.Size = new System.Drawing.Size(299, 20);
-            this.txtNomeProduto.TabIndex = 6;
+            this.txtNomeProduto.TabIndex = 1;
             this.txtNomeProduto.TextChanged += new System.EventHandler(this.txtNomeProduto_TextChanged);
             // 
             // panel2
@@ -228,7 +228,7 @@
             this.panel2.Location = new System.Drawing.Point(74, 37);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(249, 103);
-            this.panel2.TabIndex = 44;
+            this.panel2.TabIndex = 1;
             // 
             // labData
             // 
@@ -273,7 +273,7 @@
             this.rdbCompra.Location = new System.Drawing.Point(3, 3);
             this.rdbCompra.Name = "rdbCompra";
             this.rdbCompra.Size = new System.Drawing.Size(61, 17);
-            this.rdbCompra.TabIndex = 4;
+            this.rdbCompra.TabIndex = 1;
             this.rdbCompra.TabStop = true;
             this.rdbCompra.Text = "Compra";
             this.rdbCompra.UseVisualStyleBackColor = true;
@@ -285,7 +285,7 @@
             this.rdbUso.Location = new System.Drawing.Point(76, 3);
             this.rdbUso.Name = "rdbUso";
             this.rdbUso.Size = new System.Drawing.Size(44, 17);
-            this.rdbUso.TabIndex = 5;
+            this.rdbUso.TabIndex = 2;
             this.rdbUso.TabStop = true;
             this.rdbUso.Text = "Uso";
             this.rdbUso.UseVisualStyleBackColor = true;
