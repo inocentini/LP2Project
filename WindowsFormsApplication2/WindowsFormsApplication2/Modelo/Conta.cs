@@ -21,7 +21,7 @@ namespace WindowsFormsApplication2
         {
 
         }
-        public Conta(int id, string nome, string detalhes, double valor, DateTime vencimento, Pessoa responsavel)
+        public Conta(int id, string nome, string detalhes, double valor, DateTime vencimento, Pessoa responsavel, List<PessoaPagamento> lPessoas)
         {
             this.Id = id;
             this.Nome = nome;
