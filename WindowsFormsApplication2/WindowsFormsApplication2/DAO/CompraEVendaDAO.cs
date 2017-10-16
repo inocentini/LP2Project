@@ -9,14 +9,49 @@ namespace WindowsFormsApplication2
 {
     class CompraEVendaDAO
     {
-        public void Editar(CompraEVenda cv)
+        public void Editar(CompraEVenda cv,Dictionary<int,ProdutoVenda> dictAnterior)
         {
             Database db = Database.GetInstance();
             string qry = string.Format("UPDATE compraevenda SET data='{0}', valor={1}, compra={2} WHERE id={3};",cv.Data.ToString("yyyy-MM-dd"),cv.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture),Convert.ToInt32(cv.Compra),cv.Id);
             qry = string.Concat(qry, string.Format("DELETE FROM compraevenda_produto WHERE idcompra = {0}; ", cv.Id));
-            foreach (ProdutoVenda pv in cv.Lista)
+
+            ProdutoDAO pd = new ProdutoDAO();
+
+            if (cv.Compra)
             {
-                qry = string.Concat(qry, string.Format("INSERT INTO compraevenda_produto(idcompra,idproduto,quantidade) VALUES ({0},{1},{2});", cv.Id, pv.Prod.Id, pv.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture)));
+                foreach (ProdutoVenda pv in cv.Lista)
+                {
+                    if (dictAnterior.ContainsKey(pv.Prod.Id))
+                    {
+                        pv.Prod.Quantidade = pv.Prod.Quantidade + pv.Quantidade - dictAnterior[pv.Prod.Id].Quantidade;
+                    }
+                    else
+                    {
+                        pv.Prod.Quantidade += pv.Quantidade;
+                    }
+
+                    if (pv.Quantidade != 0)
+                    {
+                        qry = string.Concat(qry, string.Format("INSERT INTO compraevenda_produto(idcompra,idproduto,quantidade) VALUES ({0},{1},{2});", cv.Id, pv.Prod.Id, pv.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture)));
+                    }
+                    pd.Editar(pv.Prod);
+                }
+            }
+            else
+            {
+                foreach (ProdutoVenda pv in cv.Lista)
+                {
+                    if (dictAnterior.ContainsKey(pv.Prod.Id))
+                    {
+                        pv.Prod.Quantidade = pv.Prod.Quantidade + dictAnterior[pv.Prod.Id].Quantidade - pv.Quantidade;
+                    }
+                    else
+                    {
+                        pv.Prod.Quantidade -= pv.Quantidade;
+                    }
+                    qry = string.Concat(qry, string.Format("INSERT INTO compraevenda_produto(idcompra,idproduto,quantidade) VALUES ({0},{1},{2});", cv.Id, pv.Prod.Id, pv.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture)));
+                    pd.Editar(pv.Prod);
+                }
             }
 
             db.ExecuteNonQuery(qry);
@@ -102,13 +137,28 @@ namespace WindowsFormsApplication2
             Database db = Database.GetInstance();
             string qry = string.Format("INSERT INTO compraevenda(data,valor,compra) VALUES ('{0}',{1},{2});", cv.Data.ToString("yyyy-MM-dd"), cv.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture), Convert.ToInt32(cv.Compra));
             db.ExecuteNonQuery(qry);
-
             int ultimoid = UltimoId();
-
             qry = "";
-            foreach (ProdutoVenda p in cv.Lista)
+
+            ProdutoDAO pd = new ProdutoDAO();
+
+            if (cv.Compra)
             {
-                qry = string.Concat(qry,string.Format("INSERT INTO compraevenda_produto(idcompra,idproduto,quantidade) VALUES ({0},{1},{2});", ultimoid, p.Prod.Id, p.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture)));
+                foreach (ProdutoVenda pv in cv.Lista)
+                {
+                    pv.Prod.Quantidade += pv.Quantidade;
+                    qry = string.Concat(qry, string.Format("INSERT INTO compraevenda_produto(idcompra,idproduto,quantidade) VALUES ({0},{1},{2});", ultimoid, pv.Prod.Id, pv.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture)));
+                    pd.Editar(pv.Prod);
+                }
+            }
+            else
+            {
+                foreach (ProdutoVenda pv in cv.Lista)
+                {
+                    pv.Prod.Quantidade -= pv.Quantidade;
+                    qry = string.Concat(qry, string.Format("INSERT INTO compraevenda_produto(idcompra,idproduto,quantidade) VALUES ({0},{1},{2});", ultimoid, pv.Prod.Id, pv.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture)));
+                    pd.Editar(pv.Prod);
+                }
             }
 
             db.ExecuteNonQuery(qry);
@@ -124,9 +174,7 @@ namespace WindowsFormsApplication2
             if (ds.Tables[0].Rows.Count != 0)
             {
                 DataRow dr = ds.Tables[0].Rows[0];
-                Console.WriteLine(dr["seq"].ToString());
                 int id = int.Parse(dr["seq"].ToString());
-                Console.WriteLine(id);
                 return id;
             }
             else

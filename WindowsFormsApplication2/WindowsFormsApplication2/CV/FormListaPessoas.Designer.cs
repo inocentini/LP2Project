@@ -42,8 +42,12 @@
             this.bntDetalhes = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
             this.pnlConteudo = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoas)).BeginInit();
             this.pnlConteudo.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvPessoas
@@ -51,20 +55,23 @@
             this.dgvPessoas.AllowUserToAddRows = false;
             this.dgvPessoas.AllowUserToDeleteRows = false;
             this.dgvPessoas.AllowUserToResizeRows = false;
+            this.dgvPessoas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPessoas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPessoas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCPF,
             this.colNome,
             this.colEmail,
             this.colTelefone});
-            this.dgvPessoas.Location = new System.Drawing.Point(0, 75);
+            this.dgvPessoas.Location = new System.Drawing.Point(0, 33);
             this.dgvPessoas.MultiSelect = false;
             this.dgvPessoas.Name = "dgvPessoas";
             this.dgvPessoas.ReadOnly = true;
             this.dgvPessoas.RowHeadersVisible = false;
             this.dgvPessoas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPessoas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPessoas.Size = new System.Drawing.Size(719, 162);
+            this.dgvPessoas.Size = new System.Drawing.Size(707, 252);
             this.dgvPessoas.TabIndex = 2;
             // 
             // colCPF
@@ -112,7 +119,7 @@
             // labPessoas
             // 
             this.labPessoas.AutoSize = true;
-            this.labPessoas.Location = new System.Drawing.Point(12, 56);
+            this.labPessoas.Location = new System.Drawing.Point(12, 14);
             this.labPessoas.Name = "labPessoas";
             this.labPessoas.Size = new System.Drawing.Size(50, 13);
             this.labPessoas.TabIndex = 2;
@@ -124,14 +131,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFiltrar.Location = new System.Drawing.Point(67, 15);
             this.txtFiltrar.Name = "txtFiltrar";
-            this.txtFiltrar.Size = new System.Drawing.Size(642, 20);
+            this.txtFiltrar.Size = new System.Drawing.Size(633, 20);
             this.txtFiltrar.TabIndex = 1;
             this.txtFiltrar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFiltrar_KeyUp);
             // 
             // bntAdd
             // 
             this.bntAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.bntAdd.Location = new System.Drawing.Point(199, 248);
+            this.bntAdd.Location = new System.Drawing.Point(193, 13);
             this.bntAdd.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntAdd.Name = "bntAdd";
             this.bntAdd.Size = new System.Drawing.Size(75, 23);
@@ -143,7 +150,7 @@
             // bntEditar
             // 
             this.bntEditar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.bntEditar.Location = new System.Drawing.Point(280, 248);
+            this.bntEditar.Location = new System.Drawing.Point(274, 13);
             this.bntEditar.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntEditar.Name = "bntEditar";
             this.bntEditar.Size = new System.Drawing.Size(75, 23);
@@ -155,7 +162,7 @@
             // bntDetalhes
             // 
             this.bntDetalhes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.bntDetalhes.Location = new System.Drawing.Point(361, 248);
+            this.bntDetalhes.Location = new System.Drawing.Point(355, 13);
             this.bntDetalhes.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntDetalhes.Name = "bntDetalhes";
             this.bntDetalhes.Size = new System.Drawing.Size(75, 23);
@@ -167,7 +174,7 @@
             // btnRemover
             // 
             this.btnRemover.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnRemover.Location = new System.Drawing.Point(442, 248);
+            this.btnRemover.Location = new System.Drawing.Point(436, 13);
             this.btnRemover.MaximumSize = new System.Drawing.Size(75, 23);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 23);
@@ -178,29 +185,46 @@
             // 
             // pnlConteudo
             // 
-            this.pnlConteudo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlConteudo.Controls.Add(this.txtFiltrar);
-            this.pnlConteudo.Controls.Add(this.btnRemover);
-            this.pnlConteudo.Controls.Add(this.dgvPessoas);
-            this.pnlConteudo.Controls.Add(this.bntDetalhes);
             this.pnlConteudo.Controls.Add(this.labFiltrar);
-            this.pnlConteudo.Controls.Add(this.bntEditar);
-            this.pnlConteudo.Controls.Add(this.labPessoas);
-            this.pnlConteudo.Controls.Add(this.bntAdd);
-            this.pnlConteudo.Location = new System.Drawing.Point(2, 2);
+            this.pnlConteudo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlConteudo.Location = new System.Drawing.Point(0, 0);
             this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(719, 289);
+            this.pnlConteudo.Size = new System.Drawing.Size(710, 51);
             this.pnlConteudo.TabIndex = 7;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnRemover);
+            this.panel1.Controls.Add(this.bntAdd);
+            this.panel1.Controls.Add(this.bntEditar);
+            this.panel1.Controls.Add(this.bntDetalhes);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 363);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(710, 49);
+            this.panel1.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dgvPessoas);
+            this.panel2.Controls.Add(this.labPessoas);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 51);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(710, 312);
+            this.panel2.TabIndex = 9;
             // 
             // FormListaPessoas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 294);
+            this.ClientSize = new System.Drawing.Size(710, 412);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlConteudo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(557, 369);
             this.Name = "FormListaPessoas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pessoas";
@@ -209,6 +233,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoas)).EndInit();
             this.pnlConteudo.ResumeLayout(false);
             this.pnlConteudo.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -228,5 +255,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTelefone;
         private System.Windows.Forms.Panel pnlConteudo;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

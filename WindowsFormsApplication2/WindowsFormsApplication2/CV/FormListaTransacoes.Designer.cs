@@ -43,7 +43,14 @@
             this.bntAdd = new System.Windows.Forms.Button();
             this.cbbTransacao = new System.Windows.Forms.ComboBox();
             this.labFiltrarCompra = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.labTransacoes = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprasEVendas)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvComprasEVendas
@@ -61,11 +68,12 @@
             this.colProds,
             this.colValor,
             this.colCompra});
-            this.dgvComprasEVendas.Location = new System.Drawing.Point(0, 78);
+            this.dgvComprasEVendas.Location = new System.Drawing.Point(0, 26);
             this.dgvComprasEVendas.Name = "dgvComprasEVendas";
+            this.dgvComprasEVendas.ReadOnly = true;
             this.dgvComprasEVendas.RowHeadersVisible = false;
             this.dgvComprasEVendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvComprasEVendas.Size = new System.Drawing.Size(856, 254);
+            this.dgvComprasEVendas.Size = new System.Drawing.Size(850, 276);
             this.dgvComprasEVendas.TabIndex = 3;
             // 
             // colId
@@ -74,12 +82,14 @@
             this.colId.FillWeight = 30F;
             this.colId.HeaderText = "Id";
             this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
             // 
             // colData
             // 
             this.colData.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colData.HeaderText = "Data";
             this.colData.Name = "colData";
+            this.colData.ReadOnly = true;
             // 
             // colProds
             // 
@@ -87,6 +97,7 @@
             this.colProds.FillWeight = 150F;
             this.colProds.HeaderText = "Produto(s)";
             this.colProds.Name = "colProds";
+            this.colProds.ReadOnly = true;
             // 
             // colValor
             // 
@@ -94,6 +105,7 @@
             this.colValor.FillWeight = 60F;
             this.colValor.HeaderText = "Valor";
             this.colValor.Name = "colValor";
+            this.colValor.ReadOnly = true;
             // 
             // colCompra
             // 
@@ -101,14 +113,15 @@
             this.colCompra.FillWeight = 60F;
             this.colCompra.HeaderText = "Tipo da transação";
             this.colCompra.Name = "colCompra";
+            this.colCompra.ReadOnly = true;
             // 
             // txtFiltrar
             // 
             this.txtFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFiltrar.Location = new System.Drawing.Point(103, 7);
+            this.txtFiltrar.Location = new System.Drawing.Point(101, 8);
             this.txtFiltrar.Name = "txtFiltrar";
-            this.txtFiltrar.Size = new System.Drawing.Size(745, 20);
+            this.txtFiltrar.Size = new System.Drawing.Size(739, 20);
             this.txtFiltrar.TabIndex = 1;
             this.txtFiltrar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFiltrar_KeyUp);
             // 
@@ -117,7 +130,7 @@
             this.labFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labFiltrar.AutoSize = true;
-            this.labFiltrar.Location = new System.Drawing.Point(5, 11);
+            this.labFiltrar.Location = new System.Drawing.Point(3, 12);
             this.labFiltrar.Name = "labFiltrar";
             this.labFiltrar.Size = new System.Drawing.Size(92, 13);
             this.labFiltrar.TabIndex = 4;
@@ -126,7 +139,7 @@
             // btnRemover
             // 
             this.btnRemover.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnRemover.Location = new System.Drawing.Point(504, 357);
+            this.btnRemover.Location = new System.Drawing.Point(496, 15);
             this.btnRemover.MaximumSize = new System.Drawing.Size(75, 23);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 23);
@@ -138,7 +151,7 @@
             // bntDetalhes
             // 
             this.bntDetalhes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.bntDetalhes.Location = new System.Drawing.Point(423, 357);
+            this.bntDetalhes.Location = new System.Drawing.Point(415, 15);
             this.bntDetalhes.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntDetalhes.Name = "bntDetalhes";
             this.bntDetalhes.Size = new System.Drawing.Size(75, 23);
@@ -150,7 +163,7 @@
             // bntEditar
             // 
             this.bntEditar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.bntEditar.Location = new System.Drawing.Point(342, 357);
+            this.bntEditar.Location = new System.Drawing.Point(334, 15);
             this.bntEditar.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntEditar.Name = "bntEditar";
             this.bntEditar.Size = new System.Drawing.Size(75, 23);
@@ -162,7 +175,7 @@
             // bntAdd
             // 
             this.bntAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.bntAdd.Location = new System.Drawing.Point(261, 357);
+            this.bntAdd.Location = new System.Drawing.Point(253, 15);
             this.bntAdd.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntAdd.Name = "bntAdd";
             this.bntAdd.Size = new System.Drawing.Size(75, 23);
@@ -173,12 +186,13 @@
             // 
             // cbbTransacao
             // 
+            this.cbbTransacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbTransacao.FormattingEnabled = true;
             this.cbbTransacao.Items.AddRange(new object[] {
             "Mostrar tudo",
             "Compra",
             "Uso"});
-            this.cbbTransacao.Location = new System.Drawing.Point(727, 42);
+            this.cbbTransacao.Location = new System.Drawing.Point(719, 43);
             this.cbbTransacao.Name = "cbbTransacao";
             this.cbbTransacao.Size = new System.Drawing.Size(121, 21);
             this.cbbTransacao.TabIndex = 2;
@@ -186,37 +200,80 @@
             // 
             // labFiltrarCompra
             // 
+            this.labFiltrarCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labFiltrarCompra.AutoSize = true;
             this.labFiltrarCompra.BackColor = System.Drawing.SystemColors.Control;
-            this.labFiltrarCompra.Location = new System.Drawing.Point(618, 46);
+            this.labFiltrarCompra.Location = new System.Drawing.Point(610, 47);
             this.labFiltrarCompra.Name = "labFiltrarCompra";
             this.labFiltrarCompra.Size = new System.Drawing.Size(103, 13);
             this.labFiltrarCompra.TabIndex = 12;
             this.labFiltrarCompra.Text = "Filtrar por transação:";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.labFiltrarCompra);
+            this.panel1.Controls.Add(this.labFiltrar);
+            this.panel1.Controls.Add(this.cbbTransacao);
+            this.panel1.Controls.Add(this.txtFiltrar);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(850, 71);
+            this.panel1.TabIndex = 13;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnRemover);
+            this.panel2.Controls.Add(this.bntAdd);
+            this.panel2.Controls.Add(this.bntDetalhes);
+            this.panel2.Controls.Add(this.bntEditar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 376);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(850, 55);
+            this.panel2.TabIndex = 14;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.labTransacoes);
+            this.panel3.Controls.Add(this.dgvComprasEVendas);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 71);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(850, 305);
+            this.panel3.TabIndex = 15;
+            // 
+            // labTransacoes
+            // 
+            this.labTransacoes.AutoSize = true;
+            this.labTransacoes.Location = new System.Drawing.Point(3, 5);
+            this.labTransacoes.Name = "labTransacoes";
+            this.labTransacoes.Size = new System.Drawing.Size(66, 13);
+            this.labTransacoes.TabIndex = 4;
+            this.labTransacoes.Text = "Transações:";
+            // 
             // FormListaTransacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 392);
-            this.Controls.Add(this.labFiltrarCompra);
-            this.Controls.Add(this.cbbTransacao);
-            this.Controls.Add(this.btnRemover);
-            this.Controls.Add(this.bntDetalhes);
-            this.Controls.Add(this.bntEditar);
-            this.Controls.Add(this.bntAdd);
-            this.Controls.Add(this.txtFiltrar);
-            this.Controls.Add(this.labFiltrar);
-            this.Controls.Add(this.dgvComprasEVendas);
+            this.ClientSize = new System.Drawing.Size(850, 431);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(643, 440);
             this.Name = "FormListaTransacoes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transações";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormEstoque_FormClosing);
             this.Load += new System.EventHandler(this.FormEstoque_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprasEVendas)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -236,5 +293,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colProds;
         private System.Windows.Forms.DataGridViewTextBoxColumn colValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCompra;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label labTransacoes;
     }
 }

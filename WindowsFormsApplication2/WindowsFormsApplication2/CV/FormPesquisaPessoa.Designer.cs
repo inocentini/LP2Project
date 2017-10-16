@@ -111,6 +111,7 @@
             // 
             this.dgvPessoas.AllowUserToAddRows = false;
             this.dgvPessoas.AllowUserToDeleteRows = false;
+            this.dgvPessoas.AllowUserToResizeRows = false;
             this.dgvPessoas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPessoas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -124,6 +125,8 @@
             this.dgvPessoas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPessoas.Size = new System.Drawing.Size(331, 176);
             this.dgvPessoas.TabIndex = 2;
+            this.dgvPessoas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvPessoas_KeyDown);
+            this.dgvPessoas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvPessoas_MouseDoubleClick);
             // 
             // colCPF
             // 
@@ -147,7 +150,10 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(358, 347);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(374, 386);
+            this.MinimumSize = new System.Drawing.Size(374, 386);
             this.Name = "FormPesquisaPessoa";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

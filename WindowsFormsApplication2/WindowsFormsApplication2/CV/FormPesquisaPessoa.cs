@@ -93,5 +93,20 @@ namespace WindowsFormsApplication2
         {
             Dispose();
         }
+
+        private void dgvPessoas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnEnviar.PerformClick();
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
+
+        private void dgvPessoas_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            btnEnviar.PerformClick();
+        }
     }
 }

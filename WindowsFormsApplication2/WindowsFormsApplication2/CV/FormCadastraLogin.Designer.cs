@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication2
 {
-    partial class FormNovoLogin
+    partial class FormCadastraLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNovoLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastraLogin));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gbNovoLogin = new System.Windows.Forms.GroupBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
@@ -82,6 +82,7 @@
             this.maskedTextBox2.PasswordChar = '•';
             this.maskedTextBox2.Size = new System.Drawing.Size(139, 20);
             this.maskedTextBox2.TabIndex = 38;
+            this.maskedTextBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
             // 
             // txtUser
             // 
@@ -89,6 +90,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(139, 20);
             this.txtUser.TabIndex = 37;
+            this.txtUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
             // 
             // lbSenha
             // 
@@ -119,6 +121,7 @@
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(85, 20);
             this.txtCPF.TabIndex = 31;
+            this.txtCPF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
             // 
             // txtTelefone
             // 
@@ -127,6 +130,7 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(85, 20);
             this.txtTelefone.TabIndex = 34;
+            this.txtTelefone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
             // 
             // labCPF
             // 
@@ -145,6 +149,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(228, 20);
             this.txtEmail.TabIndex = 33;
+            this.txtEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
             // 
             // labNome
             // 
@@ -163,6 +168,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(267, 20);
             this.txtNome.TabIndex = 32;
+            this.txtNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
             // 
             // labEmail
             // 
@@ -210,7 +216,7 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // FormNovoLogin
+            // FormCadastraLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -221,9 +227,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(400, 380);
+            this.MaximumSize = new System.Drawing.Size(399, 317);
             this.MinimizeBox = false;
-            this.Name = "FormNovoLogin";
+            this.MinimumSize = new System.Drawing.Size(399, 317);
+            this.Name = "FormCadastraLogin";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Novo usuário";

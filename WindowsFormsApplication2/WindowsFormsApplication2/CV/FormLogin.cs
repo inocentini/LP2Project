@@ -62,7 +62,7 @@ namespace WindowsFormsApplication2
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            FormNovoLogin newlogin = new FormNovoLogin();
+            FormCadastraLogin newlogin = new FormCadastraLogin();
             newlogin.ShowDialog(this);
         }
     }

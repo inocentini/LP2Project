@@ -55,9 +55,9 @@
             this.panCadastro.Controls.Add(this.txtDetalhes);
             this.panCadastro.Controls.Add(this.labNome);
             this.panCadastro.Controls.Add(this.labDetalhes);
-            this.panCadastro.Location = new System.Drawing.Point(12, 12);
+            this.panCadastro.Location = new System.Drawing.Point(1, 2);
             this.panCadastro.Name = "panCadastro";
-            this.panCadastro.Size = new System.Drawing.Size(370, 167);
+            this.panCadastro.Size = new System.Drawing.Size(309, 159);
             this.panCadastro.TabIndex = 28;
             // 
             // txtQuantidade
@@ -72,6 +72,7 @@
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(120, 20);
             this.txtQuantidade.TabIndex = 3;
+            this.txtQuantidade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyDown);
             // 
             // txtNome
             // 
@@ -80,13 +81,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNome.Location = new System.Drawing.Point(98, 13);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(98, 20);
+            this.txtNome.Size = new System.Drawing.Size(141, 20);
             this.txtNome.TabIndex = 1;
+            this.txtNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyDown);
             // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelar.Location = new System.Drawing.Point(177, 112);
+            this.btnCancelar.Location = new System.Drawing.Point(146, 112);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 36);
             this.btnCancelar.TabIndex = 5;
@@ -97,7 +99,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSalvar.Location = new System.Drawing.Point(66, 112);
+            this.btnSalvar.Location = new System.Drawing.Point(35, 112);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 36);
             this.btnSalvar.TabIndex = 4;
@@ -126,8 +128,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDetalhes.Location = new System.Drawing.Point(98, 41);
             this.txtDetalhes.Name = "txtDetalhes";
-            this.txtDetalhes.Size = new System.Drawing.Size(233, 20);
+            this.txtDetalhes.Size = new System.Drawing.Size(191, 20);
             this.txtDetalhes.TabIndex = 2;
+            this.txtDetalhes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyDown);
             // 
             // labNome
             // 
@@ -161,9 +164,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 191);
+            this.ClientSize = new System.Drawing.Size(313, 160);
             this.Controls.Add(this.panCadastro);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(329, 199);
+            this.MinimumSize = new System.Drawing.Size(329, 199);
             this.Name = "FormCadastraProduto";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

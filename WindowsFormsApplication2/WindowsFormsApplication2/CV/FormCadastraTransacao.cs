@@ -15,6 +15,7 @@ namespace WindowsFormsApplication2
         private bool editar = new bool();
         private int id = new int();
         private Dictionary<int, ProdutoVenda> dictProdutosDgv = new Dictionary<int, ProdutoVenda>();
+        private Dictionary<int, ProdutoVenda> dictProdutosAnteriores = new Dictionary<int, ProdutoVenda>();
         private Produto prod;
         private RadioButton escolhido = new RadioButton();
         private bool reescolha = false;
@@ -30,25 +31,27 @@ namespace WindowsFormsApplication2
             InitializeComponent();
             setDTO(cv);
             this.id = cv.Id;
+
             if (!Editar)
             {
-                txtNomeProduto.ReadOnly = true;
-                txtNomeProduto.TabStop = false;
+                txtNomeProduto.Hide();
                 txtValor.ReadOnly = true;
                 txtValor.TabStop = false;
                 txtValor.Increment = 0;
                 txtValor.Controls[0].Enabled = false;
-                txtQuantidade.ReadOnly = true;
-                txtQuantidade.TabStop = false;
-                txtQuantidade.Increment = 0;
-                txtQuantidade.Controls[0].Enabled = false;
-                dtpData.Hide();
+                txtQuantidade.Hide();
+                txtDescricao.Hide();
                 rdbCompra.Enabled = false;
                 rdbUso.Enabled = false;
+                dtpData.Hide();
                 btnAdd.Hide();
                 btnRemover.Hide();
                 txtData.Visible = true;
-                dgvProdutos.Enabled = false;
+                dgvProdutos.Height = 325;
+                dgvProdutos.Top = 145;
+                dgvProdutos.ClearSelection();
+                dgvProdutos.DefaultCellStyle.SelectionBackColor = dgvProdutos.DefaultCellStyle.BackColor;
+                dgvProdutos.DefaultCellStyle.SelectionForeColor = dgvProdutos.DefaultCellStyle.ForeColor;
                 txtData.Text = dtpData.Value.Date.ToShortDateString();
                 btnCancelar.Text = "Voltar";
                 btnSalvar.Hide();
@@ -76,10 +79,10 @@ namespace WindowsFormsApplication2
             cv.Compra = rdbCompra.Checked;
 
             List<ProdutoVenda> lproduto = new List<ProdutoVenda>();
-            foreach(DataGridViewRow r in dgvProdutos.Rows)
+            foreach(KeyValuePair<int,ProdutoVenda> pv in dictProdutosDgv)
             {
-                ProdutoVenda pv = new ProdutoVenda(dictProdutosDgv[int.Parse(r.Cells[0].Value.ToString())].Prod, double.Parse(r.Cells[2].Value.ToString()));
-                lproduto.Add(pv);
+                ProdutoVenda pve = new ProdutoVenda(pv.Value.Prod, pv.Value.Quantidade);
+                lproduto.Add(pve);
             }
 
             cv.Lista = lproduto;
@@ -90,7 +93,6 @@ namespace WindowsFormsApplication2
         private void setDTO(CompraEVenda cv)
         {
             dtpData.Value = cv.Data;
-            Console.WriteLine(cv.Valor);
             txtValor.Text = cv.Valor.ToString();
             if (cv.Compra)
             {
@@ -103,6 +105,8 @@ namespace WindowsFormsApplication2
             foreach(ProdutoVenda pv in cv.Lista)
             {
                 dictProdutosDgv.Add(pv.Prod.Id, pv);
+                int id = pv.Prod.Id;
+                dictProdutosAnteriores.Add(id, new ProdutoVenda(pv.Prod,pv.Quantidade));
             }
             Fill();
         }
@@ -226,7 +230,14 @@ namespace WindowsFormsApplication2
                 {
                     if (dictProdutosDgv.ContainsKey(prod.Id))
                     {
-                        txtQuantidade.Maximum = decimal.Parse((prod.Quantidade - dictProdutosDgv[prod.Id].Quantidade).ToString());
+                        if (dictProdutosAnteriores.ContainsKey(prod.Id))
+                        {
+                            txtQuantidade.Maximum = decimal.Parse(((prod.Quantidade + dictProdutosAnteriores[prod.Id].Quantidade) - dictProdutosDgv[prod.Id].Quantidade).ToString());
+                        }
+                        else
+                        {
+                            txtQuantidade.Maximum = decimal.Parse((prod.Quantidade - dictProdutosDgv[prod.Id].Quantidade).ToString());
+                        }
                     }
                     else
                     {
@@ -248,8 +259,14 @@ namespace WindowsFormsApplication2
             {
                 foreach (DataGridViewRow row in dgvProdutos.SelectedRows)
                 {
-                    Console.WriteLine(int.Parse(row.Cells[0].Value.ToString()));
-                    dictProdutosDgv.Remove(int.Parse(row.Cells[0].Value.ToString()));
+                    if (Editar)
+                    {
+                        dictProdutosDgv[int.Parse(row.Cells[0].Value.ToString())].Quantidade = 0;
+                    }
+                    else
+                    {
+                        dictProdutosDgv.Remove(int.Parse(row.Cells[0].Value.ToString()));
+                    }
                     dgvProdutos.Rows.Remove(row);
                 }
                 AtualizaMaximo();
@@ -269,7 +286,7 @@ namespace WindowsFormsApplication2
                 if (Editar)
                 {
                     cv.Id = id;
-                    database.Editar(cv);
+                    database.Editar(cv,dictProdutosAnteriores);
                     Dispose();
                 }
                 else
@@ -287,6 +304,26 @@ namespace WindowsFormsApplication2
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void dtpData_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSalvar.PerformClick();
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
+
+        private void txtNomeProduto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnAdd.PerformClick();
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
         }
     }
 }

@@ -92,11 +92,11 @@
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\ContaDAO.cs" />
-    <Compile Include="CV\FormNovoLogin.cs">
+    <Compile Include="CV\FormCadastraLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CV\FormNovoLogin.Designer.cs">
-      <DependentUpon>FormNovoLogin.cs</DependentUpon>
+    <Compile Include="CV\FormCadastraLogin.Designer.cs">
+      <DependentUpon>FormCadastraLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="CV\FormListaContas.cs">
       <SubType>Form</SubType>
@@ -193,8 +193,8 @@
     <EmbeddedResource Include="CV\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CV\FormNovoLogin.resx">
-      <DependentUpon>FormNovoLogin.cs</DependentUpon>
+    <EmbeddedResource Include="CV\FormCadastraLogin.resx">
+      <DependentUpon>FormCadastraLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormListaContas.resx">
       <DependentUpon>FormListaContas.cs</DependentUpon>

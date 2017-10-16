@@ -129,6 +129,7 @@
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(100, 20);
             this.txtCPF.TabIndex = 1;
+            this.txtCPF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefone_KeyDown);
             // 
             // txtNome
             // 
@@ -139,6 +140,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(235, 20);
             this.txtNome.TabIndex = 2;
+            this.txtNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefone_KeyDown);
             // 
             // txtEmail
             // 
@@ -149,6 +151,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
             this.txtEmail.TabIndex = 3;
+            this.txtEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefone_KeyDown);
             // 
             // txtTelefone
             // 
@@ -160,6 +163,7 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(100, 20);
             this.txtTelefone.TabIndex = 4;
+            this.txtTelefone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefone_KeyDown);
             // 
             // panel1
             // 
@@ -195,8 +199,11 @@
             this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(342, 220);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(358, 259);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(358, 259);
             this.Name = "FormCadastraPessoa";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

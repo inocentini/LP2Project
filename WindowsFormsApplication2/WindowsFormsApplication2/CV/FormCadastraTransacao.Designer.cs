@@ -178,6 +178,7 @@
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(75, 20);
             this.txtQuantidade.TabIndex = 2;
+            this.txtQuantidade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNomeProduto_KeyDown);
             // 
             // btnRemover
             // 
@@ -215,6 +216,7 @@
             this.txtNomeProduto.Size = new System.Drawing.Size(299, 20);
             this.txtNomeProduto.TabIndex = 1;
             this.txtNomeProduto.TextChanged += new System.EventHandler(this.txtNomeProduto_TextChanged);
+            this.txtNomeProduto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNomeProduto_KeyDown);
             // 
             // panel2
             // 
@@ -300,6 +302,7 @@
             this.dtpData.Name = "dtpData";
             this.dtpData.Size = new System.Drawing.Size(169, 20);
             this.dtpData.TabIndex = 1;
+            this.dtpData.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtpData_KeyDown);
             // 
             // txtValor
             // 
@@ -313,6 +316,7 @@
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(170, 20);
             this.txtValor.TabIndex = 2;
+            this.txtValor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtpData_KeyDown);
             // 
             // labReais
             // 
@@ -343,7 +347,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(447, 552);
             this.Controls.Add(this.panCadastro);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(463, 591);
+            this.MinimumSize = new System.Drawing.Size(463, 591);
             this.Name = "FormCadastraTransacao";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

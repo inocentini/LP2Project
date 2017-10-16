@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication2
 {
-    public partial class FormNovoLogin : Form
+    public partial class FormCadastraLogin : Form
     {
-        public FormNovoLogin()
+        public FormCadastraLogin()
         {
             InitializeComponent();
         }
 
-        public FormNovoLogin(Pessoa p, Login l)
+        public FormCadastraLogin(Pessoa p, Login l)
         {
             InitializeComponent();
             setDTO(p);
@@ -108,6 +108,16 @@ namespace WindowsFormsApplication2
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void txtCPF_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSalvar.PerformClick();
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
         }
     }
 }

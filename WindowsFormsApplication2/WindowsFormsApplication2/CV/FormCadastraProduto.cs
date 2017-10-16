@@ -109,5 +109,15 @@ namespace WindowsFormsApplication2
         {
             Dispose();
         }
+
+        private void txtNome_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSalvar.PerformClick();
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
     }
 }

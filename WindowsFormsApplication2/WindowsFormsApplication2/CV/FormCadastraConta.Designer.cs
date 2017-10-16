@@ -52,7 +52,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelar.Location = new System.Drawing.Point(226, 160);
+            this.btnCancelar.Location = new System.Drawing.Point(237, 160);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 36);
             this.btnCancelar.TabIndex = 7;
@@ -63,7 +63,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSalvar.Location = new System.Drawing.Point(82, 160);
+            this.btnSalvar.Location = new System.Drawing.Point(93, 160);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 36);
             this.btnSalvar.TabIndex = 6;
@@ -92,8 +92,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNome.Location = new System.Drawing.Point(98, 13);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(73, 20);
+            this.txtNome.Size = new System.Drawing.Size(94, 20);
             this.txtNome.TabIndex = 1;
+            this.txtNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyDown);
             // 
             // labNome
             // 
@@ -116,8 +117,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDetalhes.Location = new System.Drawing.Point(98, 39);
             this.txtDetalhes.Name = "txtDetalhes";
-            this.txtDetalhes.Size = new System.Drawing.Size(208, 20);
+            this.txtDetalhes.Size = new System.Drawing.Size(229, 20);
             this.txtDetalhes.TabIndex = 2;
+            this.txtDetalhes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyDown);
             // 
             // labValor
             // 
@@ -169,7 +171,7 @@
             this.dtpVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpVencimento.Location = new System.Drawing.Point(98, 91);
             this.dtpVencimento.Name = "dtpVencimento";
-            this.dtpVencimento.Size = new System.Drawing.Size(101, 20);
+            this.dtpVencimento.Size = new System.Drawing.Size(122, 20);
             this.dtpVencimento.TabIndex = 4;
             // 
             // panCadastro
@@ -192,9 +194,9 @@
             this.panCadastro.Controls.Add(this.labResponsavel);
             this.panCadastro.Controls.Add(this.labNome);
             this.panCadastro.Controls.Add(this.labDetalhes);
-            this.panCadastro.Location = new System.Drawing.Point(12, 12);
+            this.panCadastro.Location = new System.Drawing.Point(1, 1);
             this.panCadastro.Name = "panCadastro";
-            this.panCadastro.Size = new System.Drawing.Size(345, 198);
+            this.panCadastro.Size = new System.Drawing.Size(366, 207);
             this.panCadastro.TabIndex = 27;
             // 
             // txtValor
@@ -209,6 +211,7 @@
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(120, 20);
             this.txtValor.TabIndex = 3;
+            this.txtValor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyDown);
             // 
             // txtVencimento
             // 
@@ -218,7 +221,7 @@
             this.txtVencimento.Location = new System.Drawing.Point(98, 91);
             this.txtVencimento.Name = "txtVencimento";
             this.txtVencimento.ReadOnly = true;
-            this.txtVencimento.Size = new System.Drawing.Size(101, 20);
+            this.txtVencimento.Size = new System.Drawing.Size(122, 20);
             this.txtVencimento.TabIndex = 31;
             this.txtVencimento.TabStop = false;
             this.txtVencimento.Visible = false;
@@ -241,14 +244,14 @@
             this.txtResponsavel.Location = new System.Drawing.Point(98, 118);
             this.txtResponsavel.Name = "txtResponsavel";
             this.txtResponsavel.ReadOnly = true;
-            this.txtResponsavel.Size = new System.Drawing.Size(126, 20);
+            this.txtResponsavel.Size = new System.Drawing.Size(147, 20);
             this.txtResponsavel.TabIndex = 8;
             this.txtResponsavel.TabStop = false;
             // 
             // btnResponsavel
             // 
             this.btnResponsavel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnResponsavel.Location = new System.Drawing.Point(231, 117);
+            this.btnResponsavel.Location = new System.Drawing.Point(252, 117);
             this.btnResponsavel.Name = "btnResponsavel";
             this.btnResponsavel.Size = new System.Drawing.Size(75, 23);
             this.btnResponsavel.TabIndex = 5;
@@ -261,10 +264,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(369, 222);
+            this.ClientSize = new System.Drawing.Size(369, 209);
             this.Controls.Add(this.panCadastro);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(385, 248);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(385, 248);
             this.Name = "FormCadastraConta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro";
