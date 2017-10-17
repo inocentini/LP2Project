@@ -26,9 +26,9 @@ namespace WindowsFormsApplication2
 
         private void Fill()
         {
-            CompraEVendaDAO db = new CompraEVendaDAO();
+            TransacaoDAO db = new TransacaoDAO();
 
-            List<CompraEVenda> lista = db.Listar();
+            List<Transacao> lista = db.Listar();
 
             dgvComprasEVendas.Rows.Clear();
 
@@ -36,7 +36,7 @@ namespace WindowsFormsApplication2
 
             if (cbbTransacao.SelectedIndex == 0)
             {
-                foreach(CompraEVenda cv in lista)
+                foreach(Transacao cv in lista)
                 {
                     if (cv.ToString().Contains(txtFiltrar.Text))
                     {
@@ -55,7 +55,7 @@ namespace WindowsFormsApplication2
                     compra = false;
                 }
 
-                foreach (CompraEVenda cv in lista)
+                foreach (Transacao cv in lista)
                 {
                     if (cv.ToString().Contains(txtFiltrar.Text) && cv.Compra == compra)
                     {
@@ -65,13 +65,13 @@ namespace WindowsFormsApplication2
             }
         }
 
-        private CompraEVenda selecao()
+        private Transacao selecao()
         {
             if (dgvComprasEVendas.CurrentRow != null)
             {
                 int indiceSelecao = dgvComprasEVendas.SelectedCells[0].RowIndex;
                 DataGridViewRow linhaSelecionada = dgvComprasEVendas.Rows[indiceSelecao];
-                CompraEVendaDAO db = new CompraEVendaDAO();
+                TransacaoDAO db = new TransacaoDAO();
                 return db.Read(int.Parse(linhaSelecionada.Cells[0].Value.ToString()));
             }
             else
@@ -83,7 +83,7 @@ namespace WindowsFormsApplication2
 
         private void bntEditar_Click(object sender, EventArgs e)
         {
-            CompraEVenda selecionada = selecao();
+            Transacao selecionada = selecao();
             if (selecionada != null)
             {
                 FormCadastraTransacao editar = new FormCadastraTransacao(selecionada, true);
@@ -94,7 +94,7 @@ namespace WindowsFormsApplication2
 
         private void bntDetalhes_Click(object sender, EventArgs e)
         {
-            CompraEVenda selecionada = selecao();
+            Transacao selecionada = selecao();
             if (selecionada != null)
             {
                 FormCadastraTransacao detalhes = new FormCadastraTransacao(selecionada, false);
@@ -104,10 +104,10 @@ namespace WindowsFormsApplication2
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            CompraEVenda selecionada = selecao();
+            Transacao selecionada = selecao();
             if (selecionada != null)
             {
-                CompraEVendaDAO db = new CompraEVendaDAO();
+                TransacaoDAO db = new TransacaoDAO();
                 db.Remover(selecionada.Id);
                 Fill();
             }

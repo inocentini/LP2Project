@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastraLogin));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gbNovoLogin = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.txtSenha = new System.Windows.Forms.MaskedTextBox();
             this.txtUser = new System.Windows.Forms.MaskedTextBox();
-            this.lbSenha = new System.Windows.Forms.Label();
-            this.lbUser = new System.Windows.Forms.Label();
+            this.labSenha = new System.Windows.Forms.Label();
+            this.labUser = new System.Windows.Forms.Label();
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.labCPF = new System.Windows.Forms.Label();
@@ -53,10 +53,10 @@
             this.gbNovoLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbNovoLogin.Controls.Add(this.maskedTextBox2);
+            this.gbNovoLogin.Controls.Add(this.txtSenha);
             this.gbNovoLogin.Controls.Add(this.txtUser);
-            this.gbNovoLogin.Controls.Add(this.lbSenha);
-            this.gbNovoLogin.Controls.Add(this.lbUser);
+            this.gbNovoLogin.Controls.Add(this.labSenha);
+            this.gbNovoLogin.Controls.Add(this.labUser);
             this.gbNovoLogin.Controls.Add(this.txtCPF);
             this.gbNovoLogin.Controls.Add(this.txtTelefone);
             this.gbNovoLogin.Controls.Add(this.labCPF);
@@ -75,14 +75,14 @@
             this.gbNovoLogin.TabStop = false;
             this.gbNovoLogin.Text = "Novo Usuário";
             // 
-            // maskedTextBox2
+            // txtSenha
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(74, 170);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.PasswordChar = '•';
-            this.maskedTextBox2.Size = new System.Drawing.Size(139, 20);
-            this.maskedTextBox2.TabIndex = 38;
-            this.maskedTextBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
+            this.txtSenha.Location = new System.Drawing.Point(74, 170);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '•';
+            this.txtSenha.Size = new System.Drawing.Size(139, 20);
+            this.txtSenha.TabIndex = 38;
+            this.txtSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
             // 
             // txtUser
             // 
@@ -92,27 +92,27 @@
             this.txtUser.TabIndex = 37;
             this.txtUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
             // 
-            // lbSenha
+            // labSenha
             // 
-            this.lbSenha.AutoSize = true;
-            this.lbSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbSenha.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbSenha.Location = new System.Drawing.Point(29, 172);
-            this.lbSenha.Name = "lbSenha";
-            this.lbSenha.Size = new System.Drawing.Size(41, 13);
-            this.lbSenha.TabIndex = 36;
-            this.lbSenha.Text = "Senha:";
+            this.labSenha.AutoSize = true;
+            this.labSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labSenha.ForeColor = System.Drawing.SystemColors.Control;
+            this.labSenha.Location = new System.Drawing.Point(29, 172);
+            this.labSenha.Name = "labSenha";
+            this.labSenha.Size = new System.Drawing.Size(41, 13);
+            this.labSenha.TabIndex = 36;
+            this.labSenha.Text = "Senha:";
             // 
-            // lbUser
+            // labUser
             // 
-            this.lbUser.AutoSize = true;
-            this.lbUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbUser.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbUser.Location = new System.Drawing.Point(24, 143);
-            this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(46, 13);
-            this.lbUser.TabIndex = 35;
-            this.lbUser.Text = "Usuário:";
+            this.labUser.AutoSize = true;
+            this.labUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labUser.ForeColor = System.Drawing.SystemColors.Control;
+            this.labUser.Location = new System.Drawing.Point(24, 143);
+            this.labUser.Name = "labUser";
+            this.labUser.Size = new System.Drawing.Size(46, 13);
+            this.labUser.TabIndex = 35;
+            this.labUser.Text = "Usuário:";
             // 
             // txtCPF
             // 
@@ -224,7 +224,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(383, 278);
             this.Controls.Add(this.gbNovoLogin);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(399, 317);
@@ -234,6 +234,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Novo usuário";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCadastraLogin_FormClosing);
             this.gbNovoLogin.ResumeLayout(false);
             this.gbNovoLogin.PerformLayout();
             this.ResumeLayout(false);
@@ -245,10 +246,10 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox txtSenha;
         private System.Windows.Forms.MaskedTextBox txtUser;
-        private System.Windows.Forms.Label lbSenha;
-        private System.Windows.Forms.Label lbUser;
+        private System.Windows.Forms.Label labSenha;
+        private System.Windows.Forms.Label labUser;
         private System.Windows.Forms.MaskedTextBox txtCPF;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.Label labCPF;

@@ -77,19 +77,25 @@
     <Compile Include="CV\FormCadastraTransacao.Designer.cs">
       <DependentUpon>FormCadastraTransacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormListaPagamentos.cs">
+    <Compile Include="CV\FormListaPagamentos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormListaPagamentos.Designer.cs">
+    <Compile Include="CV\FormListaPagamentos.Designer.cs">
       <DependentUpon>FormListaPagamentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\CompraEVenda.cs" />
-    <Compile Include="DAO\CompraEVendaDAO.cs" />
-    <Compile Include="CV\FormAdmin.cs">
+    <Compile Include="CV\FormAlteraSenha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CV\FormAdmin.Designer.cs">
-      <DependentUpon>FormAdmin.cs</DependentUpon>
+    <Compile Include="CV\FormAlteraSenha.Designer.cs">
+      <DependentUpon>FormAlteraSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Transacao.cs" />
+    <Compile Include="DAO\TransacaoDAO.cs" />
+    <Compile Include="CV\FormRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormRelatorios.Designer.cs">
+      <DependentUpon>FormRelatorios.cs</DependentUpon>
     </Compile>
     <Compile Include="CV\FormPrincipal.cs">
       <SubType>Form</SubType>
@@ -141,7 +147,7 @@
     <Compile Include="CV\FormListaTransacoes.Designer.cs">
       <DependentUpon>FormListaTransacoes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\ProdutoVenda.cs" />
+    <Compile Include="Modelo\ProdutoTransacao.cs" />
     <Compile Include="Modelo\Pagamento.cs" />
     <Compile Include="DAO\PagamentoDAO.cs" />
     <Compile Include="Modelo\PessoaPagamento.cs" />
@@ -184,8 +190,9 @@
     <Compile Include="CV\FormSplashScreen.Designer.cs">
       <DependentUpon>FormSplashScreen.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CV\FormAdmin.resx">
-      <DependentUpon>FormAdmin.cs</DependentUpon>
+    <Compile Include="Utils\Sessao.cs" />
+    <EmbeddedResource Include="CV\FormRelatorios.resx">
+      <DependentUpon>FormRelatorios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormCadastraPessoa.resx">
       <DependentUpon>FormCadastraPessoa.cs</DependentUpon>
@@ -223,8 +230,11 @@
     <EmbeddedResource Include="CV\FormCadastraTransacao.resx">
       <DependentUpon>FormCadastraTransacao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormListaPagamentos.resx">
+    <EmbeddedResource Include="CV\FormListaPagamentos.resx">
       <DependentUpon>FormListaPagamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormAlteraSenha.resx">
+      <DependentUpon>FormAlteraSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

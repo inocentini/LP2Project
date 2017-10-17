@@ -43,10 +43,20 @@ namespace WindowsFormsApplication2
                 Login l = GetDTO();
                 if (database.Login(l))
                 {
+                    database.SetSession(l.Nome);
                     FormPrincipal fp = new FormPrincipal();
                     this.Hide();
-                    fp.ShowDialog();
-                    Dispose();
+                    fp.ShowDialog(this);
+                    try
+                    {
+                        this.Show();
+                        txtUser.Text = "";
+                        txtSenha.Text = "";
+                    }
+                    catch (System.ObjectDisposedException)
+                    {
+
+                    }
                 }
                 else
                 {

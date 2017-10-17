@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication2
 {
-    public class ProdutoVenda
+    public class ProdutoTransacao
     {
         private Produto prod = new Produto();
         private double quantidade = new double();
 
-        public ProdutoVenda(Produto prod, double quantidade)
+        public ProdutoTransacao(Produto prod, double quantidade)
         {
             this.Prod = prod;
             this.Quantidade = quantidade;
         }
 
-        public ProdutoVenda()
+        public ProdutoTransacao()
         {
 
         }

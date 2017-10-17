@@ -16,11 +16,7 @@ namespace WindowsFormsApplication2
         }
 
         public List<Pagamento> Listar()
-        {
-            Database db = Database.GetInstance();
-            string qry = string.Format("SELECT * FROM Pagamento");
-            DataSet ds = db.ExecuteQuery(qry);
-            
+        {            
             ContaDAO dbc = new ContaDAO();
             List<Conta> lContas = dbc.Listar();
             List<Pagamento> lPagamentos = new List<Pagamento>();
@@ -30,7 +26,34 @@ namespace WindowsFormsApplication2
                 lPagamentos.Add(Read(c.Id));
             }
 
-            return c;
+            return lPagamentos;
+        }
+
+        public List<Pagamento> ListarPessoa(string cpf)
+        {
+            Database db = Database.GetInstance();
+            string qry = string.Format("SELECT * FROM Pagamento WHERE cpfpessoa = '{0}'",cpf);
+            DataSet ds = db.ExecuteQuery(qry);
+
+            PessoaDAO dbp = new PessoaDAO();
+            ContaDAO dbc = new ContaDAO();
+
+            Pessoa p = dbp.Read(cpf);
+            List<Pagamento> lPagamentos = new List<Pagamento>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                Pagamento pgm = new Pagamento();
+                Conta c = dbc.Read(int.Parse(dr["idconta"].ToString()));
+                PessoaPagamento pg = new PessoaPagamento();
+                pg.P = p;
+                pg.Pago = Convert.ToBoolean(int.Parse(dr["pago"].ToString()));
+                pg.APagar = double.Parse(dr["apagar"].ToString());
+                pgm.LPessoas.Add(pg);
+                lPagamentos.Add(pgm);
+            }
+
+            return lPagamentos;
         }
 
         public Pagamento Read(int id)
@@ -39,11 +62,11 @@ namespace WindowsFormsApplication2
             string qry = string.Format("SELECT * FROM Pagamento WHERE idConta = {0}", id);
             DataSet ds = db.ExecuteQuery(qry);
 
-            Pagamento c = new Pagamento();
+            Pagamento p = new Pagamento();
             ContaDAO dbc = new ContaDAO();
             PessoaDAO dbp = new PessoaDAO();
 
-            c.C = dbc.Read(id);
+            p.C = dbc.Read(id);
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
@@ -51,10 +74,10 @@ namespace WindowsFormsApplication2
                 pg.P = dbp.Read(dr["cpfpessoa"].ToString());
                 pg.APagar = double.Parse(dr["apagar"].ToString());
                 pg.Pago = Convert.ToBoolean(int.Parse(dr["pago"].ToString()));
-                c.LPessoas.Add(pg);
+                p.LPessoas.Add(pg);
             }
 
-            return c;
+            return p;
         }
 
         public void Remover(int id)

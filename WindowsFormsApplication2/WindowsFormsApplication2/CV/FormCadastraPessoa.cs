@@ -12,29 +12,16 @@ namespace WindowsFormsApplication2
 {
     public partial class FormCadastraPessoa : Form
     {
-        private bool editar = new bool();
-
-        public bool Editar
-        {
-            get
-            {
-                return editar;
-            }
-
-            set
-            {
-                editar = value;
-            }
-        }
+        private bool editar = false;
 
         public FormCadastraPessoa(Pessoa p, bool edicao) //objeto
         {
-            Editar = edicao;
+            editar = edicao;
             InitializeComponent();
             setDTO(p);
             txtCPF.ReadOnly = true;
             txtCPF.TabStop = false;
-            if (!Editar)
+            if (!editar)
             {
                 txtEmail.ReadOnly = true;
                 txtEmail.TabStop = false;
@@ -76,7 +63,7 @@ namespace WindowsFormsApplication2
             if (IsComplete())
             {
                 PessoaDAO database = new PessoaDAO();
-                if (Editar)
+                if (editar)
                 {
                     database.Editar(getDTO());
                     Dispose();

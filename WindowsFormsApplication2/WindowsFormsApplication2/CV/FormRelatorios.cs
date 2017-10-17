@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication2
 {
-    public partial class FormAdmin : Form
+    public partial class FormRelatorios : Form
     {
-        public FormAdmin()
+        public FormRelatorios()
         {
             InitializeComponent();
         }

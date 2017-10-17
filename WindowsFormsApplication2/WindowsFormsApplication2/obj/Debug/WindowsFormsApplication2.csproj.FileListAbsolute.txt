@@ -135,7 +135,6 @@ C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsA
 C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\System.Data.SQLite.xml
 C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormPrincipal.resources
-C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormAdmin.resources
 C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormListaTransacoes.resources
 C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormCadastraTransacao.resources
 C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormCadastraLogin.resources
@@ -144,3 +143,6 @@ C:\Users\gabri\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsAppli
 C:\Users\gabri\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormCadastraLogin.resources
 C:\Users\gabri\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormPrincipal.resources
 C:\Users\gabri\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormCadastraTransacao.resources
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormListaPagamentos.resources
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormRelatorios.resources
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormAlteraSenha.resources

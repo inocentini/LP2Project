@@ -12,26 +12,39 @@ namespace WindowsFormsApplication2
 {
     public partial class FormCadastraLogin : Form
     {
+        private bool editar = false;
+
         public FormCadastraLogin()
         {
             InitializeComponent();
         }
 
-        public FormCadastraLogin(Pessoa p, Login l)
+        public FormCadastraLogin(Login l)
         {
             InitializeComponent();
-            setDTO(p);
+
+            this.MinimumSize = new Size(this.Width, 280);
+            this.MaximumSize = new Size(this.Width, 280);
+            this.Height = 300;
+            btnSalvar.Location = new Point(btnSalvar.Location.X, 170);
+            btnCancelar.Location = new Point(btnCancelar.Location.X, 170);
+
+            setDTO(l.P);
             setDTOL(l);
             txtCPF.ReadOnly = true;
-            txtCPF.TabIndex = btnCancelar.TabIndex + 1;
+            txtUser.ReadOnly = true;
+            txtSenha.Visible = false;
+            labSenha.Visible = false;
+            gbNovoLogin.Text = "Modificando informações";
 
+            editar = true;
         }
 
         private Login getDTOL()
         {
             Login l = new Login();
             l.Nome = txtUser.Text;
-            l.Senha = maskedTextBox2.Text;
+            l.Senha = txtSenha.Text;
 
             return l;
         }
@@ -39,7 +52,6 @@ namespace WindowsFormsApplication2
         private void setDTOL(Login l)
         {
             txtUser.Text = l.Nome;
-            maskedTextBox2.Text = l.Senha;
         }
 
         private Pessoa getDTO()
@@ -66,14 +78,14 @@ namespace WindowsFormsApplication2
             txtNome.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             txtEmail.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             txtTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            if (txtCPF.Text.Trim() == "" || txtNome.Text.Trim() == "" || txtEmail.Text.Trim() == "" || txtTelefone.Text.Trim() == "" || txtUser.Text.Trim() == "" || maskedTextBox2.Text.Trim() == "")
+            if (txtCPF.Text.Trim() == "" || txtNome.Text.Trim() == "" || txtEmail.Text.Trim() == "" || txtTelefone.Text.Trim() == "" || txtUser.Text.Trim() == "" || txtSenha.Text.Trim() == "")
             {
                 txtCPF.TextMaskFormat = MaskFormat.IncludeLiterals;
                 txtNome.TextMaskFormat = MaskFormat.IncludeLiterals;
                 txtEmail.TextMaskFormat = MaskFormat.IncludeLiterals;
                 txtTelefone.TextMaskFormat = MaskFormat.IncludeLiterals;
                 txtUser.TextMaskFormat = MaskFormat.IncludeLiterals;
-                maskedTextBox2.TextMaskFormat = MaskFormat.IncludeLiterals;
+                txtSenha.TextMaskFormat = MaskFormat.IncludeLiterals;
                 return false;
             }
             txtCPF.TextMaskFormat = MaskFormat.IncludeLiterals;
@@ -81,33 +93,77 @@ namespace WindowsFormsApplication2
             txtEmail.TextMaskFormat = MaskFormat.IncludeLiterals;
             txtTelefone.TextMaskFormat = MaskFormat.IncludeLiterals;
             txtUser.TextMaskFormat = MaskFormat.IncludeLiterals;
-            maskedTextBox2.TextMaskFormat = MaskFormat.IncludeLiterals;
+            txtSenha.TextMaskFormat = MaskFormat.IncludeLiterals;
+            return true;
+        }
+
+        private bool IsCompleteEdicao()
+        {
+            txtNome.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            txtEmail.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            txtTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (txtNome.Text.Trim() == "" || txtEmail.Text.Trim() == "" || txtTelefone.Text.Trim() == "")
+            {
+                txtNome.TextMaskFormat = MaskFormat.IncludeLiterals;
+                txtEmail.TextMaskFormat = MaskFormat.IncludeLiterals;
+                txtTelefone.TextMaskFormat = MaskFormat.IncludeLiterals;
+                return false;
+            }
+            txtNome.TextMaskFormat = MaskFormat.IncludeLiterals;
+            txtEmail.TextMaskFormat = MaskFormat.IncludeLiterals;
+            txtTelefone.TextMaskFormat = MaskFormat.IncludeLiterals;
             return true;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (IsComplete())
+            if (editar)
             {
-                LoginDAO database = new LoginDAO();
-                PessoaDAO databasep = new PessoaDAO();
+                if (IsCompleteEdicao())
+                {
+                    PessoaDAO databasep = new PessoaDAO();
 
-                Login l = getDTOL();
-                Pessoa p = getDTO();
-                
-                database.Salvar(l);
-                databasep.Salvar(p);
-                Dispose();
+                    Pessoa p = getDTO();
+
+                    databasep.Editar(p);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Campo inválido ou vazio.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Erro!", "Campo inválido ou vazio.",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                if (IsComplete())
+                {
+                    LoginDAO database = new LoginDAO();
+                    PessoaDAO databasep = new PessoaDAO();
+
+                    Login l = getDTOL();
+                    Pessoa p = getDTO();
+
+                    l.P = p;
+
+                    if (database.HasAdmin())
+                    {
+                        MessageBox.Show("Bem vindo ao House Manager! Como primeiro usuário, você terá previlégios de administrador. Para gerenciar os administradores, consulte a área administrativa.", "Bem vindo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        l.Admin = true;
+                    }
+                    database.Salvar(l);
+                    databasep.Salvar(p);
+                    Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("Campo inválido ou vazio.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Dispose();
+            Close();
         }
 
         private void txtCPF_KeyDown(object sender, KeyEventArgs e)
@@ -117,6 +173,19 @@ namespace WindowsFormsApplication2
                 btnSalvar.PerformClick();
                 e.SuppressKeyPress = true;
                 e.Handled = true;
+            }
+        }
+
+        private void FormCadastraLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (editar)
+            {
+                this.Hide();
+                e.Cancel = true;
+            }
+            else
+            {
+                Dispose();
             }
         }
     }

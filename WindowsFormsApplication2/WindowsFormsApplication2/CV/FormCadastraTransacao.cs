@@ -14,8 +14,8 @@ namespace WindowsFormsApplication2
     {
         private bool editar = new bool();
         private int id = new int();
-        private Dictionary<int, ProdutoVenda> dictProdutosDgv = new Dictionary<int, ProdutoVenda>();
-        private Dictionary<int, ProdutoVenda> dictProdutosAnteriores = new Dictionary<int, ProdutoVenda>();
+        private Dictionary<int, ProdutoTransacao> dictProdutosDgv = new Dictionary<int, ProdutoTransacao>();
+        private Dictionary<int, ProdutoTransacao> dictProdutosAnteriores = new Dictionary<int, ProdutoTransacao>();
         private Produto prod;
         private RadioButton escolhido = new RadioButton();
         private bool reescolha = false;
@@ -25,7 +25,7 @@ namespace WindowsFormsApplication2
             InitializeComponent();
         }
 
-        public FormCadastraTransacao(CompraEVenda cv, bool edicao) //objeto
+        public FormCadastraTransacao(Transacao cv, bool edicao) //objeto
         {
             Editar = edicao;
             InitializeComponent();
@@ -71,17 +71,17 @@ namespace WindowsFormsApplication2
             }
         }
 
-        private CompraEVenda getDTO()
+        private Transacao getDTO()
         {
-            CompraEVenda cv = new CompraEVenda();
+            Transacao cv = new Transacao();
             cv.Data = dtpData.Value;
             cv.Valor = double.Parse(txtValor.Text);
             cv.Compra = rdbCompra.Checked;
 
-            List<ProdutoVenda> lproduto = new List<ProdutoVenda>();
-            foreach(KeyValuePair<int,ProdutoVenda> pv in dictProdutosDgv)
+            List<ProdutoTransacao> lproduto = new List<ProdutoTransacao>();
+            foreach(KeyValuePair<int,ProdutoTransacao> pv in dictProdutosDgv)
             {
-                ProdutoVenda pve = new ProdutoVenda(pv.Value.Prod, pv.Value.Quantidade);
+                ProdutoTransacao pve = new ProdutoTransacao(pv.Value.Prod, pv.Value.Quantidade);
                 lproduto.Add(pve);
             }
 
@@ -90,7 +90,7 @@ namespace WindowsFormsApplication2
             return cv;
         }
 
-        private void setDTO(CompraEVenda cv)
+        private void setDTO(Transacao cv)
         {
             dtpData.Value = cv.Data;
             txtValor.Text = cv.Valor.ToString();
@@ -102,11 +102,11 @@ namespace WindowsFormsApplication2
             {
                 rdbUso.Checked = true;
             }
-            foreach(ProdutoVenda pv in cv.Lista)
+            foreach(ProdutoTransacao pv in cv.Lista)
             {
                 dictProdutosDgv.Add(pv.Prod.Id, pv);
                 int id = pv.Prod.Id;
-                dictProdutosAnteriores.Add(id, new ProdutoVenda(pv.Prod,pv.Quantidade));
+                dictProdutosAnteriores.Add(id, new ProdutoTransacao(pv.Prod,pv.Quantidade));
             }
             Fill();
         }
@@ -144,7 +144,7 @@ namespace WindowsFormsApplication2
                 }
                 else
                 {
-                    ProdutoVenda prodvenda = new ProdutoVenda(prod, double.Parse(txtQuantidade.Text));
+                    ProdutoTransacao prodvenda = new ProdutoTransacao(prod, double.Parse(txtQuantidade.Text));
                     dgvProdutos.Rows.Add(prod.Id, prod.Nome, txtQuantidade.Text);
                     dictProdutosDgv.Add(prod.Id, prodvenda);
                     txtQuantidade.Text = "0";
@@ -159,7 +159,7 @@ namespace WindowsFormsApplication2
 
         private void Fill()
         {
-            foreach(KeyValuePair<int,ProdutoVenda> p in dictProdutosDgv)
+            foreach(KeyValuePair<int,ProdutoTransacao> p in dictProdutosDgv)
             {
                 dgvProdutos.Rows.Add(p.Key, p.Value.Prod.Nome, p.Value.Quantidade);
             }
@@ -281,8 +281,8 @@ namespace WindowsFormsApplication2
         {
             if (IsCompleteForm())
             {
-                CompraEVendaDAO database = new CompraEVendaDAO();
-                CompraEVenda cv = getDTO();
+                TransacaoDAO database = new TransacaoDAO();
+                Transacao cv = getDTO();
                 if (Editar)
                 {
                     cv.Id = id;

@@ -10,16 +10,20 @@ namespace WindowsFormsApplication2
     {
         private string nome;
         private string senha;
-        private string cpf;
+        private Pessoa p;
+        private bool admin = false;
+
         public Login()
         {
 
         }
 
-        public Login(string nome, string senha)
+        public Login(string nome, string senha, bool admin, Pessoa p)
         {
             this.Nome = nome;
             this.Senha = Hashing.Hash(senha,null);
+            this.Admin = admin;
+            this.P = p;
         }
 
         public string Nome
@@ -48,16 +52,29 @@ namespace WindowsFormsApplication2
             }
         }
 
-        public string Cpf
+        public bool Admin
         {
             get
             {
-                return cpf;
+                return admin;
             }
 
             set
             {
-                cpf = value;
+                admin = value;
+            }
+        }
+
+        public Pessoa P
+        {
+            get
+            {
+                return p;
+            }
+
+            set
+            {
+                p = value;
             }
         }
     }

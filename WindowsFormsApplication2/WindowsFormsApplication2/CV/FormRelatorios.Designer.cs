@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication2
 {
-    partial class FormAdmin
+    partial class FormRelatorios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRelatorios));
             this.SuspendLayout();
             // 
-            // FormAdmin
+            // FormRelatorios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 428);
+            this.ClientSize = new System.Drawing.Size(961, 504);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormAdmin";
+            this.Name = "FormRelatorios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Área Administrativa";
             this.ResumeLayout(false);
 

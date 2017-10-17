@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication2
 {
-    public class CompraEVenda
+    public class Transacao
     {
         private int id = new int();
         private DateTime data = new DateTime();
-        private List<ProdutoVenda> lista = new List<ProdutoVenda>();
+        private List<ProdutoTransacao> lista = new List<ProdutoTransacao>();
         private bool compra = new bool();
         private double valor = new double();
 
@@ -27,7 +27,7 @@ namespace WindowsFormsApplication2
             }
         }
 
-        public List<ProdutoVenda> Lista
+        public List<ProdutoTransacao> Lista
         {
             get
             {
@@ -79,7 +79,7 @@ namespace WindowsFormsApplication2
             }
         }
 
-        public CompraEVenda(DateTime data, List<ProdutoVenda> lista, int id,bool compra,double valor)
+        public Transacao(DateTime data, List<ProdutoTransacao> lista, int id,bool compra,double valor)
         {
             this.Id = id;
             this.Data = data;
@@ -88,7 +88,7 @@ namespace WindowsFormsApplication2
             this.Valor = valor;
         }
 
-        public CompraEVenda()
+        public Transacao()
         {
 
         }
@@ -96,7 +96,7 @@ namespace WindowsFormsApplication2
         public override string ToString()
         {
             string stg = "";
-            foreach(ProdutoVenda pv in Lista)
+            foreach(ProdutoTransacao pv in Lista)
             {
                 stg = stg + "" + pv.Prod.Nome + ": " + pv.Quantidade + "  |  ";
             }
