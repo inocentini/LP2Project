@@ -122,19 +122,19 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pessoasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="pessoasToolStripMenuItem.Text" xml:space="preserve">
     <value>Pessoas</value>
   </data>
   <data name="relatóriosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="relatóriosToolStripMenuItem.Text" xml:space="preserve">
     <value>Relatórios</value>
   </data>
   <data name="contasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="contasToolStripMenuItem.Text" xml:space="preserve">
     <value>Contas</value>
