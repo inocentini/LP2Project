@@ -13,7 +13,7 @@ namespace WindowsFormsApplication2
     public partial class FormPrincipal : Form
     {
         FormListaProdutos flpr = new FormListaProdutos();
-        FormListaContas flc;
+        FormListaContas flc = new FormListaContas();
         FormRelatorios frel;
         FormListaTransacoes flt = new FormListaTransacoes();
         FormListaPessoas flp;
@@ -59,6 +59,7 @@ namespace WindowsFormsApplication2
         {
             Application.Exit();
         }
+
         private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             flpr.Show();
@@ -66,6 +67,11 @@ namespace WindowsFormsApplication2
 
         private void contasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if(flc.Visible == true)
+            {
+                flc.Hide();
+            }
+            flc.NonAdmin = false;
             flc.Show();
         }
 
@@ -105,9 +111,24 @@ namespace WindowsFormsApplication2
             fmas.Show();
         }
 
-        private void pagamentosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void contasQueAdministroToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (flc.Visible == true)
+            {
+                flc.Hide();
+            }
+            flc.NonAdmin = true;
+            flc.Show();
+        }
 
+        private void meusPagamentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(flpag.Visible == true)
+            {
+                flpag.Hide();
+            }
+            flpag.NonResp = true;
+            flpag.Show();
         }
     }
 }

@@ -42,6 +42,30 @@ namespace WindowsFormsApplication2
             return LContas;
         }
 
+        public List<Conta> ListarPorResponsavel(string cpf)
+        {
+            Database db = Database.GetInstance();
+            string qry = string.Format("SELECT * FROM Conta WHERE cpfresponsavel = '{0}'",cpf);
+            DataSet ds = db.ExecuteQuery(qry);
+
+            List<Conta> LContas = new List<Conta>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                Conta c = new Conta();
+                c.Id = int.Parse(dr["id"].ToString());
+                c.Nome = dr["nome"].ToString();
+                c.Detalhes = dr["detalhes"].ToString();
+                c.Valor = double.Parse(dr["valor"].ToString());
+                string vencimento = dr["vencimento"].ToString();
+                c.Vencimento = Convert.ToDateTime(vencimento);
+                PessoaDAO dbp = new PessoaDAO();
+                c.Responsavel = dbp.Read(dr["cpfresponsavel"].ToString());
+                LContas.Add(c);
+            }
+            return LContas;
+        }
+
         public Conta Read(int id)
         {
             Database db = Database.GetInstance();

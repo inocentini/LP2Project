@@ -40,6 +40,8 @@
             this.controleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contasQueAdministroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.meusPagamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.meuPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -129,10 +131,26 @@
             // 
             // pagamentosToolStripMenuItem
             // 
+            this.pagamentosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contasQueAdministroToolStripMenuItem,
+            this.meusPagamentosToolStripMenuItem});
             this.pagamentosToolStripMenuItem.Image = global::WindowsFormsApplication2.Properties.Resources.coin;
             this.pagamentosToolStripMenuItem.Name = "pagamentosToolStripMenuItem";
             resources.ApplyResources(this.pagamentosToolStripMenuItem, "pagamentosToolStripMenuItem");
-            this.pagamentosToolStripMenuItem.Click += new System.EventHandler(this.pagamentosToolStripMenuItem_Click);
+            // 
+            // contasQueAdministroToolStripMenuItem
+            // 
+            this.contasQueAdministroToolStripMenuItem.Image = global::WindowsFormsApplication2.Properties.Resources.newspaper;
+            this.contasQueAdministroToolStripMenuItem.Name = "contasQueAdministroToolStripMenuItem";
+            resources.ApplyResources(this.contasQueAdministroToolStripMenuItem, "contasQueAdministroToolStripMenuItem");
+            this.contasQueAdministroToolStripMenuItem.Click += new System.EventHandler(this.contasQueAdministroToolStripMenuItem_Click);
+            // 
+            // meusPagamentosToolStripMenuItem
+            // 
+            this.meusPagamentosToolStripMenuItem.Image = global::WindowsFormsApplication2.Properties.Resources.coin;
+            this.meusPagamentosToolStripMenuItem.Name = "meusPagamentosToolStripMenuItem";
+            resources.ApplyResources(this.meusPagamentosToolStripMenuItem, "meusPagamentosToolStripMenuItem");
+            this.meusPagamentosToolStripMenuItem.Click += new System.EventHandler(this.meusPagamentosToolStripMenuItem_Click);
             // 
             // cadastroToolStripMenuItem
             // 
@@ -207,5 +225,7 @@
         private System.Windows.Forms.ToolStripMenuItem contasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alterarInformaçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mudarSenhaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contasQueAdministroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem meusPagamentosToolStripMenuItem;
     }
 }

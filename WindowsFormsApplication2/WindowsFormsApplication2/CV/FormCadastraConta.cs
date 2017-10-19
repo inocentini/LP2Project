@@ -29,7 +29,7 @@ namespace WindowsFormsApplication2
             }
         }
 
-        public FormCadastraConta(Conta c, bool edicao) //objeto
+        public FormCadastraConta(Conta c, bool edicao, bool nonAdmin)
         {
             Editar = edicao;
             InitializeComponent();
@@ -52,11 +52,24 @@ namespace WindowsFormsApplication2
                 btnCancelar.Text = "Voltar";
                 btnSalvar.Hide();
             }
+            else
+            {
+                if (nonAdmin)
+                {
+                    btnResponsavel.Hide();
+                }
+            }
         }
 
-        public FormCadastraConta()
+        public FormCadastraConta(bool nonAdmin)
         {
             InitializeComponent();
+            if (nonAdmin)
+            {
+                btnResponsavel.Hide();
+                resp = Sessao.login.P;
+                txtResponsavel.Text = Sessao.login.P.Nome;
+            }
         }
 
         private Conta getDTO()
@@ -66,7 +79,6 @@ namespace WindowsFormsApplication2
             c.Detalhes = txtDetalhes.Text;
             c.Valor = double.Parse(txtValor.Text);
             c.Vencimento = dtpVencimento.Value;
-            PessoaDAO dbp = new PessoaDAO();
             c.Responsavel = resp;
 
             return c;
@@ -79,6 +91,8 @@ namespace WindowsFormsApplication2
             txtValor.Text = c.Valor.ToString();
             dtpVencimento.Value = c.Vencimento;
             txtResponsavel.Text = c.Responsavel.Nome;
+            PessoaDAO dbp = new PessoaDAO();
+            resp = dbp.Read(c.Responsavel.Cpf);
         }
 
         private bool IsComplete()

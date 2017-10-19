@@ -12,6 +12,21 @@ namespace WindowsFormsApplication2
 {
     public partial class FormListaContas : Form
     {
+        private bool nonAdmin = false;
+
+        public bool NonAdmin
+        {
+            get
+            {
+                return nonAdmin;
+            }
+
+            set
+            {
+                nonAdmin = value;
+            }
+        }
+
         public FormListaContas()
         {
             InitializeComponent();
@@ -21,7 +36,15 @@ namespace WindowsFormsApplication2
         {
             ContaDAO db = new ContaDAO();
 
-            List<Conta> lista = db.Listar();
+            List<Conta> lista;
+            if (NonAdmin)
+            {
+                lista = db.ListarPorResponsavel(Sessao.login.P.Cpf);
+            }
+            else
+            {
+                lista = db.Listar();
+            }
 
             dgvContas.Rows.Clear();
             foreach (Conta c in lista)
@@ -48,7 +71,17 @@ namespace WindowsFormsApplication2
 
         private void bntAdd_Click(object sender, EventArgs e)
         {
-            FormCadastraConta cadastro = new FormCadastraConta();
+            FormCadastraConta cadastro;
+
+            if (nonAdmin)
+            {
+                cadastro = new FormCadastraConta(true);
+            }
+            else
+            {
+                cadastro = new FormCadastraConta(false);
+            }
+
             cadastro.ShowDialog(this);
             Fill();
         }
@@ -58,7 +91,16 @@ namespace WindowsFormsApplication2
             Conta selecionada = selecao();
             if (selecionada != null)
             {
-                FormCadastraConta editar = new FormCadastraConta(selecionada, true);
+                FormCadastraConta editar;
+                if (nonAdmin)
+                {
+                    editar = new FormCadastraConta(selecionada, true, true);
+                }
+                else
+                {
+                    editar = new FormCadastraConta(selecionada, true, false);
+                }
+
                 editar.ShowDialog(this);
                 Fill();
             }
@@ -69,7 +111,7 @@ namespace WindowsFormsApplication2
             Conta selecionada = selecao();
             if (selecionada != null)
             {
-                FormCadastraConta detalhes = new FormCadastraConta(selecionada, false);
+                FormCadastraConta detalhes = new FormCadastraConta(selecionada, false, false);
                 detalhes.ShowDialog(this);
             }
         }
@@ -85,11 +127,30 @@ namespace WindowsFormsApplication2
             }
         }
 
+        private void btnPagamentos_Click(object sender, EventArgs e)
+        {
+            Conta selecionada = selecao();
+            if (selecionada != null)
+            {
+                FormListaPagamentos pagamentos = new FormListaPagamentos(selecionada);
+                pagamentos.NonResp = false;
+                pagamentos.ShowDialog();
+            }
+        }
+
         private void txtFiltrar_KeyUp(object sender, KeyEventArgs e)
         {
             ContaDAO db = new ContaDAO();
 
-            List<Conta> lista = db.Listar();
+            List<Conta> lista;
+            if (NonAdmin)
+            {
+                lista = db.ListarPorResponsavel(Sessao.login.P.Cpf);
+            }
+            else
+            {
+                lista = db.Listar();
+            }
 
 
             dgvContas.Rows.Clear();
@@ -104,6 +165,14 @@ namespace WindowsFormsApplication2
 
         private void FromListaContas_Load(object sender, EventArgs e)
         {
+            if (this.nonAdmin)
+            {
+                this.Text = "Contas que administro";
+            }
+            else
+            {
+                this.Text = "Contas";
+            }
             Fill();
         }
 

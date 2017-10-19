@@ -23,11 +23,12 @@ namespace WindowsFormsApplication2
         {
             InitializeComponent();
 
+            this.Text = "Modificando usuário";
             this.MinimumSize = new Size(this.Width, 280);
             this.MaximumSize = new Size(this.Width, 280);
             this.Height = 300;
-            btnSalvar.Location = new Point(btnSalvar.Location.X, 170);
-            btnCancelar.Location = new Point(btnCancelar.Location.X, 170);
+            btnSalvar.Location = new Point(btnSalvar.Location.X, 190);
+            btnCancelar.Location = new Point(btnCancelar.Location.X, 190);
 
             setDTO(l.P);
             setDTOL(l);
@@ -35,7 +36,6 @@ namespace WindowsFormsApplication2
             txtUser.ReadOnly = true;
             txtSenha.Visible = false;
             labSenha.Visible = false;
-            gbNovoLogin.Text = "Modificando informações";
 
             editar = true;
         }

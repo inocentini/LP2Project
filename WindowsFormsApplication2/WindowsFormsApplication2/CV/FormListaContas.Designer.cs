@@ -46,6 +46,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnPagamentos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContas)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -55,7 +56,7 @@
             // btnRemover
             // 
             this.btnRemover.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnRemover.Location = new System.Drawing.Point(460, 19);
+            this.btnRemover.Location = new System.Drawing.Point(427, 19);
             this.btnRemover.MaximumSize = new System.Drawing.Size(75, 23);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 23);
@@ -67,7 +68,7 @@
             // bntDetalhes
             // 
             this.bntDetalhes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.bntDetalhes.Location = new System.Drawing.Point(379, 19);
+            this.bntDetalhes.Location = new System.Drawing.Point(346, 19);
             this.bntDetalhes.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntDetalhes.Name = "bntDetalhes";
             this.bntDetalhes.Size = new System.Drawing.Size(75, 23);
@@ -79,7 +80,7 @@
             // bntEditar
             // 
             this.bntEditar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.bntEditar.Location = new System.Drawing.Point(298, 19);
+            this.bntEditar.Location = new System.Drawing.Point(265, 19);
             this.bntEditar.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntEditar.Name = "bntEditar";
             this.bntEditar.Size = new System.Drawing.Size(75, 23);
@@ -91,7 +92,7 @@
             // bntAdd
             // 
             this.bntAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.bntAdd.Location = new System.Drawing.Point(217, 19);
+            this.bntAdd.Location = new System.Drawing.Point(184, 19);
             this.bntAdd.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntAdd.Name = "bntAdd";
             this.bntAdd.Size = new System.Drawing.Size(75, 23);
@@ -223,6 +224,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnPagamentos);
             this.panel3.Controls.Add(this.btnRemover);
             this.panel3.Controls.Add(this.bntAdd);
             this.panel3.Controls.Add(this.bntEditar);
@@ -232,6 +234,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(752, 60);
             this.panel3.TabIndex = 13;
+            // 
+            // btnPagamentos
+            // 
+            this.btnPagamentos.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnPagamentos.Location = new System.Drawing.Point(508, 19);
+            this.btnPagamentos.MaximumSize = new System.Drawing.Size(75, 23);
+            this.btnPagamentos.Name = "btnPagamentos";
+            this.btnPagamentos.Size = new System.Drawing.Size(75, 23);
+            this.btnPagamentos.TabIndex = 7;
+            this.btnPagamentos.Text = "Pagamentos";
+            this.btnPagamentos.UseVisualStyleBackColor = true;
+            this.btnPagamentos.Click += new System.EventHandler(this.btnPagamentos_Click);
             // 
             // FormListaContas
             // 
@@ -246,6 +260,7 @@
             this.Name = "FormListaContas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contas";
+            this.Activated += new System.EventHandler(this.FromListaContas_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormListaContas_FormClosing);
             this.Load += new System.EventHandler(this.FromListaContas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContas)).EndInit();
@@ -277,5 +292,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnPagamentos;
     }
 }

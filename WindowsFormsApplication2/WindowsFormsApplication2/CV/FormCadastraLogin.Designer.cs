@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastraLogin));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.gbNovoLogin = new System.Windows.Forms.GroupBox();
             this.txtSenha = new System.Windows.Forms.MaskedTextBox();
             this.txtUser = new System.Windows.Forms.MaskedTextBox();
             this.labSenha = new System.Windows.Forms.Label();
@@ -45,39 +44,13 @@
             this.labTelefone = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.gbNovoLogin.SuspendLayout();
+            this.pnlCadastro = new System.Windows.Forms.Panel();
+            this.pnlCadastro.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // gbNovoLogin
-            // 
-            this.gbNovoLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbNovoLogin.Controls.Add(this.txtSenha);
-            this.gbNovoLogin.Controls.Add(this.txtUser);
-            this.gbNovoLogin.Controls.Add(this.labSenha);
-            this.gbNovoLogin.Controls.Add(this.labUser);
-            this.gbNovoLogin.Controls.Add(this.txtCPF);
-            this.gbNovoLogin.Controls.Add(this.txtTelefone);
-            this.gbNovoLogin.Controls.Add(this.labCPF);
-            this.gbNovoLogin.Controls.Add(this.txtEmail);
-            this.gbNovoLogin.Controls.Add(this.labNome);
-            this.gbNovoLogin.Controls.Add(this.txtNome);
-            this.gbNovoLogin.Controls.Add(this.labEmail);
-            this.gbNovoLogin.Controls.Add(this.labTelefone);
-            this.gbNovoLogin.Controls.Add(this.btnCancelar);
-            this.gbNovoLogin.Controls.Add(this.btnSalvar);
-            this.gbNovoLogin.ForeColor = System.Drawing.SystemColors.Control;
-            this.gbNovoLogin.Location = new System.Drawing.Point(7, 12);
-            this.gbNovoLogin.Name = "gbNovoLogin";
-            this.gbNovoLogin.Size = new System.Drawing.Size(367, 254);
-            this.gbNovoLogin.TabIndex = 39;
-            this.gbNovoLogin.TabStop = false;
-            this.gbNovoLogin.Text = "Novo Usuário";
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(74, 170);
+            this.txtSenha.Location = new System.Drawing.Point(76, 177);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '•';
             this.txtSenha.Size = new System.Drawing.Size(139, 20);
@@ -86,7 +59,7 @@
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(74, 140);
+            this.txtUser.Location = new System.Drawing.Point(76, 144);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(139, 20);
             this.txtUser.TabIndex = 37;
@@ -96,8 +69,8 @@
             // 
             this.labSenha.AutoSize = true;
             this.labSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labSenha.ForeColor = System.Drawing.SystemColors.Control;
-            this.labSenha.Location = new System.Drawing.Point(29, 172);
+            this.labSenha.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labSenha.Location = new System.Drawing.Point(31, 181);
             this.labSenha.Name = "labSenha";
             this.labSenha.Size = new System.Drawing.Size(41, 13);
             this.labSenha.TabIndex = 36;
@@ -107,8 +80,8 @@
             // 
             this.labUser.AutoSize = true;
             this.labUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labUser.ForeColor = System.Drawing.SystemColors.Control;
-            this.labUser.Location = new System.Drawing.Point(24, 143);
+            this.labUser.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labUser.Location = new System.Drawing.Point(26, 148);
             this.labUser.Name = "labUser";
             this.labUser.Size = new System.Drawing.Size(46, 13);
             this.labUser.TabIndex = 35;
@@ -116,7 +89,7 @@
             // 
             // txtCPF
             // 
-            this.txtCPF.Location = new System.Drawing.Point(74, 20);
+            this.txtCPF.Location = new System.Drawing.Point(76, 12);
             this.txtCPF.Mask = "000,000,000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(85, 20);
@@ -125,7 +98,7 @@
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(74, 110);
+            this.txtTelefone.Location = new System.Drawing.Point(76, 111);
             this.txtTelefone.Mask = "(99) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(85, 20);
@@ -136,8 +109,8 @@
             // 
             this.labCPF.AutoSize = true;
             this.labCPF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labCPF.ForeColor = System.Drawing.SystemColors.Control;
-            this.labCPF.Location = new System.Drawing.Point(40, 27);
+            this.labCPF.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labCPF.Location = new System.Drawing.Point(42, 16);
             this.labCPF.Name = "labCPF";
             this.labCPF.Size = new System.Drawing.Size(30, 13);
             this.labCPF.TabIndex = 28;
@@ -145,7 +118,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(74, 80);
+            this.txtEmail.Location = new System.Drawing.Point(76, 78);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(228, 20);
             this.txtEmail.TabIndex = 33;
@@ -155,8 +128,8 @@
             // 
             this.labNome.AutoSize = true;
             this.labNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labNome.ForeColor = System.Drawing.SystemColors.Control;
-            this.labNome.Location = new System.Drawing.Point(32, 56);
+            this.labNome.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labNome.Location = new System.Drawing.Point(34, 49);
             this.labNome.Name = "labNome";
             this.labNome.Size = new System.Drawing.Size(38, 13);
             this.labNome.TabIndex = 27;
@@ -164,7 +137,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(74, 50);
+            this.txtNome.Location = new System.Drawing.Point(76, 45);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(267, 20);
             this.txtNome.TabIndex = 32;
@@ -174,8 +147,8 @@
             // 
             this.labEmail.AutoSize = true;
             this.labEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labEmail.ForeColor = System.Drawing.SystemColors.Control;
-            this.labEmail.Location = new System.Drawing.Point(35, 85);
+            this.labEmail.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labEmail.Location = new System.Drawing.Point(37, 82);
             this.labEmail.Name = "labEmail";
             this.labEmail.Size = new System.Drawing.Size(35, 13);
             this.labEmail.TabIndex = 29;
@@ -185,8 +158,8 @@
             // 
             this.labTelefone.AutoSize = true;
             this.labTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labTelefone.ForeColor = System.Drawing.SystemColors.Control;
-            this.labTelefone.Location = new System.Drawing.Point(18, 114);
+            this.labTelefone.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labTelefone.Location = new System.Drawing.Point(20, 115);
             this.labTelefone.Name = "labTelefone";
             this.labTelefone.Size = new System.Drawing.Size(52, 13);
             this.labTelefone.TabIndex = 30;
@@ -196,9 +169,9 @@
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelar.Location = new System.Drawing.Point(195, 210);
+            this.btnCancelar.Location = new System.Drawing.Point(229, 227);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(108, 36);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 36);
             this.btnCancelar.TabIndex = 26;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -208,22 +181,44 @@
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalvar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSalvar.Location = new System.Drawing.Point(74, 210);
+            this.btnSalvar.Location = new System.Drawing.Point(86, 227);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(108, 36);
+            this.btnSalvar.Size = new System.Drawing.Size(75, 36);
             this.btnSalvar.TabIndex = 25;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // pnlCadastro
+            // 
+            this.pnlCadastro.Controls.Add(this.txtSenha);
+            this.pnlCadastro.Controls.Add(this.btnCancelar);
+            this.pnlCadastro.Controls.Add(this.txtUser);
+            this.pnlCadastro.Controls.Add(this.labNome);
+            this.pnlCadastro.Controls.Add(this.labSenha);
+            this.pnlCadastro.Controls.Add(this.txtNome);
+            this.pnlCadastro.Controls.Add(this.txtCPF);
+            this.pnlCadastro.Controls.Add(this.txtEmail);
+            this.pnlCadastro.Controls.Add(this.labUser);
+            this.pnlCadastro.Controls.Add(this.labEmail);
+            this.pnlCadastro.Controls.Add(this.btnSalvar);
+            this.pnlCadastro.Controls.Add(this.labCPF);
+            this.pnlCadastro.Controls.Add(this.labTelefone);
+            this.pnlCadastro.Controls.Add(this.txtTelefone);
+            this.pnlCadastro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCadastro.Location = new System.Drawing.Point(0, 0);
+            this.pnlCadastro.Name = "pnlCadastro";
+            this.pnlCadastro.Size = new System.Drawing.Size(383, 278);
+            this.pnlCadastro.TabIndex = 39;
+            // 
             // FormCadastraLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSlateGray;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(383, 278);
-            this.Controls.Add(this.gbNovoLogin);
+            this.Controls.Add(this.pnlCadastro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -235,8 +230,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Novo usuário";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCadastraLogin_FormClosing);
-            this.gbNovoLogin.ResumeLayout(false);
-            this.gbNovoLogin.PerformLayout();
+            this.pnlCadastro.ResumeLayout(false);
+            this.pnlCadastro.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -258,6 +253,6 @@
         private System.Windows.Forms.MaskedTextBox txtNome;
         private System.Windows.Forms.Label labEmail;
         private System.Windows.Forms.Label labTelefone;
-        private System.Windows.Forms.GroupBox gbNovoLogin;
+        private System.Windows.Forms.Panel pnlCadastro;
     }
 }

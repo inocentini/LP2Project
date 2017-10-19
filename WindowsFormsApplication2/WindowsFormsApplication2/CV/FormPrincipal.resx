@@ -122,19 +122,19 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pessoasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>126, 22</value>
   </data>
   <data name="pessoasToolStripMenuItem.Text" xml:space="preserve">
     <value>Pessoas</value>
   </data>
   <data name="relatóriosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>126, 22</value>
   </data>
   <data name="relatóriosToolStripMenuItem.Text" xml:space="preserve">
     <value>Relatórios</value>
   </data>
   <data name="contasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>126, 22</value>
   </data>
   <data name="contasToolStripMenuItem.Text" xml:space="preserve">
     <value>Contas</value>
@@ -176,6 +176,18 @@
   <data name="estoqueToolStripMenuItem.Text" xml:space="preserve">
     <value>Compras</value>
   </data>
+  <data name="contasQueAdministroToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
+  <data name="contasQueAdministroToolStripMenuItem.Text" xml:space="preserve">
+    <value>Contas que administro</value>
+  </data>
+  <data name="meusPagamentosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
+  <data name="meusPagamentosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Meus pagamentos</value>
+  </data>
   <data name="pagamentosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
@@ -189,7 +201,7 @@
     <value>Controle</value>
   </data>
   <data name="produtoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>117, 22</value>
   </data>
   <data name="produtoToolStripMenuItem.Text" xml:space="preserve">
     <value>Produto</value>
@@ -246,7 +258,7 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>50</value>
+    <value>25</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -2465,6 +2477,18 @@
     <value>pagamentosToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;pagamentosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;contasQueAdministroToolStripMenuItem.Name" xml:space="preserve">
+    <value>contasQueAdministroToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;contasQueAdministroToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;meusPagamentosToolStripMenuItem.Name" xml:space="preserve">
+    <value>meusPagamentosToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;meusPagamentosToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cadastroToolStripMenuItem.Name" xml:space="preserve">
