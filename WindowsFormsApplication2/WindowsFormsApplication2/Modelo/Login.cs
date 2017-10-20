@@ -8,11 +8,13 @@ namespace WindowsFormsApplication2
 {
     public class Login
     {
+        //Declaração de variáveis.
         private string nome;
         private string senha;
         private Pessoa p;
         private bool admin = false;
 
+        //Construtores.
         public Login()
         {
 
@@ -26,6 +28,7 @@ namespace WindowsFormsApplication2
             this.P = p;
         }
 
+        //Properties
         public string Nome
         {
             get

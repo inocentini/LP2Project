@@ -8,12 +8,14 @@ namespace WindowsFormsApplication2
 {
     public class Transacao
     {
+        //Declaração de variáveis.
         private int id = new int();
         private DateTime data = new DateTime();
         private List<ProdutoTransacao> lista = new List<ProdutoTransacao>();
         private bool compra = new bool();
         private double valor = new double();
 
+        //Properties.
         public DateTime Data
         {
             get
@@ -79,6 +81,7 @@ namespace WindowsFormsApplication2
             }
         }
 
+        //Construtores.
         public Transacao(DateTime data, List<ProdutoTransacao> lista, int id,bool compra,double valor)
         {
             this.Id = id;
@@ -93,6 +96,7 @@ namespace WindowsFormsApplication2
 
         }
 
+        //Método override ToString de formatação para visualização no DataGridView.
         public override string ToString()
         {
             string stg = "";

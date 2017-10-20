@@ -8,9 +8,11 @@ namespace WindowsFormsApplication2
 {
     class Pagamento
     {
+        //Declaração de variáveis.
         private Conta c = new Conta();
         private List<PessoaPagamento> lPessoas = new List<PessoaPagamento>();
 
+        //Construtores.
         public Pagamento(Conta c, List<PessoaPagamento> lPessoas)
         {
             this.C = c;
@@ -22,6 +24,7 @@ namespace WindowsFormsApplication2
 
         }
 
+        //Properties
         public Conta C
         {
             get

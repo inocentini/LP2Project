@@ -8,11 +8,13 @@ namespace WindowsFormsApplication2
 {
     public class Produto
     {
+        //Declaração de variáveis.
         private int id;
         private string nome;
         private string detalhes;
         private double quantidade;
 
+        //Construtores.
         public Produto()
         {
 
@@ -24,6 +26,8 @@ namespace WindowsFormsApplication2
             this.Detalhes = detalhes;
             this.quantidade = quantidade;
         }
+
+        //Properties.
         public int Id
         {
             get

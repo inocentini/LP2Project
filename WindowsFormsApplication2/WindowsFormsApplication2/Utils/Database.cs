@@ -11,21 +11,25 @@ namespace WindowsFormsApplication2
 {
     public class Database
     {
-        private static SQLiteConnection conn;
-        private static Database instance;
-        private const string URL = "Data Source=database.db";
-        private const string NOMEBANCO = "database.db";
+        //Declaração de variáveis.
+        private static SQLiteConnection conn; // variável para conectar com a DB.
+        private static Database instance; //variável para verificar a instância da DB. 
+        private const string URL = "Data Source=database.db"; // caminho da DB
+        private const string NOMEBANCO = "database.db"; // nome da DB
 
+        //Construtor
         private Database()
         {
-            conn = new SQLiteConnection(URL);
+            conn = new SQLiteConnection(URL); // faz a conexão com db.
 
-            if (!File.Exists(NOMEBANCO))
+            //verifica se a db existe e se o resultado for false chama o método de criar a db.
+            if (!File.Exists(NOMEBANCO)) 
             {
                 CriarDatabase();
             }
         }
 
+        //Método de criação da DB
         public static void CriarDatabase()
         {
             SQLiteConnection.CreateFile(NOMEBANCO);
@@ -43,6 +47,7 @@ namespace WindowsFormsApplication2
             cmd.ExecuteNonQuery();
         }
 
+        //Método de verificar a instancia da db.
         public static Database GetInstance()
         {
             if(instance == null)
@@ -52,23 +57,27 @@ namespace WindowsFormsApplication2
             return instance;
         }
 
+        //Método de verificar conexão.
         public SQLiteConnection GetConnection()
         {
             return conn;
         }     
 
+        //Método de executar uma query na db recebendo ela como parâmetro sem retornar nada.
         public void ExecuteNonQuery(string qry)
-        {
+        {   //Verifica e abre conexão com o banco.
             if (conn.State != System.Data.ConnectionState.Open)
             {
                 conn.Open();
             }
+            // Passa a qry e a conexão para uma variável do tipo cmd e chama o método para executar o comando no banco.
             SQLiteCommand comm = new SQLiteCommand(qry, conn);
             comm.ExecuteNonQuery();
-
+            //fecha conexão.
             conn.Close();
         }
 
+        //Método de executar query na db com retorno de linhas alteradas.
         public DataSet ExecuteQuery(string qry)
         {
 

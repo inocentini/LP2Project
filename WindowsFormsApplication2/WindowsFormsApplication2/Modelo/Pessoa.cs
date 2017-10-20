@@ -8,11 +8,13 @@ namespace WindowsFormsApplication2
 {
     public class Pessoa
     {
+        //Declaração de variáveis.
         private string nome;
         private string cpf;
         private string email;
         private string telefone;
 
+        //Construtores.
         public Pessoa()
         {
 
@@ -26,6 +28,7 @@ namespace WindowsFormsApplication2
             this.Telefone = telefone;
         }
 
+        //Properties.
         public string Nome
         {
             get

@@ -8,10 +8,12 @@ namespace WindowsFormsApplication2
 {
     public class PessoaPagamento
     {
+        //Declaração de variáveis.
         private Pessoa p = new Pessoa();
         private bool pago = false;
         private double aPagar = new double();
 
+        //Construtores.
         public PessoaPagamento(Pessoa p, bool pago, double aPagar)
         {
             this.P = p;
@@ -24,6 +26,7 @@ namespace WindowsFormsApplication2
 
         }
 
+        //Properties.
         public double APagar
         {
             get

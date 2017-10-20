@@ -8,6 +8,7 @@ namespace WindowsFormsApplication2
 {
     public class Conta
     {
+        //Declaração de variáveis
         private int id;
         private string nome;
         private string detalhes;
@@ -31,6 +32,7 @@ namespace WindowsFormsApplication2
             this.Responsavel = responsavel;
         }
 
+        //Properties
         public int Id
         {
             get
