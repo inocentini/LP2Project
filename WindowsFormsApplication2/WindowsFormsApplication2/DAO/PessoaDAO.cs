@@ -65,7 +65,7 @@ namespace WindowsFormsApplication2
         {
             Database db = Database.GetInstance();
 
-            string qry = string.Format("DELETE FROM Pessoa WHERE cpf ='{0}'", o);
+            string qry = string.Format("DELETE FROM Pessoa WHERE cpf ='{0}'; DELETE FROM Login WHERE cpfpessoa = '{0}'", o);
             db.ExecuteNonQuery(qry);
         }
 

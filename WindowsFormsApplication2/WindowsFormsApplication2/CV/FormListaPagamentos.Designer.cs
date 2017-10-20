@@ -109,7 +109,7 @@
             "Não pagos"});
             this.cbbSituacao.Location = new System.Drawing.Point(686, 39);
             this.cbbSituacao.Name = "cbbSituacao";
-            this.cbbSituacao.Size = new System.Drawing.Size(121, 21);
+            this.cbbSituacao.Size = new System.Drawing.Size(109, 21);
             this.cbbSituacao.TabIndex = 14;
             this.cbbSituacao.SelectedIndexChanged += new System.EventHandler(this.cbbSituacao_SelectedIndexChanged);
             // 
@@ -119,7 +119,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFiltrar.Location = new System.Drawing.Point(138, 6);
             this.txtFiltrar.Name = "txtFiltrar";
-            this.txtFiltrar.Size = new System.Drawing.Size(669, 20);
+            this.txtFiltrar.Size = new System.Drawing.Size(657, 20);
             this.txtFiltrar.TabIndex = 12;
             this.txtFiltrar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFiltrar_KeyUp);
             // 
@@ -178,6 +178,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pagamentos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormListaPagamentos_FormClosing);
+            this.Load += new System.EventHandler(this.FormListaPagamentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagamentos)).EndInit();
             this.p.ResumeLayout(false);
             this.p.PerformLayout();

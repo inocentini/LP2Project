@@ -112,5 +112,10 @@ namespace WindowsFormsApplication2
         {
             Fill();
         }
+
+        private void FormListaPagamentos_Load(object sender, EventArgs e)
+        {
+            cbbSituacao.SelectedIndex = 0;
+        }
     }
 }

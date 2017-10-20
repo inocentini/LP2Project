@@ -100,5 +100,20 @@ namespace WindowsFormsApplication2
 
             db.ExecuteNonQuery(qry);
         }
+
+        public void Gerar(Conta c)
+        {
+            /*PessoaDAO dbp = new PessoaDAO();
+
+            List<Pessoa> lPessoas = new List<Pessoa>();
+
+            lPessoas = dbp.Listar();
+
+            Pagamento p = new Pagamento();
+            foreach(Pessoa p in lPessoas)
+            {
+                qry = string.Concat(q)
+            }*/
+        }
     }
 }
