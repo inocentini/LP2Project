@@ -20,6 +20,7 @@ namespace WindowsFormsApplication2
         FormCadastraLogin flmi = new FormCadastraLogin(Sessao.login);
         FormAlteraSenha fmas = new FormAlteraSenha();
         FormListaPagamentos flpag = new FormListaPagamentos();
+        FormRelatorioContas frc = new FormRelatorioContas();
 
         private void InicializaForms()
         {
@@ -28,6 +29,7 @@ namespace WindowsFormsApplication2
             flmi.MdiParent = this;
             fmas.MdiParent = this;
             flpag.MdiParent = this;
+            frc.MdiParent = this;
         }
 
         public FormPrincipal()
@@ -85,11 +87,6 @@ namespace WindowsFormsApplication2
             flp.Show();
         }
 
-        private void relatóriosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frel.Show();
-        }
-
         private void FormPrincipal_ResizeEnd(object sender, EventArgs e)
         {
             this.Refresh();
@@ -129,6 +126,11 @@ namespace WindowsFormsApplication2
             }
             flpag.NonResp = true;
             flpag.Show();
+        }
+
+        private void contasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frc.Show();
         }
     }
 }

@@ -122,19 +122,37 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pessoasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="pessoasToolStripMenuItem.Text" xml:space="preserve">
     <value>Pessoas</value>
   </data>
+  <data name="contasToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="contasToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Contas</value>
+  </data>
+  <data name="pagamentosToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="pagamentosToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Pagamentos</value>
+  </data>
+  <data name="estoqueToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="estoqueToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Estoque</value>
+  </data>
   <data name="relatóriosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="relatóriosToolStripMenuItem.Text" xml:space="preserve">
     <value>Relatórios</value>
   </data>
   <data name="contasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="contasToolStripMenuItem.Text" xml:space="preserve">
     <value>Contas</value>
@@ -170,59 +188,17 @@
   <data name="sistemaToolStripMenuItem.Text" xml:space="preserve">
     <value>Sistema</value>
   </data>
-  <data name="estoqueToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="estoqueToolStripMenuItem.Text" xml:space="preserve">
-    <value>Compras</value>
-  </data>
-  <data name="contasQueAdministroToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
-  </data>
-  <data name="contasQueAdministroToolStripMenuItem.Text" xml:space="preserve">
-    <value>Contas que administro</value>
-  </data>
-  <data name="meusPagamentosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
-  </data>
-  <data name="meusPagamentosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Meus pagamentos</value>
-  </data>
-  <data name="pagamentosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="pagamentosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Pagamentos</value>
-  </data>
   <data name="controleToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 20</value>
   </data>
   <data name="controleToolStripMenuItem.Text" xml:space="preserve">
     <value>Controle</value>
   </data>
-  <data name="produtoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 22</value>
-  </data>
-  <data name="produtoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Produto</value>
-  </data>
   <data name="cadastroToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 20</value>
   </data>
   <data name="cadastroToolStripMenuItem.Text" xml:space="preserve">
     <value>Cadastro</value>
-  </data>
-  <data name="alterarInformaçõesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
-  </data>
-  <data name="alterarInformaçõesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mudar informações</value>
-  </data>
-  <data name="mudarSenhaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
-  </data>
-  <data name="mudarSenhaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mudar senha</value>
   </data>
   <data name="meuPerfilToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 20</value>
@@ -253,6 +229,48 @@
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="estoqueToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 22</value>
+  </data>
+  <data name="estoqueToolStripMenuItem.Text" xml:space="preserve">
+    <value>Compras</value>
+  </data>
+  <data name="pagamentosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 22</value>
+  </data>
+  <data name="pagamentosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Pagamentos</value>
+  </data>
+  <data name="contasQueAdministroToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
+  <data name="contasQueAdministroToolStripMenuItem.Text" xml:space="preserve">
+    <value>Contas que administro</value>
+  </data>
+  <data name="meusPagamentosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
+  <data name="meusPagamentosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Meus pagamentos</value>
+  </data>
+  <data name="produtoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 22</value>
+  </data>
+  <data name="produtoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Produto</value>
+  </data>
+  <data name="alterarInformaçõesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="alterarInformaçõesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mudar informações</value>
+  </data>
+  <data name="mudarSenhaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="mudarSenhaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mudar senha</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2443,6 +2461,12 @@
   <data name="&gt;&gt;relatóriosToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;estoqueToolStripMenuItem1.Name" xml:space="preserve">
+    <value>estoqueToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;estoqueToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;contasToolStripMenuItem.Name" xml:space="preserve">
     <value>contasToolStripMenuItem</value>
   </data>
@@ -2519,6 +2543,18 @@
     <value>mudarSenhaToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;mudarSenhaToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pagamentosToolStripMenuItem1.Name" xml:space="preserve">
+    <value>pagamentosToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;pagamentosToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;contasToolStripMenuItem1.Name" xml:space="preserve">
+    <value>contasToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;contasToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

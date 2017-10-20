@@ -89,6 +89,12 @@
     <Compile Include="CV\FormAlteraSenha.Designer.cs">
       <DependentUpon>FormAlteraSenha.cs</DependentUpon>
     </Compile>
+    <Compile Include="CV\FormRelatorioContas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormRelatorioContas.Designer.cs">
+      <DependentUpon>FormRelatorioContas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Transacao.cs" />
     <Compile Include="DAO\TransacaoDAO.cs" />
     <Compile Include="CV\FormRelatorios.cs">
@@ -191,6 +197,9 @@
       <DependentUpon>FormSplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Sessao.cs" />
+    <EmbeddedResource Include="CV\FormRelatorioContas.resx">
+      <DependentUpon>FormRelatorioContas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CV\FormRelatorios.resx">
       <DependentUpon>FormRelatorios.cs</DependentUpon>
     </EmbeddedResource>
