@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication2
+namespace HouseManager
 {
     public partial class FormListaPagamentos : Form
     {
@@ -31,6 +31,9 @@ namespace WindowsFormsApplication2
         public FormListaPagamentos()
         {
             InitializeComponent();
+            colPessoa.Visible = false;
+            btnSituacao.Hide();
+            dgvPagamentos.Height = 400;
         }
 
         public FormListaPagamentos(Conta c)
@@ -39,7 +42,8 @@ namespace WindowsFormsApplication2
             InitializeComponent();
             labFiltrarPagamento.Hide();
             txtFiltrar.Hide();
-            pnlFiltro.Height = 49;
+            pnlFiltro.Height = 54;
+            pnlInfo.Height = 452;
         }
 
         private void FormListaPagamentos_FormClosing(object sender, FormClosingEventArgs e)
@@ -75,7 +79,7 @@ namespace WindowsFormsApplication2
                     {
                         foreach(PessoaPagamento pp in p.LPessoas)
                         {
-                            dgvPagamentos.Rows.Add(p.C.Nome, pp.APagar, p.C.Vencimento.ToShortDateString(), pp.Pago ? "Pago" : "Não pago");
+                            dgvPagamentos.Rows.Add(p.C.Nome, pp.APagar, p.C.Vencimento.ToShortDateString(), pp.Pago ? "Pago" : "Não pago", p.C.Id, pp.P.Cpf);
                         }
                     }
                 }
@@ -99,7 +103,7 @@ namespace WindowsFormsApplication2
                         {
                             if(pp.Pago == situacao)
                             {
-                                dgvPagamentos.Rows.Add(p.C.Nome, pp.APagar, p.C.Vencimento.ToShortDateString(), pp.Pago ? "Pago" : "Não pago");
+                                dgvPagamentos.Rows.Add(p.C.Nome, pp.APagar, p.C.Vencimento.ToShortDateString(), pp.Pago ? "Pago" : "Não pago", p.C.Id, pp.P.Cpf);
                             }
                         }
                     }
@@ -120,6 +124,59 @@ namespace WindowsFormsApplication2
         private void FormListaPagamentos_Load(object sender, EventArgs e)
         {
             cbbSituacao.SelectedIndex = 0;
+        }
+
+        private PessoaPagamento selecaoPessoaPagamento()
+        {
+            if (dgvPagamentos.CurrentRow != null)
+            {
+                int indiceSelecao = dgvPagamentos.SelectedCells[0].RowIndex;
+                DataGridViewRow linhaSelecionada = dgvPagamentos.Rows[indiceSelecao];
+                PagamentoDAO db = new PagamentoDAO();
+                return db.Read(int.Parse(linhaSelecionada.Cells[5].Value.ToString()),linhaSelecionada.Cells[6].Value.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Selecione um pagamento!", "Você deve selecionar um pagamento.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        private Conta selecaoConta()
+        {
+            if (dgvPagamentos.CurrentRow != null)
+            {
+                int indiceSelecao = dgvPagamentos.SelectedCells[0].RowIndex;
+                DataGridViewRow linhaSelecionada = dgvPagamentos.Rows[indiceSelecao];
+                ContaDAO db = new ContaDAO();
+                return db.Read(int.Parse(linhaSelecionada.Cells[5].Value.ToString()));
+            }
+            else
+            {
+                MessageBox.Show("Selecione um pagamento!", "Você deve selecionar um pagamento.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        private void btnSituacao_Click(object sender, EventArgs e)
+        {
+            PagamentoDAO db = new PagamentoDAO();
+
+            PessoaPagamento pp = selecaoPessoaPagamento();
+            Conta c = selecaoConta();
+
+            if(pp != null && c != null)
+            {
+                if (pp.Pago)
+                {
+                    pp.Pago = false;
+                }
+                else
+                {
+                    pp.Pago = true;
+                }
+                db.Editar(pp, c);
+            }
         }
     }
 }

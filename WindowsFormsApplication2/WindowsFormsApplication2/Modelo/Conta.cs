@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApplication2
+namespace HouseManager
 {
     public class Conta
     {
@@ -22,7 +22,7 @@ namespace WindowsFormsApplication2
         {
 
         }
-        public Conta(int id, string nome, string detalhes, double valor, DateTime vencimento, Pessoa responsavel, List<PessoaPagamento> lPessoas)
+        public Conta(int id, string nome, string detalhes, double valor, DateTime vencimento, Pessoa responsavel)
         {
             this.Id = id;
             this.Nome = nome;

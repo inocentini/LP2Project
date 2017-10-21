@@ -139,7 +139,6 @@ C:\Users\gabri\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsAppli
 C:\Users\gabri\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormPrincipal.resources
 C:\Users\gabri\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormCadastraTransacao.resources
 C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormListaPagamentos.resources
-C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormRelatorios.resources
 C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormAlteraSenha.resources
 C:\Users\IFSP\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\EntityFramework.dll
 C:\Users\IFSP\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\EntityFramework.SqlServer.dll
@@ -202,3 +201,4 @@ C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\Wind
 C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormRelatorioContas.resources
 C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormRelatorioPagamentos.resources
 C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormPesquisaConta.resources
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormRelatorioTransacoes.resources

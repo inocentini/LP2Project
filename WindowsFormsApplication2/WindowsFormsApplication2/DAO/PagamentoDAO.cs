@@ -5,10 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 
-namespace WindowsFormsApplication2
+namespace HouseManager
 {
     class PagamentoDAO
     {
+        public void Editar(PessoaPagamento p, Conta c)
+        {
+            Database db = Database.GetInstance();
+            string qry = string.Format("UPDATE Pagamento SET pago = {0} WHERE cpfpessoa = '{1}' AND idconta={2};", Convert.ToInt32(p.Pago), p.P.Cpf, c.Id);
+            
+
+            db.ExecuteNonQuery(qry);
+        }
+
         public void Editar(Pagamento p)
         {
             Remover(p.C.Id);
@@ -80,6 +89,29 @@ namespace WindowsFormsApplication2
             return p;
         }
 
+        public PessoaPagamento Read(int idconta, string cpf)
+        {
+            Database db = Database.GetInstance();
+            string qry = string.Format("SELECT * FROM Pagamento WHERE cpfpessoa = '{0}' AND idconta = {1}", cpf,idconta);
+            DataSet ds = db.ExecuteQuery(qry);
+
+            PessoaPagamento p = new PessoaPagamento();
+            PessoaDAO dbp = new PessoaDAO();
+            p.P = dbp.Read(cpf);
+
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+                DataRow dr = ds.Tables[0].Rows[0];
+                p.APagar = double.Parse(dr["apagar"].ToString());
+                p.Pago = Convert.ToBoolean(int.Parse(dr["pago"].ToString()));
+                return p;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public void Remover(int id)
         {
             Database db = Database.GetInstance();
@@ -103,17 +135,22 @@ namespace WindowsFormsApplication2
 
         public void Gerar(Conta c)
         {
-            /*PessoaDAO dbp = new PessoaDAO();
+            PessoaDAO dbp = new PessoaDAO();
 
             List<Pessoa> lPessoas = new List<Pessoa>();
-
             lPessoas = dbp.Listar();
+            Pagamento pag = new Pagamento();
+            pag.C = new Conta(c.Id, c.Nome, c.Detalhes, c.Valor, c.Vencimento, c.Responsavel);
+            int pessoas = dbp.Contar();
+            double aPagar = c.Valor / pessoas;
 
-            Pagamento p = new Pagamento();
             foreach(Pessoa p in lPessoas)
             {
-                qry = string.Concat(q)
-            }*/
+                PessoaPagamento pp = new PessoaPagamento(p, false, aPagar);
+                pag.LPessoas.Add(pp);
+            }
+
+            Salvar(pag);
         }
     }
 }

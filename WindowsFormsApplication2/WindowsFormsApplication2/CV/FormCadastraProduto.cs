@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
-namespace WindowsFormsApplication2
+namespace HouseManager
 {
     public partial class FormCadastraProduto : Form
     {
@@ -37,6 +37,7 @@ namespace WindowsFormsApplication2
             this.id = p.Id;
             if (!Editar)
             {
+                this.Text = "Visualizando informações do produto " + p.Nome;
                 txtNome.ReadOnly = true;
                 txtNome.TabStop = false;
                 txtDetalhes.ReadOnly = true;
@@ -47,6 +48,10 @@ namespace WindowsFormsApplication2
                 txtQuantidade.TabStop = false;
                 btnCancelar.Text = "Voltar";
                 btnSalvar.Hide();
+            }
+            else
+            {
+                this.Text = "Editando produto " + p.Nome;
             }
         }
 

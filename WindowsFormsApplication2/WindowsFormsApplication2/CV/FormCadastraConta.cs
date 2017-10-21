@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication2
+namespace HouseManager
 {
     public partial class FormCadastraConta : Form
     {
@@ -37,6 +37,7 @@ namespace WindowsFormsApplication2
             this.id = c.Id;
             if (!Editar)
             {
+                this.Text = "Visualizando conta " + c.Nome;
                 txtNome.ReadOnly = true;
                 txtNome.TabStop = false;
                 txtDetalhes.ReadOnly = true;
@@ -54,6 +55,7 @@ namespace WindowsFormsApplication2
             }
             else
             {
+                this.Text = "Editando conta " + c.Nome;
                 if (nonAdmin)
                 {
                     btnResponsavel.Hide();
@@ -126,11 +128,6 @@ namespace WindowsFormsApplication2
             {
                 MessageBox.Show("Verifique se todos os campos estão preenchidos!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void FormCadastraConta_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnResponsavel_Click(object sender, EventArgs e)

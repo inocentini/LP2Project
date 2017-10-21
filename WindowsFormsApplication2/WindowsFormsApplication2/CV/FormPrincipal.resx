@@ -145,6 +145,12 @@
   <data name="estoqueToolStripMenuItem1.Text" xml:space="preserve">
     <value>Estoque</value>
   </data>
+  <data name="transaçõesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="transaçõesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Transações</value>
+  </data>
   <data name="relatóriosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
@@ -189,10 +195,10 @@
     <value>Sistema</value>
   </data>
   <data name="estoqueToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="estoqueToolStripMenuItem.Text" xml:space="preserve">
-    <value>Compras</value>
+    <value>Compras/Usos</value>
   </data>
   <data name="contasQueAdministroToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>194, 22</value>
@@ -207,7 +213,7 @@
     <value>Meus pagamentos</value>
   </data>
   <data name="pagamentosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="pagamentosToolStripMenuItem.Text" xml:space="preserve">
     <value>Pagamentos</value>
@@ -219,7 +225,7 @@
     <value>Controle</value>
   </data>
   <data name="produtoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="produtoToolStripMenuItem.Text" xml:space="preserve">
     <value>Produto</value>
@@ -2477,6 +2483,12 @@
     <value>estoqueToolStripMenuItem1</value>
   </data>
   <data name="&gt;&gt;estoqueToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;transaçõesToolStripMenuItem.Name" xml:space="preserve">
+    <value>transaçõesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;transaçõesToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;contasToolStripMenuItem.Name" xml:space="preserve">

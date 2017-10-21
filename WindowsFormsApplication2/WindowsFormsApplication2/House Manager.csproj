@@ -7,8 +7,8 @@
     <ProjectGuid>{0A17E5C5-33D8-4506-B25F-A11F771C3E86}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WindowsFormsApplication2</RootNamespace>
-    <AssemblyName>WindowsFormsApplication2</AssemblyName>
+    <RootNamespace>HouseManager</RootNamespace>
+    <AssemblyName>HouseManager</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -95,26 +95,32 @@
     <Compile Include="CV\FormRelatorioContas.Designer.cs">
       <DependentUpon>FormRelatorioContas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPesquisaConta.cs">
+    <Compile Include="CV\FormPesquisaConta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPesquisaConta.Designer.cs">
+    <Compile Include="CV\FormPesquisaConta.Designer.cs">
       <DependentUpon>FormPesquisaConta.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRelatorioPagamentos.cs">
+    <Compile Include="CV\FormRelatorioPagamentos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRelatorioPagamentos.Designer.cs">
+    <Compile Include="CV\FormRelatorioPagamentos.Designer.cs">
       <DependentUpon>FormRelatorioPagamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormListaTransacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormListaTransacoes.Designer.cs">
+      <DependentUpon>FormListaTransacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormRelatorioTransacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormRelatorioTransacoes.Designer.cs">
+      <DependentUpon>FormRelatorioTransacoes.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Transacao.cs" />
     <Compile Include="DAO\TransacaoDAO.cs" />
-    <Compile Include="CV\FormRelatorios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CV\FormRelatorios.Designer.cs">
-      <DependentUpon>FormRelatorios.cs</DependentUpon>
-    </Compile>
     <Compile Include="CV\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,12 +165,6 @@
       <DependentUpon>FormListaProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\ProdutoDAO.cs" />
-    <Compile Include="CV\FormListaTransacoes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CV\FormListaTransacoes.Designer.cs">
-      <DependentUpon>FormListaTransacoes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modelo\ProdutoTransacao.cs" />
     <Compile Include="Modelo\Pagamento.cs" />
     <Compile Include="DAO\PagamentoDAO.cs" />
@@ -212,17 +212,11 @@
     <EmbeddedResource Include="CV\FormRelatorioContas.resx">
       <DependentUpon>FormRelatorioContas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CV\FormRelatorios.resx">
-      <DependentUpon>FormRelatorios.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CV\FormCadastraPessoa.resx">
       <DependentUpon>FormCadastraPessoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormCadastraProduto.resx">
       <DependentUpon>FormCadastraProduto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CV\FormListaTransacoes.resx">
-      <DependentUpon>FormListaTransacoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormListaPessoas.resx">
       <DependentUpon>FormListaPessoas.cs</DependentUpon>
@@ -257,11 +251,17 @@
     <EmbeddedResource Include="CV\FormAlteraSenha.resx">
       <DependentUpon>FormAlteraSenha.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPesquisaConta.resx">
+    <EmbeddedResource Include="CV\FormPesquisaConta.resx">
       <DependentUpon>FormPesquisaConta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRelatorioPagamentos.resx">
+    <EmbeddedResource Include="CV\FormRelatorioPagamentos.resx">
       <DependentUpon>FormRelatorioPagamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormListaTransacoes.resx">
+      <DependentUpon>FormListaTransacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormRelatorioTransacoes.resx">
+      <DependentUpon>FormRelatorioTransacoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

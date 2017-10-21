@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 
-namespace WindowsFormsApplication2
+namespace HouseManager
 {
     //Classe de controle.
     class ContaDAO
@@ -123,6 +123,9 @@ namespace WindowsFormsApplication2
 
             string qry = string.Format("INSERT INTO Conta(nome,detalhes,valor,vencimento,cpfresponsavel) VALUES('{0}','{1}',{2},'{3}','{4}')", c.Nome,c.Detalhes,c.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture),c.Vencimento.ToString("yyyy-MM-dd"), c.Responsavel.Cpf);
             db.ExecuteNonQuery(qry);
+
+            /*PagamentoDAO dbp = new PagamentoDAO();
+            dbp.Gerar(c);*/
         }
     }
 }

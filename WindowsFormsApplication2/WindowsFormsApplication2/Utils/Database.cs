@@ -7,7 +7,7 @@ using System.Data.SQLite;
 using System.Data;
 using System.IO;
 
-namespace WindowsFormsApplication2
+namespace HouseManager
 {
     public class Database
     {

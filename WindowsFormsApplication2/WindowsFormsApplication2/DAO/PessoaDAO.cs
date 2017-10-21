@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 
-namespace WindowsFormsApplication2
+namespace HouseManager
 {
     class PessoaDAO
     {
@@ -75,6 +75,24 @@ namespace WindowsFormsApplication2
 
             string qry = string.Format("INSERT INTO PESSOA VALUES('{0}','{1}','{2}','{3}')", o.Cpf, o.Nome, o.Email, o.Telefone);
             db.ExecuteNonQuery(qry);
+        }
+
+        public int Contar()
+        {
+            Database db = Database.GetInstance();
+            string qry = string.Format("SELECT COUNT(*) AS pessoas FROM Pessoa");
+            DataSet ds = db.ExecuteQuery(qry);
+
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+                DataRow dr = ds.Tables[0].Rows[0];
+
+                return int.Parse(dr["pessoas"].ToString());
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }

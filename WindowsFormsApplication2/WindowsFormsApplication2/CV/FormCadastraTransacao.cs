@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication2
+namespace HouseManager
 {
     public partial class FormCadastraTransacao : Form
     {
@@ -34,6 +34,7 @@ namespace WindowsFormsApplication2
 
             if (!Editar)
             {
+                this.Text = "Visualizando informações de transação";
                 txtNomeProduto.Hide();
                 txtValor.ReadOnly = true;
                 txtValor.TabStop = false;
@@ -55,6 +56,10 @@ namespace WindowsFormsApplication2
                 txtData.Text = dtpData.Value.Date.ToShortDateString();
                 btnCancelar.Text = "Voltar";
                 btnSalvar.Hide();
+            }
+            else
+            {
+                this.Text = "Editando transação";
             }
         }
 

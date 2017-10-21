@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication2
+﻿namespace HouseManager
 {
     partial class FormLogin
     {
@@ -143,7 +143,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.password;
+            this.pictureBox1.BackgroundImage = global::HouseManager.Properties.Resources.password;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(-2, -2);
             this.pictureBox1.Name = "pictureBox1";
@@ -164,7 +164,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.padlock_md;
+            this.pictureBox3.BackgroundImage = global::HouseManager.Properties.Resources.padlock_md;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(39, 17);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);

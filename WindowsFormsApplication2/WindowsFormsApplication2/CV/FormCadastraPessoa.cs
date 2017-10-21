@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication2
+namespace HouseManager
 {
     public partial class FormCadastraPessoa : Form
     {
@@ -23,6 +23,7 @@ namespace WindowsFormsApplication2
             txtCPF.TabStop = false;
             if (!editar)
             {
+                this.Text = "Visualizando informações de " + p.Nome;
                 txtEmail.ReadOnly = true;
                 txtEmail.TabStop = false;
                 txtNome.ReadOnly = true;
@@ -31,6 +32,10 @@ namespace WindowsFormsApplication2
                 txtTelefone.TabStop = false;
                 btnCancelar.Text = "Voltar";
                 btnSalvar.Hide();
+            }
+            else
+            {
+                this.Text = "Editando informações de " + p.Nome;
             }
         }
 

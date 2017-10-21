@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication2
+namespace HouseManager
 {
     public partial class FormListaContas : Form
     {
@@ -168,6 +168,7 @@ namespace WindowsFormsApplication2
             if (this.nonAdmin)
             {
                 this.Text = "Contas que administro";
+                colResponsavel.Visible = false;
             }
             else
             {

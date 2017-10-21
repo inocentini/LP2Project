@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication2
+﻿namespace HouseManager
 {
     partial class FormPesquisaConta
     {
@@ -64,6 +64,7 @@
             this.txtFiltrar.Name = "txtFiltrar";
             this.txtFiltrar.Size = new System.Drawing.Size(424, 20);
             this.txtFiltrar.TabIndex = 1;
+            this.txtFiltrar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFiltrar_KeyUp);
             // 
             // labFiltrar
             // 
@@ -85,6 +86,7 @@
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEnviar
             // 
@@ -94,6 +96,7 @@
             this.btnEnviar.TabIndex = 3;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
             // labPessoas
             // 
@@ -128,6 +131,8 @@
             this.dgvContas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContas.Size = new System.Drawing.Size(462, 275);
             this.dgvContas.TabIndex = 13;
+            this.dgvContas.DoubleClick += new System.EventHandler(this.dgvContas_DoubleClick);
+            this.dgvContas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvContas_KeyDown);
             // 
             // colID
             // 
@@ -175,7 +180,8 @@
             this.Controls.Add(this.dgvContas);
             this.Controls.Add(this.panel1);
             this.Name = "FormPesquisaConta";
-            this.Text = "FormPesquisaConta";
+            this.Text = "Selecione uma conta";
+            this.Load += new System.EventHandler(this.FormPesquisaConta_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContas)).EndInit();

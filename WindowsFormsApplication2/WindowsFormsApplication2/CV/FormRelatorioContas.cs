@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication2
+namespace HouseManager
 {
     public partial class FormRelatorioContas : Form
     {
@@ -17,7 +17,7 @@ namespace WindowsFormsApplication2
             InitializeComponent();
         }
 
-        private void btnVoltar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }

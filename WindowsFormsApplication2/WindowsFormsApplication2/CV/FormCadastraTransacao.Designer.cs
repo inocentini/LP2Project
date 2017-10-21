@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication2
+﻿namespace HouseManager
 {
     partial class FormCadastraTransacao
     {
@@ -169,7 +169,7 @@
             // txtQuantidade
             // 
             this.txtQuantidade.DecimalPlaces = 2;
-            this.txtQuantidade.Location = new System.Drawing.Point(307, 18);
+            this.txtQuantidade.Location = new System.Drawing.Point(305, 17);
             this.txtQuantidade.Maximum = new decimal(new int[] {
             0,
             0,
@@ -349,7 +349,9 @@
             this.Controls.Add(this.panCadastro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(463, 591);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(463, 591);
             this.Name = "FormCadastraTransacao";
             this.ShowInTaskbar = false;

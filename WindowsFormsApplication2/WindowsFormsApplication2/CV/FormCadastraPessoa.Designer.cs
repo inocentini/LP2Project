@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication2
+﻿namespace HouseManager
 {
     partial class FormCadastraPessoa
     {
@@ -201,13 +201,14 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(358, 259);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(358, 259);
             this.Name = "FormCadastraPessoa";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro";
+            this.Text = "Informações";
             this.Load += new System.EventHandler(this.FormCadastraPessoa_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

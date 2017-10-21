@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication2
+namespace HouseManager
 {
     public partial class FormLogin : Form
     {
@@ -19,7 +19,7 @@ namespace WindowsFormsApplication2
 
         private Login GetDTO()
         {
-            Login l = new WindowsFormsApplication2.Login();
+            Login l = new HouseManager.Login();
             l.Nome = txtUser.Text;
             l.Senha = txtSenha.Text;
             return l;

@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication2
+﻿namespace HouseManager
 {
     partial class FormCadastraProduto
     {
@@ -168,7 +168,9 @@
             this.Controls.Add(this.panCadastro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(329, 199);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(329, 199);
             this.Name = "FormCadastraProduto";
             this.ShowInTaskbar = false;

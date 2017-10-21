@@ -8,13 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication2
+namespace HouseManager
 {
     public partial class FormPrincipal : Form
     {
         FormListaProdutos flpr = new FormListaProdutos();
         FormListaContas flc = new FormListaContas();
-        FormRelatorios frel;
         FormListaTransacoes flt = new FormListaTransacoes();
         FormListaPessoas flp;
         FormCadastraLogin flmi = new FormCadastraLogin(Sessao.login);
@@ -22,6 +21,7 @@ namespace WindowsFormsApplication2
         FormListaPagamentos flpag = new FormListaPagamentos();
         FormRelatorioContas frc;
         FormRelatorioPagamentos frp;
+        FormRelatorioTransacoes frt;
 
         private void InicializaForms()
         {
@@ -41,15 +41,15 @@ namespace WindowsFormsApplication2
                 áreaAdministrativaToolStripMenuItem.Visible = true;
                 áreaAdministrativaToolStripMenuItem.Enabled = true;
                 flp = new FormListaPessoas();
-                frel = new FormRelatorios();
                 flc = new FormListaContas();
                 frc = new FormRelatorioContas();
                 frp = new FormRelatorioPagamentos();
+                frt = new FormRelatorioTransacoes();
                 flp.MdiParent = this;
-                frel.MdiParent = this;
                 flc.MdiParent = this;
                 frc.MdiParent = this;
                 frp.MdiParent = this;
+                frt.MdiParent = this;
             }
         }
 
@@ -57,12 +57,20 @@ namespace WindowsFormsApplication2
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
+                foreach(Form f in MdiChildren)
+                {
+                    f.Close();
+                }
                 Application.Exit();
             }
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            foreach (Form f in MdiChildren)
+            {
+                f.Close();
+            }
             Application.Exit();
         }
 
@@ -140,6 +148,16 @@ namespace WindowsFormsApplication2
         private void pagamentosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frp.Show();
+        }
+
+        private void transaçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frt.Show();
+        }
+
+        private void estoqueToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //Como esse relatório não precisará de nenhuma configuração, ele será chamado direto por aqui
         }
     }
 }
