@@ -95,6 +95,18 @@
     <Compile Include="CV\FormRelatorioContas.Designer.cs">
       <DependentUpon>FormRelatorioContas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPesquisaConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPesquisaConta.Designer.cs">
+      <DependentUpon>FormPesquisaConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelatorioPagamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelatorioPagamentos.Designer.cs">
+      <DependentUpon>FormRelatorioPagamentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Transacao.cs" />
     <Compile Include="DAO\TransacaoDAO.cs" />
     <Compile Include="CV\FormRelatorios.cs">
@@ -244,6 +256,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormAlteraSenha.resx">
       <DependentUpon>FormAlteraSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPesquisaConta.resx">
+      <DependentUpon>FormPesquisaConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelatorioPagamentos.resx">
+      <DependentUpon>FormRelatorioPagamentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

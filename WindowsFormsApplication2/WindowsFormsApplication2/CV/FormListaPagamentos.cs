@@ -36,6 +36,10 @@ namespace WindowsFormsApplication2
         public FormListaPagamentos(Conta c)
         {
             this.c = c;
+            InitializeComponent();
+            labFiltrarPagamento.Hide();
+            txtFiltrar.Hide();
+            pnlFiltro.Height = 49;
         }
 
         private void FormListaPagamentos_FormClosing(object sender, FormClosingEventArgs e)

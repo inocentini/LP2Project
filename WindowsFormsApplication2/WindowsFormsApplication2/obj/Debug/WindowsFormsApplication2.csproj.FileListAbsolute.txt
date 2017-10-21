@@ -199,3 +199,6 @@ C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\Wind
 C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormSplashScreen.resources
 C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.csproj.GenerateResource.Cache
 C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormRelatorioContas.resources
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormRelatorioContas.resources
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormRelatorioPagamentos.resources
+C:\Users\Gabriel Z\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.FormPesquisaConta.resources

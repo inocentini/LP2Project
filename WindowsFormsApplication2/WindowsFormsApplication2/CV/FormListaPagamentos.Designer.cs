@@ -38,11 +38,11 @@
             this.txtFiltrar = new System.Windows.Forms.TextBox();
             this.labFiltrarSituacao = new System.Windows.Forms.Label();
             this.labFiltrarPagamento = new System.Windows.Forms.Label();
-            this.p = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlFiltro = new System.Windows.Forms.Panel();
+            this.pnlInfo = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagamentos)).BeginInit();
-            this.p.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlFiltro.SuspendLayout();
+            this.pnlInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvPagamentos
@@ -65,7 +65,7 @@
             this.dgvPagamentos.ReadOnly = true;
             this.dgvPagamentos.RowHeadersVisible = false;
             this.dgvPagamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPagamentos.Size = new System.Drawing.Size(807, 286);
+            this.dgvPagamentos.Size = new System.Drawing.Size(807, 178);
             this.dgvPagamentos.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn2
@@ -101,7 +101,7 @@
             // 
             // cbbSituacao
             // 
-            this.cbbSituacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbSituacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbSituacao.FormattingEnabled = true;
             this.cbbSituacao.Items.AddRange(new object[] {
             "Mostrar tudo",
@@ -125,7 +125,7 @@
             // 
             // labFiltrarSituacao
             // 
-            this.labFiltrarSituacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labFiltrarSituacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labFiltrarSituacao.AutoSize = true;
             this.labFiltrarSituacao.Location = new System.Drawing.Point(586, 42);
             this.labFiltrarSituacao.Name = "labFiltrarSituacao";
@@ -144,34 +144,34 @@
             this.labFiltrarPagamento.TabIndex = 13;
             this.labFiltrarPagamento.Text = "Filtrar por nome da conta:";
             // 
-            // p
+            // pnlFiltro
             // 
-            this.p.Controls.Add(this.cbbSituacao);
-            this.p.Controls.Add(this.txtFiltrar);
-            this.p.Controls.Add(this.labFiltrarPagamento);
-            this.p.Controls.Add(this.labFiltrarSituacao);
-            this.p.Dock = System.Windows.Forms.DockStyle.Top;
-            this.p.Location = new System.Drawing.Point(0, 0);
-            this.p.Name = "p";
-            this.p.Size = new System.Drawing.Size(807, 79);
-            this.p.TabIndex = 15;
+            this.pnlFiltro.Controls.Add(this.cbbSituacao);
+            this.pnlFiltro.Controls.Add(this.txtFiltrar);
+            this.pnlFiltro.Controls.Add(this.labFiltrarPagamento);
+            this.pnlFiltro.Controls.Add(this.labFiltrarSituacao);
+            this.pnlFiltro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFiltro.Location = new System.Drawing.Point(0, 0);
+            this.pnlFiltro.Name = "pnlFiltro";
+            this.pnlFiltro.Size = new System.Drawing.Size(807, 79);
+            this.pnlFiltro.TabIndex = 15;
             // 
-            // panel2
+            // pnlInfo
             // 
-            this.panel2.Controls.Add(this.dgvPagamentos);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 79);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(807, 352);
-            this.panel2.TabIndex = 16;
+            this.pnlInfo.Controls.Add(this.dgvPagamentos);
+            this.pnlInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInfo.Location = new System.Drawing.Point(0, 79);
+            this.pnlInfo.Name = "pnlInfo";
+            this.pnlInfo.Size = new System.Drawing.Size(807, 352);
+            this.pnlInfo.TabIndex = 16;
             // 
             // FormListaPagamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 431);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.p);
+            this.Controls.Add(this.pnlInfo);
+            this.Controls.Add(this.pnlFiltro);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(651, 412);
             this.Name = "FormListaPagamentos";
@@ -180,9 +180,9 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormListaPagamentos_FormClosing);
             this.Load += new System.EventHandler(this.FormListaPagamentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagamentos)).EndInit();
-            this.p.ResumeLayout(false);
-            this.p.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.pnlFiltro.ResumeLayout(false);
+            this.pnlFiltro.PerformLayout();
+            this.pnlInfo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -197,7 +197,7 @@
         private System.Windows.Forms.Label labFiltrarPagamento;
         private System.Windows.Forms.ComboBox cbbSituacao;
         private System.Windows.Forms.Label labFiltrarSituacao;
-        private System.Windows.Forms.Panel p;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlFiltro;
+        private System.Windows.Forms.Panel pnlInfo;
     }
 }

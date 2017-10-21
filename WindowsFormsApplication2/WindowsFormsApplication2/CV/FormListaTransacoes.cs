@@ -133,10 +133,5 @@ namespace WindowsFormsApplication2
         {
             Fill();
         }
-
-        private void dtpData_ValueChanged(object sender, EventArgs e)
-        {
-            Fill();
-        }
     }
 }

@@ -19,7 +19,7 @@ namespace WindowsFormsApplication2
 
         private void bntAdd_Click(object sender, EventArgs e)
         {
-            FormCadastraPessoa cadastro = new FormCadastraPessoa();
+            FormCadastraLogin cadastro = new FormCadastraLogin();
             cadastro.ShowDialog(this);
             Fill();
         }
