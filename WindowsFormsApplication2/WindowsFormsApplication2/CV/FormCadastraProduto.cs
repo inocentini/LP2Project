@@ -37,7 +37,7 @@ namespace HouseManager
             this.id = p.Id;
             if (!Editar)
             {
-                this.Text = "Visualizando informações do produto " + p.Nome;
+                this.Text = "Visualizando produto";
                 txtNome.ReadOnly = true;
                 txtNome.TabStop = false;
                 txtDetalhes.ReadOnly = true;
@@ -51,7 +51,7 @@ namespace HouseManager
             }
             else
             {
-                this.Text = "Editando produto " + p.Nome;
+                this.Text = "Editando produto";
             }
         }
 

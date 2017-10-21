@@ -9,6 +9,7 @@ namespace HouseManager
 {
     class PessoaDAO
     {
+        //Edita uma pessoa
         public void Editar(Pessoa p)
         {
             Database db = Database.GetInstance();
@@ -18,6 +19,7 @@ namespace HouseManager
             
         }
 
+        //Lista todas as pessoas
         public List<Pessoa> Listar()
         {
             Database db = Database.GetInstance();
@@ -38,6 +40,7 @@ namespace HouseManager
             return LPessoas;
         }
 
+        //Lê as informações de uma pessoa
         public Pessoa Read(string cpf)
         {
             Database db = Database.GetInstance();
@@ -61,22 +64,25 @@ namespace HouseManager
             }
         }
 
-        public void Remover(string o)
+        //Exclui uma pessoa
+        public void Remover(string cpf)
         {
             Database db = Database.GetInstance();
 
-            string qry = string.Format("DELETE FROM Pessoa WHERE cpf ='{0}'; DELETE FROM Login WHERE cpfpessoa = '{0}'", o);
+            string qry = string.Format("DELETE FROM Pessoa WHERE cpf ='{0}'; DELETE FROM Login WHERE cpfpessoa = '{0}'", cpf);
             db.ExecuteNonQuery(qry);
         }
 
-        public void Salvar(Pessoa o)
+        //Adiciona uma pessoa
+        public void Salvar(Pessoa p)
         {
             Database db = Database.GetInstance();
 
-            string qry = string.Format("INSERT INTO PESSOA VALUES('{0}','{1}','{2}','{3}')", o.Cpf, o.Nome, o.Email, o.Telefone);
+            string qry = string.Format("INSERT INTO PESSOA VALUES('{0}','{1}','{2}','{3}')", p.Cpf, p.Nome, p.Email, p.Telefone);
             db.ExecuteNonQuery(qry);
         }
 
+        //Conta o número de pessoas (será utilizado para a geração de pagamentos)
         public int Contar()
         {
             Database db = Database.GetInstance();

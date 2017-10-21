@@ -37,7 +37,7 @@ namespace HouseManager
             this.id = c.Id;
             if (!Editar)
             {
-                this.Text = "Visualizando conta " + c.Nome;
+                this.Text = "Visualizando conta";
                 txtNome.ReadOnly = true;
                 txtNome.TabStop = false;
                 txtDetalhes.ReadOnly = true;
@@ -55,7 +55,7 @@ namespace HouseManager
             }
             else
             {
-                this.Text = "Editando conta " + c.Nome;
+                this.Text = "Editando conta";
                 if (nonAdmin)
                 {
                     btnResponsavel.Hide();

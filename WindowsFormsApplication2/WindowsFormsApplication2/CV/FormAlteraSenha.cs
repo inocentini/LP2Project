@@ -73,5 +73,11 @@ namespace HouseManager
             }
 
         }
+
+        private void FormAlteraSenha_Activated(object sender, EventArgs e)
+        {
+            txtNovaSenha.Text = "";
+            txtSenhaAtual.Text = "";
+        }
     }
 }

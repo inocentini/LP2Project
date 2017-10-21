@@ -12,7 +12,7 @@ namespace HouseManager
         //Classe utilizada para o hashing e salting
         private const int MINSALT = 4; //mínimo do intervalo de aleatoriedade do salt
         private const int MAXSALT = 16; //máximo do intervalo de aleatoriedade do salt
-        private const int TAMANHOHASH = 32;
+        private const int TAMANHOHASH = 32; //tamanho do hash para o algoritmo SHA256
 
         public static string Hash(string senha,byte[] salt) //Método utilizado para realizar o hashing em uma senha
         {
@@ -40,11 +40,13 @@ namespace HouseManager
             byte[] bytesSenha = ASCIIEncoding.UTF8.GetBytes(senha);
             byte[] bytesSenhaComSalt = new byte[bytesSenha.Length + bytesSalt.Length];
 
+            //Aqui é colocada a senha (já transformada em bytes) no começo do vetor criado
             for(int x=0; x<bytesSenha.Length; x++)
             {
                 bytesSenhaComSalt[x] = bytesSenha[x];
             }
 
+            //Aqui é colocado o salt após a senha
             for(int n=0; n<bytesSalt.Length; n++)
             {
                 bytesSenhaComSalt[bytesSenha.Length + n] = bytesSalt[n];
@@ -60,11 +62,13 @@ namespace HouseManager
             //Por fim, é criado o vetor de bytes do resultado, que contém a senha encriptada anteriormente e o salt
             byte[] resultado = new byte[valorHash.Length + bytesSalt.Length];
 
+            //Coloca a senha com hash encriptada no começo do vetor de bytes
             for(int x=0; x<valorHash.Length; x++)
             {
                 resultado[x] = valorHash[x];
             }
 
+            //Coloca o hash não encriptado (para verificação) no fim do vetor
             for(int n=0; n<bytesSalt.Length; n++)
             {
                 resultado[valorHash.Length + n] = bytesSalt[n];

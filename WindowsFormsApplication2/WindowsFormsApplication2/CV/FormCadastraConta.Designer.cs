@@ -274,7 +274,7 @@
             this.MinimumSize = new System.Drawing.Size(385, 248);
             this.Name = "FormCadastraConta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro";
+            this.Text = "Cadastro de conta";
             this.panCadastro.ResumeLayout(false);
             this.panCadastro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtValor)).EndInit();

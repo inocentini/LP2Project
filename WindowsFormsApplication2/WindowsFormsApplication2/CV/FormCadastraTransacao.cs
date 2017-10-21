@@ -34,7 +34,7 @@ namespace HouseManager
 
             if (!Editar)
             {
-                this.Text = "Visualizando informações de transação";
+                this.Text = "Visualizando transação";
                 txtNomeProduto.Hide();
                 txtValor.ReadOnly = true;
                 txtValor.TabStop = false;

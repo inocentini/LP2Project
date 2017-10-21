@@ -23,7 +23,7 @@ namespace HouseManager
             txtCPF.TabStop = false;
             if (!editar)
             {
-                this.Text = "Visualizando informações de " + p.Nome;
+                this.Text = "Visualizando pessoa";
                 txtEmail.ReadOnly = true;
                 txtEmail.TabStop = false;
                 txtNome.ReadOnly = true;
@@ -35,7 +35,7 @@ namespace HouseManager
             }
             else
             {
-                this.Text = "Editando informações de " + p.Nome;
+                this.Text = "Editando pessoa";
             }
         }
 

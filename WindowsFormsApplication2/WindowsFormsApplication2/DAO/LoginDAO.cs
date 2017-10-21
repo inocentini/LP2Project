@@ -8,16 +8,18 @@ namespace HouseManager
 {
     class LoginDAO
     {
+        //Método para realizar login
         public bool Login (Login l)
         {
             Database db = Database.GetInstance();
 
+            //Verifica se o usuário informado existe
             Login n = (Login)Read(l.Nome);
 
             if (n != null)
             {
-                string hash = n.Senha;
-                return Hashing.Verifica(l.Senha, hash);
+                //Chama o hashing para verificar a senha
+                return Hashing.Verifica(l.Senha, n.Senha);
             }
             else
             {
@@ -26,7 +28,7 @@ namespace HouseManager
 
         }
 
-
+        //Edita um login
         public void Editar(Login l)
         {
             Console.WriteLine(l.Nome + " " + l.Senha);
@@ -38,6 +40,7 @@ namespace HouseManager
 
         }
 
+        //Lista todos os logins
         public List<Login> Listar()
         {
             Database db = Database.GetInstance();
@@ -59,6 +62,7 @@ namespace HouseManager
             return LLogin;
         }
 
+        //Lê um login
         public Login Read(string nome)
         {
             Database db = Database.GetInstance();
@@ -83,6 +87,7 @@ namespace HouseManager
             }
         }
 
+        //Remove um login
         public void Remover(string nome)
         {
             Database db = Database.GetInstance();
@@ -91,14 +96,16 @@ namespace HouseManager
             db.ExecuteNonQuery(qry);
         }
 
+        //Salva um login, realiza um hashing na senha
         public void Salvar(Login l)
         {
             Database db = Database.GetInstance();
-
+            
             string qry = string.Format("INSERT INTO Login VALUES('{0}', '{1}', '{2}', '{3}')", l.Nome, Hashing.Hash(l.Senha, null), Convert.ToInt32(l.Admin), l.P.Cpf);
             db.ExecuteNonQuery(qry);
         }
 
+        //Define o usuário que está logado
         public void SetSession(string nome)
         {
             Database db = Database.GetInstance();
@@ -119,6 +126,7 @@ namespace HouseManager
 
         }
 
+        //Verifica se existe algum admin para que não ocorram problemas por falta de admin
         public bool HasAdmin()
         {
             Database db = Database.GetInstance();

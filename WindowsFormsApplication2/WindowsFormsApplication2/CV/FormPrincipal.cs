@@ -83,8 +83,10 @@ namespace HouseManager
         {
             if(flc.Visible == true)
             {
-                flc.Hide();
+                flc.Dispose();
             }
+            flc = new FormListaContas();
+            flc.MdiParent = this;
             flc.NonAdmin = false;
             flc.Show();
         }
@@ -124,8 +126,10 @@ namespace HouseManager
         {
             if (flc.Visible == true)
             {
-                flc.Hide();
+                flc.Dispose();
             }
+            flc = new FormListaContas();
+            flc.MdiParent = this;
             flc.NonAdmin = true;
             flc.Show();
         }

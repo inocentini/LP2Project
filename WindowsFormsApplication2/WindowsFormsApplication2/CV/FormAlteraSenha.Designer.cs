@@ -111,6 +111,7 @@
             this.Name = "FormAlteraSenha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alterar senha";
+            this.Activated += new System.EventHandler(this.FormAlteraSenha_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormAlteraSenha_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -9,6 +9,7 @@ namespace HouseManager
 {
     class ProdutoDAO
     {
+        //Edita um produto
         public void Editar(Produto p)
         {
             Database db = Database.GetInstance();
@@ -18,6 +19,7 @@ namespace HouseManager
 
         }
 
+        //Lista todos os produtos
         public List<Produto> Listar()
         {
             Database db = Database.GetInstance();
@@ -38,6 +40,7 @@ namespace HouseManager
             return LProdutos;
         }
 
+        //Lê as informações de um produto pelo seu id
         public Produto Read(int id)
         {
             Database db = Database.GetInstance();
@@ -61,6 +64,7 @@ namespace HouseManager
             }
         }
 
+        //Lê as informações de um produto pelo seu nome
         public Produto Read(string nome)
         {
             Database db = Database.GetInstance();
@@ -84,6 +88,7 @@ namespace HouseManager
             }
         }
 
+        //Remove um produto
         public void Remover(int id)
         {
             Database db = Database.GetInstance();
@@ -92,6 +97,7 @@ namespace HouseManager
             db.ExecuteNonQuery(qry);
         }
 
+        //Salva um produto
         public void Salvar(Produto p)
         {
             Database db = Database.GetInstance();

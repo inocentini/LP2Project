@@ -9,6 +9,7 @@ namespace HouseManager
 {
     class PagamentoDAO
     {
+        //Edita a situação de pago de uma pessoa para uma conta
         public void Editar(PessoaPagamento p, Conta c)
         {
             Database db = Database.GetInstance();
@@ -18,18 +19,24 @@ namespace HouseManager
             db.ExecuteNonQuery(qry);
         }
 
+        //Edita todos os pagamentos de uma conta
         public void Editar(Pagamento p)
         {
             Remover(p.C.Id);
             Salvar(p);
         }
 
+        //Lista todos os pagamentos de todas as contas
         public List<Pagamento> Listar()
         {            
             ContaDAO dbc = new ContaDAO();
+
+            //Lista todas contas
             List<Conta> lContas = dbc.Listar();
+
             List<Pagamento> lPagamentos = new List<Pagamento>();
 
+            //Para toda conta encontrada, lê os pagamentos dela
             foreach(Conta c in lContas)
             {
                 lPagamentos.Add(Read(c.Id));
@@ -38,6 +45,7 @@ namespace HouseManager
             return lPagamentos;
         }
 
+        //Lista todos os pagamentos de uma pessoa
         public List<Pagamento> ListarPessoa(string cpf)
         {
             Database db = Database.GetInstance();
@@ -47,9 +55,12 @@ namespace HouseManager
             PessoaDAO dbp = new PessoaDAO();
             ContaDAO dbc = new ContaDAO();
 
+            //Instancia a pessoa pesquisada
             Pessoa p = dbp.Read(cpf);
+
             List<Pagamento> lPagamentos = new List<Pagamento>();
 
+            //Para cada pagamento encontrado, lê a conta que ele pertence e a situação da pessoa e se adiciona na lista
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 Pagamento pgm = new Pagamento();
@@ -65,6 +76,7 @@ namespace HouseManager
             return lPagamentos;
         }
 
+        //Lista todos os pagamentos de uma conta em particular
         public Pagamento Read(int id)
         {
             Database db = Database.GetInstance();
@@ -75,8 +87,10 @@ namespace HouseManager
             ContaDAO dbc = new ContaDAO();
             PessoaDAO dbp = new PessoaDAO();
 
+            //Instancia a conta procurada
             p.C = dbc.Read(id);
 
+            //Para cada pagamento encontrado, lê adiciona as informações da pessoa na lista
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 PessoaPagamento pg = new PessoaPagamento();
@@ -89,6 +103,7 @@ namespace HouseManager
             return p;
         }
 
+        //Retorna a situação de pagamento de uma pessoa para uma conta
         public PessoaPagamento Read(int idconta, string cpf)
         {
             Database db = Database.GetInstance();
@@ -97,6 +112,8 @@ namespace HouseManager
 
             PessoaPagamento p = new PessoaPagamento();
             PessoaDAO dbp = new PessoaDAO();
+
+            //Instancia a pessoa pesquisada
             p.P = dbp.Read(cpf);
 
             if (ds.Tables[0].Rows.Count != 0)
@@ -112,6 +129,7 @@ namespace HouseManager
             }
         }
 
+        //Exclui todos os pagamentos de uma conta
         public void Remover(int id)
         {
             Database db = Database.GetInstance();
@@ -120,11 +138,13 @@ namespace HouseManager
             db.ExecuteNonQuery(qry);
         }
 
+        //Salva um pagamento
         public void Salvar(Pagamento p)
         {
             Database db = Database.GetInstance();
             string qry = "";
 
+            //Para cada pessoa, gera um comando para a inserção de sua situação no pagamento da conta
             foreach(PessoaPagamento pp in p.LPessoas)
             {
                 qry = string.Concat(qry, string.Format("INSERT INTO Pagamento(idconta,cpfpessoa,pago,apagar) VALUES({0},'{1}',{2},{3}); ", p.C.Id, pp.P.Cpf, Convert.ToInt32(pp.Pago), pp.APagar.ToString(System.Globalization.CultureInfo.InvariantCulture)));
@@ -133,8 +153,10 @@ namespace HouseManager
             db.ExecuteNonQuery(qry);
         }
 
+        //Função (não terminada) para gerar os pagamentos ao se adicionar uma conta
         public void Gerar(Conta c)
         {
+            /*
             PessoaDAO dbp = new PessoaDAO();
 
             List<Pessoa> lPessoas = new List<Pessoa>();
@@ -150,7 +172,7 @@ namespace HouseManager
                 pag.LPessoas.Add(pp);
             }
 
-            Salvar(pag);
+            Salvar(pag);*/
         }
     }
 }

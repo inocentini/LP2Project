@@ -9,31 +9,42 @@ namespace HouseManager
 {
     class TransacaoDAO
     {
+        //Método utilizado para editar uma transação
         public void Editar(Transacao t,Dictionary<int,ProdutoTransacao> dictAnterior)
         {
             Database db = Database.GetInstance();
+
+            //Atualiza as informações pertinentes à tabela de transação
             string qry = string.Format("UPDATE transacao SET data='{0}', valor={1}, compra={2} WHERE id={3};",t.Data.ToString("yyyy-MM-dd"),t.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture),Convert.ToInt32(t.Compra),t.Id);
+
+            //Exclui todos os produtos dessa transação para não haver conflitos após a readição
             qry = string.Concat(qry, string.Format("DELETE FROM transacao_produto WHERE idcompra = {0}; ", t.Id));
 
             ProdutoDAO pd = new ProdutoDAO();
 
+            //Se for uma compra
             if (t.Compra)
             {
                 foreach (ProdutoTransacao pt in t.Lista)
                 {
                     if (dictAnterior.ContainsKey(pt.Prod.Id))
                     {
+                        //Se anteriormente o produto já tinha uma quantidade em estoque, ele recebe o que tinha anteriormente menos a diferença do que foi mudado para o que tinha sido adicionado na compra
                         pt.Prod.Quantidade = pt.Prod.Quantidade + pt.Quantidade - dictAnterior[pt.Prod.Id].Quantidade;
                     }
                     else
                     {
+                        //Senão, o estoque do produto recebe a quantidade comprada
                         pt.Prod.Quantidade += pt.Quantidade;
                     }
 
                     if (pt.Quantidade != 0)
                     {
+                        //Se o produto não foi zerado (ou seja, ele faz parte da compra)
                         qry = string.Concat(qry, string.Format("INSERT INTO transacao_produto(idcompra,idproduto,quantidade) VALUES ({0},{1},{2});", t.Id, pt.Prod.Id, pt.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture)));
                     }
+
+                    //Edita o produto para atualizar seu estoque
                     pd.Editar(pt.Prod);
                 }
             }
