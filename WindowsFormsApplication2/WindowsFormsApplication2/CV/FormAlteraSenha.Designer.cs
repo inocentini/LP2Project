@@ -93,9 +93,10 @@
             // 
             // FormAlteraSenha
             // 
+            this.AcceptButton = this.btnSalvar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(306, 115);
+            this.ClientSize = new System.Drawing.Size(306, 116);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtNovaSenha);

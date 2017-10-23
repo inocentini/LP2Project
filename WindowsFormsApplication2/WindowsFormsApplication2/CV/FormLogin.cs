@@ -79,5 +79,10 @@ namespace HouseManager
             FormCadastraLogin newlogin = new FormCadastraLogin();
             newlogin.ShowDialog(this);
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

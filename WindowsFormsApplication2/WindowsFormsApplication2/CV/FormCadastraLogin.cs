@@ -33,8 +33,8 @@ namespace HouseManager
             btnSalvar.Location = new Point(btnSalvar.Location.X, 190);
             btnCancelar.Location = new Point(btnCancelar.Location.X, 190);
 
-            setDTO(l.P);
-            setDTOL(l);
+            SetDTO(l.P);
+            SetDTOL(l);
             txtCPF.ReadOnly = true;
             txtUser.ReadOnly = true;
             txtSenha.Visible = false;
@@ -43,7 +43,7 @@ namespace HouseManager
             editar = true;
         }
 
-        private Login getDTOL()
+        private Login GetDTOL()
         {
             //Método utilizado para se obter um login a partir das informações digitadas pelo usuário
             Login l = new Login();
@@ -53,13 +53,13 @@ namespace HouseManager
             return l;
         }
 
-        private void setDTOL(Login l)
+        private void SetDTOL(Login l)
         {
             //Método utilizado para se preencher os campos a partir de um login informado
             txtUser.Text = l.Nome;
         }
 
-        private Pessoa getDTO()
+        private Pessoa GetDTO()
         {
             //Método utilizado para se obter uma pessoa a partir das informações digitadas pelo usuário
             Pessoa p = new Pessoa();
@@ -71,7 +71,7 @@ namespace HouseManager
             return p;
         }
 
-        private void setDTO(Pessoa p)
+        private void SetDTO(Pessoa p)
         {
             //Método utilizado para se preencher os campos a partir de uma pessoa informada
             txtNome.Text = p.Nome;
@@ -137,7 +137,7 @@ namespace HouseManager
                     //Se estiver ocorrendo a edição e os campos estão todos preenchidos, edita as informações do usuário informado
                     PessoaDAO databasep = new PessoaDAO();
 
-                    Pessoa p = getDTO();
+                    Pessoa p = GetDTO();
 
                     databasep.Editar(p);
                     this.Close();
@@ -155,8 +155,8 @@ namespace HouseManager
                     LoginDAO database = new LoginDAO();
                     PessoaDAO databasep = new PessoaDAO();
 
-                    Login l = getDTOL();
-                    Pessoa p = getDTO();
+                    Login l = GetDTOL();
+                    Pessoa p = GetDTO();
 
                     l.P = p;
 

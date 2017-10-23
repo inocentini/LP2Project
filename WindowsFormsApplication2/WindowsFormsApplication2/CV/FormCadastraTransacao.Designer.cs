@@ -38,6 +38,9 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labDetalhesProduto = new System.Windows.Forms.Label();
+            this.labQuantidade = new System.Windows.Forms.Label();
+            this.labFiltrarProduto = new System.Windows.Forms.Label();
             this.txtQuantidade = new System.Windows.Forms.NumericUpDown();
             this.btnRemover = new System.Windows.Forms.Button();
             this.txtDescricao = new System.Windows.Forms.TextBox();
@@ -156,6 +159,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.labDetalhesProduto);
+            this.panel1.Controls.Add(this.labQuantidade);
+            this.panel1.Controls.Add(this.labFiltrarProduto);
             this.panel1.Controls.Add(this.txtQuantidade);
             this.panel1.Controls.Add(this.btnRemover);
             this.panel1.Controls.Add(this.txtDescricao);
@@ -166,10 +172,37 @@
             this.panel1.Size = new System.Drawing.Size(382, 84);
             this.panel1.TabIndex = 2;
             // 
+            // labDetalhesProduto
+            // 
+            this.labDetalhesProduto.AutoSize = true;
+            this.labDetalhesProduto.Location = new System.Drawing.Point(3, 45);
+            this.labDetalhesProduto.Name = "labDetalhesProduto";
+            this.labDetalhesProduto.Size = new System.Drawing.Size(52, 13);
+            this.labDetalhesProduto.TabIndex = 45;
+            this.labDetalhesProduto.Text = "Detalhes:";
+            // 
+            // labQuantidade
+            // 
+            this.labQuantidade.AutoSize = true;
+            this.labQuantidade.Location = new System.Drawing.Point(304, 6);
+            this.labQuantidade.Name = "labQuantidade";
+            this.labQuantidade.Size = new System.Drawing.Size(65, 13);
+            this.labQuantidade.TabIndex = 44;
+            this.labQuantidade.Text = "Quantidade:";
+            // 
+            // labFiltrarProduto
+            // 
+            this.labFiltrarProduto.AutoSize = true;
+            this.labFiltrarProduto.Location = new System.Drawing.Point(3, 5);
+            this.labFiltrarProduto.Name = "labFiltrarProduto";
+            this.labFiltrarProduto.Size = new System.Drawing.Size(75, 13);
+            this.labFiltrarProduto.TabIndex = 43;
+            this.labFiltrarProduto.Text = "Filtrar Produto:";
+            // 
             // txtQuantidade
             // 
             this.txtQuantidade.DecimalPlaces = 2;
-            this.txtQuantidade.Location = new System.Drawing.Point(305, 17);
+            this.txtQuantidade.Location = new System.Drawing.Point(304, 22);
             this.txtQuantidade.Maximum = new decimal(new int[] {
             0,
             0,
@@ -182,7 +215,7 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.Location = new System.Drawing.Point(307, 49);
+            this.btnRemover.Location = new System.Drawing.Point(307, 61);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 20);
             this.btnRemover.TabIndex = 4;
@@ -192,7 +225,7 @@
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(0, 49);
+            this.txtDescricao.Location = new System.Drawing.Point(0, 61);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.ReadOnly = true;
             this.txtDescricao.Size = new System.Drawing.Size(220, 20);
@@ -201,7 +234,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(226, 49);
+            this.btnAdd.Location = new System.Drawing.Point(226, 61);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 20);
             this.btnAdd.TabIndex = 3;
@@ -211,7 +244,7 @@
             // 
             // txtNomeProduto
             // 
-            this.txtNomeProduto.Location = new System.Drawing.Point(0, 17);
+            this.txtNomeProduto.Location = new System.Drawing.Point(0, 22);
             this.txtNomeProduto.Name = "txtNomeProduto";
             this.txtNomeProduto.Size = new System.Drawing.Size(299, 20);
             this.txtNomeProduto.TabIndex = 1;
@@ -345,7 +378,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 552);
+            this.ClientSize = new System.Drawing.Size(447, 553);
             this.Controls.Add(this.panCadastro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -356,7 +389,7 @@
             this.Name = "FormCadastraTransacao";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro";
+            this.Text = "Cadastro de transação";
             this.panCadastro.ResumeLayout(false);
             this.panCadastro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
@@ -398,5 +431,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuantidade;
+        private System.Windows.Forms.Label labDetalhesProduto;
+        private System.Windows.Forms.Label labQuantidade;
+        private System.Windows.Forms.Label labFiltrarProduto;
     }
 }
