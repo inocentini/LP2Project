@@ -19,6 +19,7 @@ namespace HouseManager
 
         private void bntAdd_Click(object sender, EventArgs e)
         {
+            //Evento do botão "Adicionar"
             FormCadastraLogin cadastro = new FormCadastraLogin();
             cadastro.ShowDialog(this);
             Fill();
@@ -26,7 +27,7 @@ namespace HouseManager
 
         private void Fill()
         {
-            //IDatabase db = new DatabaseDict();
+            //Método utilizado para listar todas as pessoas na DataGridView
             PessoaDAO db = new PessoaDAO();
             
             List <Pessoa> lista = db.Listar();
@@ -40,6 +41,7 @@ namespace HouseManager
 
         private Pessoa selecao()
         {
+            //Método utilizado para se obter uma pessoa a partir da linha selecionada na DataGridView
             if (dgvPessoas.CurrentRow != null) {
                 int indiceSelecao = dgvPessoas.SelectedCells[0].RowIndex;
                 DataGridViewRow linhaSelecionada = dgvPessoas.Rows[indiceSelecao];
@@ -55,6 +57,7 @@ namespace HouseManager
 
         private void bntEditar_Click(object sender, EventArgs e)
         {
+            //Evento de clique no botão "editar"
             Pessoa selecionada = selecao();
             if (selecionada != null)
             {
@@ -66,6 +69,7 @@ namespace HouseManager
 
         private void bntDetalhes_Click(object sender, EventArgs e)
         {
+            //Evento de clique no botão "detalhes"
             Pessoa selecionada = selecao();
             if (selecionada != null)
             {
@@ -76,6 +80,7 @@ namespace HouseManager
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
+            //Evento de clique no botão "remover"
             Pessoa selecionada = selecao();
             if (selecionada != null)
             {
@@ -87,6 +92,7 @@ namespace HouseManager
 
         private void txtFiltrar_KeyUp(object sender, KeyEventArgs e)
         {
+            //Evento que filtra as pessoas mostradas conforme é digitado no campo de texto "txtFiltrar", tem funcionamento semelhante ao "Fill"
             PessoaDAO db = new PessoaDAO();
 
             List<Pessoa> lista = db.Listar();
@@ -104,12 +110,16 @@ namespace HouseManager
 
         private void FormListaPessoas_Load(object sender, EventArgs e)
         {
+            //Evento de carregamento do form, chama o método "Fill"
             Fill();
         }
 
         private void FormListaPessoas_FormClosing(object sender, FormClosingEventArgs e)
         {
+            //Evento chamado no fechamento do form, apenas o esconde ao invés de realizar um "Dispose"
             this.Hide();
+
+            //Cancela o evento padrão de fechamento ("Dispose")
             e.Cancel = true;
         }
     }

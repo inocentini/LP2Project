@@ -19,6 +19,7 @@ namespace HouseManager
 
         private void Fill()
         {
+            //Método utilizado para listar todos os produtos na DataGridView
             ProdutoDAO db = new ProdutoDAO();
 
             List<Produto> lista = db.Listar();
@@ -32,6 +33,7 @@ namespace HouseManager
 
         private Produto selecao()
         {
+            //Método utilizado para se obter um produto a partir da linha selecionada na DataGridView
             if (dgvProdutos.CurrentRow != null)
             {
                 int indiceSelecao = dgvProdutos.SelectedCells[0].RowIndex;
@@ -48,6 +50,7 @@ namespace HouseManager
 
         private void bntAdd_Click(object sender, EventArgs e)
         {
+            //Evento do botão "Adicionar"
             FormCadastraProduto cadastro = new FormCadastraProduto();
             cadastro.ShowDialog(this);
             Fill();
@@ -55,6 +58,7 @@ namespace HouseManager
 
         private void bntEditar_Click(object sender, EventArgs e)
         {
+            //Evento de clique no botão "editar"
             Produto selecionado = selecao();
             if (selecionado != null)
             {
@@ -66,6 +70,7 @@ namespace HouseManager
 
         private void bntDetalhes_Click(object sender, EventArgs e)
         {
+            //Evento de clique no botão "detalhes"
             Produto selecionado = selecao();
             if (selecionado != null)
             {
@@ -76,6 +81,7 @@ namespace HouseManager
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
+            //Evento de clique no botão "remover"
             Produto selecionado = selecao();
             if (selecionado != null)
             {
@@ -87,6 +93,7 @@ namespace HouseManager
 
         private void txtFiltrar_KeyUp(object sender, KeyEventArgs e)
         {
+            //Evento que filtra os produtos mostrados conforme é digitado no campo de texto "txtFiltrar", tem funcionamento semelhante ao "Fill"
             ProdutoDAO db = new ProdutoDAO();
 
             List<Produto> lista = db.Listar();
@@ -104,12 +111,16 @@ namespace HouseManager
 
         private void FromListaProdutos_Load(object sender, EventArgs e)
         {
+            //Evento de carregamento do form, chama o método "Fill"
             Fill();
         }
 
         private void FormListaProdutos_FormClosing(object sender, FormClosingEventArgs e)
         {
+            //Evento chamado no fechamento do form, apenas o esconde ao invés de realizar um "Dispose"
             this.Hide();
+
+            //Cancela o evento padrão de fechamento ("Dispose")
             e.Cancel = true;
         }
     }

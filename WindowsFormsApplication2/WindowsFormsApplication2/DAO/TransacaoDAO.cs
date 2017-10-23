@@ -40,7 +40,7 @@ namespace HouseManager
 
                     if (pt.Quantidade != 0)
                     {
-                        //Se o produto não foi zerado (ou seja, ele faz parte da compra)
+                        //Se o produto não foi zerado (ou seja, ele ainda faz parte da compra, não foi removido na edição)
                         qry = string.Concat(qry, string.Format("INSERT INTO transacao_produto(idcompra,idproduto,quantidade) VALUES ({0},{1},{2});", t.Id, pt.Prod.Id, pt.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture)));
                     }
 
@@ -48,20 +48,30 @@ namespace HouseManager
                     pd.Editar(pt.Prod);
                 }
             }
+            //Se for um uso
             else
             {
-                foreach (ProdutoTransacao pv in t.Lista)
+                foreach (ProdutoTransacao pt in t.Lista)
                 {
-                    if (dictAnterior.ContainsKey(pv.Prod.Id))
+                    if (dictAnterior.ContainsKey(pt.Prod.Id))
                     {
-                        pv.Prod.Quantidade = pv.Prod.Quantidade + dictAnterior[pv.Prod.Id].Quantidade - pv.Quantidade;
+                        //Se o produto já tinha uma quantidade em estoque, ele recebe o que tinha antes mais a diferença entre o que se tinha adicionado no uso e a nova quantidade fornecida na edição
+                        pt.Prod.Quantidade = pt.Prod.Quantidade + dictAnterior[pt.Prod.Id].Quantidade - pt.Quantidade;
                     }
                     else
                     {
-                        pv.Prod.Quantidade -= pv.Quantidade;
+                        //Senão, o estoque do produto é decrescido do tanto que foi usado
+                        pt.Prod.Quantidade -= pt.Quantidade;
                     }
-                    qry = string.Concat(qry, string.Format("INSERT INTO transacao_produto(idcompra,idproduto,quantidade) VALUES ({0},{1},{2});", t.Id, pv.Prod.Id, pv.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture)));
-                    pd.Editar(pv.Prod);
+
+                    if (pt.Quantidade != 0)
+                    {
+                        //Se o produto não foi zerado (ou seja, ele faz parte do uso, não foi removido na edição)
+                        qry = string.Concat(qry, string.Format("INSERT INTO transacao_produto(idcompra,idproduto,quantidade) VALUES ({0},{1},{2});", t.Id, pt.Prod.Id, pt.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture)));
+                    }
+
+                    //Edita o produto para atualizar seu estoque
+                    pd.Editar(pt.Prod);
                 }
             }
 
@@ -70,8 +80,9 @@ namespace HouseManager
 
         public List<Transacao> Listar()
         {
+            //Método utilizado para listar todas as transações
             Database db = Database.GetInstance();
-            string qry = string.Format("SELECT * FROM transacao GROUP BY id");
+            string qry = string.Format("SELECT * FROM transacao");
             DataSet ds = db.ExecuteQuery(qry);
 
             List<Transacao> LCompraEVenda = new List<Transacao>();
@@ -84,6 +95,8 @@ namespace HouseManager
                 cv.Data = Convert.ToDateTime(data);
                 cv.Compra = Convert.ToBoolean(int.Parse(dr["compra"].ToString()));
                 cv.Valor = double.Parse(dr["valor"].ToString());
+
+                //Chama o método ListarProd (abaixo) para listar todos os produtos de uma transação e a quantidade comprada/usada
                 cv.Lista = ListarProd(cv.Id);
                 LCompraEVenda.Add(cv);
             }
@@ -93,6 +106,7 @@ namespace HouseManager
 
         public List<ProdutoTransacao> ListarProd(int id)
         {
+            //Método utilizado para listar todos os produtos de uma transação, dado seu id
             Database db = Database.GetInstance();
             string qry = string.Format("SELECT * FROM transacao_produto WHERE idcompra={0}", id);
             DataSet ds = db.ExecuteQuery(qry);
@@ -112,6 +126,7 @@ namespace HouseManager
 
         public Transacao Read(int id)
         {
+            //Método utilizado para ler as informações de uma transação específica
             Database db = Database.GetInstance();
             string qry = string.Format("SELECT * FROM transacao WHERE id = {0}", id);
             DataSet ds = db.ExecuteQuery(qry);
@@ -126,6 +141,8 @@ namespace HouseManager
                 cv.Valor = double.Parse(dr["valor"].ToString());
                 cv.Data = Convert.ToDateTime(data);
                 cv.Compra = Convert.ToBoolean(int.Parse(dr["compra"].ToString()));
+
+                //Chama o método ListarProd (abaixo) para listar todos os produtos da transação e a quantidade comprada/usada
                 cv.Lista = ListarProd(cv.Id);
                 return cv;
             }
@@ -137,6 +154,7 @@ namespace HouseManager
 
         public void Remover(int id)
         {
+            //Método utilizado para remover uma transação, dado seu id
             Database db = Database.GetInstance();
             Transacao t = Read(id);
 
@@ -144,6 +162,7 @@ namespace HouseManager
 
             if (t.Compra)
             {
+                //Se ela for uma compra, edita a quantidade no estoque de cada produto dela para remover a quantidade que foi adicionada
                 foreach (ProdutoTransacao pt in t.Lista)
                 {
                     pt.Prod.Quantidade -= pt.Quantidade;
@@ -152,6 +171,7 @@ namespace HouseManager
             }
             else
             {
+                //Se for um uso, edita o estoque para readicionar os produtos que tinham sido usados
                 foreach (ProdutoTransacao pt in t.Lista)
                 {
                     pt.Prod.Quantidade += pt.Quantidade;
@@ -159,16 +179,19 @@ namespace HouseManager
                 }
             }
 
-
+            //Exclui todas as informações de ambas as tabelas
             string qry = string.Format("DELETE FROM transacao WHERE id = {0}; DELETE FROM transacao_produto WHERE idcompra = {0}", id);
             db.ExecuteNonQuery(qry);
         }
 
         public void Salvar(Transacao cv)
         {
+            //Método utilizado para se salvar uma transação
             Database db = Database.GetInstance();
             string qry = string.Format("INSERT INTO transacao(data,valor,compra) VALUES ('{0}',{1},{2});", cv.Data.ToString("yyyy-MM-dd"), cv.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture), Convert.ToInt32(cv.Compra));
             db.ExecuteNonQuery(qry);
+
+            //Aqui, por meio do método "UltimoId" (abaixo), se guarda o id gerado pelo autoincrement na query anterior para se adicionar os produtos na tabela "transacao_produto"
             int ultimoid = UltimoId();
             qry = "";
 
@@ -176,6 +199,7 @@ namespace HouseManager
 
             if (cv.Compra)
             {
+                //Se foi uma compra, para cada produto na lista se acrescenta a quantidade comprada no estoque
                 foreach (ProdutoTransacao pv in cv.Lista)
                 {
                     pv.Prod.Quantidade += pv.Quantidade;
@@ -185,6 +209,7 @@ namespace HouseManager
             }
             else
             {
+                //Se foi um uso, para cada produto na lista se decrescenta a quantidade usada no estoque
                 foreach (ProdutoTransacao pv in cv.Lista)
                 {
                     pv.Prod.Quantidade -= pv.Quantidade;
@@ -198,8 +223,10 @@ namespace HouseManager
 
         public int UltimoId()
         {
+            //Método utilizado para se obter o último valor do autoincrement, utilizado para realizar as ligações das informações das tabelas "transacao" e "transacao_produto"
             Database db = Database.GetInstance();
 
+            //A tabela sqlite_sequence contém os valores atuais do autoincrement na coluna "seq" e o nome da tabela que usa esse autoincrement na coluna "name"
             string qry = string.Format("SELECT seq FROM sqlite_sequence WHERE name='Transacao';");
             DataSet ds = db.ExecuteQuery(qry);
 

@@ -260,9 +260,9 @@
             this.Name = "FormListaContas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contas";
-            this.Activated += new System.EventHandler(this.FromListaContas_Load);
+            this.Activated += new System.EventHandler(this.FormListaContas_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormListaContas_FormClosing);
-            this.Load += new System.EventHandler(this.FromListaContas_Load);
+            this.Load += new System.EventHandler(this.FormListaContas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContas)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

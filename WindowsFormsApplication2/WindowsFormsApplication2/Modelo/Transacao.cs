@@ -8,14 +8,14 @@ namespace HouseManager
 {
     public class Transacao
     {
-        //Declaração de variáveis.
+        //Declaração de variáveis
         private int id = new int();
         private DateTime data = new DateTime();
         private List<ProdutoTransacao> lista = new List<ProdutoTransacao>();
         private bool compra = new bool();
         private double valor = new double();
 
-        //Properties.
+        //Properties
         public DateTime Data
         {
             get
@@ -81,7 +81,7 @@ namespace HouseManager
             }
         }
 
-        //Construtores.
+        //Construtores
         public Transacao(DateTime data, List<ProdutoTransacao> lista, int id,bool compra,double valor)
         {
             this.Id = id;
@@ -96,7 +96,7 @@ namespace HouseManager
 
         }
 
-        //Método override ToString de formatação para visualização no DataGridView.
+        //Método override ToString de formatação para visualização no DataGridView, mostra todos os produtos da transação
         public override string ToString()
         {
             string stg = "";

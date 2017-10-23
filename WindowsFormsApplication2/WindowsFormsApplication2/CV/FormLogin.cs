@@ -19,7 +19,8 @@ namespace HouseManager
 
         private Login GetDTO()
         {
-            Login l = new HouseManager.Login();
+            //Método utilizado para se obter um login a partir do que é digitado nos campos
+            Login l = new Login();
             l.Nome = txtUser.Text;
             l.Senha = txtSenha.Text;
             return l;
@@ -27,6 +28,7 @@ namespace HouseManager
 
         private bool IsComplete()
         {
+            //Método utilizado para verificar se algum dos campos está em branco
             if (txtUser.Text.Trim() == "" || txtSenha.Text.Trim() == "")
             {
                 return false;
@@ -36,6 +38,7 @@ namespace HouseManager
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            //Evento de clique no botão "Entrar"
             if (IsComplete())
             {
                 LoginDAO database = new LoginDAO();
@@ -55,7 +58,7 @@ namespace HouseManager
                     }
                     catch (System.ObjectDisposedException)
                     {
-
+                        //Trata a exceção de quando o usuário fecha a aplicação principal ao invés de deslogar, para que não se volte ao login quando ele já foi descartado
                     }
                 }
                 else
@@ -72,6 +75,7 @@ namespace HouseManager
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
+            //Evento de clique no botão "Novo"
             FormCadastraLogin newlogin = new FormCadastraLogin();
             newlogin.ShowDialog(this);
         }

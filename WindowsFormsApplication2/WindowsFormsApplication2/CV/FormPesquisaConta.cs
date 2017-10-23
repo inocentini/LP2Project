@@ -12,7 +12,7 @@ namespace HouseManager
 {
     public partial class FormPesquisaConta : Form
     {
-        private Conta selecionado;
+        private Conta selecionado; //Atributo que define a conta selecionada
 
         public Conta Selecionado
         {
@@ -32,8 +32,9 @@ namespace HouseManager
             InitializeComponent();
         }
 
-    private void Fill()
+        private void Fill()
         {
+            //Método que preenche a DataGridView com todas as contas disponíveis
             ContaDAO db = new ContaDAO();
 
             List<Conta> lista = db.Listar();
@@ -47,6 +48,7 @@ namespace HouseManager
 
         private void txtFiltrar_KeyUp(object sender, KeyEventArgs e)
         {
+            //Evento chamado ao se digitar algo no campo "txtFiltrar", é semelhante ao "Fill"
             ContaDAO db = new ContaDAO();
 
             List<Conta> lista;
@@ -65,6 +67,7 @@ namespace HouseManager
 
         private Conta selecao()
         {
+            //Método que obtém uma Conta a partir da seleção do DataGridView
             if (dgvContas.CurrentRow != null)
             {
                 int indiceSelecao = dgvContas.SelectedCells[0].RowIndex;
@@ -81,20 +84,25 @@ namespace HouseManager
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
+            //Evento de clique no botão "Enviar"
             Selecionado = selecao();
             this.Hide();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            //Evento de clique no botão "Cancelar"
             Dispose();
         }
 
         private void dgvContas_KeyDown(object sender, KeyEventArgs e)
         {
+            //Evento que verifica se a tecla "Enter" é pressionada com uma linha selecionada na DataGridView
             if (e.KeyCode == Keys.Enter)
             {
                 btnEnviar.PerformClick();
+
+                //Altera os argumentos da função para que não possa ocorrer repetidas vezes o evento ao se apertar a tecla rapidamente
                 e.SuppressKeyPress = true;
                 e.Handled = true;
             }
@@ -102,11 +110,13 @@ namespace HouseManager
 
         private void dgvContas_DoubleClick(object sender, EventArgs e)
         {
+            //Evento que verifica se ocorre um clique duplo em uma linha na DataGridView
             btnEnviar.PerformClick();
         }
 
         private void FormPesquisaConta_Load(object sender, EventArgs e)
         {
+            //Evento chamado no carregamento do Form, chama o método "Fill"
             Fill();
         }
     }
