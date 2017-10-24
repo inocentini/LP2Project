@@ -176,7 +176,7 @@ namespace HouseManager
 
         private void btnSituacao_Click(object sender, EventArgs e)
         {
-            //Evento de clique no botão para mudar a situação
+            /*//Evento de clique no botão para mudar a situação
             PagamentoDAO db = new PagamentoDAO();
 
             PessoaPagamento pp = selecaoPessoaPagamento();
@@ -194,7 +194,7 @@ namespace HouseManager
                     pp.Pago = true;
                 }
                 db.Editar(pp, c);
-            }
+            }*/
         }
     }
 }
