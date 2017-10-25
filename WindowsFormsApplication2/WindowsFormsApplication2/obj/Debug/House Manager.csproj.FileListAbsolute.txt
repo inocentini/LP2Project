@@ -109,3 +109,40 @@ C:\Users\IFSP-\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsAppli
 C:\Users\IFSP-\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.Properties.Resources.resources
 C:\Users\IFSP-\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormSplashScreen.resources
 C:\Users\IFSP-\Source\Repos\LP2Projet\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\House Manager.csproj.GenerateResource.Cache
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\HouseManager.exe.config
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.exe
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.pdb
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\HouseManager.exe
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\HouseManager.pdb
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\EntityFramework.dll
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\MySql.Data.dll
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\System.Data.SQLite.dll
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\EntityFramework.xml
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\MySql.Data.xml
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\bin\Debug\System.Data.SQLite.xml
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\House Manager.csprojResolveAssemblyReference.cache
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormRelatorioContas.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormCadastraPessoa.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormCadastraProduto.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormListaPessoas.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormLogin.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormCadastraLogin.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormListaContas.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormCadastraConta.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormPesquisaPessoa.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormListaProdutos.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormPrincipal.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormCadastraTransacao.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormListaPagamentos.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormAlteraSenha.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormPesquisaConta.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormRelatorioPagamentos.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormListaTransacoes.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormRelatorioTransacoes.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.Properties.Resources.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\HouseManager.FormSplashScreen.resources
+C:\Users\Mateus Inocentini\Source\ReposLP2\NewRepo\WindowsFormsApplication2\WindowsFormsApplication2\obj\Debug\House Manager.csproj.GenerateResource.Cache
