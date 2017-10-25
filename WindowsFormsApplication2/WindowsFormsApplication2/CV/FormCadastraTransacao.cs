@@ -204,6 +204,17 @@ namespace HouseManager
 
         private void rdbCompra_CheckedChanged(object sender, EventArgs e)
         {
+            //Impede que seja adicionado um valor de compra no caso de um uso
+            if (rdbCompra.Checked)
+            {
+                txtValor.Enabled = true;
+            }
+            else
+            {
+                txtValor.Enabled = false;
+                txtValor.Value = 0;
+            }
+
             //Evento que é chamado toda vez que se muda uma opção nos RadioButtons
             if ((!reescolha) && (dgvProdutos.Rows.Count != 0))
             {

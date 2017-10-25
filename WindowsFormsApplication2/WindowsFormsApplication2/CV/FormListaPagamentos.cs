@@ -45,7 +45,8 @@ namespace HouseManager
             labFiltrarPagamento.Hide();
             txtFiltrar.Hide();
             pnlFiltro.Height = 54;
-            pnlInfo.Height = 452;
+            pnlInfo.Height = 462;
+            colConta.Visible = false;
         }
 
         private void FormListaPagamentos_FormClosing(object sender, FormClosingEventArgs e)
@@ -89,7 +90,7 @@ namespace HouseManager
                     {
                         foreach(PessoaPagamento pp in p.LPessoas)
                         {
-                            dgvPagamentos.Rows.Add(p.C.Nome, pp.APagar, p.C.Vencimento.ToShortDateString(), pp.Pago ? "Pago" : "Não pago", p.C.Id, pp.P.Cpf);
+                            dgvPagamentos.Rows.Add(pp.P.Nome,p.C.Nome, pp.APagar, p.C.Vencimento.ToShortDateString(), pp.Pago ? "Pago" : "Não pago");
                         }
                     }
                 }
@@ -114,7 +115,7 @@ namespace HouseManager
                         {
                             if(pp.Pago == situacao)
                             {
-                                dgvPagamentos.Rows.Add(p.C.Nome, pp.APagar, p.C.Vencimento.ToShortDateString(), pp.Pago ? "Pago" : "Não pago", p.C.Id, pp.P.Cpf);
+                                dgvPagamentos.Rows.Add(pp.P.Nome, p.C.Nome, pp.APagar, p.C.Vencimento.ToShortDateString(), pp.Pago ? "Pago" : "Não pago");
                             }
                         }
                     }

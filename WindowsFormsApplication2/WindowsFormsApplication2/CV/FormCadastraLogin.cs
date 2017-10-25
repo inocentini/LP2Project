@@ -13,6 +13,7 @@ namespace HouseManager
     public partial class FormCadastraLogin : Form
     {
         private bool editar = false; //Atributo responsável pela verificação se ocorrerá uma edição ou uma visualização
+        private Login l;
 
         public FormCadastraLogin() 
         {
@@ -30,11 +31,14 @@ namespace HouseManager
             this.MinimumSize = new Size(this.Width, 280);
             this.MaximumSize = new Size(this.Width, 280);
             this.Height = 300;
+
+            //Posiciona o botão de salvar e o de cancelar mais acima se for uma edição (já que não haverá campo de senha)
             btnSalvar.Location = new Point(btnSalvar.Location.X, 190);
             btnCancelar.Location = new Point(btnCancelar.Location.X, 190);
 
-            SetDTO(l.P);
-            SetDTOL(l);
+            this.l = l;
+            SetDTO(this.l.P);
+            SetDTOL(this.l);
             txtCPF.ReadOnly = true;
             txtUser.ReadOnly = true;
             txtSenha.Visible = false;

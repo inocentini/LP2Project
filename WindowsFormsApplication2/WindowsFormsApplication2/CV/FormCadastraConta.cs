@@ -146,6 +146,7 @@ namespace HouseManager
         {
             //Evento do botão para a escolha de um responsável
             FormPesquisaPessoa pesquisaResponsavel = new FormPesquisaPessoa();
+            pesquisaResponsavel.Selecionado = resp;
             pesquisaResponsavel.ShowDialog(this);
 
             //O atributo "resp" recebe o que estiver na propriedade "Selecionado" do Form chamado

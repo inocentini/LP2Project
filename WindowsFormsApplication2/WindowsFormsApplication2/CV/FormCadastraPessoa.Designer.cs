@@ -149,7 +149,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.Location = new System.Drawing.Point(72, 74);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(196, 20);
             this.txtEmail.TabIndex = 3;
             this.txtEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefone_KeyDown);
             // 

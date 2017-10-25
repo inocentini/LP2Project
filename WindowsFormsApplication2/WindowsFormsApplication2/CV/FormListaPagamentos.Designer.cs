@@ -30,13 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListaPagamentos));
             this.dgvPagamentos = new System.Windows.Forms.DataGridView();
-            this.colPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSituacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIdConta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbbSituacao = new System.Windows.Forms.ComboBox();
             this.txtFiltrar = new System.Windows.Forms.TextBox();
             this.labFiltrarSituacao = new System.Windows.Forms.Label();
@@ -44,6 +37,11 @@
             this.pnlFiltro = new System.Windows.Forms.Panel();
             this.pnlInfo = new System.Windows.Forms.Panel();
             this.btnSituacao = new System.Windows.Forms.Button();
+            this.colPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colConta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSituacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagamentos)).BeginInit();
             this.pnlFiltro.SuspendLayout();
             this.pnlInfo.SuspendLayout();
@@ -60,12 +58,10 @@
             this.dgvPagamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPagamentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colPessoa,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.colSituacao,
-            this.colIdConta,
-            this.colCPF});
+            this.colConta,
+            this.colApagar,
+            this.colVencimento,
+            this.colSituacao});
             this.dgvPagamentos.Location = new System.Drawing.Point(0, 24);
             this.dgvPagamentos.MultiSelect = false;
             this.dgvPagamentos.Name = "dgvPagamentos";
@@ -74,58 +70,6 @@
             this.dgvPagamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPagamentos.Size = new System.Drawing.Size(793, 350);
             this.dgvPagamentos.TabIndex = 3;
-            // 
-            // colPessoa
-            // 
-            this.colPessoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colPessoa.HeaderText = "Pessoa";
-            this.colPessoa.Name = "colPessoa";
-            this.colPessoa.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nome da conta";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.FillWeight = 80F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Valor a pagar";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn5.FillWeight = 60F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Vencimento";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // colSituacao
-            // 
-            this.colSituacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colSituacao.FillWeight = 40F;
-            this.colSituacao.HeaderText = "Situação";
-            this.colSituacao.Name = "colSituacao";
-            this.colSituacao.ReadOnly = true;
-            // 
-            // colIdConta
-            // 
-            this.colIdConta.HeaderText = "Id Conta";
-            this.colIdConta.Name = "colIdConta";
-            this.colIdConta.ReadOnly = true;
-            this.colIdConta.Visible = false;
-            // 
-            // colCPF
-            // 
-            this.colCPF.HeaderText = "CPF";
-            this.colCPF.Name = "colCPF";
-            this.colCPF.ReadOnly = true;
-            this.colCPF.Visible = false;
             // 
             // cbbSituacao
             // 
@@ -205,6 +149,44 @@
             this.btnSituacao.UseVisualStyleBackColor = true;
             this.btnSituacao.Click += new System.EventHandler(this.btnSituacao_Click);
             // 
+            // colPessoa
+            // 
+            this.colPessoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colPessoa.HeaderText = "Pessoa";
+            this.colPessoa.Name = "colPessoa";
+            this.colPessoa.ReadOnly = true;
+            // 
+            // colConta
+            // 
+            this.colConta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colConta.HeaderText = "Nome da conta";
+            this.colConta.Name = "colConta";
+            this.colConta.ReadOnly = true;
+            // 
+            // colApagar
+            // 
+            this.colApagar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colApagar.FillWeight = 80F;
+            this.colApagar.HeaderText = "Valor a pagar";
+            this.colApagar.Name = "colApagar";
+            this.colApagar.ReadOnly = true;
+            // 
+            // colVencimento
+            // 
+            this.colVencimento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colVencimento.FillWeight = 60F;
+            this.colVencimento.HeaderText = "Vencimento";
+            this.colVencimento.Name = "colVencimento";
+            this.colVencimento.ReadOnly = true;
+            // 
+            // colSituacao
+            // 
+            this.colSituacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colSituacao.FillWeight = 40F;
+            this.colSituacao.HeaderText = "Situação";
+            this.colSituacao.Name = "colSituacao";
+            this.colSituacao.ReadOnly = true;
+            // 
             // FormListaPagamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,11 +219,9 @@
         private System.Windows.Forms.Panel pnlInfo;
         private System.Windows.Forms.Button btnSituacao;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPessoa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colConta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colApagar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVencimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSituacao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIdConta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCPF;
     }
 }

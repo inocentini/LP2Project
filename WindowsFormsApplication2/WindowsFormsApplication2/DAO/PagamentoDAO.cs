@@ -64,7 +64,7 @@ namespace HouseManager
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 Pagamento pgm = new Pagamento();
-                Conta c = dbc.Read(int.Parse(dr["idconta"].ToString()));
+                pgm.C = dbc.Read(int.Parse(dr["idconta"].ToString()));
                 PessoaPagamento pg = new PessoaPagamento();
                 pg.P = p;
                 pg.Pago = Convert.ToBoolean(int.Parse(dr["pago"].ToString()));
@@ -80,7 +80,7 @@ namespace HouseManager
         public Pagamento Read(int id)
         {
             Database db = Database.GetInstance();
-            string qry = string.Format("SELECT * FROM Pagamento WHERE idConta = {0}", id);
+            string qry = string.Format("SELECT idconta, cpfpessoa, pago, apagar FROM Pagamento WHERE idConta = {0}", id);
             DataSet ds = db.ExecuteQuery(qry);
 
             Pagamento p = new Pagamento();
@@ -94,6 +94,7 @@ namespace HouseManager
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 PessoaPagamento pg = new PessoaPagamento();
+                Console.WriteLine(dr["cpfpessoa"].ToString());
                 pg.P = dbp.Read(dr["cpfpessoa"].ToString());
                 pg.APagar = double.Parse(dr["apagar"].ToString());
                 pg.Pago = Convert.ToBoolean(int.Parse(dr["pago"].ToString()));

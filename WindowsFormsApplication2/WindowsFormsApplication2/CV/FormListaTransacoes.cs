@@ -45,7 +45,7 @@ namespace HouseManager
                     //Se tiver algo digitado no "txtFiltrar", mostra apenas as transações que têm o que é digitado na sua lista de produtos
                     if (t.ToString().Contains(txtFiltrar.Text))
                     {
-                        dgvComprasEVendas.Rows.Add(t.Id, t.Data.ToShortDateString(), t.ToString(), t.Valor, t.Compra ? "Compra" : "Uso");
+                        dgvComprasEVendas.Rows.Add(t.Id, t.Data.ToShortDateString(), t.ToString(), t.Compra ? "R$" + t.Valor : "N.D.", t.Compra ? "Compra" : "Uso");
                     }
                 }
             }
@@ -66,7 +66,7 @@ namespace HouseManager
                     //Se tiver algo digitado no "txtFiltrar", mostra apenas as transações que têm o que é digitado na sua lista de produtos
                     if (t.ToString().Contains(txtFiltrar.Text) && t.Compra == compra)
                     {
-                        dgvComprasEVendas.Rows.Add(t.Id, t.Data.ToShortDateString(), t.ToString(), t.Valor, t.Compra ? "Compra" : "Uso");
+                        dgvComprasEVendas.Rows.Add(t.Id, t.Data.ToShortDateString(), t.ToString(), "R$" + t.Valor, t.Compra ? "Compra" : "Uso");
                     }
                 }
             }
