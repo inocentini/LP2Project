@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0A17E5C5-33D8-4506-B25F-A11F771C3E86}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HouseManager</RootNamespace>
+    <AssemblyName>HouseManager</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.20.2399\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.20.2399\lib\CrystalDecisions.ReportSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.20.2399\lib\CrystalDecisions.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.20.2399\lib\CrystalDecisions.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.105.2, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.105.2\lib\net451\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.105.2, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.105.2\lib\net451\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.105.2, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.105.2\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CV\FormCadastraTransacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormCadastraTransacao.Designer.cs">
+      <DependentUpon>FormCadastraTransacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormListaPagamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormListaPagamentos.Designer.cs">
+      <DependentUpon>FormListaPagamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormAlteraSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormAlteraSenha.Designer.cs">
+      <DependentUpon>FormAlteraSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormRelatorioContas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormRelatorioContas.Designer.cs">
+      <DependentUpon>FormRelatorioContas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormPesquisaConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormPesquisaConta.Designer.cs">
+      <DependentUpon>FormPesquisaConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormRelatorioPagamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormRelatorioPagamentos.Designer.cs">
+      <DependentUpon>FormRelatorioPagamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormListaTransacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormListaTransacoes.Designer.cs">
+      <DependentUpon>FormListaTransacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormRelatorioTransacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormRelatorioTransacoes.Designer.cs">
+      <DependentUpon>FormRelatorioTransacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelatorioContaPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelatorioContaPrint.Designer.cs">
+      <DependentUpon>FormRelatorioContaPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Transacao.cs" />
+    <Compile Include="DAO\TransacaoDAO.cs" />
+    <Compile Include="CV\FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\ContaDAO.cs" />
+    <Compile Include="CV\FormCadastraLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormCadastraLogin.Designer.cs">
+      <DependentUpon>FormCadastraLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormListaContas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormListaContas.Designer.cs">
+      <DependentUpon>FormListaContas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormCadastraConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormCadastraConta.Designer.cs">
+      <DependentUpon>FormCadastraConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormPesquisaPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormPesquisaPessoa.Designer.cs">
+      <DependentUpon>FormPesquisaPessoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormCadastraProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormCadastraProduto.Designer.cs">
+      <DependentUpon>FormCadastraProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormListaProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormListaProdutos.Designer.cs">
+      <DependentUpon>FormListaProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\ProdutoDAO.cs" />
+    <Compile Include="Modelo\ProdutoTransacao.cs" />
+    <Compile Include="Modelo\Pagamento.cs" />
+    <Compile Include="DAO\PagamentoDAO.cs" />
+    <Compile Include="Modelo\PessoaPagamento.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RelatorioConta.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioConta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils\Database.cs" />
+    <Compile Include="Modelo\Conta.cs" />
+    <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="CV\FormCadastraPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormCadastraPessoa.Designer.cs">
+      <DependentUpon>FormCadastraPessoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\PessoaDAO.cs" />
+    <Compile Include="CV\FormListaPessoas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormListaPessoas.Designer.cs">
+      <DependentUpon>FormListaPessoas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Hashing.cs" />
+    <Compile Include="Modelo\Login.cs" />
+    <Compile Include="Modelo\Pessoa.cs" />
+    <Compile Include="Modelo\Produto.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CV\FormSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormSplashScreen.Designer.cs">
+      <DependentUpon>FormSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Sessao.cs" />
+    <EmbeddedResource Include="CV\FormRelatorioContas.resx">
+      <DependentUpon>FormRelatorioContas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormCadastraPessoa.resx">
+      <DependentUpon>FormCadastraPessoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormCadastraProduto.resx">
+      <DependentUpon>FormCadastraProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormListaPessoas.resx">
+      <DependentUpon>FormListaPessoas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormCadastraLogin.resx">
+      <DependentUpon>FormCadastraLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormListaContas.resx">
+      <DependentUpon>FormListaContas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormCadastraConta.resx">
+      <DependentUpon>FormCadastraConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormPesquisaPessoa.resx">
+      <DependentUpon>FormPesquisaPessoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormListaProdutos.resx">
+      <DependentUpon>FormListaProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormCadastraTransacao.resx">
+      <DependentUpon>FormCadastraTransacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormListaPagamentos.resx">
+      <DependentUpon>FormListaPagamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormAlteraSenha.resx">
+      <DependentUpon>FormAlteraSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormPesquisaConta.resx">
+      <DependentUpon>FormPesquisaConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormRelatorioPagamentos.resx">
+      <DependentUpon>FormRelatorioPagamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormListaTransacoes.resx">
+      <DependentUpon>FormListaTransacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormRelatorioTransacoes.resx">
+      <DependentUpon>FormRelatorioTransacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelatorioContaPrint.resx">
+      <DependentUpon>FormRelatorioContaPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormSplashScreen.resx">
+      <DependentUpon>FormSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioConta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioConta.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\processamento-de-dados-computacao-fotos-imagens.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\geladeira_republica.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\24b3b3f4d6839c2029c06ead11153598.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_24b3b3f4d6839c2029c06ead11153598.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_black_cubes_3-wallpaper-640x960.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock-md.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1013.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\O7MF5N0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\240_F_81814151_BuyTjihhQ7ad76dgCgaXu4htNbVufT6g.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arte720.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-bag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-bag %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-bag %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-with-tie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiple-users-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\progress-report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newspaper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.2\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net451\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.105.2\build\net451\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
