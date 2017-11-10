@@ -45,5 +45,11 @@ namespace HouseManager
             //Evento de clique no botão "Cancelar"
             this.Close();
         }
+
+        private void btnGerar_Click(object sender, EventArgs e)
+        {
+            FormTeste rTeste = new FormTeste();
+            rTeste.Show();
+        }
     }
 }

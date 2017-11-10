@@ -133,6 +133,12 @@
     <Compile Include="FormRelatorioContaPrint.Designer.cs">
       <DependentUpon>FormRelatorioContaPrint.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTeste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTeste.Designer.cs">
+      <DependentUpon>FormTeste.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Transacao.cs" />
     <Compile Include="DAO\TransacaoDAO.cs" />
     <Compile Include="CV\FormPrincipal.cs">
@@ -192,6 +198,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RelatorioConta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RelatorioTeste.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioTeste.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utils\Database.cs" />
@@ -286,6 +298,9 @@
     <EmbeddedResource Include="FormRelatorioContaPrint.resx">
       <DependentUpon>FormRelatorioContaPrint.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTeste.resx">
+      <DependentUpon>FormTeste.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -298,7 +313,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RelatorioConta.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioTeste.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioTeste.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Conta.datasource" />
     <None Include="packages.config" />
+    <None Include="Pagamento.datasource" />
+    <None Include="Pessoa.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
