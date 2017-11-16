@@ -59,8 +59,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sistemaToolStripMenuItem,
             this.controleToolStripMenuItem,
-            this.cadastroToolStripMenuItem,
-            this.meuPerfilToolStripMenuItem});
+            this.meuPerfilToolStripMenuItem,
+            this.cadastroToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 

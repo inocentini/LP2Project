@@ -79,6 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\CompraDAO.cs" />
     <Compile Include="CV\FormCadastraTransacao.cs">
       <SubType>Form</SubType>
     </Compile>

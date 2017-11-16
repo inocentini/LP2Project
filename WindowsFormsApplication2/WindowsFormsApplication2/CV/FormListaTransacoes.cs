@@ -34,40 +34,12 @@ namespace HouseManager
 
             dgvComprasEVendas.Rows.Clear();
 
-            //Variável utilizada para definir qual opção (compra ou uso) está selecionada no ComboBox
-            bool compra = new bool();
-
-            if (cbbTransacao.SelectedIndex == 0)
+            foreach (Transacao t in lista)
             {
-                //Se a opção de índice 0 ("Mostrar tudo") estiver selecionada na ComboBox, mostra todas as transações
-                foreach(Transacao t in lista)
+                //Se tiver algo digitado no "txtFiltrar", mostra apenas as transações que têm o que é digitado na sua lista de produtos
+                if (t.ToString().Contains(txtFiltrar.Text))
                 {
-                    //Se tiver algo digitado no "txtFiltrar", mostra apenas as transações que têm o que é digitado na sua lista de produtos
-                    if (t.ToString().Contains(txtFiltrar.Text))
-                    {
-                        dgvComprasEVendas.Rows.Add(t.Id, t.Data.ToShortDateString(), t.ToString(), t.Compra ? "R$" + t.Valor : "N.D.", t.Compra ? "Compra" : "Uso");
-                    }
-                }
-            }
-            else
-            {
-                //Senão, define "compra" como "true" ou "false" dependendo da opção escolhida ("compra" ou "uso")
-                if (cbbTransacao.SelectedIndex == 1)
-                {
-                    compra = true;
-                }
-                else
-                {
-                    compra = false;
-                }
-
-                foreach (Transacao t in lista)
-                {
-                    //Se tiver algo digitado no "txtFiltrar", mostra apenas as transações que têm o que é digitado na sua lista de produtos
-                    if (t.ToString().Contains(txtFiltrar.Text) && t.Compra == compra)
-                    {
-                        dgvComprasEVendas.Rows.Add(t.Id, t.Data.ToShortDateString(), t.ToString(), "R$" + t.Valor, t.Compra ? "Compra" : "Uso");
-                    }
+                    dgvComprasEVendas.Rows.Add(t.Id, t.Data.ToShortDateString(), t.ToString(), "R$" + t.Valor);
                 }
             }
         }
@@ -132,8 +104,7 @@ namespace HouseManager
 
         private void FormEstoque_Load(object sender, EventArgs e)
         {
-            //Evento de carregamento do form, define o valor marcado da ComboBox "cbbTransacao" como "Mostrar tudo"
-            cbbTransacao.SelectedIndex = 0;
+            Fill();
         }
 
         private void FormEstoque_FormClosing(object sender, FormClosingEventArgs e)
@@ -143,12 +114,6 @@ namespace HouseManager
 
             //Cancela o evento padrão de fechamento ("Dispose")
             e.Cancel = true;
-        }
-
-        private void cbbTransacao_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Evento que chama o método "Fill" toda vez que o valor selecionado do ComboBox "cbbTransacao" for mudado
-            Fill();
         }
     }
 }

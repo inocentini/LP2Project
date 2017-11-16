@@ -30,23 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListaTransacoes));
             this.dgvComprasEVendas = new System.Windows.Forms.DataGridView();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProds = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtFiltrar = new System.Windows.Forms.TextBox();
             this.labFiltrar = new System.Windows.Forms.Label();
             this.btnRemover = new System.Windows.Forms.Button();
             this.bntDetalhes = new System.Windows.Forms.Button();
             this.bntEditar = new System.Windows.Forms.Button();
             this.bntAdd = new System.Windows.Forms.Button();
-            this.cbbTransacao = new System.Windows.Forms.ComboBox();
-            this.labFiltrarCompra = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labTransacoes = new System.Windows.Forms.Label();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprasEVendas)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -66,8 +63,7 @@
             this.colId,
             this.colData,
             this.colProds,
-            this.colValor,
-            this.colCompra});
+            this.colValor});
             this.dgvComprasEVendas.Location = new System.Drawing.Point(0, 26);
             this.dgvComprasEVendas.Name = "dgvComprasEVendas";
             this.dgvComprasEVendas.ReadOnly = true;
@@ -75,45 +71,6 @@
             this.dgvComprasEVendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvComprasEVendas.Size = new System.Drawing.Size(850, 276);
             this.dgvComprasEVendas.TabIndex = 3;
-            // 
-            // colId
-            // 
-            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colId.FillWeight = 30F;
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            // 
-            // colData
-            // 
-            this.colData.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colData.HeaderText = "Data";
-            this.colData.Name = "colData";
-            this.colData.ReadOnly = true;
-            // 
-            // colProds
-            // 
-            this.colProds.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colProds.FillWeight = 150F;
-            this.colProds.HeaderText = "Produto(s)";
-            this.colProds.Name = "colProds";
-            this.colProds.ReadOnly = true;
-            // 
-            // colValor
-            // 
-            this.colValor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colValor.FillWeight = 60F;
-            this.colValor.HeaderText = "Valor";
-            this.colValor.Name = "colValor";
-            this.colValor.ReadOnly = true;
-            // 
-            // colCompra
-            // 
-            this.colCompra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCompra.FillWeight = 60F;
-            this.colCompra.HeaderText = "Tipo da transação";
-            this.colCompra.Name = "colCompra";
-            this.colCompra.ReadOnly = true;
             // 
             // txtFiltrar
             // 
@@ -184,36 +141,9 @@
             this.bntAdd.UseVisualStyleBackColor = true;
             this.bntAdd.Click += new System.EventHandler(this.bntAdd_Click);
             // 
-            // cbbTransacao
-            // 
-            this.cbbTransacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbbTransacao.FormattingEnabled = true;
-            this.cbbTransacao.Items.AddRange(new object[] {
-            "Mostrar tudo",
-            "Compra",
-            "Uso"});
-            this.cbbTransacao.Location = new System.Drawing.Point(719, 43);
-            this.cbbTransacao.Name = "cbbTransacao";
-            this.cbbTransacao.Size = new System.Drawing.Size(121, 21);
-            this.cbbTransacao.TabIndex = 2;
-            this.cbbTransacao.SelectedIndexChanged += new System.EventHandler(this.cbbTransacao_SelectedIndexChanged);
-            // 
-            // labFiltrarCompra
-            // 
-            this.labFiltrarCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labFiltrarCompra.AutoSize = true;
-            this.labFiltrarCompra.BackColor = System.Drawing.SystemColors.Control;
-            this.labFiltrarCompra.Location = new System.Drawing.Point(610, 47);
-            this.labFiltrarCompra.Name = "labFiltrarCompra";
-            this.labFiltrarCompra.Size = new System.Drawing.Size(103, 13);
-            this.labFiltrarCompra.TabIndex = 12;
-            this.labFiltrarCompra.Text = "Filtrar por transação:";
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.labFiltrarCompra);
             this.panel1.Controls.Add(this.labFiltrar);
-            this.panel1.Controls.Add(this.cbbTransacao);
             this.panel1.Controls.Add(this.txtFiltrar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -252,6 +182,37 @@
             this.labTransacoes.TabIndex = 4;
             this.labTransacoes.Text = "Transações:";
             // 
+            // colId
+            // 
+            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colId.FillWeight = 30F;
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            // 
+            // colData
+            // 
+            this.colData.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colData.HeaderText = "Data";
+            this.colData.Name = "colData";
+            this.colData.ReadOnly = true;
+            // 
+            // colProds
+            // 
+            this.colProds.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colProds.FillWeight = 150F;
+            this.colProds.HeaderText = "Produto(s)";
+            this.colProds.Name = "colProds";
+            this.colProds.ReadOnly = true;
+            // 
+            // colValor
+            // 
+            this.colValor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colValor.FillWeight = 60F;
+            this.colValor.HeaderText = "Valor";
+            this.colValor.Name = "colValor";
+            this.colValor.ReadOnly = true;
+            // 
             // FormListaTransacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,16 +247,13 @@
         private System.Windows.Forms.Button bntDetalhes;
         private System.Windows.Forms.Button bntEditar;
         private System.Windows.Forms.Button bntAdd;
-        private System.Windows.Forms.ComboBox cbbTransacao;
-        private System.Windows.Forms.Label labFiltrarCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colProds;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colValor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCompra;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label labTransacoes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProds;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colValor;
     }
 }

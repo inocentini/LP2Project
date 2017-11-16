@@ -128,25 +128,25 @@
     <value>Pessoas</value>
   </data>
   <data name="contasToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>140, 22</value>
   </data>
   <data name="contasToolStripMenuItem1.Text" xml:space="preserve">
     <value>Contas</value>
   </data>
   <data name="pagamentosToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>140, 22</value>
   </data>
   <data name="pagamentosToolStripMenuItem1.Text" xml:space="preserve">
     <value>Pagamentos</value>
   </data>
   <data name="estoqueToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>140, 22</value>
   </data>
   <data name="estoqueToolStripMenuItem1.Text" xml:space="preserve">
     <value>Estoque</value>
   </data>
   <data name="transaçõesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>140, 22</value>
   </data>
   <data name="transaçõesToolStripMenuItem.Text" xml:space="preserve">
     <value>Transações</value>
@@ -198,7 +198,7 @@
     <value>152, 22</value>
   </data>
   <data name="estoqueToolStripMenuItem.Text" xml:space="preserve">
-    <value>Compras/Usos</value>
+    <value>Compras</value>
   </data>
   <data name="contasQueAdministroToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>194, 22</value>
@@ -224,18 +224,6 @@
   <data name="controleToolStripMenuItem.Text" xml:space="preserve">
     <value>Controle</value>
   </data>
-  <data name="produtoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="produtoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Produto</value>
-  </data>
-  <data name="cadastroToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 20</value>
-  </data>
-  <data name="cadastroToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cadastro</value>
-  </data>
   <data name="alterarInformaçõesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
   </data>
@@ -253,6 +241,24 @@
   </data>
   <data name="meuPerfilToolStripMenuItem.Text" xml:space="preserve">
     <value>Meu perfil</value>
+  </data>
+  <data name="produtoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="produtoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Produto</value>
+  </data>
+  <data name="produtoToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="cadastroToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
+  </data>
+  <data name="cadastroToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cadastro</value>
+  </data>
+  <data name="cadastroToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>

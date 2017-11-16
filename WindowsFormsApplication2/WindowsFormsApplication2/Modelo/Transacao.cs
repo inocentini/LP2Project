@@ -12,7 +12,6 @@ namespace HouseManager
         private int id = new int();
         private DateTime data = new DateTime();
         private List<ProdutoTransacao> lista = new List<ProdutoTransacao>();
-        private bool compra = new bool();
         private double valor = new double();
 
         //Properties
@@ -55,19 +54,6 @@ namespace HouseManager
             }
         }
 
-        public bool Compra
-        {
-            get
-            {
-                return compra;
-            }
-
-            set
-            {
-                compra = value;
-            }
-        }
-
         public double Valor
         {
             get
@@ -82,12 +68,11 @@ namespace HouseManager
         }
 
         //Construtores
-        public Transacao(DateTime data, List<ProdutoTransacao> lista, int id,bool compra,double valor)
+        public Transacao(DateTime data, List<ProdutoTransacao> lista, int id,double valor)
         {
             this.Id = id;
             this.Data = data;
             this.Lista = lista;
-            this.Compra = compra;
             this.Valor = valor;
         }
 

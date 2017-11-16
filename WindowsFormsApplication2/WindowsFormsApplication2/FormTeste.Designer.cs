@@ -41,7 +41,12 @@
             this.crvTeste.Location = new System.Drawing.Point(0, 0);
             this.crvTeste.Name = "crvTeste";
             this.crvTeste.ReportSource = this.RelatorioTeste1;
-            this.crvTeste.Size = new System.Drawing.Size(284, 262);
+            this.crvTeste.ShowCloseButton = false;
+            this.crvTeste.ShowCopyButton = false;
+            this.crvTeste.ShowLogo = false;
+            this.crvTeste.ShowParameterPanelButton = false;
+            this.crvTeste.ShowRefreshButton = false;
+            this.crvTeste.Size = new System.Drawing.Size(654, 521);
             this.crvTeste.TabIndex = 0;
             this.crvTeste.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -49,10 +54,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(654, 521);
             this.Controls.Add(this.crvTeste);
             this.Name = "FormTeste";
-            this.Text = "FormTeste";
+            this.Text = "Relatório";
             this.Load += new System.EventHandler(this.FormTeste_Load);
             this.ResumeLayout(false);
 
