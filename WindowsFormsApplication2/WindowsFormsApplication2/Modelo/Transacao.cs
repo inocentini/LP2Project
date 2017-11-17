@@ -87,7 +87,7 @@ namespace HouseManager
             string stg = "";
             foreach(ProdutoTransacao pv in Lista)
             {
-                stg = stg + "" + pv.Prod.Nome + ": " + pv.Quantidade + "  |  ";
+                stg = stg + "" + pv.Prod + ": " + pv.Quantidade + "  |  ";
             }
 
             return stg.Remove(stg.Length - 3,1);

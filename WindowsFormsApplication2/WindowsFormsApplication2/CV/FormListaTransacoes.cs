@@ -28,7 +28,7 @@ namespace HouseManager
         private void Fill()
         {
             //Método utilizado para listar todas as transações na DataGridView
-            TransacaoDAO db = new TransacaoDAO();
+            CompraDAO db = new CompraDAO();
 
             List<Transacao> lista = db.Listar();
 
@@ -51,7 +51,7 @@ namespace HouseManager
             {
                 int indiceSelecao = dgvComprasEVendas.SelectedCells[0].RowIndex;
                 DataGridViewRow linhaSelecionada = dgvComprasEVendas.Rows[indiceSelecao];
-                TransacaoDAO db = new TransacaoDAO();
+                CompraDAO db = new CompraDAO();
                 return db.Read(int.Parse(linhaSelecionada.Cells[0].Value.ToString()));
             }
             else
@@ -67,7 +67,7 @@ namespace HouseManager
             Transacao selecionada = selecao();
             if (selecionada != null)
             {
-                FormCadastraTransacao editar = new FormCadastraTransacao(selecionada, true);
+                FormCadastraTransacao editar = new FormCadastraTransacao();
                 editar.ShowDialog(this);
                 Fill();
             }
@@ -79,7 +79,7 @@ namespace HouseManager
             Transacao selecionada = selecao();
             if (selecionada != null)
             {
-                FormCadastraTransacao detalhes = new FormCadastraTransacao(selecionada, false);
+                FormCadastraTransacao detalhes = new FormCadastraTransacao();
                 detalhes.ShowDialog(this);
             }
         }
@@ -90,7 +90,7 @@ namespace HouseManager
             Transacao selecionada = selecao();
             if (selecionada != null)
             {
-                TransacaoDAO db = new TransacaoDAO();
+                CompraDAO db = new CompraDAO();
                 db.Remover(selecionada.Id);
                 Fill();
             }

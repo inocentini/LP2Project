@@ -22,7 +22,7 @@ namespace HouseManager
 
             foreach(ProdutoTransacao pt in t.Lista)
             {
-                qry = string.Concat(qry, string.Format("INSERT INTO transacao_produto(idcompra,idproduto,quantidade,valor) VALUES({0}, {1}, {2}, {3})",t.Id, pt.Prod.Id, pt.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture), pt.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture)));
+                qry = string.Concat(qry, string.Format("INSERT INTO transacao_produto(idcompra,produto,quantidade,valor) VALUES({0}, {1}, {2}, {3})",t.Id, pt.Prod, pt.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture), pt.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture)));
             }
 
             db.ExecuteNonQuery(qry);
@@ -65,8 +65,7 @@ namespace HouseManager
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 ProdutoTransacao pv = new ProdutoTransacao();
-                ProdutoDAO dbprod = new ProdutoDAO();
-                pv.Prod = dbprod.Read(int.Parse(dr["idproduto"].ToString()));
+                pv.Prod = dr["produto"].ToString();
                 pv.Quantidade = double.Parse(dr["quantidade"].ToString());
                 pv.Valor = double.Parse(dr["valor"].ToString());
                 Lprod.Add(pv);
@@ -124,7 +123,7 @@ namespace HouseManager
 
             foreach (ProdutoTransacao pv in t.Lista)
             {
-                qry = string.Concat(qry, string.Format("INSERT INTO transacao_produto(idcompra,idproduto,quantidade,valor) VALUES ({0},{1},{2},{3});", ultimoid, pv.Prod.Id, pv.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture), pv.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture)));
+                qry = string.Concat(qry, string.Format("INSERT INTO transacao_produto(idcompra,produto,quantidade,valor) VALUES ({0},{1},{2},{3});", ultimoid, pv.Prod, pv.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture), pv.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture)));
             }
            
             db.ExecuteNonQuery(qry);

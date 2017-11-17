@@ -141,7 +141,6 @@
       <DependentUpon>FormTeste.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Transacao.cs" />
-    <Compile Include="DAO\TransacaoDAO.cs" />
     <Compile Include="CV\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

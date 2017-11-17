@@ -9,12 +9,12 @@ namespace HouseManager
     public class ProdutoTransacao
     {
         //Declaração de variáveis.
-        private Produto prod = new Produto();
+        private string prod = "";
         private double quantidade = new double();
         private double valor = new double();
 
         //Construtores.
-        public ProdutoTransacao(Produto prod, double quantidade, double valor)
+        public ProdutoTransacao(string prod, double quantidade, double valor)
         {
             this.Prod = prod;
             this.Quantidade = quantidade;
@@ -27,7 +27,7 @@ namespace HouseManager
         }
 
         //Properties.
-        public Produto Prod
+        public string Prod
         {
             get
             {

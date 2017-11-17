@@ -40,8 +40,8 @@ namespace HouseManager
             sql.AppendLine("CREATE TABLE IF NOT EXISTS Login([nome] varchar(16) PRIMARY KEY, [senha] varchar(256), [admin] integer, [cpfpessoa] varchar(14), FOREIGN KEY(cpfpessoa) REFERENCES Pessoa(cpf) ON DELETE CASCADE);");
             sql.AppendLine("CREATE TABLE IF NOT EXISTS Conta([id] integer PRIMARY KEY autoincrement, [nome] varchar(64), [detalhes] varchar(128), [valor] float, [vencimento] date, [cpfresponsavel] varchar(14), foreign key(cpfresponsavel) references pessoa(cpf));");
             sql.AppendLine("CREATE TABLE IF NOT EXISTS Produto([id] integer PRIMARY KEY autoincrement, [nome] varchar(64) UNIQUE, [detalhes] varchar(128), [quantidade] float);");
-            sql.AppendLine("CREATE TABLE IF NOT EXISTS Transacao([id] integer PRIMARY KEY autoincrement, [data] date, [valor] float;");
-            sql.AppendLine("CREATE TABLE IF NOT EXISTS Transacao_Produto([idcompra] integer, [idproduto] integer, [quantidade] float, [valor] float, PRIMARY KEY(idcompra,idproduto), FOREIGN KEY(idcompra) REFERENCES CompraEVenda(id) ON DELETE CASCADE, FOREIGN KEY(idproduto) REFERENCES Produto(id) ON DELETE CASCADE);");
+            sql.AppendLine("CREATE TABLE IF NOT EXISTS Transacao([id] integer PRIMARY KEY autoincrement, [data] date, [valor] float);");
+            sql.AppendLine("CREATE TABLE IF NOT EXISTS Transacao_Produto([idcompra] integer, [produto] varchar(64), [quantidade] float, [valor] float, PRIMARY KEY(idcompra,produto), FOREIGN KEY(idcompra) REFERENCES CompraEVenda(id) ON DELETE CASCADE);");
             sql.AppendLine("CREATE TABLE IF NOT EXISTS Pagamento([idconta] integer,[cpfpessoa] varchar(14), [pago] integer, [apagar] float, PRIMARY KEY(idconta,cpfpessoa), FOREIGN KEY(idconta) REFERENCES Conta(id) ON DELETE CASCADE, FOREIGN KEY(cpfpessoa) REFERENCES Pessoa(cpf) ON DELETE CASCADE);");
             SQLiteCommand cmd = new SQLiteCommand(sql.ToString(), con);
             cmd.ExecuteNonQuery();
