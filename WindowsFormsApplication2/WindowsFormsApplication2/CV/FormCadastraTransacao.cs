@@ -13,6 +13,21 @@ namespace HouseManager
     public partial class FormCadastraTransacao : Form
     {
         Dictionary<string, ProdutoTransacao> dictProdutosDgv = new Dictionary<string, ProdutoTransacao>();
+        private int id = new int(); //Atributo utilizado para se obter o id numa edição
+        private bool editar;
+
+        public bool Editar
+        {
+            get
+            {
+                return editar;
+            }
+
+            set
+            {
+                editar = value;
+            }
+        }
 
         public FormCadastraTransacao()
         {
@@ -20,22 +35,55 @@ namespace HouseManager
             InitializeComponent();
         }
 
+        public FormCadastraTransacao(Transacao t, bool edicao)
+        {
+            //Construtor para o caso de uma edição ou visualização de uma compra
+            Editar = edicao;
+            InitializeComponent();
+            setDTO(t);
+            this.id = t.Id;
+            if (!Editar)
+            {
+                //Se é uma visualização, impossibilita a modificação de todos os campos
+                this.Text = "Visualizando compra";
+                labTitulo.Text = "Visualização de compra";
+                txtProduto.Hide();
+                txtQuantidade.Hide();
+                labProduto.Hide();
+                labQuantidade.Hide();
+                btnAdicionar.Hide();
+                dtpData.Location = new Point(dtpData.Location.X, dtpData.Location.Y - 45);
+                labData.Location = new Point(labData.Location.X, labData.Location.Y - 45);
+                dgvProdutos.Height = 410;
+                dgvProdutos.Location = new Point(dgvProdutos.Location.X, dgvProdutos.Location.Y - 45);
+                dtpData.Enabled = false;
+                btnCancelar.Text = "Voltar";
+                btnSalvar.Hide();
+                dgvProdutos.Columns[2].Visible = false;
+            }
+            else
+            {
+                this.Text = "Editando compra";
+                labTitulo.Text = "Modificação de compra";
+            }
+        }
+
         private Transacao getDTO()
         {
             //Método utilizado para se obter uma transação a partir das informações digitadas e dos produtos escolhidos
-            Transacao cv = new Transacao();
+            Transacao t = new Transacao();
 
             //Cada produto escolhido na DGV (que está no "DictProdutosDgv") é adicionado numa lista e a lista é passada para a transação
             List<ProdutoTransacao> lproduto = new List<ProdutoTransacao>();
-            foreach(KeyValuePair<string,ProdutoTransacao> pv in dictProdutosDgv)
+            foreach(KeyValuePair<string,ProdutoTransacao> pt in dictProdutosDgv)
             {
-                ProdutoTransacao pve = new ProdutoTransacao(pv.Value.Prod, pv.Value.Quantidade, 0);
-                lproduto.Add(pve);
+                lproduto.Add(pt.Value);
             }
 
-            cv.Lista = lproduto;
+            t.Lista = lproduto;
+            t.Data = dtpData.Value;
 
-            return cv;
+            return t;
         }
 
         private ProdutoTransacao getDTOProd()
@@ -46,6 +94,17 @@ namespace HouseManager
             p.Quantidade = double.Parse(txtQuantidade.Text);
 
             return p;
+        }
+
+        private void setDTO(Transacao t)
+        {
+            dtpData.Value = t.Data;
+            foreach(ProdutoTransacao pt in t.Lista)
+            {
+                dictProdutosDgv.Add(pt.Prod, pt);
+            }
+
+            Fill();
         }
 
         bool IsCompleteForm()
@@ -111,7 +170,17 @@ namespace HouseManager
                 //Se tudo estiver completo
                 CompraDAO database = new CompraDAO();
                 Transacao t = getDTO();
-                database.Salvar(t);
+                if (Editar)
+                {
+                    t.Id = id;
+                    database.Editar(t);
+                    Dispose();
+                }
+                else
+                {
+                    database.Salvar(t);
+                    Dispose();
+                }
             }
             else
             {

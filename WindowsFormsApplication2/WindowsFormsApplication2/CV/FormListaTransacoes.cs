@@ -67,7 +67,7 @@ namespace HouseManager
             Transacao selecionada = selecao();
             if (selecionada != null)
             {
-                FormCadastraTransacao editar = new FormCadastraTransacao();
+                FormCadastraTransacao editar = new FormCadastraTransacao(selecionada, true);
                 editar.ShowDialog(this);
                 Fill();
             }
@@ -79,7 +79,7 @@ namespace HouseManager
             Transacao selecionada = selecao();
             if (selecionada != null)
             {
-                FormCadastraTransacao detalhes = new FormCadastraTransacao();
+                FormCadastraTransacao detalhes = new FormCadastraTransacao(selecionada, false);
                 detalhes.ShowDialog(this);
             }
         }

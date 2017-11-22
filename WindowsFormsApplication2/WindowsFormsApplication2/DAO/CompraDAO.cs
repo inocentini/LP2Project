@@ -15,14 +15,14 @@ namespace HouseManager
             Database db = Database.GetInstance();
 
             //Atualiza as informações pertinentes à tabela de transação
-            string qry = string.Format("UPDATE transacao SET data='{0}', valor={1} WHERE id={3};",t.Data.ToString("yyyy-MM-dd"),t.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture),t.Id);
+            string qry = string.Format("UPDATE transacao SET data='{0}', valor={1} WHERE id={2};",t.Data.ToString("yyyy-MM-dd"),t.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture),t.Id);
 
             //Exclui todos os produtos dessa transação para não haver conflitos após a readição
             qry = string.Concat(qry, string.Format("DELETE FROM transacao_produto WHERE idcompra = {0}; ", t.Id));
 
             foreach(ProdutoTransacao pt in t.Lista)
             {
-                qry = string.Concat(qry, string.Format("INSERT INTO transacao_produto(idcompra,produto,quantidade,valor) VALUES({0}, {1}, {2}, {3})",t.Id, pt.Prod, pt.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture), pt.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture)));
+                qry = string.Concat(qry, string.Format("INSERT INTO transacao_produto(idcompra,produto,quantidade,valor) VALUES({0}, '{1}', {2}, {3});",t.Id, pt.Prod, pt.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture), pt.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture)));
             }
 
             db.ExecuteNonQuery(qry);
@@ -114,7 +114,7 @@ namespace HouseManager
         {
             //Método utilizado para se salvar uma transação
             Database db = Database.GetInstance();
-            string qry = string.Format("INSERT INTO transacao(data,valor) VALUES ('{0}',{1},{2});", t.Data.ToString("yyyy-MM-dd"), t.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture));
+            string qry = string.Format("INSERT INTO transacao(data,valor) VALUES ('{0}',{1});", t.Data.ToString("yyyy-MM-dd"), t.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture));
             db.ExecuteNonQuery(qry);
 
             //Aqui, por meio do método "UltimoId" (abaixo), se guarda o id gerado pelo autoincrement na query anterior para se adicionar os produtos na tabela "transacao_produto"
@@ -123,7 +123,7 @@ namespace HouseManager
 
             foreach (ProdutoTransacao pv in t.Lista)
             {
-                qry = string.Concat(qry, string.Format("INSERT INTO transacao_produto(idcompra,produto,quantidade,valor) VALUES ({0},{1},{2},{3});", ultimoid, pv.Prod, pv.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture), pv.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture)));
+                qry = string.Concat(qry, string.Format("INSERT INTO transacao_produto(idcompra,produto,quantidade,valor) VALUES ({0},'{1}',{2},{3});", ultimoid, pv.Prod, pv.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture), pv.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture)));
             }
            
             db.ExecuteNonQuery(qry);

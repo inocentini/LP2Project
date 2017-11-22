@@ -84,13 +84,20 @@ namespace HouseManager
         //Método override ToString de formatação para visualização no DataGridView, mostra todos os produtos da transação
         public override string ToString()
         {
-            string stg = "";
-            foreach(ProdutoTransacao pv in Lista)
+            if (Lista.Count != 0)
             {
-                stg = stg + "" + pv.Prod + ": " + pv.Quantidade + "  |  ";
-            }
+                string stg = "";
+                foreach (ProdutoTransacao pv in Lista)
+                {
+                    stg = stg + "" + pv.Prod + ": " + pv.Quantidade + "  |  ";
+                }
 
-            return stg.Remove(stg.Length - 3,1);
+                return stg.Remove(stg.Length - 3, 1);
+            }
+            else
+            {
+                return "";
+            }
         }
     }
 }

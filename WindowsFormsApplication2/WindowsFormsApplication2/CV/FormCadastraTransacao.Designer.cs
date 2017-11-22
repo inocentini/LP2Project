@@ -30,18 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastraTransacao));
             this.panCadastro = new System.Windows.Forms.Panel();
+            this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.txtQuantidade = new System.Windows.Forms.NumericUpDown();
             this.txtProduto = new System.Windows.Forms.TextBox();
             this.labQuantidade = new System.Windows.Forms.Label();
+            this.labData = new System.Windows.Forms.Label();
             this.labProduto = new System.Windows.Forms.Label();
             this.labTitulo = new System.Windows.Forms.Label();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.colProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRemover = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.panCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
@@ -52,19 +54,29 @@
             this.panCadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panCadastro.Controls.Add(this.btnCancelar);
+            this.panCadastro.Controls.Add(this.btnSalvar);
+            this.panCadastro.Controls.Add(this.dtpData);
             this.panCadastro.Controls.Add(this.btnAdicionar);
             this.panCadastro.Controls.Add(this.txtQuantidade);
             this.panCadastro.Controls.Add(this.txtProduto);
             this.panCadastro.Controls.Add(this.labQuantidade);
+            this.panCadastro.Controls.Add(this.labData);
             this.panCadastro.Controls.Add(this.labProduto);
             this.panCadastro.Controls.Add(this.labTitulo);
             this.panCadastro.Controls.Add(this.dgvProdutos);
-            this.panCadastro.Controls.Add(this.btnCancelar);
-            this.panCadastro.Controls.Add(this.btnSalvar);
             this.panCadastro.Location = new System.Drawing.Point(12, 12);
             this.panCadastro.Name = "panCadastro";
             this.panCadastro.Size = new System.Drawing.Size(423, 528);
             this.panCadastro.TabIndex = 28;
+            // 
+            // dtpData
+            // 
+            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpData.Location = new System.Drawing.Point(73, 83);
+            this.dtpData.Name = "dtpData";
+            this.dtpData.Size = new System.Drawing.Size(122, 20);
+            this.dtpData.TabIndex = 45;
             // 
             // btnAdicionar
             // 
@@ -107,9 +119,19 @@
             this.labQuantidade.TabIndex = 41;
             this.labQuantidade.Text = "Quantidade:";
             // 
+            // labData
+            // 
+            this.labData.AutoSize = true;
+            this.labData.Location = new System.Drawing.Point(20, 86);
+            this.labData.Name = "labData";
+            this.labData.Size = new System.Drawing.Size(33, 13);
+            this.labData.TabIndex = 40;
+            this.labData.Text = "Data:";
+            // 
             // labProduto
             // 
             this.labProduto.AutoSize = true;
+            this.labProduto.Cursor = System.Windows.Forms.Cursors.Default;
             this.labProduto.Location = new System.Drawing.Point(20, 54);
             this.labProduto.Name = "labProduto";
             this.labProduto.Size = new System.Drawing.Size(47, 13);
@@ -148,28 +170,6 @@
             this.dgvProdutos.TabIndex = 3;
             this.dgvProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellContentClick);
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelar.Location = new System.Drawing.Point(248, 489);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 36);
-            this.btnCancelar.TabIndex = 5;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSalvar.Location = new System.Drawing.Point(120, 489);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 36);
-            this.btnSalvar.TabIndex = 4;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
             // colProduto
             // 
             this.colProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -192,6 +192,28 @@
             this.colRemover.HeaderText = "";
             this.colRemover.Name = "colRemover";
             this.colRemover.ReadOnly = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancelar.Location = new System.Drawing.Point(269, 489);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(117, 36);
+            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSalvar.Location = new System.Drawing.Point(41, 489);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(117, 36);
+            this.btnSalvar.TabIndex = 4;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // FormCadastraTransacao
             // 
@@ -232,5 +254,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuantidade;
         private System.Windows.Forms.DataGridViewButtonColumn colRemover;
+        private System.Windows.Forms.DateTimePicker dtpData;
+        private System.Windows.Forms.Label labData;
     }
 }
