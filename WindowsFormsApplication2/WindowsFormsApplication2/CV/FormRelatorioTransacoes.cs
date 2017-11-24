@@ -31,5 +31,11 @@ namespace HouseManager
             //Cancela o evento padrão de fechamento ("Dispose")
             e.Cancel = true;
         }
+
+        private void btnGerar_Click(object sender, EventArgs e)
+        {
+            FormRelatorioCompra frc = new FormRelatorioCompra();
+            frc.ShowDialog();
+        }
     }
 }

@@ -128,17 +128,17 @@
     <Compile Include="CV\FormRelatorioTransacoes.Designer.cs">
       <DependentUpon>FormRelatorioTransacoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRelatorioCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelatorioCompra.Designer.cs">
+      <DependentUpon>FormRelatorioCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRelatorioContaPrint.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormRelatorioContaPrint.Designer.cs">
       <DependentUpon>FormRelatorioContaPrint.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormTeste.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTeste.Designer.cs">
-      <DependentUpon>FormTeste.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Transacao.cs" />
     <Compile Include="CV\FormPrincipal.cs">
@@ -194,16 +194,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RelatorioCompra.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioCompra.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RelatorioConta.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RelatorioConta.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RelatorioTeste.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RelatorioTeste.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utils\Database.cs" />
@@ -295,11 +295,11 @@
     <EmbeddedResource Include="CV\FormRelatorioTransacoes.resx">
       <DependentUpon>FormRelatorioTransacoes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormRelatorioCompra.resx">
+      <DependentUpon>FormRelatorioCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRelatorioContaPrint.resx">
       <DependentUpon>FormRelatorioContaPrint.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormTeste.resx">
-      <DependentUpon>FormTeste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -309,18 +309,19 @@
     <EmbeddedResource Include="CV\FormSplashScreen.resx">
       <DependentUpon>FormSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioCompra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioCompra.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="RelatorioConta.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RelatorioConta.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="RelatorioTeste.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>RelatorioTeste.cs</LastGenOutput>
-    </EmbeddedResource>
-    <None Include="Conta.datasource" />
-    <None Include="packages.config" />
-    <None Include="Pagamento.datasource" />
-    <None Include="Pessoa.datasource" />
+    <None Include="Properties\DataSources\Conta.datasource" />
+    <None Include="Properties\DataSources\ProdutoTransacao.datasource" />
+    <None Include="Utils\packages.config" />
+    <None Include="Properties\DataSources\Pagamento.datasource" />
+    <None Include="Properties\DataSources\Pessoa.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -332,7 +333,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Utils\App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\processamento-de-dados-computacao-fotos-imagens.jpg" />
