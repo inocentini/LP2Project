@@ -83,10 +83,13 @@ namespace HouseManager
             }
         }
 
-        public bool verificaCPF(string cpf)
+        public static bool verificaCPF(string cpf)
         {
+            cpf = cpf.Replace(@"-","");
+            cpf = cpf.Replace(@".","");
             cpf.Trim();
-            if (cpf.Length != 11 && System.Text.RegularExpressions.Regex.IsMatch(cpf, @"[^0-9]"))
+
+            if (cpf.Length != 11 || !Regex.IsMatch(cpf, @"[0-9]{11}"))
             {
                 return false;
             }
@@ -94,10 +97,12 @@ namespace HouseManager
             string sub = cpf.Substring(0, 9);
             int soma = 0;
             int digito;
+            int i = 10;
 
-            for(int i = 10; i >= 2; i++)
+            foreach(char c in sub)
             {
-                soma = soma + int.Parse(sub[i].ToString()) * i;
+                soma = soma + int.Parse(c.ToString()) * i;
+                i--;
             }
 
             digito = soma % 11;
@@ -109,8 +114,8 @@ namespace HouseManager
             {
                 digito = 11 - digito;
             }
-
-            if(digito != cpf.Substring(9, 1)[0])
+            
+            if(Char.Equals(digito,cpf[9]))
             {
                 return false;
             }
@@ -118,10 +123,11 @@ namespace HouseManager
             sub = sub + digito;
 
             soma = 0;
+            i = 11;
 
-            for(int i = 11; i >= 2; i++)
-            {
-                soma = soma + int.Parse(sub[i].ToString()) * i;
+            foreach(char c in sub) {
+                soma = soma + int.Parse(c.ToString()) * i;
+                i--;
             }
 
             digito = soma % 11;

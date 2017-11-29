@@ -153,7 +153,7 @@ namespace HouseManager
             }
             else
             {
-                if (IsComplete())
+                if (IsComplete() && Pessoa.verificaCPF(txtCPF.Text))
                 {
                     //Se estiver ocorrendo a adição e os campos estão todos preenchidos, salva as informações do usuário
                     LoginDAO database = new LoginDAO();
@@ -176,7 +176,7 @@ namespace HouseManager
                 }
                 else
                 {
-                    MessageBox.Show("Campo inválido ou vazio.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Verifique se você preencheu todos os campos e se o CPF fornecido é válido.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
