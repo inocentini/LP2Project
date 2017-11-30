@@ -144,5 +144,23 @@ namespace HouseManager
                 return false;
             }
         }
+
+        public string cpfAdmin()
+        {
+            Database db = Database.GetInstance();
+
+            string qry = string.Format("SELECT cpfpessoa FROM Login WHERE admin=1");
+            DataSet ds = db.ExecuteQuery(qry);
+
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+                DataRow dr = ds.Tables[0].Rows[0];
+                return dr["cpfpessoa"].ToString();
+            }
+            else
+            {
+                return "";
+            }
+        }
     }
 }

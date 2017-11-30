@@ -90,7 +90,7 @@ namespace HouseManager
                     {
                         foreach(PessoaPagamento pp in p.LPessoas)
                         {
-                            dgvPagamentos.Rows.Add(pp.P.Nome,p.C.Nome, pp.APagar, p.C.Vencimento.ToShortDateString(), pp.Pago ? "Pago" : "Não pago");
+                            dgvPagamentos.Rows.Add(p.C.Id,pp.P.Cpf,pp.P.Nome,p.C.Nome, "R$" + pp.APagar.ToString("F"), p.C.Vencimento.ToShortDateString(), pp.Pago ? "Pago" : "Não pago");
                         }
                     }
                 }
@@ -115,7 +115,7 @@ namespace HouseManager
                         {
                             if(pp.Pago == situacao)
                             {
-                                dgvPagamentos.Rows.Add(pp.P.Nome, p.C.Nome, pp.APagar, p.C.Vencimento.ToShortDateString(), pp.Pago ? "Pago" : "Não pago");
+                                dgvPagamentos.Rows.Add(p.C.Id,pp.P.Cpf,pp.P.Nome, p.C.Nome, "R$" + pp.APagar, p.C.Vencimento.ToShortDateString(), pp.Pago ? "Pago" : "Não pago");
                             }
                         }
                     }
@@ -149,7 +149,7 @@ namespace HouseManager
                 int indiceSelecao = dgvPagamentos.SelectedCells[0].RowIndex;
                 DataGridViewRow linhaSelecionada = dgvPagamentos.Rows[indiceSelecao];
                 PagamentoDAO db = new PagamentoDAO();
-                return db.Read(int.Parse(linhaSelecionada.Cells[5].Value.ToString()),linhaSelecionada.Cells[6].Value.ToString());
+                return db.Read(int.Parse(linhaSelecionada.Cells[0].Value.ToString()),linhaSelecionada.Cells[1].Value.ToString());
             }
             else
             {
@@ -166,7 +166,7 @@ namespace HouseManager
                 int indiceSelecao = dgvPagamentos.SelectedCells[0].RowIndex;
                 DataGridViewRow linhaSelecionada = dgvPagamentos.Rows[indiceSelecao];
                 ContaDAO db = new ContaDAO();
-                return db.Read(int.Parse(linhaSelecionada.Cells[5].Value.ToString()));
+                return db.Read(int.Parse(linhaSelecionada.Cells[0].Value.ToString()));
             }
             else
             {
@@ -177,7 +177,6 @@ namespace HouseManager
 
         private void btnSituacao_Click(object sender, EventArgs e)
         {
-            /*//Evento de clique no botão para mudar a situação
             PagamentoDAO db = new PagamentoDAO();
 
             PessoaPagamento pp = selecaoPessoaPagamento();
@@ -195,7 +194,8 @@ namespace HouseManager
                     pp.Pago = true;
                 }
                 db.Editar(pp, c);
-            }*/
+                Fill();
+            }
         }
     }
 }

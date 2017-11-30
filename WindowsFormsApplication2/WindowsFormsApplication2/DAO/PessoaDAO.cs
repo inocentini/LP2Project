@@ -69,7 +69,13 @@ namespace HouseManager
         {
             Database db = Database.GetInstance();
 
-            string qry = string.Format("DELETE FROM Pessoa WHERE cpf ='{0}'; DELETE FROM Login WHERE cpfpessoa = '{0}'", cpf);
+            ContaDAO dbc = new ContaDAO();
+            dbc.AtribuirResp(cpf);
+
+            PagamentoDAO dbp = new PagamentoDAO();
+            dbp.RemoverPessoa(cpf);
+
+            string qry = string.Format("DELETE FROM Pessoa WHERE cpf ='{0}'; DELETE FROM Login WHERE cpfpessoa = '{0}';", cpf);
             db.ExecuteNonQuery(qry);
         }
 

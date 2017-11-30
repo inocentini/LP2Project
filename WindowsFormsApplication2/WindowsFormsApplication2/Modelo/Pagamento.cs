@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HouseManager
 {
-    class Pagamento
+    public class Pagamento
     {
         //Declaração de variáveis.
         private Conta c = new Conta();

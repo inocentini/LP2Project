@@ -29,7 +29,7 @@ namespace HouseManager
         {
             //Método utilizado para listar todas as pessoas na DataGridView
             PessoaDAO db = new PessoaDAO();
-            
+
             List <Pessoa> lista = db.Listar();
 
             dgvPessoas.Rows.Clear();
@@ -81,8 +81,10 @@ namespace HouseManager
         private void btnRemover_Click(object sender, EventArgs e)
         {
             //Evento de clique no botão "remover"
+            LoginDAO dbl = new LoginDAO();
+
             Pessoa selecionada = selecao();
-            if (selecionada != null)
+            if ((selecionada != null)&&(selecionada.Cpf != dbl.cpfAdmin()))
             {
                 PessoaDAO db = new PessoaDAO();
                 db.Remover(selecionada.Cpf);

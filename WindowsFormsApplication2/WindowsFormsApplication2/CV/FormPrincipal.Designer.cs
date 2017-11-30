@@ -46,11 +46,11 @@
             this.pagamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contasQueAdministroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.meusPagamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.meuPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alterarInformaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mudarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -188,20 +188,6 @@
             resources.ApplyResources(this.meusPagamentosToolStripMenuItem, "meusPagamentosToolStripMenuItem");
             this.meusPagamentosToolStripMenuItem.Click += new System.EventHandler(this.meusPagamentosToolStripMenuItem_Click);
             // 
-            // cadastroToolStripMenuItem
-            // 
-            this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.produtoToolStripMenuItem});
-            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            resources.ApplyResources(this.cadastroToolStripMenuItem, "cadastroToolStripMenuItem");
-            // 
-            // produtoToolStripMenuItem
-            // 
-            this.produtoToolStripMenuItem.Image = global::HouseManager.Properties.Resources.shopping_bag;
-            this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            resources.ApplyResources(this.produtoToolStripMenuItem, "produtoToolStripMenuItem");
-            this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
-            // 
             // meuPerfilToolStripMenuItem
             // 
             this.meuPerfilToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -223,6 +209,20 @@
             this.mudarSenhaToolStripMenuItem.Name = "mudarSenhaToolStripMenuItem";
             resources.ApplyResources(this.mudarSenhaToolStripMenuItem, "mudarSenhaToolStripMenuItem");
             this.mudarSenhaToolStripMenuItem.Click += new System.EventHandler(this.mudarSenhaToolStripMenuItem_Click);
+            // 
+            // cadastroToolStripMenuItem
+            // 
+            this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.produtoToolStripMenuItem});
+            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
+            resources.ApplyResources(this.cadastroToolStripMenuItem, "cadastroToolStripMenuItem");
+            // 
+            // produtoToolStripMenuItem
+            // 
+            this.produtoToolStripMenuItem.Image = global::HouseManager.Properties.Resources.shopping_bag;
+            this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
+            resources.ApplyResources(this.produtoToolStripMenuItem, "produtoToolStripMenuItem");
+            this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 

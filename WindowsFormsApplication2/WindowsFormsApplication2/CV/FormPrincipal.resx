@@ -122,7 +122,7 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pessoasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>126, 22</value>
   </data>
   <data name="pessoasToolStripMenuItem.Text" xml:space="preserve">
     <value>Pessoas</value>
@@ -152,13 +152,13 @@
     <value>Transações</value>
   </data>
   <data name="relatóriosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>126, 22</value>
   </data>
   <data name="relatóriosToolStripMenuItem.Text" xml:space="preserve">
     <value>Relatórios</value>
   </data>
   <data name="contasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>126, 22</value>
   </data>
   <data name="contasToolStripMenuItem.Text" xml:space="preserve">
     <value>Contas</value>
@@ -195,7 +195,7 @@
     <value>Sistema</value>
   </data>
   <data name="estoqueToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>140, 22</value>
   </data>
   <data name="estoqueToolStripMenuItem.Text" xml:space="preserve">
     <value>Compras</value>
@@ -213,7 +213,7 @@
     <value>Meus pagamentos</value>
   </data>
   <data name="pagamentosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>140, 22</value>
   </data>
   <data name="pagamentosToolStripMenuItem.Text" xml:space="preserve">
     <value>Pagamentos</value>
@@ -243,7 +243,7 @@
     <value>Meu perfil</value>
   </data>
   <data name="produtoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>117, 22</value>
   </data>
   <data name="produtoToolStripMenuItem.Text" xml:space="preserve">
     <value>Produto</value>
@@ -2545,18 +2545,6 @@
   <data name="&gt;&gt;meusPagamentosToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cadastroToolStripMenuItem.Name" xml:space="preserve">
-    <value>cadastroToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;cadastroToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;produtoToolStripMenuItem.Name" xml:space="preserve">
-    <value>produtoToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;produtoToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;meuPerfilToolStripMenuItem.Name" xml:space="preserve">
     <value>meuPerfilToolStripMenuItem</value>
   </data>
@@ -2573,6 +2561,18 @@
     <value>mudarSenhaToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;mudarSenhaToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cadastroToolStripMenuItem.Name" xml:space="preserve">
+    <value>cadastroToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;cadastroToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;produtoToolStripMenuItem.Name" xml:space="preserve">
+    <value>produtoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;produtoToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

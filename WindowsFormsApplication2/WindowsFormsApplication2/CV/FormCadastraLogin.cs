@@ -89,7 +89,7 @@ namespace HouseManager
             //Método utilizado para se verificar se os campos estão preenchidos numa adição de usuário, primeiro se desabilita as máscaras dos campos para se verificar
             txtCPF.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             txtTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            if (txtCPF.Text.Trim() == "" || txtNome.Text.Trim() == "" || txtEmail.Text.Trim() == "" || txtTelefone.Text.Trim() == "" || txtUser.Text.Trim() == "" || txtSenha.Text.Trim() == "")
+            if (txtCPF.Text.Trim() == "" || txtNome.Text.Trim() == "" || txtEmail.Text.Trim() == "" || txtTelefone.Text.Trim() == "" || txtTelefone.Text.Trim().Length != 11 || txtUser.Text.Trim() == "" || txtSenha.Text.Trim() == "" || !(System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){ 2,3})+)$")))
             {
                 //Reabilita as máscaras e retorna "false" se algum dos campos estiver vazio
                 txtCPF.TextMaskFormat = MaskFormat.IncludeLiterals;
@@ -148,15 +148,22 @@ namespace HouseManager
 
                     l.P = p;
 
-                    if (database.HasAdmin())
+                    if(databasep.Read(p.Cpf) == null && (database.Read(l.Nome) == null))
                     {
-                        //Se não existe nenhum administrador no programa, para que não ocorram problemas de falta de administrador caso algum imprevisto ocorra, o programa estabelece que o cadastrado é um administrador
-                        MessageBox.Show("Bem vindo ao House Manager! Como primeiro usuário, você terá previlégios de administrador. Para gerenciar os administradores, consulte a área administrativa.", "Bem vindo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        l.Admin = true;
+                        if (database.HasAdmin())
+                        {
+                            //Se não existe nenhum administrador no programa, para que não ocorram problemas de falta de administrador caso algum imprevisto ocorra, o programa estabelece que o cadastrado é um administrador
+                            MessageBox.Show("Bem vindo ao House Manager! Como primeiro usuário, você terá previlégios de administrador. Para gerenciar os administradores, consulte a área administrativa.", "Bem vindo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            l.Admin = true;
+                        }
+                        database.Salvar(l);
+                        databasep.Salvar(p);
+                        Dispose();
                     }
-                    database.Salvar(l);
-                    databasep.Salvar(p);
-                    Dispose();
+                    else
+                    {
+                        MessageBox.Show("Verifique se o CPF ou o login informados já não se encontram cadastrados.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {

@@ -37,6 +37,8 @@
             this.pnlFiltro = new System.Windows.Forms.Panel();
             this.pnlInfo = new System.Windows.Forms.Panel();
             this.btnSituacao = new System.Windows.Forms.Button();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colConta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +59,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPagamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPagamentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colID,
+            this.colCPF,
             this.colPessoa,
             this.colConta,
             this.colApagar,
@@ -149,6 +153,20 @@
             this.btnSituacao.UseVisualStyleBackColor = true;
             this.btnSituacao.Click += new System.EventHandler(this.btnSituacao_Click);
             // 
+            // colID
+            // 
+            this.colID.HeaderText = "ID";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            this.colID.Visible = false;
+            // 
+            // colCPF
+            // 
+            this.colCPF.HeaderText = "CPF";
+            this.colCPF.Name = "colCPF";
+            this.colCPF.ReadOnly = true;
+            this.colCPF.Visible = false;
+            // 
             // colPessoa
             // 
             this.colPessoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -218,6 +236,8 @@
         private System.Windows.Forms.Panel pnlFiltro;
         private System.Windows.Forms.Panel pnlInfo;
         private System.Windows.Forms.Button btnSituacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCPF;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPessoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colConta;
         private System.Windows.Forms.DataGridViewTextBoxColumn colApagar;

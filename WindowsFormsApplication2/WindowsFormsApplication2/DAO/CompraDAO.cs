@@ -22,7 +22,7 @@ namespace HouseManager
 
             foreach(ProdutoTransacao pt in t.Lista)
             {
-                qry = string.Concat(qry, string.Format("INSERT INTO transacao_produto(idcompra,produto,quantidade,valor) VALUES({0}, '{1}', {2}, {3});",t.Id, pt.Prod, pt.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture), pt.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture)));
+                qry = string.Concat(qry, string.Format("INSERT INTO transacao_produto(idcompra,produto,quantidade) VALUES({0}, '{1}', {2});",t.Id, pt.Prod, pt.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture)));
             }
 
             db.ExecuteNonQuery(qry);
@@ -53,6 +53,31 @@ namespace HouseManager
             return LCompra;
         }
 
+        public List<Transacao> ListarPorData(DateTime data)
+        {
+            //Método utilizado para listar todas as transações
+            Database db = Database.GetInstance();
+            string qry = string.Format("SELECT * FROM transacao WHERE data = '{0}';", data.ToString("yyyy-MM-dd"));
+            DataSet ds = db.ExecuteQuery(qry);
+
+            List<Transacao> LCompra = new List<Transacao>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                Transacao t = new Transacao();
+                t.Id = int.Parse(dr["id"].ToString());
+                string dataV = dr["data"].ToString();
+                t.Data = Convert.ToDateTime(dataV);
+                t.Valor = double.Parse(dr["valor"].ToString());
+
+                //Chama o método ListarProd (abaixo) para listar todos os produtos de uma transação e a quantidade comprada/usada
+                t.Lista = ListarProd(t.Id);
+                LCompra.Add(t);
+            }
+
+            return LCompra;
+        }
+
         public List<ProdutoTransacao> ListarProd(int id)
         {
             //Método utilizado para listar todos os produtos de uma transação, dado seu id
@@ -67,7 +92,6 @@ namespace HouseManager
                 ProdutoTransacao pv = new ProdutoTransacao();
                 pv.Prod = dr["produto"].ToString();
                 pv.Quantidade = double.Parse(dr["quantidade"].ToString());
-                pv.Valor = double.Parse(dr["valor"].ToString());
                 Lprod.Add(pv);
             }
             return Lprod;
@@ -123,7 +147,7 @@ namespace HouseManager
 
             foreach (ProdutoTransacao pv in t.Lista)
             {
-                qry = string.Concat(qry, string.Format("INSERT INTO transacao_produto(idcompra,produto,quantidade,valor) VALUES ({0},'{1}',{2},{3});", ultimoid, pv.Prod, pv.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture), pv.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture)));
+                qry = string.Concat(qry, string.Format("INSERT INTO transacao_produto(idcompra,produto,quantidade) VALUES ({0},'{1}',{2});", ultimoid, pv.Prod, pv.Quantidade.ToString(System.Globalization.CultureInfo.InvariantCulture)));
             }
            
             db.ExecuteNonQuery(qry);

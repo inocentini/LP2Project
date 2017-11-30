@@ -157,15 +157,14 @@ namespace HouseManager
         //Função (não terminada) para gerar os pagamentos ao se adicionar uma conta
         public void Gerar(Conta c)
         {
-            /*
             PessoaDAO dbp = new PessoaDAO();
 
             List<Pessoa> lPessoas = new List<Pessoa>();
             lPessoas = dbp.Listar();
             Pagamento pag = new Pagamento();
-            pag.C = new Conta(c.Id, c.Nome, c.Detalhes, c.Valor, c.Vencimento, c.Responsavel);
-            int pessoas = dbp.Contar();
-            double aPagar = c.Valor / pessoas;
+            pag.C = c;
+            int numPessoas = dbp.Contar();
+            double aPagar = c.Valor / numPessoas;
 
             foreach(Pessoa p in lPessoas)
             {
@@ -173,7 +172,15 @@ namespace HouseManager
                 pag.LPessoas.Add(pp);
             }
 
-            Salvar(pag);*/
+            Salvar(pag);
+        }
+
+        public void RemoverPessoa(string cpf)
+        {
+            Database db = Database.GetInstance();
+            
+            string qry = string.Format("DELETE FROM Pagamento WHERE cpfpessoa = '{0}';", cpf);
+            db.ExecuteNonQuery(qry);
         }
     }
 }
