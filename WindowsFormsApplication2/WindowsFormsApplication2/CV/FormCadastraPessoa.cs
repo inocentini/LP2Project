@@ -106,7 +106,7 @@ namespace HouseManager
             //Método utilizado para se verificar se os campos estão preenchidos, primeiro se desabilita as máscaras dos campos para se verificar
             txtCPF.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             txtTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            if (txtCPF.Text.Trim() == "" || txtNome.Text.Trim() =="" || txtEmail.Text.Trim() =="" || txtTelefone.Text.Trim()=="")
+            if (txtCPF.Text.Trim() == "" || txtNome.Text.Trim() =="" || txtEmail.Text.Trim() =="" || txtTelefone.Text.Trim()=="" || !(System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, @"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$")))
             {
                 //Reabilita as máscaras e retorna "false" se algum dos campos estiver vazio
                 txtCPF.TextMaskFormat = MaskFormat.IncludeLiterals;
