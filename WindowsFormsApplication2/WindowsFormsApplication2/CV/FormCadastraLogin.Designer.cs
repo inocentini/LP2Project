@@ -29,41 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastraLogin));
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.txtSenha = new System.Windows.Forms.MaskedTextBox();
-            this.txtUser = new System.Windows.Forms.MaskedTextBox();
             this.labSenha = new System.Windows.Forms.Label();
             this.labUser = new System.Windows.Forms.Label();
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.labCPF = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.MaskedTextBox();
             this.labNome = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.MaskedTextBox();
             this.labEmail = new System.Windows.Forms.Label();
             this.labTelefone = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.pnlCadastro = new System.Windows.Forms.Panel();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
             this.pnlCadastro.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Location = new System.Drawing.Point(76, 177);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '•';
-            this.txtSenha.Size = new System.Drawing.Size(139, 20);
-            this.txtSenha.TabIndex = 38;
-            this.txtSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
-            // 
-            // txtUser
-            // 
-            this.txtUser.Location = new System.Drawing.Point(76, 144);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(139, 20);
-            this.txtUser.TabIndex = 37;
-            this.txtUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
             // 
             // labSenha
             // 
@@ -93,7 +75,7 @@
             this.txtCPF.Mask = "000,000,000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(85, 20);
-            this.txtCPF.TabIndex = 31;
+            this.txtCPF.TabIndex = 1;
             this.txtCPF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
             // 
             // txtTelefone
@@ -102,7 +84,7 @@
             this.txtTelefone.Mask = "(99) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(85, 20);
-            this.txtTelefone.TabIndex = 34;
+            this.txtTelefone.TabIndex = 4;
             this.txtTelefone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
             // 
             // labCPF
@@ -116,14 +98,6 @@
             this.labCPF.TabIndex = 28;
             this.labCPF.Text = "CPF:";
             // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(76, 78);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(228, 20);
-            this.txtEmail.TabIndex = 33;
-            this.txtEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
-            // 
             // labNome
             // 
             this.labNome.AutoSize = true;
@@ -134,14 +108,6 @@
             this.labNome.Size = new System.Drawing.Size(38, 13);
             this.labNome.TabIndex = 27;
             this.labNome.Text = "Nome:";
-            // 
-            // txtNome
-            // 
-            this.txtNome.Location = new System.Drawing.Point(76, 45);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(267, 20);
-            this.txtNome.TabIndex = 32;
-            this.txtNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
             // 
             // labEmail
             // 
@@ -172,7 +138,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(229, 227);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 36);
-            this.btnCancelar.TabIndex = 26;
+            this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -184,7 +150,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(86, 227);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 36);
-            this.btnSalvar.TabIndex = 25;
+            this.btnSalvar.TabIndex = 7;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -192,13 +158,13 @@
             // pnlCadastro
             // 
             this.pnlCadastro.Controls.Add(this.txtSenha);
-            this.pnlCadastro.Controls.Add(this.btnCancelar);
             this.pnlCadastro.Controls.Add(this.txtUser);
+            this.pnlCadastro.Controls.Add(this.txtEmail);
+            this.pnlCadastro.Controls.Add(this.txtNome);
+            this.pnlCadastro.Controls.Add(this.btnCancelar);
             this.pnlCadastro.Controls.Add(this.labNome);
             this.pnlCadastro.Controls.Add(this.labSenha);
-            this.pnlCadastro.Controls.Add(this.txtNome);
             this.pnlCadastro.Controls.Add(this.txtCPF);
-            this.pnlCadastro.Controls.Add(this.txtEmail);
             this.pnlCadastro.Controls.Add(this.labUser);
             this.pnlCadastro.Controls.Add(this.labEmail);
             this.pnlCadastro.Controls.Add(this.btnSalvar);
@@ -210,6 +176,45 @@
             this.pnlCadastro.Name = "pnlCadastro";
             this.pnlCadastro.Size = new System.Drawing.Size(383, 278);
             this.pnlCadastro.TabIndex = 39;
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(76, 45);
+            this.txtNome.MaxLength = 64;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.ShortcutsEnabled = false;
+            this.txtNome.Size = new System.Drawing.Size(244, 20);
+            this.txtNome.TabIndex = 2;
+            this.txtNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
+            this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(76, 78);
+            this.txtEmail.MaxLength = 32;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(228, 20);
+            this.txtEmail.TabIndex = 3;
+            this.txtEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
+            // 
+            // txtUser
+            // 
+            this.txtUser.Location = new System.Drawing.Point(76, 144);
+            this.txtUser.MaxLength = 16;
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(139, 20);
+            this.txtUser.TabIndex = 5;
+            this.txtUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Location = new System.Drawing.Point(76, 178);
+            this.txtSenha.MaxLength = 16;
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '●';
+            this.txtSenha.Size = new System.Drawing.Size(139, 20);
+            this.txtSenha.TabIndex = 6;
+            this.txtSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
             // 
             // FormCadastraLogin
             // 
@@ -237,22 +242,20 @@
         }
 
         #endregion
-
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.MaskedTextBox txtSenha;
-        private System.Windows.Forms.MaskedTextBox txtUser;
         private System.Windows.Forms.Label labSenha;
         private System.Windows.Forms.Label labUser;
         private System.Windows.Forms.MaskedTextBox txtCPF;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.Label labCPF;
-        private System.Windows.Forms.MaskedTextBox txtEmail;
         private System.Windows.Forms.Label labNome;
-        private System.Windows.Forms.MaskedTextBox txtNome;
         private System.Windows.Forms.Label labEmail;
         private System.Windows.Forms.Label labTelefone;
         private System.Windows.Forms.Panel pnlCadastro;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.TextBox txtSenha;
     }
 }

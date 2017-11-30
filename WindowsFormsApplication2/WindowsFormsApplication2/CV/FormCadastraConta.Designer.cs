@@ -32,9 +32,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.labDetalhes = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.MaskedTextBox();
             this.labNome = new System.Windows.Forms.Label();
-            this.txtDetalhes = new System.Windows.Forms.MaskedTextBox();
             this.labValor = new System.Windows.Forms.Label();
             this.labVencimento = new System.Windows.Forms.Label();
             this.labResponsavel = new System.Windows.Forms.Label();
@@ -45,6 +43,8 @@
             this.labReais = new System.Windows.Forms.Label();
             this.txtResponsavel = new System.Windows.Forms.TextBox();
             this.btnResponsavel = new System.Windows.Forms.Button();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtDetalhes = new System.Windows.Forms.TextBox();
             this.panCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtValor)).BeginInit();
             this.SuspendLayout();
@@ -85,17 +85,6 @@
             this.labDetalhes.TabIndex = 14;
             this.labDetalhes.Text = "Detalhes:";
             // 
-            // txtNome
-            // 
-            this.txtNome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNome.Location = new System.Drawing.Point(98, 13);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(147, 20);
-            this.txtNome.TabIndex = 1;
-            this.txtNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyDown);
-            // 
             // labNome
             // 
             this.labNome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -109,17 +98,6 @@
             this.labNome.Size = new System.Drawing.Size(38, 13);
             this.labNome.TabIndex = 13;
             this.labNome.Text = "Nome:";
-            // 
-            // txtDetalhes
-            // 
-            this.txtDetalhes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDetalhes.Location = new System.Drawing.Point(98, 39);
-            this.txtDetalhes.Name = "txtDetalhes";
-            this.txtDetalhes.Size = new System.Drawing.Size(229, 20);
-            this.txtDetalhes.TabIndex = 2;
-            this.txtDetalhes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyDown);
             // 
             // labValor
             // 
@@ -179,18 +157,18 @@
             this.panCadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panCadastro.Controls.Add(this.txtDetalhes);
+            this.panCadastro.Controls.Add(this.txtNome);
             this.panCadastro.Controls.Add(this.txtValor);
             this.panCadastro.Controls.Add(this.txtVencimento);
             this.panCadastro.Controls.Add(this.labReais);
             this.panCadastro.Controls.Add(this.txtResponsavel);
             this.panCadastro.Controls.Add(this.btnResponsavel);
-            this.panCadastro.Controls.Add(this.txtNome);
             this.panCadastro.Controls.Add(this.btnCancelar);
             this.panCadastro.Controls.Add(this.btnSalvar);
             this.panCadastro.Controls.Add(this.labVencimento);
             this.panCadastro.Controls.Add(this.dtpVencimento);
             this.panCadastro.Controls.Add(this.labValor);
-            this.panCadastro.Controls.Add(this.txtDetalhes);
             this.panCadastro.Controls.Add(this.labResponsavel);
             this.panCadastro.Controls.Add(this.labNome);
             this.panCadastro.Controls.Add(this.labDetalhes);
@@ -259,6 +237,22 @@
             this.btnResponsavel.UseVisualStyleBackColor = true;
             this.btnResponsavel.Click += new System.EventHandler(this.btnResponsavel_Click);
             // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(98, 13);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(200, 20);
+            this.txtNome.TabIndex = 1;
+            this.txtNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyDown);
+            // 
+            // txtDetalhes
+            // 
+            this.txtDetalhes.Location = new System.Drawing.Point(98, 40);
+            this.txtDetalhes.Name = "txtDetalhes";
+            this.txtDetalhes.Size = new System.Drawing.Size(229, 20);
+            this.txtDetalhes.TabIndex = 2;
+            this.txtDetalhes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyDown);
+            // 
             // FormCadastraConta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,9 +281,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label labDetalhes;
-        private System.Windows.Forms.MaskedTextBox txtNome;
         private System.Windows.Forms.Label labNome;
-        private System.Windows.Forms.MaskedTextBox txtDetalhes;
         private System.Windows.Forms.Label labValor;
         private System.Windows.Forms.Label labVencimento;
         private System.Windows.Forms.Label labResponsavel;
@@ -300,5 +292,7 @@
         private System.Windows.Forms.Label labReais;
         private System.Windows.Forms.TextBox txtVencimento;
         private System.Windows.Forms.NumericUpDown txtValor;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtDetalhes;
     }
 }

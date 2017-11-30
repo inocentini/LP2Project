@@ -28,38 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.crvRelatorioCompra = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.RelatorioCompra1 = new HouseManager.RelatorioCompra();
             this.SuspendLayout();
             // 
-            // crystalReportViewer1
+            // crvRelatorioCompra
             // 
-            this.crystalReportViewer1.ActiveViewIndex = 0;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.RelatorioCompra1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(284, 262);
-            this.crystalReportViewer1.TabIndex = 0;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crvRelatorioCompra.ActiveViewIndex = 0;
+            this.crvRelatorioCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crvRelatorioCompra.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crvRelatorioCompra.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crvRelatorioCompra.Location = new System.Drawing.Point(0, 0);
+            this.crvRelatorioCompra.Name = "crvRelatorioCompra";
+            this.crvRelatorioCompra.ReportSource = this.RelatorioCompra1;
+            this.crvRelatorioCompra.Size = new System.Drawing.Size(284, 262);
+            this.crvRelatorioCompra.TabIndex = 0;
+            this.crvRelatorioCompra.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // FormRelatorioCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.crystalReportViewer1);
+            this.Controls.Add(this.crvRelatorioCompra);
             this.Name = "FormRelatorioCompra";
-            this.Text = "FormRelatorioCompra";
+            this.Text = "Relatorios Compras";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crvRelatorioCompra;
         private RelatorioCompra RelatorioCompra1;
     }
 }

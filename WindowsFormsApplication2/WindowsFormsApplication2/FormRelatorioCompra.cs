@@ -16,5 +16,19 @@ namespace HouseManager
         {
             InitializeComponent();
         }
+
+        public FormRelatorioCompra(Transacao t)
+        {
+            InitializeComponent();
+        }
+
+        private void FormRelatorioCompra_Load(object sender, EventArgs e)
+        {
+            CompraDAO cdao = new CompraDAO();
+            List<CompraDAO> lcdao = new List<CompraDAO>();
+            RelatorioCompra report = new RelatorioCompra();
+            report.SetDataSource(lcdao);
+            crvRelatorioCompra.ReportSource = report;
+        }
     }
 }

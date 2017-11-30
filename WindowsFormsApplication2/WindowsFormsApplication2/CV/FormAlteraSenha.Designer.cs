@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAlteraSenha));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtSenhaAtual = new System.Windows.Forms.MaskedTextBox();
-            this.txtNovaSenha = new System.Windows.Forms.MaskedTextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtSenhaAtual = new System.Windows.Forms.TextBox();
+            this.txtNovaSenha = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -55,28 +55,12 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Digite sua nova senha:";
             // 
-            // txtSenhaAtual
-            // 
-            this.txtSenhaAtual.Location = new System.Drawing.Point(133, 10);
-            this.txtSenhaAtual.Name = "txtSenhaAtual";
-            this.txtSenhaAtual.PasswordChar = '•';
-            this.txtSenhaAtual.Size = new System.Drawing.Size(139, 20);
-            this.txtSenhaAtual.TabIndex = 39;
-            // 
-            // txtNovaSenha
-            // 
-            this.txtNovaSenha.Location = new System.Drawing.Point(133, 44);
-            this.txtNovaSenha.Name = "txtNovaSenha";
-            this.txtNovaSenha.PasswordChar = '•';
-            this.txtNovaSenha.Size = new System.Drawing.Size(139, 20);
-            this.txtNovaSenha.TabIndex = 40;
-            // 
             // btnSalvar
             // 
             this.btnSalvar.Location = new System.Drawing.Point(53, 86);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 41;
+            this.btnSalvar.TabIndex = 3;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -86,21 +70,39 @@
             this.btnCancelar.Location = new System.Drawing.Point(170, 86);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 42;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // txtSenhaAtual
+            // 
+            this.txtSenhaAtual.Location = new System.Drawing.Point(133, 10);
+            this.txtSenhaAtual.MaxLength = 16;
+            this.txtSenhaAtual.Name = "txtSenhaAtual";
+            this.txtSenhaAtual.PasswordChar = '•';
+            this.txtSenhaAtual.Size = new System.Drawing.Size(139, 20);
+            this.txtSenhaAtual.TabIndex = 1;
+            // 
+            // txtNovaSenha
+            // 
+            this.txtNovaSenha.Location = new System.Drawing.Point(133, 44);
+            this.txtNovaSenha.MaxLength = 16;
+            this.txtNovaSenha.Name = "txtNovaSenha";
+            this.txtNovaSenha.PasswordChar = '•';
+            this.txtNovaSenha.Size = new System.Drawing.Size(139, 20);
+            this.txtNovaSenha.TabIndex = 2;
             // 
             // FormAlteraSenha
             // 
             this.AcceptButton = this.btnSalvar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(306, 116);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnSalvar);
+            this.ClientSize = new System.Drawing.Size(306, 115);
             this.Controls.Add(this.txtNovaSenha);
             this.Controls.Add(this.txtSenhaAtual);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -123,9 +125,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox txtSenhaAtual;
-        private System.Windows.Forms.MaskedTextBox txtNovaSenha;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.TextBox txtSenhaAtual;
+        private System.Windows.Forms.TextBox txtNovaSenha;
     }
 }

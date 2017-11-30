@@ -88,45 +88,29 @@ namespace HouseManager
         {
             //Método utilizado para se verificar se os campos estão preenchidos numa adição de usuário, primeiro se desabilita as máscaras dos campos para se verificar
             txtCPF.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            txtNome.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            txtEmail.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             txtTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             if (txtCPF.Text.Trim() == "" || txtNome.Text.Trim() == "" || txtEmail.Text.Trim() == "" || txtTelefone.Text.Trim() == "" || txtUser.Text.Trim() == "" || txtSenha.Text.Trim() == "")
             {
                 //Reabilita as máscaras e retorna "false" se algum dos campos estiver vazio
                 txtCPF.TextMaskFormat = MaskFormat.IncludeLiterals;
-                txtNome.TextMaskFormat = MaskFormat.IncludeLiterals;
-                txtEmail.TextMaskFormat = MaskFormat.IncludeLiterals;
                 txtTelefone.TextMaskFormat = MaskFormat.IncludeLiterals;
-                txtUser.TextMaskFormat = MaskFormat.IncludeLiterals;
-                txtSenha.TextMaskFormat = MaskFormat.IncludeLiterals;
                 return false;
             }
             //Reabilita as máscaras e retorna "true" se nenhum campo estiver vazio
             txtCPF.TextMaskFormat = MaskFormat.IncludeLiterals;
-            txtNome.TextMaskFormat = MaskFormat.IncludeLiterals;
-            txtEmail.TextMaskFormat = MaskFormat.IncludeLiterals;
             txtTelefone.TextMaskFormat = MaskFormat.IncludeLiterals;
-            txtUser.TextMaskFormat = MaskFormat.IncludeLiterals;
-            txtSenha.TextMaskFormat = MaskFormat.IncludeLiterals;
             return true;
         }
 
         private bool IsCompleteEdicao()
         {
             //Método utilizado como o método acima, porém para a edição de um usuário
-            txtNome.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            txtEmail.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             txtTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             if (txtNome.Text.Trim() == "" || txtEmail.Text.Trim() == "" || txtTelefone.Text.Trim() == "")
             {
-                txtNome.TextMaskFormat = MaskFormat.IncludeLiterals;
-                txtEmail.TextMaskFormat = MaskFormat.IncludeLiterals;
                 txtTelefone.TextMaskFormat = MaskFormat.IncludeLiterals;
                 return false;
             }
-            txtNome.TextMaskFormat = MaskFormat.IncludeLiterals;
-            txtEmail.TextMaskFormat = MaskFormat.IncludeLiterals;
             txtTelefone.TextMaskFormat = MaskFormat.IncludeLiterals;
             return true;
         }
@@ -213,6 +197,13 @@ namespace HouseManager
             {
                 //Se estiver ocorrendo uma adição, o form é chamado apenas pelo login ou pela lista de pessoas da área administrativa que não são MDI, então realiza o "Dispose"
                 Dispose();
+            }
+        }
+
+        private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!((char.IsLetter(e.KeyChar)) || (char.IsControl(e.KeyChar)) || (char.IsSeparator(e.KeyChar)))){
+                e.Handled = true;
             }
         }
     }

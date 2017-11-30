@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastraTransacao));
             this.panCadastro = new System.Windows.Forms.Panel();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.txtQuantidade = new System.Windows.Forms.NumericUpDown();
@@ -42,8 +44,6 @@
             this.colProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRemover = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.panCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
@@ -70,20 +70,42 @@
             this.panCadastro.Size = new System.Drawing.Size(423, 528);
             this.panCadastro.TabIndex = 28;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancelar.Location = new System.Drawing.Point(269, 489);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(117, 36);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSalvar.Location = new System.Drawing.Point(41, 489);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(117, 36);
+            this.btnSalvar.TabIndex = 6;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
             // dtpData
             // 
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpData.Location = new System.Drawing.Point(73, 83);
             this.dtpData.Name = "dtpData";
             this.dtpData.Size = new System.Drawing.Size(122, 20);
-            this.dtpData.TabIndex = 45;
+            this.dtpData.TabIndex = 3;
             // 
             // btnAdicionar
             // 
             this.btnAdicionar.Location = new System.Drawing.Point(330, 80);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
-            this.btnAdicionar.TabIndex = 44;
+            this.btnAdicionar.TabIndex = 4;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
@@ -99,15 +121,16 @@
             0});
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(89, 20);
-            this.txtQuantidade.TabIndex = 43;
+            this.txtQuantidade.TabIndex = 2;
             this.txtQuantidade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNomeProduto_KeyDown);
             // 
             // txtProduto
             // 
             this.txtProduto.Location = new System.Drawing.Point(73, 51);
+            this.txtProduto.MaxLength = 64;
             this.txtProduto.Name = "txtProduto";
             this.txtProduto.Size = new System.Drawing.Size(147, 20);
-            this.txtProduto.TabIndex = 42;
+            this.txtProduto.TabIndex = 1;
             this.txtProduto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNomeProduto_KeyDown);
             // 
             // labQuantidade
@@ -167,7 +190,7 @@
             this.dgvProdutos.RowHeadersVisible = false;
             this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProdutos.Size = new System.Drawing.Size(382, 366);
-            this.dgvProdutos.TabIndex = 3;
+            this.dgvProdutos.TabIndex = 5;
             this.dgvProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellContentClick);
             // 
             // colProduto
@@ -192,28 +215,6 @@
             this.colRemover.HeaderText = "";
             this.colRemover.Name = "colRemover";
             this.colRemover.ReadOnly = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelar.Location = new System.Drawing.Point(269, 489);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(117, 36);
-            this.btnCancelar.TabIndex = 5;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSalvar.Location = new System.Drawing.Point(41, 489);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(117, 36);
-            this.btnSalvar.TabIndex = 4;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // FormCadastraTransacao
             // 

@@ -101,7 +101,7 @@ namespace HouseManager
 
             foreach(char c in sub)
             {
-                soma = soma + int.Parse(c.ToString()) * i;
+                soma = soma + (int.Parse(c.ToString()) * i);
                 i--;
             }
 

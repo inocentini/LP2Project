@@ -36,11 +36,11 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.labTelefone = new System.Windows.Forms.Label();
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
-            this.txtNome = new System.Windows.Forms.MaskedTextBox();
-            this.txtEmail = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -131,28 +131,6 @@
             this.txtCPF.TabIndex = 1;
             this.txtCPF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefone_KeyDown);
             // 
-            // txtNome
-            // 
-            this.txtNome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNome.Location = new System.Drawing.Point(72, 43);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(235, 20);
-            this.txtNome.TabIndex = 2;
-            this.txtNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefone_KeyDown);
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmail.Location = new System.Drawing.Point(72, 74);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(196, 20);
-            this.txtEmail.TabIndex = 3;
-            this.txtEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefone_KeyDown);
-            // 
             // txtTelefone
             // 
             this.txtTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -177,20 +155,38 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtEmail);
+            this.panel2.Controls.Add(this.txtNome);
             this.panel2.Controls.Add(this.txtCPF);
             this.panel2.Controls.Add(this.labTelefone);
             this.panel2.Controls.Add(this.btnCancelar);
             this.panel2.Controls.Add(this.labEmail);
             this.panel2.Controls.Add(this.txtTelefone);
-            this.panel2.Controls.Add(this.txtNome);
             this.panel2.Controls.Add(this.btnSalvar);
             this.panel2.Controls.Add(this.labNome);
             this.panel2.Controls.Add(this.labCPF);
-            this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(317, 199);
             this.panel2.TabIndex = 9;
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(70, 44);
+            this.txtNome.MaxLength = 64;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.ShortcutsEnabled = false;
+            this.txtNome.Size = new System.Drawing.Size(198, 20);
+            this.txtNome.TabIndex = 2;
+            this.txtNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefone_KeyDown);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(70, 75);
+            this.txtEmail.MaxLength = 32;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(198, 20);
+            this.txtEmail.TabIndex = 3;
             // 
             // FormCadastraPessoa
             // 
@@ -225,11 +221,11 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label labTelefone;
         private System.Windows.Forms.MaskedTextBox txtCPF;
-        private System.Windows.Forms.MaskedTextBox txtNome;
-        private System.Windows.Forms.MaskedTextBox txtEmail;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtEmail;
     }
 }
 
