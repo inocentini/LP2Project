@@ -15,15 +15,28 @@ namespace HouseManager
         public FormRelatorioContaPrint()
         {
             InitializeComponent();
-        }
-
-        private void FormRelatorioContaPrint_Load(object sender, EventArgs e)
-        {
             ContaDAO dao = new ContaDAO();
             List<Conta> lConta = dao.Listar();
             RelatorioConta report = new RelatorioConta();
             report.SetDataSource(lConta);
             crvConta.ReportSource = report;
+        }
+
+        public FormRelatorioContaPrint(DateTime data)
+        {
+            InitializeComponent();
+            ContaDAO dao = new ContaDAO();
+            List<Conta> lConta = dao.ListarPorData(data);
+            RelatorioConta report = new RelatorioConta();
+            report.SetDataSource(lConta);
+            crvConta.ReportSource = report;
+
+
+        }
+
+        private void FormRelatorioContaPrint_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

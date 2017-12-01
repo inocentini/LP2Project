@@ -206,6 +206,12 @@
       <DependentUpon>RelatorioConta.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RelatorioTransacao.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioTransacao.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utils\Database.cs" />
     <Compile Include="Modelo\Conta.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
@@ -316,6 +322,10 @@
     <EmbeddedResource Include="RelatorioConta.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RelatorioConta.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioTransacao.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioTransacao.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Conta.datasource" />
     <None Include="Properties\DataSources\ProdutoTransacao.datasource" />

@@ -55,19 +55,28 @@ namespace HouseManager
 
         public List<Transacao> ListarPorData(DateTime data)
         {
-            //Método utilizado para listar todas as transações
+            //Conexão, qry e atribuição da consulta para uma variavel.
             Database db = Database.GetInstance();
-            string qry = string.Format("SELECT * FROM transacao WHERE data = '{0}';", data.ToString("yyyy-MM-dd"));
+            string qry;
+            if (data.Month < 10)
+            {
+                qry = string.Format("SELECT * FROM Transacao WHERE strftime('%m', data) = '{0}{1}' AND strftime('%Y', data) = '{2}';", 0, data.Month, data.Year);
+            }
+            else
+            {
+                qry = string.Format("SELECT * FROM Transacao WHERE strftime('%m', data) = '{0}' AND strftime('%Y', data) = '{1}';", data.Month, data.Year);
+            }
             DataSet ds = db.ExecuteQuery(qry);
 
             List<Transacao> LCompra = new List<Transacao>();
 
+            //Atribui dados da consulta para a lista e retorna a lista.
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 Transacao t = new Transacao();
                 t.Id = int.Parse(dr["id"].ToString());
-                string dataV = dr["data"].ToString();
-                t.Data = Convert.ToDateTime(dataV);
+                string data2 = dr["data"].ToString();
+                t.Data = Convert.ToDateTime(data2);
                 t.Valor = double.Parse(dr["valor"].ToString());
 
                 //Chama o método ListarProd (abaixo) para listar todos os produtos de uma transação e a quantidade comprada/usada
@@ -77,7 +86,6 @@ namespace HouseManager
 
             return LCompra;
         }
-
         public List<ProdutoTransacao> ListarProd(int id)
         {
             //Método utilizado para listar todos os produtos de uma transação, dado seu id

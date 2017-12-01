@@ -34,7 +34,7 @@ namespace HouseManager
 
         private void btnGerar_Click(object sender, EventArgs e)
         {
-            FormRelatorioContaPrint rConta = new FormRelatorioContaPrint();
+            FormRelatorioContaPrint rConta = new FormRelatorioContaPrint(dtpReferencia.Value);
             rConta.Show();
         }
     }

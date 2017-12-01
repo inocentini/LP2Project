@@ -57,7 +57,16 @@ namespace HouseManager
         {
             //Conexão, qry e atribuição da consulta para uma variavel.
             Database db = Database.GetInstance();
-            string qry = string.Format("SELECT * FROM Conta WHERE vencimento = '{0}';", data.ToString("yyyy-MM-dd"));
+            //string qry = string.Format("SELECT * FROM Conta WHERE strftime('%m', vencimento) = '{0}' AND strftime('%Y', vencimento) = '{1}';",data.Month, data.Year);
+            string qry;
+            if (data.Month < 10)
+            {
+                qry = string.Format("SELECT * FROM Conta WHERE strftime('%m', vencimento) = '{0}{1}' AND strftime('%Y', vencimento) = '{2}';", 0, data.Month, data.Year);
+            }
+            else
+            {
+                qry = string.Format("SELECT * FROM Conta WHERE strftime('%m', vencimento) = '{0}' AND strftime('%Y', vencimento) = '{1}';", data.Month, data.Year);
+            }
             DataSet ds = db.ExecuteQuery(qry);
 
             List<Conta> LContas = new List<Conta>();
@@ -174,7 +183,7 @@ namespace HouseManager
             //Conexão, qry e execução da qry na DB.
             Database db = Database.GetInstance();
 
-            string qry = string.Format("INSERT INTO Conta(nome,detalhes,valor,vencimento,cpfresponsavel) VALUES('{0}','{1}',{2},'{3}','{4}')", c.Nome,c.Detalhes,c.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture),c.Vencimento.ToString("yyyy-MM-dd"), c.Responsavel.Cpf);
+            string qry = string.Format("INSERT INTO Conta(nome,detalhes,valor,vencimento,cpfresponsavel) VALUES('{0}','{1}',{2},'{3}','{4}')", c.Nome, c.Detalhes, c.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture), c.Vencimento.ToString("yyyy-MM-dd"), c.Responsavel.Cpf);
             db.ExecuteNonQuery(qry);
 
             c.Id = UltimoId();
