@@ -49,13 +49,12 @@ namespace HouseManager
                 labTitulo.Text = "Visualização de compra";
                 txtProduto.Hide();
                 txtQuantidade.Hide();
+                txtTotal.Enabled = false;
                 labProduto.Hide();
                 labQuantidade.Hide();
                 btnAdicionar.Hide();
-                dtpData.Location = new Point(dtpData.Location.X, dtpData.Location.Y - 45);
-                labData.Location = new Point(labData.Location.X, labData.Location.Y - 45);
                 dgvProdutos.Height = 410;
-                dgvProdutos.Location = new Point(dgvProdutos.Location.X, dgvProdutos.Location.Y - 45);
+                dgvProdutos.Location = new Point(dgvProdutos.Location.X, dgvProdutos.Location.Y - 70);
                 dtpData.Enabled = false;
                 btnCancelar.Text = "Voltar";
                 btnSalvar.Hide();
@@ -82,6 +81,7 @@ namespace HouseManager
 
             t.Lista = lproduto;
             t.Data = dtpData.Value;
+            t.Valor = Double.Parse(txtTotal.Text);
 
             return t;
         }
@@ -99,6 +99,7 @@ namespace HouseManager
         private void setDTO(Transacao t)
         {
             dtpData.Value = t.Data;
+            txtTotal.Text = t.Valor.ToString();
             foreach(ProdutoTransacao pt in t.Lista)
             {
                 dictProdutosDgv.Add(pt.Prod, pt);

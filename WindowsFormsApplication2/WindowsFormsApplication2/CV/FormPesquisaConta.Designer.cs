@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPesquisaConta));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtFiltrar = new System.Windows.Forms.TextBox();
             this.labFiltrar = new System.Windows.Forms.Label();
@@ -179,6 +180,9 @@
             this.ClientSize = new System.Drawing.Size(497, 446);
             this.Controls.Add(this.dgvContas);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(513, 485);
+            this.MinimumSize = new System.Drawing.Size(513, 485);
             this.Name = "FormPesquisaConta";
             this.Text = "Selecione uma conta";
             this.Load += new System.EventHandler(this.FormPesquisaConta_Load);

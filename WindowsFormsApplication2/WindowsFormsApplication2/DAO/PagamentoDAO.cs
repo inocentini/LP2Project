@@ -168,10 +168,13 @@ namespace HouseManager
 
             foreach(Pessoa p in lPessoas)
             {
-                PessoaPagamento pp = new PessoaPagamento(p, false, aPagar);
+                PessoaPagamento pp;
+                pp = new PessoaPagamento(p, false, aPagar);
+
                 pag.LPessoas.Add(pp);
             }
 
+            Remover(c.Id);
             Salvar(pag);
         }
 

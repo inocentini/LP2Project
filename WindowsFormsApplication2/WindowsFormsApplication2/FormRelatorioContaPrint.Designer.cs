@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRelatorioContaPrint));
             this.crvConta = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.RelatorioConta1 = new HouseManager.RelatorioConta();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.crvConta);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRelatorioContaPrint";
             this.Text = "FormRelatorioContaPrint";
             this.Load += new System.EventHandler(this.FormRelatorioContaPrint_Load);

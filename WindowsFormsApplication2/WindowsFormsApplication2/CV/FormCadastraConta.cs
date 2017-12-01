@@ -40,8 +40,7 @@ namespace HouseManager
             {
                 //Se é uma visualização, impossibilita a modificação de todos os campos
                 this.Text = "Visualizando conta";
-                txtNome.ReadOnly = true;
-                txtNome.TabStop = false;
+                cbbNome.Enabled = false;
                 txtDetalhes.ReadOnly = true;
                 txtDetalhes.TabStop = false;
                 txtValor.ReadOnly = true;
@@ -83,7 +82,7 @@ namespace HouseManager
         {
             //Método utilizado para se obter uma conta a partir dos valores informados pelo usuário
             Conta c = new Conta();
-            c.Nome = txtNome.Text;
+            c.Nome = cbbNome.Text;
             c.Detalhes = txtDetalhes.Text;
             c.Valor = double.Parse(txtValor.Text);
             c.Vencimento = dtpVencimento.Value;
@@ -95,7 +94,7 @@ namespace HouseManager
         private void SetDTO(Conta c)
         {
             //Método utilizado para se preencher os campos a partir de uma conta informada
-            txtNome.Text = c.Nome;
+            cbbNome.Text = c.Nome;
             txtDetalhes.Text = c.Detalhes;
             txtValor.Text = c.Valor.ToString();
             dtpVencimento.Value = c.Vencimento;
@@ -107,7 +106,7 @@ namespace HouseManager
         private bool IsComplete()
         {
             //Método utilizado para verificar se os campos estão preenchidos
-            if (txtNome.Text.Trim() == "" || txtDetalhes.Text.Trim() == "" || txtValor.Text.Trim() == "" || txtResponsavel.Text.Trim() == "" || dtpVencimento.Value.ToString().Trim() == "")
+            if (cbbNome.Text.Trim() == "" || txtDetalhes.Text.Trim() == "" || txtValor.Text.Trim() == "" || txtResponsavel.Text.Trim() == "" || dtpVencimento.Value.ToString().Trim() == "")
             {
                 return false;
             }
@@ -123,10 +122,15 @@ namespace HouseManager
                 Conta c = GetDTO();
                 if (Editar)
                 {
-                    //Se for uma edição, chama o método "Editar" para a conta obtida pelo "GetDTO"
-                    c.Id = id;
-                    database.Editar(c);
-                    Dispose();
+                    DialogResult dl = MessageBox.Show("Editar uma conta definirá todas as pessoas como não pagas. Deseja continuar?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if(dl == DialogResult.Yes)
+                    {
+                        //Se for uma edição, chama o método "Editar" para a conta obtida pelo "GetDTO"
+                        c.Id = id;
+                        database.Editar(c);
+                        Dispose();
+                    }
                 }
                 else
                 {

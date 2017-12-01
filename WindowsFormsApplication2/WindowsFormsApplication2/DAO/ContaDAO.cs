@@ -20,6 +20,10 @@ namespace HouseManager
 
             db.ExecuteNonQuery(qry);
 
+            c.Id = UltimoId();
+
+            PagamentoDAO dbp = new PagamentoDAO();
+            dbp.Gerar(c);
         }
 
             //Listar Conta:

@@ -38,13 +38,13 @@
             this.labResponsavel = new System.Windows.Forms.Label();
             this.dtpVencimento = new System.Windows.Forms.DateTimePicker();
             this.panCadastro = new System.Windows.Forms.Panel();
+            this.txtDetalhes = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.NumericUpDown();
             this.txtVencimento = new System.Windows.Forms.TextBox();
             this.labReais = new System.Windows.Forms.Label();
             this.txtResponsavel = new System.Windows.Forms.TextBox();
             this.btnResponsavel = new System.Windows.Forms.Button();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtDetalhes = new System.Windows.Forms.TextBox();
+            this.cbbNome = new System.Windows.Forms.ComboBox();
             this.panCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtValor)).BeginInit();
             this.SuspendLayout();
@@ -157,8 +157,8 @@
             this.panCadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panCadastro.Controls.Add(this.cbbNome);
             this.panCadastro.Controls.Add(this.txtDetalhes);
-            this.panCadastro.Controls.Add(this.txtNome);
             this.panCadastro.Controls.Add(this.txtValor);
             this.panCadastro.Controls.Add(this.txtVencimento);
             this.panCadastro.Controls.Add(this.labReais);
@@ -176,6 +176,14 @@
             this.panCadastro.Name = "panCadastro";
             this.panCadastro.Size = new System.Drawing.Size(366, 207);
             this.panCadastro.TabIndex = 27;
+            // 
+            // txtDetalhes
+            // 
+            this.txtDetalhes.Location = new System.Drawing.Point(98, 40);
+            this.txtDetalhes.Name = "txtDetalhes";
+            this.txtDetalhes.Size = new System.Drawing.Size(229, 20);
+            this.txtDetalhes.TabIndex = 2;
+            this.txtDetalhes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyDown);
             // 
             // txtValor
             // 
@@ -237,21 +245,36 @@
             this.btnResponsavel.UseVisualStyleBackColor = true;
             this.btnResponsavel.Click += new System.EventHandler(this.btnResponsavel_Click);
             // 
-            // txtNome
+            // cbbNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(98, 13);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(200, 20);
-            this.txtNome.TabIndex = 1;
-            this.txtNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyDown);
-            // 
-            // txtDetalhes
-            // 
-            this.txtDetalhes.Location = new System.Drawing.Point(98, 40);
-            this.txtDetalhes.Name = "txtDetalhes";
-            this.txtDetalhes.Size = new System.Drawing.Size(229, 20);
-            this.txtDetalhes.TabIndex = 2;
-            this.txtDetalhes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyDown);
+            this.cbbNome.AutoCompleteCustomSource.AddRange(new string[] {
+            "Luz",
+            "Telefone",
+            "Água e esgoto",
+            "Internet",
+            "Televisão",
+            "Combustível",
+            "Aluguel",
+            "Festa",
+            "IPTU",
+            "Viagem"});
+            this.cbbNome.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbbNome.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbbNome.Items.AddRange(new object[] {
+            "Luz",
+            "Telefone",
+            "Água e esgoto",
+            "Internet",
+            "Televisão",
+            "Combustível",
+            "Aluguel",
+            "Festa",
+            "IPTU",
+            "Viagem"});
+            this.cbbNome.Location = new System.Drawing.Point(98, 13);
+            this.cbbNome.Name = "cbbNome";
+            this.cbbNome.Size = new System.Drawing.Size(176, 21);
+            this.cbbNome.TabIndex = 32;
             // 
             // FormCadastraConta
             // 
@@ -292,7 +315,7 @@
         private System.Windows.Forms.Label labReais;
         private System.Windows.Forms.TextBox txtVencimento;
         private System.Windows.Forms.NumericUpDown txtValor;
-        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtDetalhes;
+        private System.Windows.Forms.ComboBox cbbNome;
     }
 }
