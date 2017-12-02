@@ -12,6 +12,7 @@ namespace HouseManager
         private Pessoa p = new Pessoa();
         private bool pago = false;
         private double aPagar = new double();
+        private string pessoa;
 
         //Construtores.
         public PessoaPagamento(Pessoa p, bool pago, double aPagar)
@@ -27,6 +28,19 @@ namespace HouseManager
         }
 
         //Properties.
+
+
+        public string Pessoa
+        {
+            get
+            {
+                return P.Nome;
+            }
+            set
+            {
+                pessoa = value;
+            }
+        }
         public double APagar
         {
             get

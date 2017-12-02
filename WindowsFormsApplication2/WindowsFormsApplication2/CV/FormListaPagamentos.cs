@@ -177,25 +177,26 @@ namespace HouseManager
 
         private void btnSituacao_Click(object sender, EventArgs e)
         {
-            PagamentoDAO db = new PagamentoDAO();
 
-            PessoaPagamento pp = selecaoPessoaPagamento();
-            Conta c = selecaoConta();
+                PagamentoDAO db = new PagamentoDAO();
 
-            //Se há um pagamento válido de uma conta válida, define o valor como "pago"/"não pago" dependendo da situação anterior e realiza uma edição
-            if(pp != null && c != null)
-            {
-                if (pp.Pago)
+                PessoaPagamento pp = selecaoPessoaPagamento();
+                Conta c = selecaoConta();
+
+                //Se há um pagamento válido de uma conta válida, define o valor como "pago"/"não pago" dependendo da situação anterior e realiza uma edição
+                if (pp != null && c != null)
                 {
-                    pp.Pago = false;
-                }
-                else
-                {
-                    pp.Pago = true;
-                }
-                db.Editar(pp, c);
-                Fill();
-            }
+                    if (pp.Pago)
+                    {
+                        pp.Pago = false;
+                    }
+                    else
+                    {
+                        pp.Pago = true;
+                    }
+                    db.Editar(pp, c);
+                    Fill();
+                }     
         }
     }
 }

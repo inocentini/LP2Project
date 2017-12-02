@@ -48,6 +48,8 @@ namespace HouseManager
 
         private void btnGerar_Click(object sender, EventArgs e)
         {
+            FormRelatorioCompra frc = new FormRelatorioCompra(selecionada.Id);
+            frc.Show(this);
         }
     }
 }

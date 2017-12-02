@@ -17,16 +17,19 @@ namespace HouseManager
         public FormRelatorioCompra()
         {
             InitializeComponent();
-
+            PessoaDAO pdao = new PessoaDAO();
+            List<Pessoa> lpessoa = pdao.Listar();
+            RelatorioPessoa report = new RelatorioPessoa();
+            report.SetDataSource(lpessoa);
+            crvRelatorioCompra.ReportSource = report;
         }
-
-        public FormRelatorioCompra(DateTime d)
+        public FormRelatorioCompra(int id)
         {
             InitializeComponent();
-            CompraDAO cdao = new CompraDAO();
-            List<Transacao> ltrans = cdao.ListarPorData(d);
-            RelatorioTransacao report = new RelatorioTransacao();
-            report.SetDataSource(lcdao);
+            PagamentoDAO cdao = new PagamentoDAO();
+            List<PessoaPagamento> ltrans = cdao.Read(id).LPessoas;
+            RelatorioPessoaPagemento report = new RelatorioPessoaPagemento();
+            report.SetDataSource(ltrans);
             crvRelatorioCompra.ReportSource = report;
 
         }

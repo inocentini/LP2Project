@@ -34,8 +34,7 @@ namespace HouseManager
 
         private void btnGerar_Click(object sender, EventArgs e)
         {
-            FormRelatorioCompra frc = new FormRelatorioCompra(dtpReferencia.Value);
-            frc.ShowDialog(this);
+         
         }
     }
 }

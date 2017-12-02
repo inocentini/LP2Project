@@ -206,10 +206,16 @@
       <DependentUpon>RelatorioConta.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RelatorioTransacao.cs">
+    <Compile Include="RelatorioPessoa.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RelatorioTransacao.rpt</DependentUpon>
+      <DependentUpon>RelatorioPessoa.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RelatorioPessoaPagemento.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioPessoaPagemento.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utils\Database.cs" />
@@ -323,9 +329,13 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RelatorioConta.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="RelatorioTransacao.rpt">
+    <EmbeddedResource Include="RelatorioPessoa.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>RelatorioTransacao.cs</LastGenOutput>
+      <LastGenOutput>RelatorioPessoa.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioPessoaPagemento.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioPessoaPagemento.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Conta.datasource" />
     <None Include="Properties\DataSources\ProdutoTransacao.datasource" />

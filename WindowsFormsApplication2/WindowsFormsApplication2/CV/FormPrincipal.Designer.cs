@@ -36,7 +36,6 @@
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pagamentosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.transaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deslogarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +49,7 @@
             this.mudarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pessoasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,7 +94,7 @@
             this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.contasToolStripMenuItem1,
             this.pagamentosToolStripMenuItem1,
-            this.transaçõesToolStripMenuItem});
+            this.pessoasToolStripMenuItem1});
             this.relatóriosToolStripMenuItem.Image = global::HouseManager.Properties.Resources.progress_report;
             this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
             resources.ApplyResources(this.relatóriosToolStripMenuItem, "relatóriosToolStripMenuItem");
@@ -112,13 +112,6 @@
             this.pagamentosToolStripMenuItem1.Name = "pagamentosToolStripMenuItem1";
             resources.ApplyResources(this.pagamentosToolStripMenuItem1, "pagamentosToolStripMenuItem1");
             this.pagamentosToolStripMenuItem1.Click += new System.EventHandler(this.pagamentosToolStripMenuItem1_Click);
-            // 
-            // transaçõesToolStripMenuItem
-            // 
-            this.transaçõesToolStripMenuItem.Image = global::HouseManager.Properties.Resources.cart;
-            this.transaçõesToolStripMenuItem.Name = "transaçõesToolStripMenuItem";
-            resources.ApplyResources(this.transaçõesToolStripMenuItem, "transaçõesToolStripMenuItem");
-            this.transaçõesToolStripMenuItem.Click += new System.EventHandler(this.transaçõesToolStripMenuItem_Click);
             // 
             // contasToolStripMenuItem
             // 
@@ -215,6 +208,12 @@
             resources.ApplyResources(this.produtoToolStripMenuItem, "produtoToolStripMenuItem");
             this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
             // 
+            // pessoasToolStripMenuItem1
+            // 
+            this.pessoasToolStripMenuItem1.Name = "pessoasToolStripMenuItem1";
+            resources.ApplyResources(this.pessoasToolStripMenuItem1, "pessoasToolStripMenuItem1");
+            this.pessoasToolStripMenuItem1.Click += new System.EventHandler(this.pessoasToolStripMenuItem1_Click);
+            // 
             // FormPrincipal
             // 
             resources.ApplyResources(this, "$this");
@@ -256,6 +255,6 @@
         private System.Windows.Forms.ToolStripMenuItem meusPagamentosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem pagamentosToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem transaçõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pessoasToolStripMenuItem1;
     }
 }
