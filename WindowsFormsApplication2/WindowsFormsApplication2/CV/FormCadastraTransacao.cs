@@ -180,7 +180,7 @@ namespace HouseManager
                 else
                 {
                     database.Salvar(t);
-                    MessageBox.Show("O relatório foi criado!", "Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Sua compra foi gerada, para imprimir a lista acesse \"Imprimir relatório\"!", "Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     Dispose();
                 }

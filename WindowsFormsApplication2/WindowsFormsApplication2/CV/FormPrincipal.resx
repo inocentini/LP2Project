@@ -122,43 +122,37 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pessoasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="pessoasToolStripMenuItem.Text" xml:space="preserve">
     <value>Pessoas</value>
   </data>
   <data name="contasToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="contasToolStripMenuItem1.Text" xml:space="preserve">
     <value>Contas</value>
   </data>
   <data name="pagamentosToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="pagamentosToolStripMenuItem1.Text" xml:space="preserve">
     <value>Pagamentos</value>
   </data>
-  <data name="estoqueToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
-  </data>
-  <data name="estoqueToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Estoque</value>
-  </data>
   <data name="transaçõesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="transaçõesToolStripMenuItem.Text" xml:space="preserve">
     <value>Transações</value>
   </data>
   <data name="relatóriosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="relatóriosToolStripMenuItem.Text" xml:space="preserve">
     <value>Relatórios</value>
   </data>
   <data name="contasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="contasToolStripMenuItem.Text" xml:space="preserve">
     <value>Contas</value>
@@ -2483,12 +2477,6 @@
     <value>pagamentosToolStripMenuItem1</value>
   </data>
   <data name="&gt;&gt;pagamentosToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;estoqueToolStripMenuItem1.Name" xml:space="preserve">
-    <value>estoqueToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;estoqueToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;transaçõesToolStripMenuItem.Name" xml:space="preserve">

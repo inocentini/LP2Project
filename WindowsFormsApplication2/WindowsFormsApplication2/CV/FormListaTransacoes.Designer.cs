@@ -42,10 +42,10 @@
             this.bntAdd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnConta = new System.Windows.Forms.Button();
             this.btnRelatorio = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labTransacoes = new System.Windows.Forms.Label();
-            this.btnConta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprasEVendas)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -198,6 +198,16 @@
             this.panel2.Size = new System.Drawing.Size(850, 55);
             this.panel2.TabIndex = 14;
             // 
+            // btnConta
+            // 
+            this.btnConta.Location = new System.Drawing.Point(600, 20);
+            this.btnConta.Name = "btnConta";
+            this.btnConta.Size = new System.Drawing.Size(75, 23);
+            this.btnConta.TabIndex = 9;
+            this.btnConta.Text = "Gerar conta";
+            this.btnConta.UseVisualStyleBackColor = true;
+            this.btnConta.Click += new System.EventHandler(this.btnConta_Click);
+            // 
             // btnRelatorio
             // 
             this.btnRelatorio.Location = new System.Drawing.Point(500, 20);
@@ -226,16 +236,6 @@
             this.labTransacoes.Size = new System.Drawing.Size(66, 13);
             this.labTransacoes.TabIndex = 4;
             this.labTransacoes.Text = "Transações:";
-            // 
-            // btnConta
-            // 
-            this.btnConta.Location = new System.Drawing.Point(600, 20);
-            this.btnConta.Name = "btnConta";
-            this.btnConta.Size = new System.Drawing.Size(75, 23);
-            this.btnConta.TabIndex = 9;
-            this.btnConta.Text = "Gerar conta";
-            this.btnConta.UseVisualStyleBackColor = true;
-            this.btnConta.Click += new System.EventHandler(this.btnConta_Click);
             // 
             // FormListaTransacoes
             // 

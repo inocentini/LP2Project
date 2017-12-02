@@ -36,7 +36,6 @@
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pagamentosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.estoqueToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.transaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deslogarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -95,7 +94,6 @@
             this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.contasToolStripMenuItem1,
             this.pagamentosToolStripMenuItem1,
-            this.estoqueToolStripMenuItem1,
             this.transaçõesToolStripMenuItem});
             this.relatóriosToolStripMenuItem.Image = global::HouseManager.Properties.Resources.progress_report;
             this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
@@ -114,13 +112,6 @@
             this.pagamentosToolStripMenuItem1.Name = "pagamentosToolStripMenuItem1";
             resources.ApplyResources(this.pagamentosToolStripMenuItem1, "pagamentosToolStripMenuItem1");
             this.pagamentosToolStripMenuItem1.Click += new System.EventHandler(this.pagamentosToolStripMenuItem1_Click);
-            // 
-            // estoqueToolStripMenuItem1
-            // 
-            this.estoqueToolStripMenuItem1.Image = global::HouseManager.Properties.Resources.shopping_bag;
-            this.estoqueToolStripMenuItem1.Name = "estoqueToolStripMenuItem1";
-            resources.ApplyResources(this.estoqueToolStripMenuItem1, "estoqueToolStripMenuItem1");
-            this.estoqueToolStripMenuItem1.Click += new System.EventHandler(this.estoqueToolStripMenuItem1_Click);
             // 
             // transaçõesToolStripMenuItem
             // 
@@ -263,7 +254,6 @@
         private System.Windows.Forms.ToolStripMenuItem mudarSenhaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contasQueAdministroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem meusPagamentosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem contasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem pagamentosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem transaçõesToolStripMenuItem;

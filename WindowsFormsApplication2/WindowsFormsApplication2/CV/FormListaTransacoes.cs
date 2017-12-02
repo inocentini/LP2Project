@@ -134,7 +134,8 @@ namespace HouseManager
                 if(selecionada.Conta.Id == 0)
                 {
                     CompraDAO db = new CompraDAO();
-                    db.GerarConta(selecionada, DateTime.Now.AddMonths(1));
+                    db.GerarConta(selecionada, selecionada.Data.AddMonths(1));
+                    MessageBox.Show("Conta gerada!", "Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Fill();
                 }
                 else

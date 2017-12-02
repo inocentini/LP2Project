@@ -177,10 +177,5 @@ namespace HouseManager
             //Evento de clique na opção "transações" dos relatórios
             frt.Show();
         }
-
-        private void estoqueToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            //Como esse relatório não precisará de nenhuma configuração, ele será chamado direto por aqui
-        }
     }
 }
