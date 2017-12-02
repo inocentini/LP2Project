@@ -42,9 +42,10 @@
             this.bntAdd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnRelatorio = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labTransacoes = new System.Windows.Forms.Label();
-            this.btnRelatorio = new System.Windows.Forms.Button();
+            this.btnConta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprasEVendas)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -128,7 +129,7 @@
             // btnRemover
             // 
             this.btnRemover.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnRemover.Location = new System.Drawing.Point(448, 20);
+            this.btnRemover.Location = new System.Drawing.Point(419, 20);
             this.btnRemover.MaximumSize = new System.Drawing.Size(75, 23);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 23);
@@ -140,7 +141,7 @@
             // bntDetalhes
             // 
             this.bntDetalhes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.bntDetalhes.Location = new System.Drawing.Point(367, 20);
+            this.bntDetalhes.Location = new System.Drawing.Point(338, 20);
             this.bntDetalhes.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntDetalhes.Name = "bntDetalhes";
             this.bntDetalhes.Size = new System.Drawing.Size(75, 23);
@@ -152,7 +153,7 @@
             // bntEditar
             // 
             this.bntEditar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.bntEditar.Location = new System.Drawing.Point(286, 20);
+            this.bntEditar.Location = new System.Drawing.Point(257, 20);
             this.bntEditar.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntEditar.Name = "bntEditar";
             this.bntEditar.Size = new System.Drawing.Size(75, 23);
@@ -164,7 +165,7 @@
             // bntAdd
             // 
             this.bntAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.bntAdd.Location = new System.Drawing.Point(205, 20);
+            this.bntAdd.Location = new System.Drawing.Point(176, 20);
             this.bntAdd.MaximumSize = new System.Drawing.Size(75, 23);
             this.bntAdd.Name = "bntAdd";
             this.bntAdd.Size = new System.Drawing.Size(75, 23);
@@ -185,6 +186,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnConta);
             this.panel2.Controls.Add(this.btnRelatorio);
             this.panel2.Controls.Add(this.btnRemover);
             this.panel2.Controls.Add(this.bntAdd);
@@ -195,6 +197,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(850, 55);
             this.panel2.TabIndex = 14;
+            // 
+            // btnRelatorio
+            // 
+            this.btnRelatorio.Location = new System.Drawing.Point(500, 20);
+            this.btnRelatorio.Name = "btnRelatorio";
+            this.btnRelatorio.Size = new System.Drawing.Size(93, 23);
+            this.btnRelatorio.TabIndex = 8;
+            this.btnRelatorio.Text = "Imprimir relatório";
+            this.btnRelatorio.UseVisualStyleBackColor = true;
+            this.btnRelatorio.Click += new System.EventHandler(this.btnRelatorio_Click);
             // 
             // panel3
             // 
@@ -215,15 +227,15 @@
             this.labTransacoes.TabIndex = 4;
             this.labTransacoes.Text = "Transações:";
             // 
-            // btnRelatorio
+            // btnConta
             // 
-            this.btnRelatorio.Location = new System.Drawing.Point(529, 20);
-            this.btnRelatorio.Name = "btnRelatorio";
-            this.btnRelatorio.Size = new System.Drawing.Size(93, 23);
-            this.btnRelatorio.TabIndex = 8;
-            this.btnRelatorio.Text = "Imprimir relatório";
-            this.btnRelatorio.UseVisualStyleBackColor = true;
-            this.btnRelatorio.Click += new System.EventHandler(this.btnRelatorio_Click);
+            this.btnConta.Location = new System.Drawing.Point(600, 20);
+            this.btnConta.Name = "btnConta";
+            this.btnConta.Size = new System.Drawing.Size(75, 23);
+            this.btnConta.TabIndex = 9;
+            this.btnConta.Text = "Gerar conta";
+            this.btnConta.UseVisualStyleBackColor = true;
+            this.btnConta.Click += new System.EventHandler(this.btnConta_Click);
             // 
             // FormListaTransacoes
             // 
@@ -268,5 +280,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colProds;
         private System.Windows.Forms.DataGridViewTextBoxColumn colValor;
         private System.Windows.Forms.Button btnRelatorio;
+        private System.Windows.Forms.Button btnConta;
     }
 }

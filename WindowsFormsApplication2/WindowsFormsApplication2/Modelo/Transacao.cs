@@ -13,6 +13,7 @@ namespace HouseManager
         private DateTime data = new DateTime();
         private List<ProdutoTransacao> lista = new List<ProdutoTransacao>();
         private double valor = new double();
+        private Conta conta = new Conta();
 
         //Properties
         public DateTime Data
@@ -67,13 +68,27 @@ namespace HouseManager
             }
         }
 
+        public Conta Conta
+        {
+            get
+            {
+                return conta;
+            }
+
+            set
+            {
+                conta = value;
+            }
+        }
+
         //Construtores
-        public Transacao(DateTime data, List<ProdutoTransacao> lista, int id,double valor)
+        public Transacao(DateTime data, List<ProdutoTransacao> lista, int id,double valor,Conta c)
         {
             this.Id = id;
             this.Data = data;
             this.Lista = lista;
             this.Valor = valor;
+            this.Conta = c;
         }
 
         public Transacao()

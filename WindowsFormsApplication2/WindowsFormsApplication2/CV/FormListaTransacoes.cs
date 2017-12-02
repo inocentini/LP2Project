@@ -118,8 +118,30 @@ namespace HouseManager
 
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
-            FormRelatorioCompra frc = new FormRelatorioCompra(selecao());
-            frc.ShowDialog(this);
+            Transacao selecionada = selecao();
+            if(selecionada != null)
+            {
+                FormRelatorioCompra frc = new FormRelatorioCompra(selecao());
+                frc.ShowDialog(this);
+            }
+        }
+
+        private void btnConta_Click(object sender, EventArgs e)
+        {
+           Transacao selecionada = selecao();
+            if(selecionada != null)
+            {
+                if(selecionada.Conta.Id == 0)
+                {
+                    CompraDAO db = new CompraDAO();
+                    db.GerarConta(selecionada, DateTime.Now.AddMonths(1));
+                    Fill();
+                }
+                else
+                {
+                    MessageBox.Show("Essa compra já tem uma conta!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

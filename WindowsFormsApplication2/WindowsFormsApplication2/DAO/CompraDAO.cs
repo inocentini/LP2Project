@@ -15,7 +15,7 @@ namespace HouseManager
             Database db = Database.GetInstance();
 
             //Atualiza as informações pertinentes à tabela de transação
-            string qry = string.Format("UPDATE transacao SET data='{0}', valor={1} WHERE id={2};",t.Data.ToString("yyyy-MM-dd"),t.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture),t.Id);
+            string qry = string.Format("UPDATE transacao SET data='{0}', valor={1}, idconta={2} WHERE id={3};",t.Data.ToString("yyyy-MM-dd"),t.Valor.ToString(System.Globalization.CultureInfo.InvariantCulture),t.Conta == null? "" : t.Conta.Id.ToString(),t.Id);
 
             //Exclui todos os produtos dessa transação para não haver conflitos após a readição
             qry = string.Concat(qry, string.Format("DELETE FROM transacao_produto WHERE idcompra = {0}; ", t.Id));
@@ -36,6 +36,7 @@ namespace HouseManager
             DataSet ds = db.ExecuteQuery(qry);
 
             List<Transacao> LCompra = new List<Transacao>();
+            ContaDAO dbc = new ContaDAO();
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
@@ -44,6 +45,10 @@ namespace HouseManager
                 string data = dr["data"].ToString();
                 t.Data = Convert.ToDateTime(data);
                 t.Valor = double.Parse(dr["valor"].ToString());
+                if(dr["idconta"].ToString() != "")
+                {
+                    t.Conta = dbc.Read(int.Parse(dr["idconta"].ToString()));
+                }
 
                 //Chama o método ListarProd (abaixo) para listar todos os produtos de uma transação e a quantidade comprada/usada
                 t.Lista = ListarProd(t.Id);
@@ -69,6 +74,7 @@ namespace HouseManager
             DataSet ds = db.ExecuteQuery(qry);
 
             List<Transacao> LCompra = new List<Transacao>();
+            ContaDAO dbc = new ContaDAO();
 
             //Atribui dados da consulta para a lista e retorna a lista.
             foreach (DataRow dr in ds.Tables[0].Rows)
@@ -78,6 +84,10 @@ namespace HouseManager
                 string data2 = dr["data"].ToString();
                 t.Data = Convert.ToDateTime(data2);
                 t.Valor = double.Parse(dr["valor"].ToString());
+                if (dr["idconta"].ToString() != "")
+                {
+                    t.Conta = dbc.Read(int.Parse(dr["idconta"].ToString()));
+                }
 
                 //Chama o método ListarProd (abaixo) para listar todos os produtos de uma transação e a quantidade comprada/usada
                 t.Lista = ListarProd(t.Id);
@@ -112,24 +122,46 @@ namespace HouseManager
             string qry = string.Format("SELECT * FROM transacao WHERE id = {0}", id);
             DataSet ds = db.ExecuteQuery(qry);
 
-            Transacao cv = new Transacao();
+            Transacao t = new Transacao();
+            ContaDAO dbc = new ContaDAO();
 
             if (ds.Tables[0].Rows.Count != 0)
             {
                 DataRow dr = ds.Tables[0].Rows[0];
-                cv.Id = int.Parse(dr["id"].ToString());
+                t.Id = int.Parse(dr["id"].ToString());
                 string data = dr["data"].ToString();
-                cv.Valor = double.Parse(dr["valor"].ToString());
-                cv.Data = Convert.ToDateTime(data);
+                t.Valor = double.Parse(dr["valor"].ToString());
+                t.Data = Convert.ToDateTime(data);
+                if(dr["idconta"].ToString() != "")
+                {
+                    t.Conta = dbc.Read(int.Parse(dr["idconta"].ToString()));
+                }
 
                 //Chama o método ListarProd (abaixo) para listar todos os produtos da transação e a quantidade comprada/usada
-                cv.Lista = ListarProd(cv.Id);
-                return cv;
+                t.Lista = ListarProd(t.Id);
+                return t;
             }
             else
             {
                 return null;
             }
+        }
+
+        public void GerarConta(Transacao t, DateTime vencimento)
+        {
+            Conta c = new Conta();
+            c.Nome = "Compra " + t.Id;
+            c.Detalhes = "Compra feita em " + t.Data.ToShortDateString() + " no valor de R$" + t.Valor;
+            c.Valor = t.Valor;
+            c.Vencimento = vencimento;
+            c.Responsavel = Sessao.login.P;
+
+            ContaDAO dbc = new ContaDAO();
+            dbc.Salvar(c);
+
+            t.Conta = dbc.Read(dbc.UltimoId());
+
+            Editar(t);
         }
 
         public void Remover(int id)
@@ -138,7 +170,7 @@ namespace HouseManager
             Database db = Database.GetInstance();
 
             //Exclui todas as informações de ambas as tabelas
-            string qry = string.Format("DELETE FROM transacao WHERE id = {0}; DELETE FROM transacao_produto WHERE idcompra = {0}", id);
+            string qry = string.Format("DELETE FROM transacao WHERE id = {0}; DELETE FROM transacao_produto WHERE idcompra = {0}; DELETE FROM conta WHERE id = {1};", id, Read(id).Conta.Id);
             db.ExecuteNonQuery(qry);
         }
 

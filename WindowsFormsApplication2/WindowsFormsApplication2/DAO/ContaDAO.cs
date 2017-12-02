@@ -152,7 +152,7 @@ namespace HouseManager
             PagamentoDAO dbp = new PagamentoDAO();
 
             dbp.Remover(id);
-            string qry = string.Format("DELETE FROM Conta WHERE id ={0}", id);
+            string qry = string.Format("DELETE FROM Transacao WHERE id ={0}; UPDATE Transacao SET idconta = NULL WHERE idconta = {0}; DELETE FROM Conta WHERE id = {0};", id);
             db.ExecuteNonQuery(qry);
         }
 
