@@ -36,6 +36,7 @@
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pagamentosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pessoasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deslogarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,6 @@
             this.mudarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pessoasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,6 +112,13 @@
             this.pagamentosToolStripMenuItem1.Name = "pagamentosToolStripMenuItem1";
             resources.ApplyResources(this.pagamentosToolStripMenuItem1, "pagamentosToolStripMenuItem1");
             this.pagamentosToolStripMenuItem1.Click += new System.EventHandler(this.pagamentosToolStripMenuItem1_Click);
+            // 
+            // pessoasToolStripMenuItem1
+            // 
+            this.pessoasToolStripMenuItem1.Image = global::HouseManager.Properties.Resources.man_user;
+            this.pessoasToolStripMenuItem1.Name = "pessoasToolStripMenuItem1";
+            resources.ApplyResources(this.pessoasToolStripMenuItem1, "pessoasToolStripMenuItem1");
+            this.pessoasToolStripMenuItem1.Click += new System.EventHandler(this.pessoasToolStripMenuItem1_Click);
             // 
             // contasToolStripMenuItem
             // 
@@ -207,12 +214,6 @@
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
             resources.ApplyResources(this.produtoToolStripMenuItem, "produtoToolStripMenuItem");
             this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
-            // 
-            // pessoasToolStripMenuItem1
-            // 
-            this.pessoasToolStripMenuItem1.Name = "pessoasToolStripMenuItem1";
-            resources.ApplyResources(this.pessoasToolStripMenuItem1, "pessoasToolStripMenuItem1");
-            this.pessoasToolStripMenuItem1.Click += new System.EventHandler(this.pessoasToolStripMenuItem1_Click);
             // 
             // FormPrincipal
             // 

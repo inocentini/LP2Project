@@ -193,6 +193,16 @@ namespace HouseManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap man_user {
+            get {
+                object obj = ResourceManager.GetObject("man-user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap man_with_tie {
             get {
                 object obj = ResourceManager.GetObject("man-with-tie", resourceCulture);
