@@ -79,7 +79,5 @@ namespace HouseManager
                 quantidade = value;
             }
         }
-
-            
     }
 }

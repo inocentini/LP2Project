@@ -154,7 +154,7 @@ namespace HouseManager
             db.ExecuteNonQuery(qry);
         }
 
-        //Função (não terminada) para gerar os pagamentos ao se adicionar uma conta
+        //Função para gerar os pagamentos ao se adicionar uma conta
         public void Gerar(Conta c)
         {
             PessoaDAO dbp = new PessoaDAO();
@@ -178,6 +178,7 @@ namespace HouseManager
             Salvar(pag);
         }
 
+        //Função utilizada para remover os pagamentos de uma pessoa
         public void RemoverPessoa(string cpf)
         {
             Database db = Database.GetInstance();

@@ -118,6 +118,7 @@ namespace HouseManager
 
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
+            //Evento que chama o relatório de compra para a compra selecionada
             Transacao selecionada = selecao();
             if(selecionada != null)
             {
@@ -128,10 +129,11 @@ namespace HouseManager
 
         private void btnConta_Click(object sender, EventArgs e)
         {
+            //Evento que gera uma conta a partir da compra selecionada
            Transacao selecionada = selecao();
-            if(selecionada != null)
+            if(selecionada != null) //Se houver alguma compra selecionada
             {
-                if(selecionada.Conta.Id == 0)
+                if(selecionada.Conta.Id == 0) //Se ela não tiver uma conta ainda
                 {
                     CompraDAO db = new CompraDAO();
                     db.GerarConta(selecionada, selecionada.Data.AddMonths(1));

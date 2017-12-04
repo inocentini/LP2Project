@@ -128,16 +128,16 @@
     <Compile Include="CV\FormRelatorioTransacoes.Designer.cs">
       <DependentUpon>FormRelatorioTransacoes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRelatorioCompra.cs">
+    <Compile Include="CV\FormRelatorioCompra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRelatorioCompra.Designer.cs">
+    <Compile Include="CV\FormRelatorioCompra.Designer.cs">
       <DependentUpon>FormRelatorioCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRelatorioContaPrint.cs">
+    <Compile Include="CV\FormRelatorioContaPrint.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRelatorioContaPrint.Designer.cs">
+    <Compile Include="CV\FormRelatorioContaPrint.Designer.cs">
       <DependentUpon>FormRelatorioContaPrint.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Transacao.cs" />
@@ -194,25 +194,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RelatorioCompra.cs">
+    <Compile Include="CV\RelatorioCompra.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RelatorioCompra.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RelatorioConta.cs">
+    <Compile Include="CV\RelatorioConta.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RelatorioConta.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RelatorioPessoa.cs">
+    <Compile Include="CV\RelatorioPessoa.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RelatorioPessoa.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RelatorioPessoaPagemento.cs">
+    <Compile Include="CV\RelatorioPessoaPagemento.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RelatorioPessoaPagemento.rpt</DependentUpon>
@@ -307,10 +307,10 @@
     <EmbeddedResource Include="CV\FormRelatorioTransacoes.resx">
       <DependentUpon>FormRelatorioTransacoes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRelatorioCompra.resx">
+    <EmbeddedResource Include="CV\FormRelatorioCompra.resx">
       <DependentUpon>FormRelatorioCompra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRelatorioContaPrint.resx">
+    <EmbeddedResource Include="CV\FormRelatorioContaPrint.resx">
       <DependentUpon>FormRelatorioContaPrint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -321,19 +321,19 @@
     <EmbeddedResource Include="CV\FormSplashScreen.resx">
       <DependentUpon>FormSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RelatorioCompra.rpt">
+    <EmbeddedResource Include="CV\RelatorioCompra.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RelatorioCompra.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="RelatorioConta.rpt">
+    <EmbeddedResource Include="CV\RelatorioConta.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RelatorioConta.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="RelatorioPessoa.rpt">
+    <EmbeddedResource Include="CV\RelatorioPessoa.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RelatorioPessoa.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="RelatorioPessoaPagemento.rpt">
+    <EmbeddedResource Include="CV\RelatorioPessoaPagemento.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RelatorioPessoaPagemento.cs</LastGenOutput>
     </EmbeddedResource>

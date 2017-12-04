@@ -194,6 +194,7 @@ namespace HouseManager
 
         public void AtribuirResp(string cpf)
         {
+            //Método utilizado para atribuir um responsável às contas de uma pessoa que será removida para o admin
             Database db = Database.GetInstance();
             LoginDAO dbl = new LoginDAO();
 

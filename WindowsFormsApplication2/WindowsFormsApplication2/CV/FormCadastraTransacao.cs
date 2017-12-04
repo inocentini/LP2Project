@@ -88,6 +88,7 @@ namespace HouseManager
 
         private ProdutoTransacao getDTOProd()
         {
+            //Método utilizado para obter as informações fornecidas sobre o produto
             ProdutoTransacao p = new ProdutoTransacao();
 
             p.Prod = txtProduto.Text;
@@ -98,6 +99,7 @@ namespace HouseManager
 
         private void setDTO(Transacao t)
         {
+            //Método utilizado para preencher os campos com as informações de uma compra
             dtpData.Value = t.Data;
             txtTotal.Text = t.Valor.ToString();
             foreach(ProdutoTransacao pt in t.Lista)
@@ -110,6 +112,7 @@ namespace HouseManager
 
         bool IsCompleteForm()
         {
+            //Método utilizado para verificar se a compra tem algum produto
             if(dictProdutosDgv.Count==0)
             {
                 return false;
@@ -122,10 +125,10 @@ namespace HouseManager
             if (IsCompleteProd())
             {
                 ProdutoTransacao p = getDTOProd();
-                if (dictProdutosDgv.ContainsKey(p.Prod))
+                if (dictProdutosDgv.ContainsKey(p.Prod)) //Se a compra já tem o produto informado
                 {
                     DialogResult resp = MessageBox.Show("Esse produto já está na lista! Você tem certeza que deseja substituir sua quantidade?", "Produto repetido", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-                    if(resp == DialogResult.Yes)
+                    if(resp == DialogResult.Yes) //Se o usuário resolver substituir a quantidade
                     {
                         dictProdutosDgv[p.Prod] = p;
                         dgvProdutos.Rows.Clear();
@@ -212,7 +215,7 @@ namespace HouseManager
 
         private void dgvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 2)
+            if (e.ColumnIndex == 2) //Se clicar no botão "Remover" que fica na coluna de índice 2, remove o produto da linha selecionada
             {
                 dictProdutosDgv.Remove(dgvProdutos.Rows[e.RowIndex].Cells[0].Value.ToString());
                 dgvProdutos.Rows.Remove(dgvProdutos.Rows[e.RowIndex]);

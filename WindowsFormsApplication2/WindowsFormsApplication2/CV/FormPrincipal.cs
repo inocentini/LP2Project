@@ -181,6 +181,7 @@ namespace HouseManager
 
         private void pessoasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            //Evento de clique na opção "Pessoas" dos relatórios
             frc2 = new FormRelatorioCompra();
             frc2.ShowDialog(this);
         }

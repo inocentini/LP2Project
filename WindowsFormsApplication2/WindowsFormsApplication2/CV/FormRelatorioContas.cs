@@ -34,6 +34,7 @@ namespace HouseManager
 
         private void btnGerar_Click(object sender, EventArgs e)
         {
+            //Evento de clique no botão "gerar relatório"
             FormRelatorioContaPrint rConta = new FormRelatorioContaPrint(dtpReferencia.Value);
             rConta.Show();
         }

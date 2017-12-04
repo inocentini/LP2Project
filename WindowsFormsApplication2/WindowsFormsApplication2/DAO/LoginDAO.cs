@@ -147,6 +147,7 @@ namespace HouseManager
 
         public string cpfAdmin()
         {
+            //Pega o CPF do administrador para a atribuição como responsável quando uma pessoa que possui contas é removida
             Database db = Database.GetInstance();
 
             string qry = string.Format("SELECT cpfpessoa FROM Login WHERE admin=1");

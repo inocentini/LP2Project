@@ -12,7 +12,7 @@ namespace HouseManager
         private Pessoa p = new Pessoa();
         private bool pago = false;
         private double aPagar = new double();
-        private string pessoa;
+        private string pessoa; //String utilizada para se retornar o nome da pessoa (será utilizado no relatório)
 
         //Construtores.
         public PessoaPagamento(Pessoa p, bool pago, double aPagar)

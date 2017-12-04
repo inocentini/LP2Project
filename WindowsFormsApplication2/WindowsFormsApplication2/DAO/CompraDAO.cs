@@ -149,6 +149,7 @@ namespace HouseManager
 
         public void GerarConta(Transacao t, DateTime vencimento)
         {
+            //Método utilizado para gerar uma conta a partir de uma compra e um vencimento
             Conta c = new Conta();
             c.Nome = "Compra " + t.Id;
             c.Detalhes = "Compra feita em " + t.Data.ToShortDateString() + " no valor de R$" + t.Valor;
